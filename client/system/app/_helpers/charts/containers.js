@@ -9,7 +9,7 @@ app.charts.containers = containers => (a,x) => {
     let size = container.limit / 1048576
 
     return {
-      label: `${ name } ${ size }MB`,
+      label: `${ name } ${ size.toFixed(0) }MB`,
       current: current,
       peak: peak,
       headroom: headroom,
