@@ -1,7 +1,7 @@
 # Ignore Byebug command history file.
 .byebug_history
 
-/logs
+/log
 /data
 /node_modules
 /sessions
