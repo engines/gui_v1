@@ -12,7 +12,7 @@ app.container.show.dialogues = ( type, controller, container ) => {
       path,
       ( blueprint, el ) => {
 
-        let dialogues = blueprint.dialogues || ( container.name === 'uadmin' ? uadminBlueprint.software.dialogues : [] ) || []
+        let dialogues = blueprint.dialogues || ( ( Sinatra::Base.development? && container.name === 'uadmin' ) ? uadminBlueprint.software.dialogues : [] ) || []
         let main = dialogues.find( dialogue => dialogue.name === 'main' )
 
         el.$nodes = (a,x) => [

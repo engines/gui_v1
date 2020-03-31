@@ -9,7 +9,7 @@ cc.report.shim = {
   },
 
   template: ( r, target ) => ( options={} ) => {
-    debugger
+    // debugger
     let template = options.template ? (a,x) => cc.md( options.template(r) ) : null
     return template
   },
