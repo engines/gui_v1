@@ -11,7 +11,7 @@ module Server
         ssh_public_key_filename: "identity.pub",
         enable_services_designer: !!ENV['ENABLE_SERVICES_DESIGNER'] || Sinatra::Base.development?,
         # git_username: ENV['GIT_USERNAME'] || 'Engines Studio',
-        user_password: Sinatra::Base.development? ? 'password' : ENV['USER_PASSWORD']
+        user_password: ( Sinatra::Base.development? ? 'password' : ENV['USER_PASSWORD'] ) || 'password'
 
   end
 end
