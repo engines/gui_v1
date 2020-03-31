@@ -3,7 +3,6 @@ module Server
 
     if Sinatra::Base.development?
       ENV['ENGINES_SYSTEM_IP'] = '172.16.162.129'
-      # ENV['SESSION_TIMEOUT_MINUTES'] = '0.1'
     end
 
     set sessions: true,
