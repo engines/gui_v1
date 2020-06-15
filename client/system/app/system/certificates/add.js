@@ -3,7 +3,7 @@ app.system.certificates.add = controller => (a,x) => [
   a.h5( 'Add' ),
 
   app.form( {
-    url: '/~/~/system/certs/',
+    url: '/-/-/system/certs/',
     success: () => controller.open( '..' ),
     scope: 'api_vars',
     form: (f) => [
@@ -42,7 +42,7 @@ app.system.certificates.add = controller => (a,x) => [
     //     if ( el.checkValidity() ) {
     //       let domain = el.$data().get('domain')
     //       el.$nodes = app.http(
-    //         `/~/~/system/domains/${ domain }`,
+    //         `/-/-/system/domains/${ domain }`,
     //         () => controller.open( '..' ),
     //         {
     //           method: 'DELETE',

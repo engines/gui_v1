@@ -1,7 +1,7 @@
 app.namespaces.show = controller => (a,x) => [
 
   app.http(
-    `/~/namespaces/${ controller.params.namespace_id }/readme`,
+    `/-/namespaces/${ controller.params.namespace_id }/readme`,
     ( readme, el ) => el.$nodes = [
 
       a['div.clearfix']( [

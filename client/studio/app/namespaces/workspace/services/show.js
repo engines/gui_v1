@@ -2,8 +2,8 @@ app.namespaces.workspace.services.show = controller => (a,x) => [
 
   app.http(
     [
-      `/~/namespaces/${ controller.params.namespace_id }/workspace/services/${ controller.params.service_id }/readme`,
-      `/~/namespaces/${ controller.params.namespace_id }/workspace/services/${ controller.params.service_id }/diff`,
+      `/-/namespaces/${ controller.params.namespace_id }/workspace/services/${ controller.params.service_id }/readme`,
+      `/-/namespaces/${ controller.params.namespace_id }/workspace/services/${ controller.params.service_id }/diff`,
     ],
     ( [ readme, diff ], el ) => el.$nodes = [
 

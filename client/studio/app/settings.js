@@ -45,7 +45,7 @@ app.settings = controller => (a,x) => [
 
 
   // app.http(
-  //   '/~/settings',
+  //   '/-/settings',
   //   ( settings, el ) => el.$nodes = [
   //
   //     a.h3( 'Settings' ),

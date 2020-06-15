@@ -1,5 +1,5 @@
 app.login = controller => (a,x) => app.form( {
-  url: '/~/session',
+  url: '/-/session',
   success: ( response, el ) => {
     nav.$setUser( true )
     el.$send( 'app.server.authenticated' )

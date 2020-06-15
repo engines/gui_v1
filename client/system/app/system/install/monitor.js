@@ -8,9 +8,9 @@ app.system.install.monitor = controller => (a,x) => [
 
   a.h5( 'Monitor installation' ),
   app.http(
-    '/~/~/engine_builder/params',
-    ( installing, el ) => installing => {
-// debugger
+    '/-/-/engine_builder/params',
+    ( installing, el ) => {
+
       if ( installing.engine_name ) {
         el.$nodes = [
 
@@ -24,7 +24,7 @@ app.system.install.monitor = controller => (a,x) => [
           app.xterm( { label: 'Builder log' } ),
           a['appkit-event-source']( null, {
             $init: function() {
-              this.$eventsource = new EventSource( '/~/eventsource/builder' )
+              this.$eventsource = new EventSource( '/-/eventsource/builder' )
               this.$eventsource.onmessage = function(e) {
                 var line = e.data
                 if ( line == String.fromCharCode(4) ) this.$complete()

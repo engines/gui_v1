@@ -30,7 +30,7 @@ end
 $SESSION_TIMEOUT_MINUTES = ENV['SESSION_TIMEOUT_MINUTES'] || 60
 
 require_relative "server/#{ ENV['MODE'] }"
-map('/~') { run Server::Api }
+map('/-') { run Server::Api }
 map('/') { run Server::Client }
 
 Server.warmup( self )

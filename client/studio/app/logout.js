@@ -1,5 +1,5 @@
 app.logout = controller => (a,x) => app.http(
-  '/~/session',
+  '/-/session',
   ( result, el  ) => {
     nav.$setUser( false ),
     el.$nodes = a.p(

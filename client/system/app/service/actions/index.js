@@ -2,7 +2,7 @@ app.service.actions.index = controller => (a,x) => {
 
   const name = controller.params.name
 
-  let path = `/~/~/containers/service/${ name }/service_definition`
+  let path = `/-/-/containers/service/${ name }/service_definition`
 
   return [
 

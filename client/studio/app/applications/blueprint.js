@@ -1,7 +1,7 @@
 app.applications.blueprint = controller => (a,x) => [
 
   app.http(
-    `/~/applications/${ controller.params.application_id }/blueprint`,
+    `/-/applications/${ controller.params.application_id }/blueprint`,
     ( blueprint, el ) => {
 
       let blueprintObject = new ApplicationBlueprint( controller.params.application_id, blueprint.object )

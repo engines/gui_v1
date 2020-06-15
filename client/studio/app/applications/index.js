@@ -15,7 +15,7 @@ app.applications.index = controller => (a,x) => [
 
 
   app.http(
-    '/~/applications',
+    '/-/applications',
     ( applications, el ) => el.$nodes = [
 
       applications.length == 0 ? 'None' : null,

@@ -19,10 +19,10 @@ app.application.network = controller => (a,x) => {
       // }
 
       [
-        `/~/~/containers/engine/${ name }`,
-        `/~/~/containers/engine/${ name }/blueprint`,
-        '/~/~/system/domains/',
-        // '/~/~/system/reserved/hostnames',
+        `/-/-/containers/engine/${ name }`,
+        `/-/-/containers/engine/${ name }/blueprint`,
+        '/-/-/system/domains/',
+        // '/-/-/system/reserved/hostnames',
       ],
 
       ( [
@@ -54,7 +54,7 @@ app.application.network = controller => (a,x) => {
               host_name: container.hostname,
               domain_name: container.host_name,
             },
-            action: `/~/~/containers/engine/${name}/properties/network`,
+            action: `/-/-/containers/engine/${name}/properties/network`,
             success: () => controller.open('..'),
             scope: 'api_vars',
             form: (f) => [

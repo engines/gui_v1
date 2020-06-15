@@ -20,7 +20,7 @@ app.namespaces.workspace.reset = controller => (a,x) => [
       onclick: (e,el) => {
 
         el.$('^').$nodes = app.http(
-          `/~/namespaces/${ controller.params.namespace_id }/workspace/reset`,
+          `/-/namespaces/${ controller.params.namespace_id }/workspace/reset`,
           ( result, el ) => el.$nodes = [
             a.pre( result.message ),
             a['div.clearfix']( [

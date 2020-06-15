@@ -1,7 +1,7 @@
 app.namespaces.definitions.index = controller => (a,x) => [
 
   app.http(
-    `/~/namespaces/${ controller.params.namespace_id }/definitions`,
+    `/-/namespaces/${ controller.params.namespace_id }/definitions`,
     ( definitions, el ) => el.$nodes = [
 
       a.h5( 'Service definitions' ),

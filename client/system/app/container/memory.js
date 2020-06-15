@@ -2,7 +2,7 @@ app.container.memory = type => controller => (a,x) => {
 
   const name = controller.params.name
 
-  let path = `/~/~/containers/${
+  let path = `/-/-/containers/${
     type === 'service' ? 'service' : 'engine'
   }/${ name }`
 

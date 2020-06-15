@@ -3,7 +3,7 @@ app.system.domains.add = controller => (a,x) => [
   a.h5( 'Add' ),
 
   app.form( {
-    url: '/~/~/system/domains/',
+    url: '/-/-/system/domains/',
     success: () => controller.open( '..' ),
     scope: 'api_vars',
     form: (f) => [

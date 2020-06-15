@@ -3,7 +3,7 @@ app.applications.commit = controller => (a,x) => [
   a.h5('Commit'),
 
   app.form( {
-    url: `/~/applications/${ controller.params.application_id }/commit`,
+    url: `/-/applications/${ controller.params.application_id }/commit`,
     scope: 'commit',
     form: (f) => [
       f.field( {

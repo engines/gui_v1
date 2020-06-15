@@ -3,11 +3,11 @@ app.applications.branch.set = controller => (a,x) => [
   a.h3('Set branch'),
 
   app.http(
-    `/~/applications/${ controller.params.application_id }/branch`,
+    `/-/applications/${ controller.params.application_id }/branch`,
     ( branch, el ) => el.$nodes = [
 
       app.form( {
-        url: `/~/applications/${ controller.params.application_id }/branch`,
+        url: `/-/applications/${ controller.params.application_id }/branch`,
         object: branch,
         form: (f) => [
           f.field( {

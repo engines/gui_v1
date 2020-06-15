@@ -8,7 +8,7 @@ app.system.users.user.show = controller => (a,x) => [
   a.br,
 
   app.http(
-    '/~/~/system/uadmin/users/accounts/',
+    '/-/-/system/uadmin/users/accounts/',
     ( account, el ) => el.$nodes = [
 
       a['div.float-right'](

@@ -14,7 +14,7 @@ app.namespaces.workspace.services.index = controller => (a,x) => [
   ] ) ),
 
   app.http(
-    `/~/namespaces/${ controller.params.namespace_id }/workspace/services`,
+    `/-/namespaces/${ controller.params.namespace_id }/workspace/services`,
     ( services, el ) => el.$nodes = [
       services.length == 0 ? 'None' : null,
       services.map( service => a.p( [

@@ -13,7 +13,7 @@ app.views.index = ( parent, path ) => controller => (a,x) => [
 
 
   app.http(
-    `/~/${ path }/views`,
+    `/-/${ path }/views`,
     ( views, el ) => el.$nodes = [
       views.length == 0 ? 'None' : null,
       views.map( view => a.p( [

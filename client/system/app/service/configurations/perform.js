@@ -3,7 +3,7 @@ app.service.configurations.perform = controller => (a,x) => {
   const containerName = controller.params.name
   const configurationName = controller.params.configuration_name
 
-  let containerPath = `/~/~/containers/service/${ containerName }`
+  let containerPath = `/-/-/containers/service/${ containerName }`
 
   return [
 

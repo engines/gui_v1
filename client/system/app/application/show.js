@@ -6,9 +6,9 @@ app.application.show = controller => (a,x) => {
     a['div.col-3']( app.container.menu( controller, 'application' ) ),
     a['div.col-9']( app.http(
       [
-        `/~/~/containers/engine/${ name }/status`,
-        `/~/~/containers/engine/${ name }/websites`,
-        `/~/~/containers/engine/${ name }/icon_url`,
+        `/-/-/containers/engine/${ name }/status`,
+        `/-/-/containers/engine/${ name }/websites`,
+        `/-/-/containers/engine/${ name }/icon_url`,
       ],
       ( [ status, websites, icon_url ], el ) => {
         let container = {

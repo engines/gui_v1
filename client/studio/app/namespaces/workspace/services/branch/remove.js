@@ -3,7 +3,7 @@ app.namespaces.workspace.services.branch.remove = controller => (a,x) => [
   a.h3('Remove branch'),
 
   app.http(
-    `/~/namespaces/${ controller.params.namespace_id }/workspace/services/${ controller.params.service_id }/branch`,
+    `/-/namespaces/${ controller.params.namespace_id }/workspace/services/${ controller.params.service_id }/branch`,
     ( branch, el ) => {
 
       let removeable = branch.all.filter( name => name != branch.current )
@@ -12,7 +12,7 @@ app.namespaces.workspace.services.branch.remove = controller => (a,x) => [
 
         removeable.length ?
         app.form( {
-          url: `/~/namespaces/${ controller.params.namespace_id }/workspace/services/${ controller.params.service_id }/branch`,
+          url: `/-/namespaces/${ controller.params.namespace_id }/workspace/services/${ controller.params.service_id }/branch`,
           method: 'DELETE',
           form: (f) => [
             f.field( {

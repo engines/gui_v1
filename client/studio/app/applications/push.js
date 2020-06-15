@@ -20,7 +20,7 @@ app.applications.push = controller => (a,x) => [
       onclick: (e,el) => {
 
         el.$('^').$nodes = app.http(
-          `/~/applications/${ controller.params.application_id }/push`,
+          `/-/applications/${ controller.params.application_id }/push`,
           ( result, el ) => el.$nodes = [
             a.pre( result.message ),
             a['div.clearfix']( [

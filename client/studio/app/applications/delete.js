@@ -20,7 +20,7 @@ app.applications.delete = controller => (a,x) => [
       onclick: (e,el) => {
 
         el.$('^').$nodes = app.http(
-          `/~/applications/${ controller.params.application_id }`,
+          `/-/applications/${ controller.params.application_id }`,
           ( result, el ) => el.$nodes = [
             a.p( 'Application has been deleted.' ),
             a['div.clearfix']( [

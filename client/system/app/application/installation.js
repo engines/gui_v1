@@ -8,7 +8,7 @@ app.application.installation = controller =>  {
     a['div.clearfix']( a['div.float-right']( app.close( controller, 'Close' ) ) ),
 
     app.http(
-      `/~/~/containers/engine/${ name }/build_report`,
+      `/-/-/containers/engine/${ name }/build_report`,
       ( report, el ) => el.$nodes = a.pre( report ),
       {
         placeholder: app.hourglass( 'Loading installation' ),

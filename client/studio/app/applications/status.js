@@ -1,7 +1,7 @@
 app.applications.status = controller => (a,x) => [
 
   app.http(
-    `/~/applications/${ controller.params.application_id }/status`,
+    `/-/applications/${ controller.params.application_id }/status`,
     ( status, el ) => el.$nodes = [
 
       a['div.clearfix']( [

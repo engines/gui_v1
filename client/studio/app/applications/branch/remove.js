@@ -3,7 +3,7 @@ app.applications.branch.remove = controller => (a,x) => [
   a.h3('Remove branch'),
 
   app.http(
-    `/~/applications/${ controller.params.application_id }/branch`,
+    `/-/applications/${ controller.params.application_id }/branch`,
     ( branch, el ) => {
 
       let removeable = branch.all.filter( name => name != branch.current )
@@ -12,7 +12,7 @@ app.applications.branch.remove = controller => (a,x) => [
 
         removeable.length ?
         app.form( {
-          url: `/~/applications/${ controller.params.application_id }/branch`,
+          url: `/-/applications/${ controller.params.application_id }/branch`,
           method: 'DELETE',
           form: (f) => [
             f.field( {

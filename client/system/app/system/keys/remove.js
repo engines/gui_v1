@@ -3,7 +3,7 @@ app.system.keys.remove = controller => (a,x) => [
   a.h5( 'Remove' ),
 
   app.http(
-    '/~/~/system/keys/',
+    '/-/-/system/keys/',
     ( keys, el ) => el.$nodes = [
 
       app.form( {
@@ -29,7 +29,7 @@ app.system.keys.remove = controller => (a,x) => [
           let key = submition.data.key
 
           submition.output.$nodes = app.http(
-            `/~/~/system/keys/${ key }`,
+            `/-/-/system/keys/${ key }`,
             () => controller.open( '..' ),
             {
               complete: submition.complete,

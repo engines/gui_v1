@@ -1,7 +1,7 @@
 app.namespaces.workspace.services.branch.show = controller => (a,x) => [
 
   app.http(
-    `/~/namespaces/${ controller.params.namespace_id }/workspace/services/${ controller.params.service_id }/branch`,
+    `/-/namespaces/${ controller.params.namespace_id }/workspace/services/${ controller.params.service_id }/branch`,
     ( branches, el ) => el.$nodes = [
 
       a.h3('Branch'),

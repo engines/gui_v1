@@ -19,7 +19,7 @@ app.applications.reset = controller => (a,x) => [
       onclick: (e,el) => {
 
         el.$('^').$nodes = app.http(
-          `/~/applications/${ controller.params.application_id }/reset`,
+          `/-/applications/${ controller.params.application_id }/reset`,
           ( result, el ) => el.$nodes = [
             a.pre( result.message ),
             a['div.clearfix']( [

@@ -1,7 +1,7 @@
 app.system.users.new = controller => (a,x) => [
 
   app.form( {
-    url: '/~/~/system/uadmin/users/accounts/',
+    url: '/-/-/system/uadmin/users/accounts/',
     scope: 'api_vars[account]',
     form: f => [
       f.row( {

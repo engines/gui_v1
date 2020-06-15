@@ -29,7 +29,7 @@ app.system.eventsource = (a,x) => a['app-system-eventsource'](
         const now = new Date();
         this.$started = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
         console.info( `Container events stream ${ this.$started } - Container events stream open.` )
-        this.$eventsource = new EventSource( '/~/eventsource/containers' )
+        this.$eventsource = new EventSource( '/-/eventsource/containers' )
         this.$eventsource.onmessage = (e) => this.$digest(e)
         this.$eventsource.onerror = function(e) {
           // An event stream error is thrown when the page reloads.

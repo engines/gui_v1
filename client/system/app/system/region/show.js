@@ -1,7 +1,7 @@
 // app.system.region.show = controller => (a,x) => [
 //
 //   app.http(
-//     '/~/~/system/control/base_os/locale',
+//     '/-/-/system/control/base_os/locale',
 //     ( response, el ) => response.json().then( locale =>
 //
 //       el.$nodes = app.report( {
@@ -22,7 +22,7 @@
 //
 //   a.hr,
 //   app.http(
-//     '/~/~/system/control/base_os/timezone',
+//     '/-/-/system/control/base_os/timezone',
 //     ( response, el ) => response.text().then( timezone =>
 //
 //       el.$nodes = app.report( {

@@ -1,7 +1,7 @@
 app.namespaces.namespace = controller => (a,x) => [
 
   app.http(
-    `/~/namespaces/${ controller.params.namespace_id }`,
+    `/-/namespaces/${ controller.params.namespace_id }`,
     ( namespace, el ) => el.$nodes = [
       a.h3( namespace.name ),
       a.small( namespace.remote ),

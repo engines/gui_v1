@@ -3,7 +3,7 @@
 //   a.h5( 'Remove' ),
 //
 //   app.http(
-//     '/~/~/system/certificates/',
+//     '/-/-/system/certificates/',
 //     ( response, el ) => response.json().then(
 //       certificates => el.$nodes = [
 //
@@ -37,7 +37,7 @@
 //               if ( el.checkValidity() ) {
 //                 let certificate = el.$data().get('certificate')
 //                 el.$nodes = app.http(
-//                   `/~/~/system/certificates/${ certificate }`,
+//                   `/-/-/system/certificates/${ certificate }`,
 //                   () => controller.open( '..' ),
 //                   {
 //                     method: 'DELETE',

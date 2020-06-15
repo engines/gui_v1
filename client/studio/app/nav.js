@@ -26,7 +26,7 @@ app.nav = controller => (a,x) => a['app-nav']( [
 
     a['app-nav-timeout-check']( null, {
       $check: function() {
-        this.$nodes = app.http( '/~/session', () => nav.$setUser( true ) )
+        this.$nodes = app.http( '/-/session', () => nav.$setUser( true ) )
       }
     } ),
 

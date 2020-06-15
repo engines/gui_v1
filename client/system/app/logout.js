@@ -1,5 +1,5 @@
 app.logout = controller => (a,x) => app.http(
-  '/~/session',
+  '/-/session',
   ( result, el  ) => {
     el.$send( 'app.unauthenticated' )
     el.$nodes = [

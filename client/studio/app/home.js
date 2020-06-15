@@ -1,7 +1,7 @@
 app.home = controller => (a,x) => [
 
   app.http(
-    '/~/',
+    '/-/',
     ( home, el ) => el.$nodes = [
 
       a.hr,

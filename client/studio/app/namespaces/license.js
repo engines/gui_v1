@@ -1,7 +1,7 @@
 app.namespaces.license = controller => (a,x) => [
 
   app.http(
-    `/~/namespaces/${ controller.params.namespace_id }/license`,
+    `/-/namespaces/${ controller.params.namespace_id }/license`,
     ( license, el ) => el.$nodes = [
 
       a['div.clearfix']( [

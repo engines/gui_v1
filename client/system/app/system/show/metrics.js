@@ -1,10 +1,10 @@
 app.system.show.metrics = controller => (a,x) => app.http(
   [
-    '/~/~/system/metrics/load',
-    '/~/~/system/metrics/disks',
-    '/~/~/system/metrics/memory',
-    '/~/~/system/metrics/memory/statistics',
-    '/~/~/system/metrics/network',
+    '/-/-/system/metrics/load',
+    '/-/-/system/metrics/disks',
+    '/-/-/system/metrics/memory',
+    '/-/-/system/metrics/memory/statistics',
+    '/-/-/system/metrics/network',
   ],
   ( [ cpu, storage, ram, memory, network ], el ) =>
   el.$nodes = a.div( [

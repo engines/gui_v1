@@ -1,7 +1,7 @@
 app.namespaces.definitions.show = controller => (a,x) => [
 
   app.http(
-    `/~/namespaces/${ controller.params.namespace_id }/definitions/query`,
+    `/-/namespaces/${ controller.params.namespace_id }/definitions/query`,
     ( definition, el ) => el.$nodes = [
 
       a.h5( definition.type ),

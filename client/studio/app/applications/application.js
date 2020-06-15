@@ -1,7 +1,7 @@
 app.applications.application = controller => (a,x) =>[
 
   app.http(
-    `/~/applications/${ controller.params.application_id }`,
+    `/-/applications/${ controller.params.application_id }`,
     ( application, el ) => el.$nodes = [
       a.h3( application.name ),
       a.small( application.remote ),

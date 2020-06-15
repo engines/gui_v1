@@ -1,7 +1,7 @@
 app.system.shutdown = controller => (a,x) => [
   a.h3( "Shutdown system" ),
   app.form( {
-    url: '/~/~/system/control/base_os/shutdown',
+    url: '/-/-/system/control/base_os/shutdown',
     success: ( response, el ) => {
       controller.open('..')
       el.$send( 'app.disconnected' )

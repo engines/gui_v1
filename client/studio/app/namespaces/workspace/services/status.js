@@ -1,7 +1,7 @@
 app.namespaces.workspace.services.status = controller => (a,x) => [
 
   app.http(
-    `/~/namespaces/${ controller.params.namespace_id }/workspace/services/${ controller.params.service_id }/status`,
+    `/-/namespaces/${ controller.params.namespace_id }/workspace/services/${ controller.params.service_id }/status`,
     ( status, el ) => el.$nodes = [
 
       a['div.clearfix']( [

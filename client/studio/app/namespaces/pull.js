@@ -19,7 +19,7 @@ app.namespaces.pull = controller => (a,x) => [
     onclick: (e,el) => {
 
       el.$('^').$nodes = app.http(
-        `/~/namespaces/${ controller.params.namespace_id }/pull`,
+        `/-/namespaces/${ controller.params.namespace_id }/pull`,
         ( pull, el ) => el.$nodes = [
           a.pre( pull.message ),
           a['div.clearfix']( [

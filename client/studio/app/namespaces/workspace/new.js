@@ -16,7 +16,7 @@ app.namespaces.workspace.new = controller => (a,x) => [
     onclick: (e,el) => {
       el.$('^').$nodes = [
         app.http(
-          `/~/namespaces/${ controller.params.namespace_id }/workspace`,
+          `/-/namespaces/${ controller.params.namespace_id }/workspace`,
           ( result, el ) => {
             workspaceBranch.$text = result.branch
             controller.open( '..' )

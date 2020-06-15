@@ -7,7 +7,7 @@ app.application.about = controller => (a,x) => {
     a.h5( `About` ),
     a['div.clearfix']( a['div.float-right']( app.close( controller, 'Close' ) ) ),
     app.http(
-      `/~/~/containers/engine/${ name }/blueprint`,
+      `/-/-/containers/engine/${ name }/blueprint`,
       ( blueprint, el ) => {
 
         let title = x.lib.object.dig( blueprint, [ 'metadata', 'software', 'display', 'title' ] )

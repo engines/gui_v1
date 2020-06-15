@@ -19,7 +19,7 @@ app.namespaces.workspace.delete = controller => (a,x) => [
       onclick: (e,el) => {
 
         el.$('^').$nodes = app.http(
-          `/~/namespaces/${ controller.params.namespace_id }/workspace`,
+          `/-/namespaces/${ controller.params.namespace_id }/workspace`,
           ( workspace, el ) => el.$nodes = [
             a.p( 'Workspace has been deleted.' ),
             a['div.clearfix']( [

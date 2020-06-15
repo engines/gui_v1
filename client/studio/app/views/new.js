@@ -4,7 +4,7 @@ app.views.new = ( parent, path ) => controller => (a,x) => [
 
   app.dialogue.designer(
     controller,
-    `/~/${ path }/views`,
+    `/-/${ path }/views`,
     {},
     view => controller.open( `../${ view.name }` )
   )

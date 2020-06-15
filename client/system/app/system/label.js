@@ -2,9 +2,9 @@ app.system.label = controller => (a,x) => [
   a.h3( "System label" ),
 
   app.http(
-    '/~/~/system/system_user/settings',
+    '/-/-/system/system_user/settings',
     (  settings, el ) => el.$nodes = [app.form( {
-      url: '/~/~/system/system_user/settings',
+      url: '/-/-/system/system_user/settings',
       success: () => location.assign( '/' ),
       object: settings.label,
       scope: 'api_vars[label]',

@@ -3,7 +3,7 @@ app.service.actions.perform = type => controller => (a,x) => {
   const containerName = controller.params.name
   const actionName = controller.params.action_name
 
-  let containerPath = `/~/~/containers/service/${ containerName }`
+  let containerPath = `/-/-/containers/service/${ containerName }`
 
   return [
 

@@ -23,11 +23,11 @@ app.system.orphans.show = controller => (a,x) => [
  // - (Array) get('/v0/service_manager/orphan_lost_services')
 
 
-  [ a.h5( '/~/~/service_manager/orphan_services/' ), app.http( '/~/~/service_manager/orphan_services/' ), a.br ],
-  [ a.h5( '/~/~/service_manager/orphan_lost_services' ), app.http( '/~/~/service_manager/orphan_lost_services' ), a.br ],
+  [ a.h5( '/-/-/service_manager/orphan_services/' ), app.http( '/-/-/service_manager/orphan_services/' ), a.br ],
+  [ a.h5( '/-/-/service_manager/orphan_lost_services' ), app.http( '/-/-/service_manager/orphan_lost_services' ), a.br ],
 
   // app.http(
-  //   '/~/~/system/certs/',
+  //   '/-/-/system/certs/',
   //   ( response, el ) => response.json().then(
   //     orphans => el.$nodes = [
   //       orphans,

@@ -19,7 +19,7 @@ app.applications.pull = controller => (a,x) => [
     onclick: (e,el) => {
 
       el.$('^').$nodes = app.http(
-        `/~/applications/${ controller.params.application_id }/pull`,
+        `/-/applications/${ controller.params.application_id }/pull`,
         ( pull, el ) => el.$nodes = [
           a.pre( pull.message ),
           a['div.clearfix']( [

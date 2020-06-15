@@ -19,7 +19,7 @@ app.system.show.engines = controller => (a,x) => [
 
 
 // app.http(
-//   '/~/~/system/version/ident',
+//   '/-/-/system/version/ident',
 //   ( version, el ) => el.$nodes = [
 //     a['div.clearfix']( [
 //       a['div.float-right'](

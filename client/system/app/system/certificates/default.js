@@ -6,10 +6,10 @@
 //     $init: function(el) {
 //       Promise.all( [
 //
-//         fetch( '/~/~/system/config/default_certificate' ).
+//         fetch( '/-/-/system/config/default_certificate' ).
 //         then( response => response.text() ),
 //
-//         fetch( '/~/~/system/certificates/' ).
+//         fetch( '/-/-/system/certificates/' ).
 //         then( response => response.json() ),
 //
 //       ] ).then( ( [

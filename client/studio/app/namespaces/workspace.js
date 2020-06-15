@@ -1,7 +1,7 @@
 app.namespaces.workspace = namespace => controller => (a,x) => [
 
   // app.http(
-  //   `/~/namespaces/${ controller.params.namespace_id }/workspace`,
+  //   `/-/namespaces/${ controller.params.namespace_id }/workspace`,
   //   ( workspace, el ) => el.$nodes = [
 
       controller.nest({

@@ -2,9 +2,9 @@ app.system.locale = controller => (a,x) => [
   a.h3( "Locale" ),
 
   app.http(
-    '/~/~/system/control/base_os/locale',
+    '/-/-/system/control/base_os/locale',
     ( locale, el ) => el.$nodes = [app.form( {
-      url: '/~/~/system/control/base_os/locale',
+      url: '/-/-/system/control/base_os/locale',
       success: () => controller.open( '..' ),
       scope: 'api_vars',
       object: locale,

@@ -1,7 +1,7 @@
 app.applications.branch.show = controller => (a,x) => [
 
   app.http(
-    `/~/applications/${ controller.params.application_id }/branch`,
+    `/-/applications/${ controller.params.application_id }/branch`,
     ( branches, el ) => el.$nodes = [
 
       a['div.btn-group.float-right']( [

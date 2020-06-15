@@ -1,13 +1,13 @@
 app.license = ( parent, path ) => controller => (a,x) => [
 
   app.http(
-    `/~/${ path }/license`,
+    `/-/${ path }/license`,
     ( license, el ) => el.$nodes = [
 
       a.h5( 'License' ),
 
       app.form( {
-        url: `/~/${ path }/license`,
+        url: `/-/${ path }/license`,
         object: license,
         scope: 'license',
         form: (f) => [

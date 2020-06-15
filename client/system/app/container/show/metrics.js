@@ -2,7 +2,7 @@ app.container.show.metrics = container => (a,x) => {
 
   if( container.status.state === 'running' ) {
 
-    let path = `/~/~/containers/${
+    let path = `/-/-/containers/${
       container.type === 'service' ? 'service' : 'engine'
     }/${ container.name }`
 

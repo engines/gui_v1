@@ -5,7 +5,7 @@ app.system.restart = controller => (a,x) => a['app-system-restart']([
   a['app-system-restart-http']( null, {
     $start: function() {
       this.$nodes = app.http(
-        '/~/~/system/control/base_os/restart',
+        '/-/-/system/control/base_os/restart',
         ( response, el ) => el.$send( 'app.restarting' ),
       )
     },

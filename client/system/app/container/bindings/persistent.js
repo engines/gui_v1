@@ -1,6 +1,6 @@
 app.container.bindings.persistent = type => controller => (a,x) => {
 
-  let path = `/~/~/containers/${
+  let path = `/-/-/containers/${
     type == 'application' ? 'engine' : 'service'
   }/${
     controller.params.name
@@ -16,7 +16,7 @@ app.container.bindings.persistent = type => controller => (a,x) => {
     path,
     app.link( {
       label: app.icon( 'fa fa-download', 'Export' ),
-      href: `/~/download/service/${
+      href: `/-/download/service/${
         controller.params.name
       }/persistent/${
         controller.params.publisher
@@ -34,7 +34,7 @@ app.container.bindings.persistent = type => controller => (a,x) => {
 
   // const name = controller.params.name
   //
-  // let path = `/~/~/containers/${
+  // let path = `/-/-/containers/${
   //   type === 'service' ? 'service' : 'engine'
   // }/${ name }/services`
   //
@@ -107,14 +107,14 @@ app.container.bindings.persistent = type => controller => (a,x) => {
   //
   //     a.p( 'Consumers' ),
   //     app.http(
-  //       `/~/~/containers/service/${ name }/consumers/`,
+  //       `/-/-/containers/service/${ name }/consumers/`,
   //       ( consumers, el ) => el.$nodes = x.out( consumers )
   //     ),
   //
   //
   //     a.p( 'Subservices' ),
   //     app.http(
-  //       `/~/~/containers/service/${ name }/sub_services`,
+  //       `/-/-/containers/service/${ name }/sub_services`,
   //       ( subservices, el ) => el.$nodes = x.out( subservices )
   //     ),
   //

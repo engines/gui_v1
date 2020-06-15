@@ -3,16 +3,16 @@ app.systemOld = controller => (a,x) => a( {
   $init: function(el) {
     Promise.all( [
 
-      fetch( '/~/~/system/status' ).
+      fetch( '/-/-/system/status' ).
       then( response => response.json() ),
 
-      fetch( '/~/~/engine_builder/status' ).
+      fetch( '/-/-/engine_builder/status' ).
       then( response => response.json() ),
 
-      fetch( '/~/~/system/config/hostname' ).
+      fetch( '/-/-/system/config/hostname' ).
       then( response => response.text() ),
 
-      fetch( '/~/~/system/system_user/settings' ).
+      fetch( '/-/-/system/system_user/settings' ).
       then( response => response.json() ),
 
     ] ).then( ( [

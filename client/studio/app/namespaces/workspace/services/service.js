@@ -1,7 +1,7 @@
 app.namespaces.workspace.services.service = namespace => controller => (a,x) => [
 
   app.http(
-    `/~/namespaces/${ controller.params.namespace_id }/workspace/services/${ controller.params.service_id }`,
+    `/-/namespaces/${ controller.params.namespace_id }/workspace/services/${ controller.params.service_id }`,
     ( service, el ) => el.$nodes = [
 
       a.hr,

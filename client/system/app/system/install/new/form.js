@@ -1,8 +1,8 @@
 app.system.install.new.form = ( controller, install ) => (a,x) => {
 
   return app.form( {
-    // url: '/~/dev',
-    url: '/~/~/containers/engines/build',
+    // url: '/-/dev',
+    url: '/-/-/containers/engines/build',
     success: () => controller.open( '../monitor' ),
     object: install,
     scope: 'api_vars',

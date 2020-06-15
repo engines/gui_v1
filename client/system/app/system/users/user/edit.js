@@ -5,9 +5,9 @@ app.system.users.user.edit = controller => (a,x) => {
   return [
 
     app.http(
-      '/~/~/system/uadmin/users/accounts/',
+      '/-/-/system/uadmin/users/accounts/',
       ( account, el ) => el.$nodes = [app.form( {
-        url: '/~/~/system/uadmin/users/accounts/',
+        url: '/-/-/system/uadmin/users/accounts/',
         method: 'PUT',
         scope: 'api_vars',
         success: () => controller.open( '..', controller.query ),

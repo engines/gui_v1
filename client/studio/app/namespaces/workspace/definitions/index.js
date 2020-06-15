@@ -1,7 +1,7 @@
 app.namespaces.workspace.definitions.index = controller => (a,x) => [
 
   app.http(
-    `/~/namespaces/${ controller.params.namespace_id }/workspace/definitions`,
+    `/-/namespaces/${ controller.params.namespace_id }/workspace/definitions`,
     ( definitions, el ) => el.$nodes = [
 
       a.h5( 'Service definitions' ),

@@ -5,7 +5,7 @@ app.container.dialogues.params = ( type, controller, container, blueprint, param
   //
   // let dialogue = dialogues[name]
 
-  let path = `/~/~/containers/${
+  let path = `/-/-/containers/${
     container.type === 'service' ? 'service' : 'engine'
   }/${ container.name }`
 
@@ -65,7 +65,7 @@ app.container.dialogues.params = ( type, controller, container, blueprint, param
 //
 //   const containerName = controller.params.name
 //
-//   let path = `/~/~/containers/${
+//   let path = `/-/-/containers/${
 //     type === 'service' ? 'service' : 'engine'
 //   }/${ containerName }`
 //

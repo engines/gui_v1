@@ -4,7 +4,7 @@ app.applications.blueprint.service_configurations.new_type = blueprint => contro
   a.h5( controller.params.namespace ),
 
   app.http(
-    `/~/consumables/namespaces/query`,
+    `/-/consumables/namespaces/query`,
     ( types, el ) => el.$nodes = [
 
       app.form( {

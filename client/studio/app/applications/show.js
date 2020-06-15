@@ -2,8 +2,8 @@ app.applications.show = controller => (a,x) => [
 
   app.http(
     [
-      `/~/applications/${ controller.params.application_id }/readme`,
-      `/~/applications/${ controller.params.application_id }/diff`,
+      `/-/applications/${ controller.params.application_id }/readme`,
+      `/-/applications/${ controller.params.application_id }/diff`,
     ],
     ( [ readme, diff ], el ) => el.$nodes = [
 

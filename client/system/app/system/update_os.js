@@ -20,7 +20,7 @@ app.system.update_os = controller => (a,x) => [
     {
       $start: function() {
         this.$nodes = app.http(
-          '/~/~/system/control/base_os/update',
+          '/-/-/system/control/base_os/update',
           ( response, el ) => { el.$send( 'app.os.updating' ) },
           { placeholder: app.hourglass( 'Starting update...' ) }
         )

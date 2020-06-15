@@ -1,7 +1,7 @@
 app.updating.os = controller => (a,x) => [
   a.h3( "Updating Operating system" ),
   app.system.polling(
-    '/~/~/system/status',
+    '/-/-/system/status',
     ( status, el ) => {
       if ( status.is_base_system_updating ) {
         el.$('^app-polling').$wait()

@@ -3,7 +3,7 @@ app.namespaces.workspace.commit = controller => (a,x) => [
   a.h5('Commit'),
 
   app.form( {
-    url: `/~/namespaces/${ controller.params.namespace_id }/workspace/commit`,
+    url: `/-/namespaces/${ controller.params.namespace_id }/workspace/commit`,
     scope: 'commit',
     form: (f) => [
       f.field( {

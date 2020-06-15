@@ -1,12 +1,12 @@
 app.system = controller => (a,x) => a( {
   $init: function(el) {
     el.$nodes = [app.http( [
-      '/~/~/system/status',
-      '/~/~/engine_builder/status',
-      '/~/~/system/system_user/settings',
-      '/~/~/system/config/hostname',
-      '/~/~/system/version/ident',
-      '/~/~/system/version/base_os',
+      '/-/-/system/status',
+      '/-/-/engine_builder/status',
+      '/-/-/system/system_user/settings',
+      '/-/-/system/config/hostname',
+      '/-/-/system/version/ident',
+      '/-/-/system/version/base_os',
     ], ( [ status, installer, settings, hostname, version, os ] ) => {
 
       el.$send( 'app.connected' )

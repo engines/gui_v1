@@ -2,7 +2,7 @@ app.application.icon = controller => (a,x) => {
 
   const name = controller.params.name
 
-  let path = `/~/~/containers/engine/${ name }/icon_url`
+  let path = `/-/-/containers/engine/${ name }/icon_url`
 
   return [
 

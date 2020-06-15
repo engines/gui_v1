@@ -13,7 +13,7 @@ app.application.uninstall = controller => (a,x) => {
     ), {
       $uninstall: function() {
         this.$nodes = app.http(
-          `/~/~/containers/engine/${ name }/delete/all`,
+          `/-/-/containers/engine/${ name }/delete/all`,
           () => controller.open( '..' ),
           { method: 'delete' }
         )

@@ -3,7 +3,7 @@ app.applications.blueprint.service_configurations.new_namespace = blueprint => c
   a.h5( 'New service configuration namespace' ),
 
   app.http(
-    `/~/consumables/namespaces`,
+    `/-/consumables/namespaces`,
     ( namespaces, el ) => el.$nodes = [
 
       app.form( {

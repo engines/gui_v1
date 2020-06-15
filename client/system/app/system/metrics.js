@@ -9,7 +9,7 @@
 //   ),
 //
 //   app.http(
-//     '/~/~/system/metrics/disks',
+//     '/-/-/system/metrics/disks',
 //     ( response, el ) => {
 //       response.json().then( disks => {
 //
@@ -61,9 +61,9 @@
 //
 //
 //
-//   [ a.h5( '/~/~/system/metrics/load' ), app.http( '/~/~/system/metrics/load' ), a.br ],
-//   [ a.h5( '/~/~/system/metrics/memory' ), app.http( '/~/~/system/metrics/memory' ), a.br ],
-//   [ a.h5( '/~/~/system/metrics/memory/statistics' ), app.http( '/~/~/system/metrics/memory/statistics' ), a.br ],
-//   [ a.h5( '/~/~/system/metrics/network' ), app.http( '/~/~/system/metrics/network' ), a.br ],
+//   [ a.h5( '/-/-/system/metrics/load' ), app.http( '/-/-/system/metrics/load' ), a.br ],
+//   [ a.h5( '/-/-/system/metrics/memory' ), app.http( '/-/-/system/metrics/memory' ), a.br ],
+//   [ a.h5( '/-/-/system/metrics/memory/statistics' ), app.http( '/-/-/system/metrics/memory/statistics' ), a.br ],
+//   [ a.h5( '/-/-/system/metrics/network' ), app.http( '/-/-/system/metrics/network' ), a.br ],
 //
 // ] )

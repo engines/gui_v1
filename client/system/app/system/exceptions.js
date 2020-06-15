@@ -10,7 +10,7 @@ app.system.exceptions = controller => (a,x) => [
   a({
     $tag: 'app-system-exceptions',
     $nodes: () => app.http(
-      '/~/~/system/config/remote_exception_logging',
+      '/-/-/system/config/remote_exception_logging',
       (logging,el) => el.$nodes = [
         logging ?
         app.float({
@@ -18,7 +18,7 @@ app.system.exceptions = controller => (a,x) => [
           right: app.btn(app.icon('fa fa-toggle-off', 'Disable'), () => {
             el.$nodes = () => [
               app.http(
-                '/~/~/system/config/remote_exception_logging/disable',
+                '/-/-/system/config/remote_exception_logging/disable',
                 (result) => {
                   el.$('^app-system-exceptions').$render()
                 },
@@ -33,7 +33,7 @@ app.system.exceptions = controller => (a,x) => [
           right: app.btn(app.icon('fa fa-toggle-on', 'Enable'), () => {
             el.$nodes = () => [
               app.http(
-                '/~/~/system/config/remote_exception_logging/enable',
+                '/-/-/system/config/remote_exception_logging/enable',
                 (result) => {
                   el.$('^app-system-exceptions').$render()
                 },

@@ -1,7 +1,7 @@
 app.namespaces.workspace.services.definition = controller => (a,x) => [
 
   app.http(
-    `/~/namespaces/${ controller.params.namespace_id }/workspace/services/${ controller.params.service_id }/definition`,
+    `/-/namespaces/${ controller.params.namespace_id }/workspace/services/${ controller.params.service_id }/definition`,
     ( definition, el ) => el.$nodes = [
 
       a.h5( 'Service definition' ),
@@ -24,7 +24,7 @@ app.namespaces.workspace.services.definition = controller => (a,x) => [
         onclick: (e,el) => {
 
           el.$('^').$nodes = app.http(
-            `/~/namespaces/${ controller.params.namespace_id }/workspace/services/${ controller.params.service_id }/definition`,
+            `/-/namespaces/${ controller.params.namespace_id }/workspace/services/${ controller.params.service_id }/definition`,
             ( result, el ) => el.$nodes = [
               a.p( 'Workspace service definition has been updated.' ),
               app.button( {

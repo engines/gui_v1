@@ -1,6 +1,6 @@
 app.system.menu.
 applications = controller => (a,x) => app.http(
-  '/~/~/containers/engines/status',
+  '/-/-/containers/engines/status',
   ( applications, el ) => el.$nodes = [
     a['div.container']( [
       a.hr,

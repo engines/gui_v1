@@ -49,7 +49,7 @@ let enginesFieldV1 = ( variable ) => {
    confirmation: input.type === 'password_with_confirmation',
    label: `${ input.label || '' }`,
    required: variable.mandatory ? 'required' : undefined,
-   pattern: `${ validation.pattern || '' }`,
+   pattern: `${ validation.pattern || '.*' }`,
    invalid: `${ validation.message || '' }`,
    help: `${ input.comment || '' }`,
    hint: `${ input.hint || '' }`,

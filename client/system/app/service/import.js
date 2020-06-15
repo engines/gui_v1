@@ -10,7 +10,7 @@ app.service.import = controller => (a,x) => {
 
     x.filepond( {
       server: {
-        url: `/~/upload/service/${ name }`,
+        url: `/-/upload/service/${ name }`,
         process: {
           headers: {
             'Content-Type': 'application/octet-stream'

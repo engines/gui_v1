@@ -1,7 +1,7 @@
 app.namespaces.workspace.services.blueprint = namespace => controller => (a,x) => [
 
   app.http(
-    `/~/namespaces/${ controller.params.namespace_id }/workspace/services/${ controller.params.service_id }/blueprint`,
+    `/-/namespaces/${ controller.params.namespace_id }/workspace/services/${ controller.params.service_id }/blueprint`,
     ( blueprint, el ) => {
 
       let blueprintObject = new ServiceBlueprint( namespace, controller.params.service_id, blueprint.object )

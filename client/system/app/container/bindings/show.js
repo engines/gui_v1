@@ -2,7 +2,7 @@
 //
 //   const name = controller.params.name
 //
-//   let path = `/~/~/containers/${
+//   let path = `/-/-/containers/${
 //     type === 'service' ? 'service' : 'engine'
 //   }/${ name }/services`
 //
@@ -78,14 +78,14 @@
 //
 //       a.p( 'Consumers' ),
 //       app.http(
-//         `/~/~/containers/service/${ name }/consumers/`,
+//         `/-/-/containers/service/${ name }/consumers/`,
 //         ( consumers, el ) => el.$nodes = x.out( consumers )
 //       ),
 //
 //
 //       a.p( 'Subservices' ),
 //       app.http(
-//         `/~/~/containers/service/${ name }/sub_services`,
+//         `/-/-/containers/service/${ name }/sub_services`,
 //         ( subservices, el ) => el.$nodes = x.out( subservices )
 //       ),
 //

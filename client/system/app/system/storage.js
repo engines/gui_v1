@@ -9,7 +9,7 @@
 //   ),
 //
 //   app.http(
-//     '/~/~/system/metrics/disks',
+//     '/-/-/system/metrics/disks',
 //     ( response, el ) => {
 //       response.json().then( disks => {
 //

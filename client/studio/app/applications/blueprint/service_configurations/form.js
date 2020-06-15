@@ -11,7 +11,7 @@ form = ( controller, blueprint, serviceConfiguration ) => (a,x) => {
     a.hr,
     a.h5( `${ serviceConfiguration.namespace } ${ serviceConfiguration.type }` ),
     app.http(
-      `/~/consumables/namespaces/types/query`,
+      `/-/consumables/namespaces/types/query`,
       ( params, el ) => el.$nodes = [
 
         app.blueprintForm(

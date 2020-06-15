@@ -36,7 +36,7 @@ class ApplicationBlueprint {
   }
 
   get apiEndpoint() {
-    return `/~/applications/${ this.id }/blueprint`
+    return `/-/applications/${ this.id }/blueprint`
   }
 
   get framework() {

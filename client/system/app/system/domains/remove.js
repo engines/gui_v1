@@ -3,7 +3,7 @@ app.system.domains.remove = controller => (a,x) => [
   a.h5( 'Remove' ),
 
   app.http(
-    '/~/~/system/domains/',
+    '/-/-/system/domains/',
     ( domains, el ) => el.$nodes = [
 
       app.form( {
@@ -29,7 +29,7 @@ app.system.domains.remove = controller => (a,x) => [
           let domain = submition.data.domain
 
           submition.output.$nodes = app.http(
-            `/~/~/system/domains/${ domain }`,
+            `/-/-/system/domains/${ domain }`,
             () => controller.open( '..' ),
             {
               complete: submition.complete,

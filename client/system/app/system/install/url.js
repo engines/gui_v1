@@ -1,7 +1,7 @@
 app.system.install.url = controller => (a,x) => [
   a.h5( "URL side load" ),
   app.form( {
-    // url: '/~/~/system/control/base_os/shutdown',
+    // url: '/-/-/system/control/base_os/shutdown',
     action: ( submition ) => {
       let url = submition.data.url
       controller.open( '../new', { label: 'Side load', blueprint_url: url } )

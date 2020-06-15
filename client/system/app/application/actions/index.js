@@ -2,7 +2,7 @@ app.application.actions.index = controller => (a,x) => {
 
   const name = controller.params.name
 
-  let path = `/~/~/containers/engine/${ name }/blueprint`
+  let path = `/-/-/containers/engine/${ name }/blueprint`
 
   return [
 

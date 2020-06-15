@@ -15,33 +15,33 @@ module Server
           return 'System connected.'
         end
 
-        get '/~/*' do
-          path = request.fullpath.sub '/~/~', ''
+        get '/-/*' do
+          path = request.fullpath.sub '/-/-', ''
           result = @engines.get( path )
           status result.code
           content_type result.headers[:content_type]
           result.body
         end
 
-        delete '/~/*' do
-          path = request.fullpath.sub '/~/~', ''
+        delete '/-/*' do
+          path = request.fullpath.sub '/-/-', ''
           result = @engines.delete( path )
           status result.code
           content_type result.headers[:content_type]
           result.body
         end
 
-        post '/~/*' do
+        post '/-/*' do
           # debugger
-          path = request.fullpath.sub '/~/~', ''
+          path = request.fullpath.sub '/-/-', ''
           result = @engines.post( path, params.to_json )
           status result.code
           content_type result.headers[:content_type]
           result.body
         end
 
-        put '/~/*' do
-          path = request.fullpath.sub '/~/~', ''
+        put '/-/*' do
+          path = request.fullpath.sub '/-/-', ''
           result = @engines.put( path, params.to_json )
           status result.code
           content_type result.headers[:content_type]

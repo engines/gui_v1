@@ -19,7 +19,7 @@ app.system.install.new = controller => (a,x) => [
   ] ),
 
   app.http(
-    `/~/~/engine_builder/resolve_blueprint?${
+    `/-/-/engine_builder/resolve_blueprint?${
       x.lib.query.from.object( { blueprint_url: controller.params.blueprint_url } )
     }`,
     ( blueprint, el ) => el.$nodes = [
@@ -33,17 +33,17 @@ app.system.install.new = controller => (a,x) => [
           Promise.all(
             services.map( service => Promise.all( [
 
-              fetch( `/~/~/service_manager/service_definitions/${
+              fetch( `/-/-/service_manager/service_definitions/${
                 service.publisher_namespace }/${ service.type_path
               }` ).
               then( response => response.json() ),
 
-              fetch( `/~/~/service_manager/persistent_services/${
+              fetch( `/-/-/service_manager/persistent_services/${
                 service.publisher_namespace }/${ service.type_path
               }` ).
               then( response => response.json() ),
 
-              fetch( `/~/~/service_manager/orphan_services/${
+              fetch( `/-/-/service_manager/orphan_services/${
                 service.publisher_namespace }/${ service.type_path
                 }` ).
               then( response => response.json() ),
@@ -60,22 +60,22 @@ app.system.install.new = controller => (a,x) => [
             ) )
           ),
 
-          fetch( '/~/~/system/config/default_domain' ).
+          fetch( '/-/-/system/config/default_domain' ).
           then( response => response.text() ),
 
-          fetch( '/~/~/system/domains/' ).
+          fetch( '/-/-/system/domains/' ).
           then( response => response.json() ),
 
-          fetch( '/~/~/system/reserved/engine_names' ).
+          fetch( '/-/-/system/reserved/engine_names' ).
           then( response => response.json() ),
 
-          fetch( '/~/~/system/reserved/hostnames' ).
+          fetch( '/-/-/system/reserved/hostnames' ).
           then( response => response.json() ),
 
-          fetch( '/~/~/system/control/base_os/locale' ).
+          fetch( '/-/-/system/control/base_os/locale' ).
           then( response => response.json() ),
 
-          fetch( '/~/~/containers/engines/status' ).
+          fetch( '/-/-/containers/engines/status' ).
           then( response => response.json() ),
 
         ] ).then( ( [

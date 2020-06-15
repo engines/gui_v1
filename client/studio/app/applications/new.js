@@ -3,7 +3,7 @@ app.applications.new = controller => (a,x) => [
   a.h3('New application'),
 
   app.form( {
-    url: '/~/applications',
+    url: '/-/applications',
     scope: 'application',
     form: (f) => [
       f.field( {

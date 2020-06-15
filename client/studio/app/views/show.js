@@ -5,7 +5,7 @@ app.views.show = ( parent, path ) => controller => (a,x) => [
   ] ) ),
 
   app.http(
-    `/~/${ path }/views/${ controller.params.view_id }`,
+    `/-/${ path }/views/${ controller.params.view_id }`,
     ( view, el ) => el.$nodes = [
 
       app.button( {

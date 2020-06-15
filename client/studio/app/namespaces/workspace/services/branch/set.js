@@ -3,11 +3,11 @@ app.namespaces.workspace.services.branch.set = controller => (a,x) => [
   a.h3('Set branch'),
 
   app.http(
-    `/~/namespaces/${ controller.params.namespace_id }/workspace/services/${ controller.params.service_id }/branch`,
+    `/-/namespaces/${ controller.params.namespace_id }/workspace/services/${ controller.params.service_id }/branch`,
     ( branch, el ) => el.$nodes = [
 
       app.form( {
-        url: `/~/namespaces/${ controller.params.namespace_id }/workspace/services/${ controller.params.service_id }/branch`,
+        url: `/-/namespaces/${ controller.params.namespace_id }/workspace/services/${ controller.params.service_id }/branch`,
         object: branch,
         form: (f) => [
           f.field( {

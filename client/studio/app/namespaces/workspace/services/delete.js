@@ -20,7 +20,7 @@ app.namespaces.workspace.services.delete = controller => (a,x) => [
       onclick: (e,el) => {
 
         el.$('^').$nodes = app.http(
-          `/~/namespaces/${ controller.params.namespace_id }/workspace/services/${ controller.params.service_id }`,
+          `/-/namespaces/${ controller.params.namespace_id }/workspace/services/${ controller.params.service_id }`,
           ( service, el ) => el.$nodes = [
             a.p( 'Service has been deleted.' ),
             a['div.clearfix']( [

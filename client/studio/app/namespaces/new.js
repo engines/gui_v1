@@ -3,7 +3,7 @@ app.namespaces.new = controller => (a,x) => [
   a.h5( 'New services provider'),
 
   app.form( {
-    url: '/~/namespaces/new',
+    url: '/-/namespaces/new',
     // object: branch,
     scope: 'namespace',
     form: (f) => [

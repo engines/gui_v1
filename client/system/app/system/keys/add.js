@@ -3,7 +3,7 @@ app.system.keys.add = controller => (a,x) => [
   a.h5( 'Add' ),
 
   app.form( {
-    url: '/~/~/system/keys/',
+    url: '/-/-/system/keys/',
     success: () => controller.open( '..' ),
     scope: 'api_vars',
     form: (f) => [

@@ -1,5 +1,5 @@
 // app.system.domains.default.form = ( controller, defaultDomain ) => (a,x) => app.form( {
-//   url: '/~/~/system/config/default_domain',
+//   url: '/-/-/system/config/default_domain',
 //   success: () => controller.open( '..' ),
 //   object: defaultDomain,
 //   scope: 'api_vars',

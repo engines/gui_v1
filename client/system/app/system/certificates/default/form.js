@@ -1,5 +1,5 @@
 // app.system.certificates.default.form = ( controller, defaultcertificate ) => (a,x) => app.form( {
-//   url: '/~/~/system/config/default_certificate',
+//   url: '/-/-/system/config/default_certificate',
 //   success: () => controller.open( '..' ),
 //   object: defaultcertificate,
 //   scope: 'api_vars',

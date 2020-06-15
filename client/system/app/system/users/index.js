@@ -7,7 +7,7 @@ app.system.users.index = controller => (a,x) => [
   ),
 
   app.http(
-    '/~/~/system/uadmin/users/accounts',
+    '/-/-/system/uadmin/users/accounts',
     ( accounts, el ) => {
       el.$nodes = [
 

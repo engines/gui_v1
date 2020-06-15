@@ -20,7 +20,7 @@ app.namespaces.workspace.pull = controller => (a,x) => [
       onclick: (e,el) => {
 
         el.$('^').$nodes = app.http(
-          `/~/namespaces/${ controller.params.namespace_id }/workspace/pull`,
+          `/-/namespaces/${ controller.params.namespace_id }/workspace/pull`,
           ( result, el ) => el.$nodes = [
             a.pre( result.message ),
             a['div.clearfix']( [

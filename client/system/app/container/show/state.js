@@ -1,6 +1,6 @@
 app.container.show.state = container => (a,x) => {
 
-  let path = `/~/~/containers/${
+  let path = `/-/-/containers/${
     container.type === 'service' ? 'service' : 'engine'
   }/${ container.name }`
 

@@ -1,11 +1,11 @@
 app.system.admin = controller => (a,x) => [
   a.h3( "Admin" ),
 
-  app.http( '/~/~/system/user/admin' ),
-  app.http( '/~/~/system/user/engines' ),
+  app.http( '/-/-/system/user/admin' ),
+  app.http( '/-/-/system/user/engines' ),
 
   app.form( {
-    url: '/~/~/unauthenticated/user/set_password',
+    url: '/-/-/unauthenticated/user/set_password',
     success: () => location.assign( '/' ),
     scope: 'api_vars',
     form: (f) => [

@@ -20,7 +20,7 @@ app.namespaces.delete = controller => (a,x) => [
       onclick: (e,el) => {
 
         el.$('^').$nodes = app.http(
-          `/~/namespaces/${ controller.params.namespace_id }`,
+          `/-/namespaces/${ controller.params.namespace_id }`,
           ( namespace, el ) => el.$nodes = [
             a.p( 'Namespace has been deleted.' ),
             a['div.clearfix']( [

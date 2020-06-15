@@ -8,10 +8,10 @@
 //     ] )
 //   ),
 //
-//   // [ a.h5( '/~/~/system/metrics/load' ), app.http( '/~/~/system/metrics/load' ), a.br ],
-//   // [ a.h5( '/~/~/system/metrics/memory' ), app.http( '/~/~/system/metrics/memory' ), a.br ],
-//   // [ a.h5( '/~/~/system/metrics/memory/statistics' ), app.http( '/~/~/system/metrics/memory/statistics' ), a.br ],
-//   // [ a.h5( '/~/~/system/metrics/network' ), app.http( '/~/~/system/metrics/network' ), a.br ],
+//   // [ a.h5( '/-/-/system/metrics/load' ), app.http( '/-/-/system/metrics/load' ), a.br ],
+//   // [ a.h5( '/-/-/system/metrics/memory' ), app.http( '/-/-/system/metrics/memory' ), a.br ],
+//   // [ a.h5( '/-/-/system/metrics/memory/statistics' ), app.http( '/-/-/system/metrics/memory/statistics' ), a.br ],
+//   // [ a.h5( '/-/-/system/metrics/network' ), app.http( '/-/-/system/metrics/network' ), a.br ],
 //   //
 //   //
 //   // this._chart( {
@@ -27,7 +27,7 @@
 //   // } ),
 //
 //   app.http(
-//     '/~/~/system/metrics/memory/statistics',
+//     '/-/-/system/metrics/memory/statistics',
 //     ( response, el ) => {
 //       response.json().then( memory => {
 //

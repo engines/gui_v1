@@ -44,7 +44,7 @@ class ServiceBlueprint {
   }
 
   get apiEndpoint() {
-    return `/~/namespaces/${ this.namespace.id }/workspace/services/${ this.id }/blueprint`
+    return `/-/namespaces/${ this.namespace.id }/workspace/services/${ this.id }/blueprint`
   }
 
   // get framework() {

@@ -7,8 +7,8 @@ app.system.domains.index = controller => (a,x) => [
   ),
 
   app.http( [
-    '/~/~/system/config/default_domain',
-    '/~/~/system/domains/',
+    '/-/-/system/config/default_domain',
+    '/-/-/system/domains/',
   ], ( [ defaultDomain, domains ], el ) => {
     el.$nodes = [
 
@@ -45,11 +45,11 @@ app.system.domains.index = controller => (a,x) => [
   } ),
 
   // app.http(
-  //   '/~/~/system/domains/',
+  //   '/-/-/system/domains/',
   //   ( domains, el ) => el.$nodes = [
   //
   //     app.http(
-  //       '/~/~/system/config/default_domain',
+  //       '/-/-/system/config/default_domain',
   //       ( defaultDomain, el ) => el.$nodes =
   //     ),
   //

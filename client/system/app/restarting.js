@@ -1,7 +1,7 @@
 app.restarting = controller => (a,x) => [
   a.h3( "Restarting system" ),
   app.system.polling(
-    '/~/system/status',
+    '/-/system/status',
     ( result, el ) =>  {
       if ( result.is_rebooting ) {
         throw new Error( 'Restarting' )

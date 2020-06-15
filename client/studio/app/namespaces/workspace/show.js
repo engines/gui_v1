@@ -1,7 +1,7 @@
 app.namespaces.workspace.show = controller => (a,x) => [
 
   app.http(
-    `/~/namespaces/${ controller.params.namespace_id }/workspace`,
+    `/-/namespaces/${ controller.params.namespace_id }/workspace`,
     ( workspace, el ) => {
 
       if ( workspace.exists ) {
@@ -20,8 +20,8 @@ app.namespaces.workspace.show = controller => (a,x) => [
 
           app.http(
             [
-              `/~/namespaces/${ controller.params.namespace_id }/workspace/readme`,
-              `/~/namespaces/${ controller.params.namespace_id }/workspace/diff`,
+              `/-/namespaces/${ controller.params.namespace_id }/workspace/readme`,
+              `/-/namespaces/${ controller.params.namespace_id }/workspace/diff`,
             ],
             ( [ readme, diff ], el ) => el.$nodes = [
 

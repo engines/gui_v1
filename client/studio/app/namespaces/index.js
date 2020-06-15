@@ -19,7 +19,7 @@ app.namespaces.index = controller => (a,x) => [
   ] ) ),
 
   app.http(
-    '/~/namespaces',
+    '/-/namespaces',
     ( namespaces, el ) => el.$nodes = [
       namespaces.length == 0 ? 'None' : null,
       namespaces.map( namespace => a.p( [

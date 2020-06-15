@@ -36,7 +36,7 @@ app.nav = controller => (a,x) => a['app-nav']( [
     style: { display: 'none' },
   } ),
 
-  app.http( '/~/session', ( response, el ) => {
+  app.http( '/-/session', ( response, el ) => {
     el.$('^app-nav').$setUser( true )
   } ),
 

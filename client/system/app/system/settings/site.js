@@ -7,7 +7,7 @@
 //   // ),
 //   //
 //   // app.http(
-//   //   '/~/~/system/config/default_domain',
+//   //   '/-/-/system/config/default_domain',
 //   //   ( response, el ) => response.text().then(
 //   //     domain => el.$nodes = [
 //   //       a['div.clearfix']( [
@@ -24,7 +24,7 @@
 //   // a.hr,
 //   //
 //   // app.http(
-//   //   '/~/~/system/site/',
+//   //   '/-/-/system/site/',
 //   //   ( response, el ) => response.json().then(
 //   //     site => el.$nodes = [
 //   //       a.h5( 'Registered'),
