@@ -10,7 +10,7 @@ app.namespaces.new = controller => (a,x) => [
       f.field( {
         key: 'url',
         label: false,
-        layout: 'vertical',
+        vertical: true,
         required: true,
         placeholder: 'Repo URL',
       } ),

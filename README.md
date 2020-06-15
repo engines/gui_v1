@@ -1,43 +1,33 @@
-Ax Function Development Application
------------------------------------
-
-Deploy
-------
+Engines GUI
+-----------
 
 Sinatra modular style, with `config.ru`.
-
-Doesn't need any services.
-
 Static assets served from `/public`
+No services.
 
-Release
--------
+Run app:
+```console
+npm i
+thin start
+``
 
-`rake release:build["version"]` to create files for a release. Output goes to `/axFunction/release`.
+To allow sessions to persist after restart, set `ENV['SESSION_SECRET']`.
 
-TODO
-----
+Default user timeout is 15 mins. If you want different, set `ENV['SESSION_TIMEOUT_MINUTES']`.
 
-FORM
-'display: block' styles need to be replaced with fade 'unset' and div
-scope/target with commas rather than [][][]
+System
+------
 
+Set `ENV['ENGINES_SYSTEM_IP']`
 
+To enable install from library, set `ENV['APPLICATION_LIBRARY_URL']`
 
-
-
-
-
-- Confirm email - or confirm anything?
-
-
+To enable side loading of blueprints, set `ENV['ENABLE_SIDE_LOAD']`.
 
 
+Studio
+------
 
-- Report field type :list should use appkit.list
+To run in 'Studio' mode, set `ENV['MODE']` to `studio`.
 
-
-- form/report DSL library using ERM syntax.
-
-- check, checkboxes, radios: alternate label text for check when selected
-- check, checkboxes, radios: confirm unchecked values coming through serialization
+Set a password with `ENV['USER_PASSWORD']`.

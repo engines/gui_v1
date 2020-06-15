@@ -2,7 +2,6 @@ app.applications.blueprint.dialogues.index = blueprint => controller => (a,x) =>
 
   a.h5( 'Dialogues' ),
   a.hr,
-
   a['div.clearfix']( a['div.btn-group.float-right']( [
     app.button( {
       label: app.icon( 'fa fa-plus', 'New dialogue' ),

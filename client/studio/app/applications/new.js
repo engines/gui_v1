@@ -10,7 +10,7 @@ app.applications.new = controller => (a,x) => [
         key: 'url',
         as: 'input/url',
         label: false,
-        layout: 'vertical',
+        vertical: true,
         placeholder: 'Repo URL',
       } ),
       f.buttons( {

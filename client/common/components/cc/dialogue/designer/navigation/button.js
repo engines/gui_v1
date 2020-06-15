@@ -47,7 +47,7 @@ cc.dialogue.designer.navigation.button = blueprint => f => [
     form: (ff) => [
       ff.field( {
         key: 'display',
-        layout: 'vertical',
+        vertical: true,
         label: false,
         as: 'select',
         placeholder: 'Default',
@@ -58,7 +58,7 @@ cc.dialogue.designer.navigation.button = blueprint => f => [
       } ),
       ff.field( {
         key: 'custom',
-        layout: 'vertical',
+        vertical: true,
         label: false,
         dependent: {
           key: 'display',

@@ -13,7 +13,7 @@ app.system.keys.remove = controller => (a,x) => [
           f.field( {
             key: 'key',
             label: false,
-            layout: 'vertical',
+            vertical: true,
             as: 'select',
             selections: Object.keys( keys ),
             placeholder: 'Select key...',

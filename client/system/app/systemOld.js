@@ -31,10 +31,10 @@ app.systemOld = controller => (a,x) => a( {
       } else if ( system.is_base_system_updating ) {
         el.$send( 'app.os.updating' )
       } else if ( system.is_engines_system_updating ) {
-        el.$send( 'app.closedating' )
+        el.$send( 'app.updating' )
       }
 
-      el.$nodes = app.system.panes( system, controller )
+      el.$nodes = [app.system.panes( system, controller )]
 
     } ).catch( error => {
 

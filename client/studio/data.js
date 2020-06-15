@@ -196,7 +196,7 @@
 //               field: {
 //                 key: 'contact',
 //                 control: 'one',
-//                 layout: 'vertical',
+//                 vertical: true,
 //                 components: [
 //                   {
 //                     type: 'field',
@@ -265,7 +265,7 @@
 //             //   field: {
 //             //     key: 'roles',
 //             //     control: 'many',
-//             //     layout: 'vertical',
+//             //     vertical: true,
 //             //     many: {
 //             //       form: []
 //             //     },

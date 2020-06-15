@@ -26,7 +26,7 @@ app.applications.blueprint.actionators.variables.delete = blueprint => controlle
 
           variable.delete()
 
-          el.$nodes = app.http(
+          el.$nodes = [app.http(
             blueprint.apiEndpoint,
             () => controller.open( '../..' ),
             {
@@ -35,7 +35,7 @@ app.applications.blueprint.actionators.variables.delete = blueprint => controlle
               headers: { 'Content-type': 'application/json' },
               body:  JSON.stringify( blueprint.output, null, 2 )
             }
-          )
+          )]
 
         },
       } ),

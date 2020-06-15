@@ -12,7 +12,7 @@ app.container.report = type => controller => (a,x) => {
     a['div.clearfix']( a['div.float-right']( app.close( controller, 'Close' ) ) ),
     app.http(
       path,
-      ( container, el ) => el.$nodes = x.output( container ),
+      ( container, el ) => el.$nodes = x.out( container ),
       {
         placeholder: app.hourglass( 'Loading container' )
       }

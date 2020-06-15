@@ -11,7 +11,7 @@ app.namespaces.workspace.services.blueprint.guises = blueprint => controller => 
       f.field( {
         key: 'guises',
         as: 'table',
-        layout: 'vertical',
+        vertical: true,
         form: (ff) => [
           ff.field( {
             key: 'type',

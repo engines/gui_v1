@@ -1,4 +1,4 @@
-cc.dialogue.builder = function( components, params, options={} ) {
+cc.dialogue.builder = function( components, params={}, options={} ) {
 
   return ( components || [] ).map( ( componentSpec ) => {
 

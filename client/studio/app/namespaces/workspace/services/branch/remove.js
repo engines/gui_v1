@@ -20,7 +20,7 @@ app.namespaces.workspace.services.branch.remove = controller => (a,x) => [
               as: 'select',
               label: false,
               required: true,
-              layout: 'vertical',
+              vertical: true,
               selections: removeable,
               placeholder: 'Select branch to remove',
             } ),

@@ -66,7 +66,7 @@ app.applications.blueprint.actionators.show = blueprint => controller => (a,x) =
               key: 'content',
               as: 'code',
               label: false,
-              layout: 'vertical',
+              vertical: true,
               code: {
                 mode: rr.object.language,
               }
@@ -81,7 +81,7 @@ app.applications.blueprint.actionators.show = blueprint => controller => (a,x) =
             controller.open( 'variables' )
           },
         } ),
-        x.output( actionator.variables.output() ),
+        x.out( actionator.variables.output() ),
 
       ]
     } ),

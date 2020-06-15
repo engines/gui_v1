@@ -12,21 +12,21 @@ app.system.reserved = controller => (a,x) => [
     label: 'Container names',
     body: app.http(
       '/~/~/system/reserved/engine_names',
-      ( result, el ) => el.$nodes = x.output( result )
+      ( result, el ) => el.$nodes = x.out( result )
     ),
   } ) ),
   a.p( app.collapse( {
     label: 'Hostnames',
     body: app.http(
       '/~/~/system/reserved/hostnames',
-      ( result, el ) => el.$nodes = x.output( result )
+      ( result, el ) => el.$nodes = x.out( result )
     ),
   } ) ),
   a.p( app.collapse( {
     label: 'Ports',
     body: app.http(
       '/~/~/system/reserved/ports',
-      ( result, el ) => el.$nodes = x.output( result )
+      ( result, el ) => el.$nodes = x.out( result )
     ),
   } ) ),
 

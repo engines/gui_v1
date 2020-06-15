@@ -22,7 +22,7 @@ app.application.show = controller => (a,x) => {
           a['app-container-state'](
             [
               a['div.float-right']( a.img( null, { src: container.icon_url, height: 48, width: 48 } ) ),
-              ax.x.transition.crossfade( {
+              ax.x.transition.fade( {
                 initial: [
                   app.container.show.state( container ),
                   app.container.show.instructions( controller, container ),

@@ -10,7 +10,7 @@ let app = (a,x) => a['app']( [
     },
     'app.authenticated': (e,el) => {
       el.$('^app app-nav').$setUser( true )
-      nav.$reopen()
+      nav.$open()
     },
     'app.unauthenticated': (e,el) => {
       el.$('^app app-nav').$setUser( false )
@@ -32,7 +32,7 @@ let app = (a,x) => a['app']( [
       el.$('app-system-eventsource').$close()
       nav.$open( '/updating/os' )
     },
-    'app.closedating': (e,el) => {
+    'app.updating': (e,el) => {
       el.$('^app app-nav').$setUser( false )
       el.$('app-system-eventsource').$close()
       nav.$open( '/updating' )

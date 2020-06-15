@@ -49,9 +49,9 @@ ax.css( {
       borderColor: '#333',
     },
 
-    '|axf-panes': {
+    '|ax-panes': {
 
-      '|axf-panes-drag': {
+      '|ax-panes-drag': {
         background: '#FFF1',
         '&:hover': {
           background: '#333',
@@ -59,7 +59,7 @@ ax.css( {
       },
 
       '&.dragable': {
-        '|axf-panes-drag': {
+        '|ax-panes-drag': {
           background: '#666',
         },
       },

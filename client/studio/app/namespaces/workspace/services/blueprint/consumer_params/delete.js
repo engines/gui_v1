@@ -25,7 +25,7 @@ app.namespaces.workspace.services.blueprint.consumer_params.delete = blueprint =
 
           consumerParam.delete()
 
-          el.$nodes = app.http(
+          el.$nodes = [app.http(
             blueprint.apiEndpoint,
             () => controller.open( '../..' ),
             {
@@ -34,7 +34,7 @@ app.namespaces.workspace.services.blueprint.consumer_params.delete = blueprint =
               headers: { 'Content-type': 'application/json' },
               body:  JSON.stringify( blueprint.output, null, 2 )
             }
-          )
+          )]
 
         },
       } ),

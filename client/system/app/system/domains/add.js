@@ -11,7 +11,7 @@ app.system.domains.add = controller => (a,x) => [
       f.field( {
         key: 'domain_name',
         label: false,
-        layout: 'vertical',
+        vertical: true,
         required: 'required',
       } ),
 

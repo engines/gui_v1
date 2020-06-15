@@ -72,6 +72,19 @@ module Server
           end
 
           def api_call( route, options={} )
+            puts ({
+              method: options[:method] || :get,
+              url: url_for( route ),
+              payload: options[:payload] || nil,
+              timeout: options[:timeout] || 120,
+              verify_ssl: false,
+              headers: {
+                content_type: options[:content_type] || :json,
+                access_token: @token
+              },
+              block_response: options[:block_response]
+            }.to_yaml)
+
             response_for do
               RestClient::Request.execute(
                 method: options[:method] || :get,

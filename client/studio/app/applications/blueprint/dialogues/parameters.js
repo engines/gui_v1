@@ -16,18 +16,15 @@ app.applications.blueprint.dialogues.parameters = blueprint => controller =>
         f.field( {
           key: 'parameters',
           as: 'many',
-          layout: 'vertical',
+          vertical: true,
           form: ff => [
-            ff.field( {
-              key: 'get',
-            } ),
             ff.field( {
               key: 'method',
               as: 'select',
               placeholder: 'None',
               selections: {
                 action: 'Action',
-                resolve: 'Resolve',
+                assign: 'Assign',
                 // parse: 'Parse',
               }
             } ),
@@ -46,18 +43,24 @@ app.applications.blueprint.dialogues.parameters = blueprint => controller =>
               }
             } ),
             ff.field( {
-              key: 'resolve',
-              as: 'code',
+              key: 'assign',
+              as: 'one',
               label: false,
-              placeholder: 'Template string',
-              required: true,
+              form: fff => [
+                fff.field( {
+                  key: 'key',
+                  required: true,
+                } ),
+                fff.field( {
+                  key: 'value',
+                  as: 'code',
+                  placeholder: 'Template string',
+                } ),
+              ],
               dependent: {
                 key: 'method',
-                value: 'resolve',
+                value: 'assign',
               }
-            } ),
-            ff.field( {
-              key: 'set',
             } ),
           ],
         } ),

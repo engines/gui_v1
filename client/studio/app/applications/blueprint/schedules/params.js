@@ -15,7 +15,7 @@ app.applications.blueprint.schedules.params = blueprint => controller => (a,x) =
         f.field( {
           key: 'actionator',
           as: 'many',
-          layout: 'vertical',
+          vertical: true,
           label: false,
           form: (ff) => [
             ff.field( {
@@ -32,7 +32,7 @@ app.applications.blueprint.schedules.params = blueprint => controller => (a,x) =
         f.field( {
           key: 'surplus',
           as: 'many',
-          layout: 'vertical',
+          vertical: true,
           label: false,
           form: (ff) => [
             ff.field( {

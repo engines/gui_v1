@@ -4,7 +4,7 @@ cc.dialogue.designer.component = blueprint => f => [
     key: 'type',
     as: 'select',
     label: false,
-    layout: 'vertical',
+    vertical: true,
     selections: {
       output: 'Output',
       form: 'Form',

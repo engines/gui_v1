@@ -34,7 +34,7 @@ form = ( controller, blueprint, serviceConfiguration ) => (a,x) => {
               key: 'variables',
               as: 'one',
               label: false,
-              layout: 'vertical',
+              vertical: true,
               form: (ff) => params.
                 map( param =>
                   ff.field( {

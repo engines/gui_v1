@@ -14,7 +14,7 @@ app.license = ( parent, path ) => controller => (a,x) => [
           f.field( {
             as: 'code',
             key: 'content',
-            layout: 'vertical',
+            vertical: true,
             label: false,
           } ),
           f.buttons( {

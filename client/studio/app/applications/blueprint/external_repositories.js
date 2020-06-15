@@ -11,7 +11,7 @@ app.applications.blueprint.external_repositories = blueprint => controller => (a
       f.field( {
         key: 'external_repositories',
         as: 'table',
-        layout: 'vertical',
+        vertical: true,
         label: false,
         form: (ff) => [
           ff.field( {

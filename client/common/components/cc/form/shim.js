@@ -6,7 +6,7 @@ cc.form.shim = {
       asyncformTag: {
         ...options.asyncformTag,
         $on: {
-          'axf.appkit.form.async.complete': (e,el) => {
+          'ax.appkit.form.async.complete': (e,el) => {
             el.$$('button[type="submit"]').$$.forEach( button => {
               button.$revert && button.$revert()
             } )
@@ -46,7 +46,7 @@ cc.form.shim = {
         'click: change button label': (e,el) => {
           let to = options.to
           el.$from = el.innerHTML
-          if ( to ) el.$nodes = to
+          if ( to ) el.$nodes = [ to ]
         },
         ...( options.buttonTag || {} ).$on
       },
@@ -146,6 +146,9 @@ cc.form.shim = {
     markdown: ( f, target ) => ( options={} ) => (a,x) => x.simplemde.form.control( f, options ),
 
     table: ( f, target ) => ( options={} ) => target( {
+      addable: true,
+      removeable: true,
+      moveable: true,
       ...options,
       sortOnButton: {
         ...options.sortOnButton,
@@ -186,6 +189,9 @@ cc.form.shim = {
     } ),
 
     many: ( f, target ) => ( options={} ) => target( {
+      addable: true,
+      removeable: true,
+      moveable: true,
       ...options,
       sortOnButton: {
         ...options.sortOnButton,

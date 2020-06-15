@@ -30,7 +30,7 @@ form = ( controller, blueprint, variable ) => (a,x) => {
         f.field( {
           key: 'input',
           as: 'one',
-          layout: 'vertical',
+          vertical: true,
           form: (ff) => [
             ff.field( {
               key: 'type',
@@ -73,7 +73,7 @@ form = ( controller, blueprint, variable ) => (a,x) => {
                   key: 'items',
                   as: 'table',
                   label: false,
-                  layout: 'vertical',
+                  vertical: true,
                   form: (ffff) => [
                     ffff.field( {
                       key: 'value',

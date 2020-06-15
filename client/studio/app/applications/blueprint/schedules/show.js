@@ -66,7 +66,7 @@ app.applications.blueprint.schedules.show = blueprint => controller => (a,x) => 
             rr.field( {
               key: 'name',
               // as: 'select',
-              layout: 'vertical',
+              vertical: true,
               label: false,
               // placeholder: 'Select actionator',
               // selections: blueprint.schedules.actionators,
@@ -87,7 +87,7 @@ app.applications.blueprint.schedules.show = blueprint => controller => (a,x) => 
               controller.open( 'params' )
             },
           } ),
-          x.output( schedule.params.output() ),
+          x.out( schedule.params.output() ),
         ] : null,
 
       ]

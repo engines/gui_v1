@@ -11,7 +11,7 @@ app.applications.blueprint.show = blueprint => controller => (a,x) => [
       app.applications.blueprint.nav( blueprint, controller )
     ] ),
     a['div.col-sm-10']( [
-      x.output( blueprint.output )
+      x.out( blueprint.output )
     ] ),
   ] )
 

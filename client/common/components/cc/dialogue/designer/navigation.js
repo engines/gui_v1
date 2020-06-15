@@ -1,12 +1,12 @@
 cc.dialogue.designer.navigation = blueprint => f => f.fieldset( {
-  layout: 'vertical',
+  vertical: true,
   label: false,
   body: [
     f.field( {
       key: 'navigation',
       as: 'one',
       label: false,
-      layout: 'vertical',
+      vertical: true,
       form: ff => [
 
         cc.collapse( {
@@ -14,15 +14,15 @@ cc.dialogue.designer.navigation = blueprint => f => f.fieldset( {
           body: [
             ff.field( {
               key: 'components',
-              item: 'navigation component',
+              singular: 'navigation component',
               label: false,
-              layout: 'vertical',
+              vertical: true,
               as: 'many',
               form: fff => [
                 fff.field( {
                   key: 'type',
                   as: 'select',
-                  layout: 'vertical',
+                  vertical: true,
                   label: false,
                   selections: {
                     button: 'Button',
@@ -32,18 +32,15 @@ cc.dialogue.designer.navigation = blueprint => f => f.fieldset( {
                 fff.field( {
                   key: 'button',
                   as: 'one',
-                  layout: 'vertical',
+                  vertical: true,
                   label: false,
                   form: ffff => [
                     cc.dialogue.designer.navigation.button( blueprint )( ffff ),
                     ffff.field( {
                       key: 'parameters',
-                      item: 'parameter',
+                      singular: 'parameter',
                       collection: true,
-                      // as: 'many',
-                      // form: fffff => fffff.field( {
-                      //   key
-                      // } ),
+                      
                     } )
                   ]
                 } ),

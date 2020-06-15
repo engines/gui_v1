@@ -8,7 +8,7 @@
 //     f.field( {
 //       key: 'default_domain',
 //       label: false,
-//       layout: 'vertical',
+//       vertical: true,
 //       as: 'select',
 //       selections: Object.keys( defaultDomain.domains ),
 //       required: 'required',

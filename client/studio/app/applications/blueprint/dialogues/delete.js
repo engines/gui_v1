@@ -4,7 +4,7 @@ app.applications.blueprint.dialogues.delete = blueprint => controller => (a,x) =
 
   return [
 
-    a.h5( `Delete dialogue ${ dialogue.id + 1 }` ),
+    a.h5( `Delete dialogue ${ dialogue.object.name }` ),
     a.p( [
 
       app.button( {
@@ -25,7 +25,7 @@ app.applications.blueprint.dialogues.delete = blueprint => controller => (a,x) =
 
           dialogue.delete()
 
-          el.$nodes = app.http(
+          el.$nodes = [app.http(
             blueprint.apiEndpoint,
             () => controller.open( '../..' ),
             {
@@ -34,7 +34,7 @@ app.applications.blueprint.dialogues.delete = blueprint => controller => (a,x) =
               headers: { 'Content-type': 'application/json' },
               body:  JSON.stringify( blueprint.output, null, 2 )
             }
-          )
+          )]
 
         },
       } ),

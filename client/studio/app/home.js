@@ -28,7 +28,6 @@ app.home = controller => (a,x) => [
 
       ] ),
 
-
       home.namespaces.map( (namespace) => [
 
         a.hr,
@@ -67,6 +66,7 @@ app.home = controller => (a,x) => [
 
 
 
-    ]
+    ],
+    { placeholder: app.hourglass('Loading') }
   )
 ]

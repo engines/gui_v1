@@ -32,10 +32,9 @@ module Server
         end
 
         post '/~/*' do
+          # debugger
           path = request.fullpath.sub '/~/~', ''
-          result = @engines.post( path, request.body, {
-            content_type: headers['Content-Type']
-          } )
+          result = @engines.post( path, params.to_json )
           status result.code
           content_type result.headers[:content_type]
           result.body
@@ -43,9 +42,7 @@ module Server
 
         put '/~/*' do
           path = request.fullpath.sub '/~/~', ''
-          result = @engines.put( path, request.body, {
-            content_type: headers['Content-Type']
-          } )
+          result = @engines.put( path, params.to_json )
           status result.code
           content_type result.headers[:content_type]
           result.body

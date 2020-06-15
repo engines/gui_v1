@@ -19,7 +19,7 @@ app.applications.blueprint.components = blueprint => controller => (a,x) => [
       f.field( {
         key: 'sources',
         as: 'many',
-        layout: 'vertical',
+        vertical: true,
         form: (ff) => [
           ff.field( {
             key: 'label',
@@ -37,7 +37,7 @@ app.applications.blueprint.components = blueprint => controller => (a,x) => [
               fff.field( {
                 key: 'content',
                 as: 'code',
-                layout: 'vertical',
+                vertical: true,
                 label: false,
                 code: {
                   mode: {

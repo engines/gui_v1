@@ -5,7 +5,7 @@ app.applications.blueprint.dialogues.tests = blueprint => controller =>
 
   return [
 
-    a.h5( `dialogue ${ dialogue.id + 1 } tests` ),
+    a.h5( `Dialogue ${ dialogue.id + 1 } tests` ),
     a.hr,
 
     app.blueprintForm(
@@ -15,7 +15,7 @@ app.applications.blueprint.dialogues.tests = blueprint => controller =>
       (f) => f.field( {
         key: 'tests',
         as: 'many',
-        layout: 'vertical',
+        vertical: true,
         form: f => [
           f.field( {
             key: 'label',

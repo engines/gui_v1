@@ -1,4 +1,4 @@
-app.closedating.os = controller => (a,x) => [
+app.updating.os = controller => (a,x) => [
   a.h3( "Updating Operating system" ),
   app.system.polling(
     '/~/~/system/status',

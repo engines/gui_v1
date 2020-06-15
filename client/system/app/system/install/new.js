@@ -101,7 +101,7 @@ app.system.install.new = controller => (a,x) => [
             applications_status: applications_status,
           } )
 
-          el.$nodes = app.system.install.new.form( controller, install )
+          el.$nodes = [app.system.install.new.form( controller, install )]
 
         } ).catch( error => {
 

@@ -23,7 +23,7 @@ app.application.about = controller => (a,x) => {
             a.hr,
             a.i( 'Website' ), '',
             a.a(
-              app.icon( 'fas fa-link', websiteUrl ),
+              websiteUrl,
               { href: websiteUrl, target: websiteUrl }
             ),
           ] : null,
@@ -31,9 +31,9 @@ app.application.about = controller => (a,x) => {
           [
             a.i( 'License' ), '',
             ( licenseUrl && licenseLabel ) ?
-            a.a( app.icon( 'fas fa-link', licenseLabel ), { href: licenseUrl, target: licenseUrl } ) :
+            a.a( licenseLabel, { href: licenseUrl, target: licenseUrl } ) :
             ( licenseUrl && !licenseLabel ) ?
-            a.a( app.icon( 'fas fa-link', licenseUrl ), { href: licenseUrl, target: licenseUrl } ) :
+            a.a( licenseUrl, { href: licenseUrl, target: licenseUrl } ) :
             ( !licenseUrl && licenseLabel ) ?
             a.span( licenseLabel ) :
             a.i( 'Unknown' ),

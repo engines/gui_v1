@@ -1,6 +1,6 @@
 app.system = controller => (a,x) => a( {
   $init: function(el) {
-    el.$nodes = app.http( [
+    el.$nodes = [app.http( [
       '/~/~/system/status',
       '/~/~/engine_builder/status',
       '/~/~/system/system_user/settings',
@@ -25,13 +25,13 @@ app.system = controller => (a,x) => a( {
       } else if ( system.is_base_system_updating ) {
         el.$send( 'app.os.updating' )
       } else if ( system.is_engines_system_updating ) {
-        el.$send( 'app.closedating' )
+        el.$send( 'app.updating' )
       }
 
-      el.$nodes = app.system.panes( system, controller )
+      el.$nodes = [ app.system.panes( system, controller ) ]
 
     }, {
       placeholder: a['div.text-center.mt-4']( app.hourglass( 'Loading system' ) )
-    } )
+    } )]
   },
 } ),

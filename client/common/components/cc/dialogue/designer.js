@@ -4,9 +4,9 @@ cc.dialogue.designer = blueprint => f => (a,x) => [
     key: 'components',
     label: false,
     as: 'many',
-    item: 'dialogue component',
+    singular: 'dialogue component',
     form: cc.dialogue.designer.component( blueprint ),
-    layout: 'vertical',
+    vertical: true,
   } ),
 
 ]

@@ -1,54 +1,65 @@
-cc.dialogue.designer.form.fieldset = (f) => [
+cc.dialogue.designer.form.fieldset = (f) => f.field( {
+  key: 'fieldset',
+  as: 'one',
+  label: false,
+  vertical: true,
+  dependent: {
+    key: 'type',
+    pattern: '^fieldset$',
+  },
+  form: ff => [
 
-  cc.collapse( {
-    label: 'Options',
-    body: [
+    cc.collapse( {
+      label: 'Options',
+      body: [
 
-      f.field( {
-        key: 'label',
-      } ),
+        ff.field( {
+          key: 'label',
+        } ),
 
-      f.field( {
-        key: 'legend',
-      } ),
+        ff.field( {
+          key: 'legend',
+        } ),
 
-      f.field( {
-        key: 'layout',
-        as: 'checkbox',
-        checked: 'vertical',
-        checkbox: { label: 'Vertical' },
-      } ),
+        ff.field( {
+          key: 'layout',
+          as: 'checkbox',
+          checked: 'vertical',
+          checkbox: { label: 'Vertical' },
+        } ),
 
-      f.field( {
-        key: 'dependent',
-        as: 'one',
-        form: (ff) => ff.row( { columns: [
-          ff.field( {
-            key: 'target',
-          } ),
-          ff.field( {
-            key: 'pattern',
-          } ),
-        ] } ),
-      } ),
+        ff.field( {
+          key: 'dependent',
+          as: 'one',
+          form: (fff) => fff.row( { columns: [
+            fff.field( {
+              key: 'target',
+            } ),
+            fff.field( {
+              key: 'pattern',
+            } ),
+          ] } ),
+        } ),
 
-    ],
-  } ),
+      ],
+    } ),
 
-  cc.collapse( {
-    label: 'Body',
-    body: [
+    cc.collapse( {
+      label: 'Body',
+      body: [
 
-      f.field( {
-        key: 'body',
-        as: 'many',
-        label: false,
-        item: 'fieldset component',
-        form: cc.dialogue.designer.form.component,
-        layout: 'vertical',
-      } ),
+        ff.field( {
+          key: 'body',
+          as: 'many',
+          label: false,
+          singular: 'fieldset component',
+          form: cc.dialogue.designer.form.component,
+          vertical: true,
+        } ),
 
-    ],
-  } ),
+      ],
+    } ),
 
-]
+  ]
+
+} )

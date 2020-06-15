@@ -15,7 +15,7 @@
 //             key: 'environments',
 //             as: 'many',
 //             label: false,
-//             layout: 'vertical',
+//             vertical: true,
 //             report: (rr) => rr.field( {
 //               key: 'value',
 //               label: rr.object.name,

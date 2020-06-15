@@ -18,7 +18,7 @@ app.service.show = controller => (a,x) => {
         }
         el.$nodes = [
           a['app-container-state'](
-            ax.x.transition.crossfade( {
+            ax.x.transition.fade( {
               initial: app.container.show( 'service', controller, container )
             } ),
             {

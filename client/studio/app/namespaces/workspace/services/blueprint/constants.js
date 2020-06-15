@@ -11,7 +11,7 @@ app.namespaces.workspace.services.blueprint.constants = blueprint => controller 
       f.field( {
         key: 'constants',
         as: 'table',
-        layout: 'vertical',
+        vertical: true,
         label: false,
         form: (ff) => [
           ff.field( {

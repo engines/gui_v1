@@ -11,7 +11,7 @@ app.applications.blueprint.rake_tasks = blueprint => controller => (a,x) => [
       f.field( {
         key: 'rake_tasks',
         as: 'table',
-        layout: 'vertical',
+        vertical: true,
         label: false,
         form: (ff) => [
           ff.field( {

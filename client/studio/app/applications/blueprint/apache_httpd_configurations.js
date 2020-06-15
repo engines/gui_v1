@@ -11,13 +11,13 @@ app.applications.blueprint.apache_httpd_configurations = blueprint => controller
       f.field( {
         key: 'apache_httpd_configurations',
         as: 'many',
-        layout: 'vertical',
+        vertical: true,
         label: false,
         form: (ff) => [
           ff.field( {
             key: 'content',
             as: 'code',
-            layout: 'vertical',
+            vertical: true,
             label: false,
           } ),
         ]

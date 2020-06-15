@@ -15,7 +15,7 @@ app.application.actions.perform = type => controller => (a,x) => {
           blueprint, [ 'software', 'actionators' ], []
         ).find( action => action.name === actionName )
 
-        el.$nodes = app.container.actions.perform( controller, containerPath, action )
+        el.$nodes = [app.container.actions.perform( controller, containerPath, action )]
 
       },
       {

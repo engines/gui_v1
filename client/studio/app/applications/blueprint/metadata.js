@@ -11,7 +11,7 @@ app.applications.blueprint.metadata = blueprint => controller => (a,x) => [
       f.field( {
         key: 'display',
         as: 'one',
-        layout: 'vertical',
+        vertical: true,
         label: false,
         form: (ff) => [
           ff.field( {
@@ -32,7 +32,7 @@ app.applications.blueprint.metadata = blueprint => controller => (a,x) => [
       f.field( {
         key: 'license',
         as: 'one',
-        layout: 'vertical',
+        vertical: true,
         label: false,
         form: (ff) => [
           ff.field( {

@@ -13,7 +13,7 @@ app.applications.blueprint.service_configurations.new_namespace = blueprint => c
             required: true,
             as: 'select',
             label: false,
-            layout: 'vertical',
+            vertical: true,
             selections: namespaces,
           } ),
           app.button( {

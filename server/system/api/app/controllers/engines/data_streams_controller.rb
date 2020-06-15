@@ -3,10 +3,10 @@ module Server
     module App
       module Controllers
 
-        get '/download/service/:service_name' do
+        get '/download/service/*' do
 
-          filename = "Engines #{ params[:service_name] } export #{ Time.now.strftime("%Y-%m-%d %H:%M:%S") }.zip"
-          route = "/containers/service/#{ params[:service_name] }/export"
+          filename = "Engines #{ params[:splat][0].gsub('/', ' ') } export #{ Time.now.strftime("%Y-%m-%d %H:%M:%S") }.gz"
+          route = "/containers/service/#{ params[:splat][0] }/export"
 
           content_type 'application/octet-stream'
           attachment filename
@@ -35,11 +35,7 @@ module Server
 
         post '/upload/service/:service_name' do
 
-          # filename = "Engines #{ params[:service_name] } export #{ Time.now.strftime("%Y-%m-%d %H:%M:%S") }.zip"
-          route = "/containers/service/#{ params[:service_name] }/import"
-# debugger
-          # content_type 'application/zip'
-          # attachment filename
+          route = "/containers/service/#{ params[:splat][0] }/import"
 
           stream do |out|
             logger.info "Service import stream started."

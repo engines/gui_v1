@@ -25,7 +25,7 @@ app.applications.blueprint.actionators.delete = blueprint => controller => (a,x)
 
           actionator.delete()
 
-          el.$nodes = app.http(
+          el.$nodes = [app.http(
             blueprint.apiEndpoint,
             () => controller.open( '../..' ),
             {
@@ -34,7 +34,7 @@ app.applications.blueprint.actionators.delete = blueprint => controller => (a,x)
               headers: { 'Content-type': 'application/json' },
               body:  JSON.stringify( blueprint.output, null, 2 )
             }
-          )
+          )]
 
         },
       } ),

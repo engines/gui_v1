@@ -10,8 +10,10 @@ cc.dialogue.builder.form.field = ( f, fieldSpec, params ) => {
     help: fieldSpec.help,
     hint: fieldSpec.hint,
     layout: fieldSpec.layout,
-    item: fieldSpec.item,
-    static: fieldSpec.static,
+    collection: fieldSpec.collection,
+    singular: fieldSpec.singular,
+    confined: fieldSpec.confined,
+    stationary: fieldSpec.stationary,
     confirmation: fieldSpec.confirmation,
     dependent: fieldSpec.dependent,
     placeholder: fieldSpec.placeholder,
@@ -26,20 +28,28 @@ cc.dialogue.builder.form.field = ( f, fieldSpec, params ) => {
 
   if ( fieldSpec.selections ) {
     let selectionsSpec = fieldSpec.selections
-    if ( selectionsSpec.type == 'dynamic' && selectionsSpec.key ) {
-      let match = selectionsSpec.key.match( /\[?\w+\]?/g ).map(
-        part => part.match( /\w+/ )[0]
-      )
+    if ( selectionsSpec.type === 'dynamic' && selectionsSpec.dig ) {
+      let match = selectionsSpec.dig.match( /\w+/g )
       field.selections = x.lib.object.dig( params, match )
     } else {
       field.selections = Object.values( selectionsSpec.static || {} )
     }
   }
 
+  if ( fieldSpec.datalist ) {
+    let datalistSpec = fieldSpec.datalist
+    if ( datalistSpec.type === 'dynamic' && datalistSpec.dig ) {
+      let match = datalistSpec.dig.match( /\w+/g )
+      field.datalist = x.lib.object.dig( params, match )
+    } else {
+      field.datalist = Object.values( datalistSpec.static || {} )
+    }
+  }
+
   let label = fieldSpec.label || {}
-  if ( label.display == 'custom' ) {
+  if ( label.type === 'custom' ) {
     field.label = label.custom
-  } else if ( label.display == 'none' ) {
+  } else if ( label.type === 'none' ) {
     field.label = false
   }
 

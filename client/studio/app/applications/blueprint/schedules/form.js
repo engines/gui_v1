@@ -60,7 +60,7 @@ form = ( controller, blueprint, schedule ) => (a,x) => {
             ff.field( {
               key: 'name',
               as: 'select',
-              layout: 'vertical',
+              vertical: true,
               label: false,
               placeholder: 'Select actionator',
               selections: schedule.actionatorSelections(),

@@ -8,24 +8,24 @@ app.system.users.new = controller => (a,x) => [
         columns: [
           f.field( {
             key: 'first_name',
-            layout: 'vertical',
+            vertical: true,
           } ),
           f.field( {
             key: 'last_name',
-            layout: 'vertical',
+            vertical: true,
           } ),
         ],
       } ),
       f.field( {
         key: 'uid',
         label: 'UID username',
-        layout: 'vertical',
+        vertical: true,
       } ),
       f.field( {
         key: 'password',
         as: 'password',
         confirmation: true,
-        layout: 'vertical',
+        vertical: true,
       } ),
       f.buttons(),
     ]

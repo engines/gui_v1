@@ -21,7 +21,7 @@ app.system.update = controller => (a,x) => [
       $start: function() {
         this.$nodes = app.http(
           '/~/~/system/control/engines_system/update',
-          ( response, el ) => { el.$send( 'app.closedating' ) },
+          ( response, el ) => { el.$send( 'app.updating' ) },
           { placeholder: app.hourglass( 'Starting update...' ) }
         )
       },

@@ -14,7 +14,7 @@
 //             f.field( {
 //               key: 'certificate',
 //               label: false,
-//               layout: 'vertical',
+//               vertical: true,
 //               as: 'select',
 //               selections: Object.keys( certificates ),
 //               placeholder: 'Select certificate...',

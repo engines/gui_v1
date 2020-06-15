@@ -30,7 +30,7 @@ app.applications.blueprint.actionators.variables.index = blueprint => controller
     //     r.field( {
     //       key: 'variables',
     //       as: 'many',
-    //       layout: 'vertical',
+    //       vertical: true,
     //
     //       report: (rr) => app.button( {
     //         label: `${ rr.index + 1 }. ${ rr.object.name }`,

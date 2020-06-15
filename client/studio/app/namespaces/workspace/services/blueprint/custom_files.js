@@ -11,7 +11,7 @@ app.namespaces.workspace.services.blueprint.custom_files = blueprint => controll
       f.field( {
         key: 'custom_files',
         as: 'many',
-        layout: 'vertical',
+        vertical: true,
         label: false,
         form: (ff) => [
 
@@ -38,7 +38,7 @@ app.namespaces.workspace.services.blueprint.custom_files = blueprint => controll
           ff.field( {
             key: 'content',
             as: 'code',
-            layout: 'vertical',
+            vertical: true,
             code: {
               mode: {
                 value: app.codemirrorMode( ff.object.content_mode ),

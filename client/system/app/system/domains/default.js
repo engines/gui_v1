@@ -6,7 +6,7 @@ app.system.domains.default = controller => (a,x) => [
     '/~/~/system/config/default_domain',
     '/~/~/system/domains/',
   ], ( [ defaultDomain, domains ], el ) => {
-    el.$nodes = app.form( {
+    el.$nodes = [app.form( {
       url: '/~/~/system/config/default_domain',
       success: () => controller.open( '..' ),
       object: { default_domain: defaultDomain },
@@ -16,7 +16,7 @@ app.system.domains.default = controller => (a,x) => [
         f.field( {
           key: 'default_domain',
           label: false,
-          layout: 'vertical',
+          vertical: true,
           as: 'select',
           selections: Object.keys( domains ),
           required: 'required',
@@ -26,7 +26,7 @@ app.system.domains.default = controller => (a,x) => [
 
 
       ]
-    } )
+    } )]
   } )
 
 

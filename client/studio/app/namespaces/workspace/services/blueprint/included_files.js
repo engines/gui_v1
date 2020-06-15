@@ -11,7 +11,7 @@ app.namespaces.workspace.services.blueprint.included_files = blueprint => contro
       f.field( {
         key: 'included_files',
         as: 'many',
-        layout: 'vertical',
+        vertical: true,
         label: false,
         form: (ff) => [
 

@@ -1,19 +1,28 @@
-cc.dialogue.designer.report.row = blueprint => f => (a,x) => [
+cc.dialogue.designer.report.row = blueprint => f => f.field( {
+  key: 'row',
+  as: 'one',
+  label: false,
+  vertical: true,
+  dependent: {
+    key: 'type',
+    pattern: '^row$',
+  },
+  form: ff => [
 
-  cc.collapse( {
-    label: 'Columns',
-    body: [
+    cc.collapse( {
+      label: 'Columns',
+      body: [
 
-      f.field( {
-        key: 'columns',
-        as: 'many',
-        item: 'column',
-        form: cc.dialogue.designer.report.component( blueprint ),
-        label: false,
-        layout: 'vertical',
-      } ),
+        ff.field( {
+          key: 'columns',
+          as: 'many',
+          singular: 'column',
+          form: cc.dialogue.designer.report.component( blueprint ),
+          label: false,
+          vertical: true,
+        } ),
+      ],
+    } ),
 
-    ],
-  } ),
-
-]
+  ]
+} )

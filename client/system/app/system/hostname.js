@@ -3,7 +3,7 @@ app.system.hostname = controller => (a,x) => [
 
   app.http(
     '/~/~/system/config/hostname',
-    ( hostname, el ) => el.$nodes = app.form( {
+    ( hostname, el ) => el.$nodes = [app.form( {
       url: '/~/~/system/config/hostname',
       success: () => location.assign( '/' ),
       scope: 'api_vars',
@@ -12,11 +12,11 @@ app.system.hostname = controller => (a,x) => [
           key: 'host_name',
           value: hostname,
           label: false,
-          layout: 'vertical'
+          vertical: true
         } ),
         f.buttons(),
       ]
-    } ),
+    } )],
     {
       placeholder: app.hourglass( 'Loading hostname' ),
     }

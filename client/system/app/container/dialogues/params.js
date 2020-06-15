@@ -35,22 +35,21 @@ app.container.dialogues.params = ( type, controller, container, blueprint, param
         }
       )
 
-    } else if ( dialogueParam.method === 'resolve' ) {
+    } else if ( dialogueParam.method === 'assign' ) {
 
-      let resolve = dialogueParam.resolve
-// debugger
-// containers/service/#{@name}/template
+      let assign = dialogueParam.assign
+      let templateString = Mustache.render( assign.value || '', params )
 
       return app.http(
         `${ path }/template`,
         ( result, el ) => {
-          // let params = { ...params, ...result }
-          el.$nodes = result
+          params[assign.key] = result
+          el.$nodes = app.container.dialogues.params( type, controller, container, blueprint, params, dialogue, index + 1 )
         },
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify( { api_vars: { template_string: resolve } } ),
+          body: JSON.stringify( { api_vars: { template_string: templateString } } ),
           placeholder: app.hourglass( `Loading dialogue step ${ index + 1 } of ${ length }` ),
         }
       )
@@ -60,24 +59,17 @@ app.container.dialogues.params = ( type, controller, container, blueprint, param
 
   }
 
-  //
-  //
-  //
-  //  (a,x) => [
-  //   dialogue,
-  // ]
-
 }
 
-let invokeAction = ( type, controller, actionName, params ) => {
-
-  const containerName = controller.params.name
-
-  let path = `/~/~/containers/${
-    type === 'service' ? 'service' : 'engine'
-  }/${ containerName }`
-
-}
+// let invokeAction = ( type, controller, actionName, params ) => {
+//
+//   const containerName = controller.params.name
+//
+//   let path = `/~/~/containers/${
+//     type === 'service' ? 'service' : 'engine'
+//   }/${ containerName }`
+//
+// }
 
 
 

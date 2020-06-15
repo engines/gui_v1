@@ -41,7 +41,7 @@ form = ( controller, blueprint, configurator ) => (a,x) => {
             ff.field( {
               key: 'content',
               label: false,
-              layout: 'vertical',
+              vertical: true,
               as: 'code',
               code: {
                 mode: {
@@ -59,7 +59,7 @@ form = ( controller, blueprint, configurator ) => (a,x) => {
             ff.field( {
               key: 'content',
               label: false,
-              layout: 'vertical',
+              vertical: true,
               as: 'code',
               code: {
                 mode: {
@@ -77,7 +77,7 @@ form = ( controller, blueprint, configurator ) => (a,x) => {
             ff.field( {
               key: 'content',
               label: false,
-              layout: 'vertical',
+              vertical: true,
               as: 'code',
               code: {
                 mode: {
@@ -95,7 +95,7 @@ form = ( controller, blueprint, configurator ) => (a,x) => {
             ff.field( {
               key: 'content',
               label: false,
-              layout: 'vertical',
+              vertical: true,
               as: 'code',
               code: {
                 mode: {

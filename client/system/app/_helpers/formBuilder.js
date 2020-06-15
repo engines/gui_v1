@@ -262,7 +262,7 @@
 //     key: 'form',
 //     // label: false,
 //     control: 'many',
-//     item: 'component',
+//     singular: 'component',
 //     form: app.formBuilderComponent,
 //     dependent: {
 //       key: 'control',
@@ -330,7 +330,7 @@
 //       } ),
 //       a.reset(
 //         app.btn( x.icon( "fa fa-caret-right", 'Done'), (e,el) => {
-//           el.$('^dropzonejs axf-dropzonejs').$dropzone.removeAllFiles()
+//           el.$('^dropzonejs ax-dropzonejs').$dropzone.removeAllFiles()
 //           el.$('^reset').$hide()
 //           el.$('^result message').$text = ""
 //         } ),
@@ -670,7 +670,7 @@
 //         key: 'form',
 //         // label: false,
 //         control: 'many',
-//         item: 'component',
+//         singular: 'component',
 //         form: app.formBuilderComponent,
 //         // layout: "compact",
 //
@@ -702,7 +702,7 @@
 //
 //       f.field( {
 //         key: 'tests',
-//         item: 'test',
+//         singular: 'test',
 //         control: 'many',
 //         form: (ff) => [
 //

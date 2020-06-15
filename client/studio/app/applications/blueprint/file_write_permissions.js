@@ -11,7 +11,7 @@ app.applications.blueprint.file_write_permissions = blueprint => controller => (
       f.field( {
         key: 'file_write_permissions',
         as: 'table',
-        layout: 'vertical',
+        vertical: true,
         label: false,
         // thTag: {
         //   width: '120px',

@@ -25,12 +25,12 @@ app.namespaces.workspace.services.blueprint.scripts = blueprint => controller =>
     ].map( script => f.field( {
       key: script,
       as: 'one',
-      layout: 'vertical',
+      vertical: true,
       form: (ff) => [
         ff.field( {
           key: 'content',
           as: 'code',
-          layout: 'vertical',
+          vertical: true,
           label: false,
           code: {
             mode: {

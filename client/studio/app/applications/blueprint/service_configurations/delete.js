@@ -25,7 +25,7 @@ app.applications.blueprint.service_configurations.delete = blueprint => controll
 
           serviceConfiguration.delete()
 
-          el.$nodes = app.http(
+          el.$nodes = [app.http(
             blueprint.apiEndpoint,
             () => controller.open( '../..' ),
             {
@@ -34,7 +34,7 @@ app.applications.blueprint.service_configurations.delete = blueprint => controll
               headers: { 'Content-type': 'application/json' },
               body:  JSON.stringify( blueprint.output, null, 2 )
             }
-          )
+          )]
 
         },
       } ),

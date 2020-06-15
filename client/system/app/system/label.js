@@ -3,7 +3,7 @@ app.system.label = controller => (a,x) => [
 
   app.http(
     '/~/~/system/system_user/settings',
-    (  settings, el ) => el.$nodes = app.form( {
+    (  settings, el ) => el.$nodes = [app.form( {
       url: '/~/~/system/system_user/settings',
       success: () => location.assign( '/' ),
       object: settings.label,
@@ -12,7 +12,7 @@ app.system.label = controller => (a,x) => [
         f.field( {
           key: 'text',
           label: false,
-          layout: 'vertical',
+          vertical: true,
         } ),
         f.field( {
           key: 'color',
@@ -26,7 +26,7 @@ app.system.label = controller => (a,x) => [
         } ),
         f.buttons(),
       ]
-    } )
+    } )]
   ),
 
 ]

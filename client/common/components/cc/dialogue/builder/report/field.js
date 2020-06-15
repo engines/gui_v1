@@ -5,13 +5,13 @@ cc.dialogue.builder.report.field = ( r, fieldSpec, params ) => {
 
   let field = {
     key: fieldSpec.key,
-    value: fieldSpec.value,
+    value: params[fieldSpec.key],
     layout: fieldSpec.layout,
     help: fieldSpec.help,
     hint: fieldSpec.hint,
     layout: fieldSpec.layout,
-    item: fieldSpec.item,
-    confirmation: fieldSpec.confirmation,
+    // item: fieldSpec.item,
+    // confirmation: fieldSpec.confirmation,
     dependent: fieldSpec.dependent,
     placeholder: fieldSpec.placeholder,
   }

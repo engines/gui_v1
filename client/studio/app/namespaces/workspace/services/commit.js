@@ -11,7 +11,7 @@ app.namespaces.workspace.services.commit = controller => (a,x) => [
         as: 'textarea',
         label: false,
         required: true,
-        layout: 'vertical',
+        vertical: true,
         placeholder: 'Message',
       } ),
       f.buttons( {

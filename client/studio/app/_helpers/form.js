@@ -6,7 +6,7 @@ app.form = ( options={} ) => cc.form( {
     418: ( response, el ) => el.$send( 'app.server.session.timeout' ),
     // 503: ( response, el ) => alert( 'Server not responding.' ),
     'text/terminal': ( response, el ) => response.text().then( result => {
-      el.$nodes = cc.xterm( { text: result } )
+      el.$nodes = [cc.xterm( { text: result } )]
     } ),
     ...options.when
   },

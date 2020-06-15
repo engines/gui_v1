@@ -12,7 +12,7 @@ app.namespaces.workspace.services.new = controller => (a,x) => [
         label: false,
         required: true,
         placeholder: 'Repo URL',
-        layout: 'vertical',
+        vertical: true,
       } ),
       f.buttons( {
         cancel: {

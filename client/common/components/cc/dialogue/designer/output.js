@@ -1,19 +1,19 @@
 cc.dialogue.designer.output = f => f.fieldset( {
-  layout: 'vertical',
+  vertical: true,
   label: false,
   body: [
     f.field( {
       key: 'output',
       as: 'one',
       label: false,
-      layout: 'vertical',
+      vertical: true,
       form: ff => [
         cc.collapse( {
           label: 'Options',
           body: [
             ff.field( {
-              key: 'get',
-              layout: 'vertical',
+              key: 'dig',
+              hint: `dot-separated keys, such as 'user.name'`
             } ),
           ]
         } ),

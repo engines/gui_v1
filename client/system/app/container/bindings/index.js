@@ -8,7 +8,6 @@ app.container.bindings.index = type => controller => (a,x) => {
 
   return [
 
-    a.h5( 'Bindings' ),
     a['div.clearfix']( a['div.float-right']( app.close( controller, 'Close' ) ) ),
     a.br,
     app.http(
@@ -52,7 +51,7 @@ app.container.bindings.index = type => controller => (a,x) => {
             () => controller.open(
               binding.persistent ?
               'persistent' :
-              'nonpersistent', 
+              'nonpersistent',
               {
                 type: binding.type_path,
                 publisher: binding.publisher_namespace,
@@ -77,14 +76,14 @@ app.container.bindings.index = type => controller => (a,x) => {
       a.p( 'Consumers' ),
       app.http(
         `/~/~/containers/service/${ name }/consumers/`,
-        ( consumers, el ) => el.$nodes = x.output( consumers )
+        ( consumers, el ) => el.$nodes = x.out( consumers )
       ),
 
 
       a.p( 'Subservices' ),
       app.http(
         `/~/~/containers/service/${ name }/sub_services`,
-        ( subservices, el ) => el.$nodes = x.output( subservices )
+        ( subservices, el ) => el.$nodes = x.out( subservices )
       ),
 
     ] : null,

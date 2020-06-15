@@ -12,7 +12,7 @@ app.namespaces.definitions.show = controller => (a,x) => [
         ] ),
       ] ),
 
-      x.output( definition.object ),
+      x.out( definition.object ),
 
     ],
     {

@@ -55,14 +55,14 @@ app.system.install.new.form = ( controller, install ) => (a,x) => {
               f.field( {
                 name: 'api_vars[attached_services][][create_type]',
                 label: false,
-                layout: 'vertical',
+                vertical: true,
                 as: 'select',
                 selections: service.create_types,
               } ),
               f.field( {
                 name: 'api_vars[attached_services][][share]',
                 label: false,
-                layout: 'vertical',
+                vertical: true,
                 as: 'select',
                 placeholder: 'Share...',
                 required: true,
@@ -76,7 +76,7 @@ app.system.install.new.form = ( controller, install ) => (a,x) => {
               f.field( {
                 name: 'api_vars[attached_services][][adopt]',
                 label: false,
-                layout: 'vertical',
+                vertical: true,
                 as: 'select',
                 placeholder: 'Adopt...',
                 required: true,
@@ -139,14 +139,14 @@ app.system.install.new.form = ( controller, install ) => (a,x) => {
       //     ff.field( {
       //       key: 'create_type',
       //       label: false,
-      //       layout: 'vertical',
+      //       vertical: true,
       //       as: 'select',
       //       selections: ff.object.create_types,
       //     } ),
       //     ff.field( {
       //       key: 'share',
       //       label: false,
-      //       layout: 'vertical',
+      //       vertical: true,
       //       as: 'select',
       //       placeholder: 'Share...',
       //       required: true,
@@ -156,7 +156,7 @@ app.system.install.new.form = ( controller, install ) => (a,x) => {
       //     ff.field( {
       //       key: 'adopt',
       //       label: false,
-      //       layout: 'vertical',
+      //       vertical: true,
       //       as: 'select',
       //       placeholder: 'Adopt...',
       //       required: true,
@@ -173,7 +173,7 @@ app.system.install.new.form = ( controller, install ) => (a,x) => {
       f.field( {
         key: 'variables',
         as: 'one',
-        layout: 'vertical',
+        vertical: true,
         label: false,
         form: (ff) => [
           ff.object.map( variable => ff.field( variable ) )

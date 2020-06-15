@@ -63,7 +63,7 @@ app.applications.blueprint.dialogues.show = blueprint => controller => (a,x) => 
             controller.open( 'parameters' )
           },
         } ),
-        x.output( dialogue.parameters.output() ),
+        x.out( dialogue.parameters.output() ),
 
         a.hr,
         app.button( {
@@ -73,7 +73,7 @@ app.applications.blueprint.dialogues.show = blueprint => controller => (a,x) => 
             controller.open( 'components' )
           },
         } ),
-        x.output( dialogue.components.output() ),
+        x.out( dialogue.components.output() ),
 
         a.hr,
         app.button( {
@@ -83,7 +83,7 @@ app.applications.blueprint.dialogues.show = blueprint => controller => (a,x) => 
             controller.open( 'tests' )
           },
         } ),
-        x.output( dialogue.tests.output() ),
+        x.out( dialogue.tests.output() ),
 
       ]
     } ),

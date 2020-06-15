@@ -14,7 +14,7 @@ app.applications.blueprint.service_configurations.new_type = blueprint => contro
             required: true,
             as: 'select',
             label: false,
-            layout: 'vertical',
+            vertical: true,
             selections: types,
           } ),
           app.button( {

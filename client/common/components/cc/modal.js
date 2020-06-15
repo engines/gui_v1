@@ -1,7 +1,7 @@
 cc.modal = ( options={} ) => (a,x) => a['app-modal'](
   a['div.modal'](
     a['div.modal-dialog'](
-      a['div.modal-content'](),
+      a['div.modal-content'],
     ), {
     tabindex: -1,
     }

@@ -11,13 +11,13 @@ app.applications.blueprint.custom_php_inis = blueprint => controller => (a,x) =>
       f.field( {
         key: 'custom_php_inis',
         as: 'many',
-        layout: 'vertical',
+        vertical: true,
         label: false,
         form: (ff) => [
           ff.field( {
             key: 'content',
             as: 'code',
-            layout: 'vertical',
+            vertical: true,
             label: false,
             code: { mode: 'php' },
           } ),

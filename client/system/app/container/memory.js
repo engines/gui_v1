@@ -24,7 +24,7 @@ app.container.memory = type => controller => (a,x) => {
                 as: 'input/number',
                 hint: 'Megabytes',
                 label: false,
-                layout: 'vertical',
+                vertical: true,
               } ),
               f.buttons(),
             ]

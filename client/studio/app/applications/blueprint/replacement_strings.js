@@ -11,7 +11,7 @@ app.applications.blueprint.replacement_strings = blueprint => controller => (a,x
       f.field( {
         key: 'replacement_strings',
         as: 'many',
-        layout: 'vertical',
+        vertical: true,
         label: false,
         form: (ff) => [
           ff.field( {

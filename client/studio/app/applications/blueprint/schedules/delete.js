@@ -25,7 +25,7 @@ app.applications.blueprint.schedules.delete = blueprint => controller => (a,x) =
 
           schedule.delete()
 
-          el.$nodes = app.http(
+          el.$nodes = [app.http(
             blueprint.apiEndpoint,
             () => controller.open( '../..' ),
             {
@@ -34,7 +34,7 @@ app.applications.blueprint.schedules.delete = blueprint => controller => (a,x) =
               headers: { 'Content-type': 'application/json' },
               body:  JSON.stringify( blueprint.output, null, 2 )
             }
-          )
+          )]
 
         },
       } ),

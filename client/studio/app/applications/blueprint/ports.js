@@ -11,12 +11,13 @@ app.applications.blueprint.ports = blueprint => controller => (a,x) => [
       f.field( {
         key: 'ports',
         as: 'table',
-        layout: 'vertical',
+        vertical: true,
         label: false,
         form: (ff) => [
           ff.field( {
             key: 'port',
             required: true,
+            hint: "0 to 65535 (or a range, e.g. 5000-5100)",
           } ),
           ff.field( {
             key: 'external',

@@ -30,7 +30,7 @@ app.namespaces.workspace.services.blueprint.configurators.variables.index = blue
     //     r.field( {
     //       key: 'variables',
     //       as: 'many',
-    //       layout: 'vertical',
+    //       vertical: true,
     //
     //       report: (rr) => app.button( {
     //         label: `${ rr.index + 1 }. ${ rr.object.name }`,

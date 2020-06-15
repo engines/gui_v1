@@ -4,10 +4,10 @@
 //     asyncformTag: {
 //       ...options.asyncformTag,
 //       $on: {
-//         'axf.appkit.http.complete': (e,el) => {
+//         'ax.appkit.http.complete': (e,el) => {
 //           el.$$('button[type="submit"]').$revert()
 //         },
-//         'axf.appkit.form.control.invalid': (e,el) => {
+//         'ax.appkit.form.control.invalid': (e,el) => {
 //           debugger
 //           el.$$('button[type="submit"]').$revert()
 //         },

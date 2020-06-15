@@ -1,4 +1,4 @@
-app.system.restart = controller => (a,x) => [
+app.system.restart = controller => (a,x) => a['app-system-restart']([
 
   a.h3( "Restart system" ),
 
@@ -25,4 +25,4 @@ app.system.restart = controller => (a,x) => [
     { class: 'btn btn-primary' }
   ),
 
-]
+])

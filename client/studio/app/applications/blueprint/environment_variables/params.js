@@ -15,7 +15,7 @@
 //         f.field( {
 //           key: 'params',
 //           as: 'many',
-//           layout: 'vertical',
+//           vertical: true,
 //           label: false,
 //           form: (ff) => [
 //             ff.field( {

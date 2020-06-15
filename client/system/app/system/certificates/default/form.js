@@ -8,7 +8,7 @@
 //     f.field( {
 //       key: 'default_certificate',
 //       label: false,
-//       layout: 'vertical',
+//       vertical: true,
 //       as: 'select',
 //       selections: Object.keys( defaultcertificate.certificates ),
 //       required: 'required',

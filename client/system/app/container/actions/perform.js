@@ -17,7 +17,7 @@ app.container.actions.perform = ( controller, containerPath, action ) => (a,x) =
       ],
       asyncformTag: {
         $on: {
-          'axf.appkit.http.success': (e,el) => {
+          'ax.appkit.http.success': (e,el) => {
             el.$('|appkit-asyncform-body').$nodes = app.btn(
               app.icon( 'fa fa-check', 'OK' ),
               () => controller.open( '..' ),

@@ -21,7 +21,7 @@ app.application.icon = controller => (a,x) => {
                 key: 'icon_url',
                 as: 'input/url',
                 label: false,
-                layout: 'vertical',
+                vertical: true,
               } ),
               f.buttons(),
             ]

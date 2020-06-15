@@ -54,7 +54,7 @@ form = ( controller, blueprint, actionator ) => (a,x) => {
             ff.field( {
               key: 'content',
               label: false,
-              layout: 'vertical',
+              vertical: true,
               as: 'code',
               code: {
                 mode: {

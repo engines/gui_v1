@@ -1,22 +1,22 @@
 cc.dialogue.designer.markdown = f => f.fieldset( {
-  layout: 'vertical',
+  vertical: true,
   label: false,
   body: [
     f.field( {
       key: 'markdown',
       as: 'one',
       label: false,
-      layout: 'vertical',
+      vertical: true,
       form: ff => [
-        cc.collapse( {
-          label: 'Options',
-          body: [
-            ff.field( {
-              key: 'get',
-              layout: 'vertical',
-            } ),
-          ]
-        } ),
+        // cc.collapse( {
+        //   label: 'Options',
+        //   body: [
+        //     ff.field( {
+        //       key: 'get',
+        //       vertical: true,
+        //     } ),
+        //   ]
+        // } ),
         cc.collapse( {
           label: 'Template',
           body: [
@@ -24,7 +24,7 @@ cc.dialogue.designer.markdown = f => f.fieldset( {
               key: 'template',
               as: 'markdown',
               label: false,
-              layout: 'vertical',
+              vertical: true,
             } ),
           ]
         } ),

@@ -13,7 +13,7 @@ app.system.domains.remove = controller => (a,x) => [
           f.field( {
             key: 'domain',
             label: false,
-            layout: 'vertical',
+            vertical: true,
             as: 'select',
             selections: Object.keys( domains ),
             placeholder: 'Select domain...',

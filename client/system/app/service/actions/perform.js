@@ -15,7 +15,7 @@ app.service.actions.perform = type => controller => (a,x) => {
           definition, [ 'service_actionators' ], {}
         )[ actionName ]
 
-        el.$nodes = app.container.actions.perform( controller, containerPath, action )
+        el.$nodes = [app.container.actions.perform( controller, containerPath, action )]
 
       },
       {

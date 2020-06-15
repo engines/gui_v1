@@ -11,21 +11,21 @@ app.applications.blueprint.template_files = blueprint => controller => (a,x) => 
       f.field( {
         key: 'template_files',
         as: 'many',
-        layout: 'vertical',
+        vertical: true,
         label: false,
         form: (ff) => [
 
           ff.field( {
             key: 'path',
             required: true,
-            layout: 'vertical',
+            vertical: true,
             hint: 'Relative to /home/ ( except when path prefixed with /usr/local/ or /home/ ).',
           } ),
 
           ff.field( {
             key: 'content',
             as: 'code',
-            layout: 'vertical',
+            vertical: true,
             code: {
               mode: {
                 value: app.codemirrorMode( ff.object.content_mode ),

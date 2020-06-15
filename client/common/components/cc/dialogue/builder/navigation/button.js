@@ -28,10 +28,23 @@ cc.dialogue.builder.navigation.button = ( buttonSpec, params ) => {
     button.label = ax.x.lib.text.labelize( buttonSpec.dialogue || 'main' )
   }
 
-  button.onclick = (e,el) => el.$send(
-    'app-container-dialogue-navigation',
-    { detail: { dialogue: buttonSpec.dialogue || 'main', params: params } }
-  )
+  button.onclick = (e,el) => {
+
+    let whitelist = buttonSpec.parameters || []
+
+    let sendParams = Object.keys( params )
+      .filter( key => whitelist.includes( key ) )
+      .reduce( ( object, key ) => {
+        object[key] = params[key]
+        return object
+      }, {} )
+
+    el.$send(
+      'app-container-dialogue-navigation',
+      { detail: { dialogue: buttonSpec.dialogue || 'main', params: sendParams } }
+    )
+
+  }
 
   return (a,x) => x.button(
     cc.dialogue.builder.navigation.button.options( button )

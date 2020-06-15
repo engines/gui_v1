@@ -15,7 +15,7 @@ let enginesFieldV1 = ( variable ) => {
     check_boxes: 'checkboxes',
     checkboxes: 'checkboxes',
     checkbox: 'checkbox',
-    checkbox_boolean: 'check',
+    checkbox_boolean: 'checkbox',
     date: 'input/date',
     datetime: 'input/datetime',
     decimal: 'input/decimal',
@@ -40,17 +40,16 @@ let enginesFieldV1 = ( variable ) => {
     uuid: 'input/url',
   }[ input.type ] // || `${ input.type || '' }`
 
-
   return {
    key: `${ variable.name || '' }`,
    value: `${ variable.value || '' }`,
    as: as,
    // unchecked: input.type === 'checkbox_boolean' ? false : '',
-   checked: as === 'check' ? 'true' : undefined,
+   checked: as === 'checkbox' ? 'true' : undefined,
    confirmation: input.type === 'password_with_confirmation',
    label: `${ input.label || '' }`,
    required: variable.mandatory ? 'required' : undefined,
-   pattern: `${ validation.pattern || '.*' }`,
+   pattern: `${ validation.pattern || '' }`,
    invalid: `${ validation.message || '' }`,
    help: `${ input.comment || '' }`,
    hint: `${ input.hint || '' }`,

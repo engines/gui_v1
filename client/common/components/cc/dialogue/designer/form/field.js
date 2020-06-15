@@ -1,387 +1,452 @@
-cc.dialogue.designer.form.field = (f) => [
+cc.dialogue.designer.form.field = f => f.field( {
+  key: 'field',
+  as: 'one',
+  label: false,
+  vertical: true,
+  dependent: {
+    key: 'type',
+    pattern: '^field$',
+  },
+  form: ff => [
 
-  f.field( {
-    key: 'key',
-  } ),
+    ff.field( {
+      key: 'key',
+    } ),
 
-  f.field( {
-    key: 'control',
-    as: 'select',
-    placeholder: ' ',
-    selections: [
-      { value: 'string', label: 'String' },
-      { value: 'select', label: 'Select' },
-      { value: 'text', label: 'Text' },
-      { disabled: 'hr' },
-      { value: 'checkbox', label: 'Checkbox' },
-      { value: 'checkboxes', label: 'Checkboxes' },
-      { value: 'radios', label: 'Radio buttons' },
-      { disabled: 'hr' },
-      { value: 'hidden', label: 'Hidden' },
-      { value: 'password', label: 'Password' },
-      { disabled: 'hr' },
-      { value: 'combobox', label: 'Combo box' },
-      { value: 'multiselect', label: 'Multi select' },
-      { disabled: 'hr' },
-      { value: 'number', label: 'Number' },
-      { value: 'url', label: 'URL' },
-      { value: 'email', label: 'Email' },
-      { value: 'color', label: 'Color' },
-      { value: 'date', label: 'Date' },
-      { value: 'tel', label: 'Telephone' },
-      { value: 'time', label: 'Time' },
-      { disabled: 'hr' },
-      { value: 'markdown', label: 'Markdown' },
-      { value: 'code', label: 'Code' },
-      { disabled: 'hr' },
-      { value: 'country', label: 'Country' },
-      { value: 'language', label: 'Language' },
-      { value: 'timezone', label: 'Timezone' },
-      // { value: 'uri', label: 'URI' },
-      { disabled: 'hr' },
-      { value: 'json', label: 'JSON' },
-      { disabled: 'hr' },
-      { value: 'one', label: 'One' },
-      { value: 'many', label: 'Many' },
-      { value: 'table', label: 'Table' },
-    ],
-  } ),
+    cc.collapse( {
+      label: 'Options',
+      body: [
 
-  cc.collapse( {
-    label: 'Options',
-    body: [
-
-      f.fieldset( {
-        layout: 'vertical',
-        label: false,
-        body: [
-
-          f.field( {
-            key: 'label',
-            as: 'one',
-            form: (ff) => [
-              ff.field( {
-                key: 'display',
-                layout: 'vertical',
-                label: false,
-                as: 'select',
-                selections: {
-                  '': 'Default',
-                  custom: 'Custom',
-                  none: 'None',
-                }
-              } ),
-              ff.field( {
-                key: 'custom',
-                layout: 'vertical',
-                label: false,
-                // required: true,
-                // placeholder: 'Required',
-                dependent: {
-                  key: 'display',
-                  value: 'custom'
-                }
-              } ),
-            ],
-          } ),
-
-          f.field( {
-            key: 'layout',
-            as: 'checkbox',
-            checked: 'vertical',
-            checkbox: { label: 'Vertical' },
-          } ),
-
-          f.field( {
-            key: 'help',
-            as: 'markdown',
-          } ),
-
-          f.field( {
-            key: 'hint',
-          } ),
-
-        ],
-        dependent: {
+        ff.field( {
           key: 'control',
-          pattern: '^(?!hidden).*$',
-        },
-      } ),
+          as: 'select',
+          placeholder: 'Default',
+          selections: [
+            { value: 'string', label: 'String' },
+            { value: 'select', label: 'Select' },
+            { value: 'text', label: 'Text' },
+            { disabled: 'hr' },
+            { value: 'checkbox', label: 'Checkbox' },
+            { value: 'checkboxes', label: 'Checkboxes' },
+            { value: 'radios', label: 'Radio buttons' },
+            { disabled: 'hr' },
+            { value: 'hidden', label: 'Hidden' },
+            { value: 'password', label: 'Password' },
+            { disabled: 'hr' },
+            { value: 'combobox', label: 'Combo box' },
+            { value: 'multiselect', label: 'Multi select' },
+            { disabled: 'hr' },
+            { value: 'number', label: 'Number' },
+            { value: 'url', label: 'URL' },
+            { value: 'email', label: 'Email' },
+            { value: 'color', label: 'Color' },
+            { value: 'date', label: 'Date' },
+            { value: 'tel', label: 'Telephone' },
+            { value: 'time', label: 'Time' },
+            { disabled: 'hr' },
+            { value: 'markdown', label: 'Markdown' },
+            { value: 'code', label: 'Code' },
+            { disabled: 'hr' },
+            { value: 'country', label: 'Country' },
+            { value: 'language', label: 'Language' },
+            { value: 'timezone', label: 'Timezone' },
+            // { value: 'uri', label: 'URI' },
+            { disabled: 'hr' },
+            { value: 'json', label: 'JSON' },
+            { disabled: 'hr' },
+            { value: 'one', label: 'One' },
+            { value: 'many', label: 'Many' },
+            { value: 'table', label: 'Table' },
+          ],
+        } ),
 
-      f.field( {
-        key: 'placeholder',
-        dependent: {
-          key: 'control',
-          pattern: '^(?!(hidden|checkbox|checkboxes|radios|one|many|table|json)$)(\w*)',
-        }
-      } ),
+        ff.fieldset( {
+          vertical: true,
+          label: false,
+          body: [
 
-      f.field( {
-        key: 'dependent',
-        as: 'one',
-        form: (ff) => ff.row( { columns: [
-          ff.field( {
-            key: 'target',
-          } ),
-          ff.field( {
-            key: 'pattern',
-          } ),
-        ] } ),
-      } ),
-
-      f.field( {
-        key: 'validation',
-        as: 'one',
-        form: (ff) => [
-          ff.field( {
-            key: 'required',
-            as: 'checkbox',
-            // checked: 'required',
-            // dependent: {
-            //   key: '[..]control',
-            //   pattern: '^(string|password|select|combobox|checkbox)$',
-            // },
-          } ),
-          ff.fieldset( {
-            layout: 'vertical',
-            label: false,
-            body: ff.row( { columns: [
-              ff.field( {
-                key: 'min',
-                as: 'input/number',
-              } ),
-              ff.field( {
-                key: 'max',
-                as: 'input/number',
-              } ),
-              ff.field( {
-                key: 'step',
-                as: 'input/number',
-              } ),
-            ] } ),
-            dependent: {
-              key: '[..]control',
-              pattern: '^number$',
-            },
-          } ),
-          ff.fieldset( {
-            layout: 'vertical',
-            label: false,
-            body: ff.row( { columns: [
-              ff.field( {
-                key: 'minlength',
-                label: 'Min length',
-                as: 'input/number',
-              } ),
-              ff.field( {
-                key: 'maxlength',
-                label: 'Max length',
-                as: 'input/number',
-              } ),
-            ] } ),
-            dependent: {
-              key: '[..]control',
-              pattern: '^(string|password|combobox)$',
-            },
-          } ),
-          ff.field( {
-            key: 'pattern',
-            dependent: {
-              key: '[..]control',
-              pattern: '^(string|password|combobox)$',
-            },
-          } ),
-          ff.field( {
-            key: 'message',
-          } ),
-        ],
-        dependent: {
-          key: 'control',
-          pattern: '^(string|select|text|checkbox|checkboxes|radios|password|combobox|color|date|email|number|tel|time|url|code|markdown|country|language|timezone)$',
-        },
-
-      } ),
-
-      f.field( {
-        key: 'value',
-        label: 'Default value',
-        dependent: {
-          key: 'control',
-          pattern: '^(?!(one|many|table)$).*$',
-        }
-      } ),
-
-      f.field( {
-        key: 'selections',
-        as: 'one',
-        form: (ff) => [
-          ff.field( {
-            key: 'type',
-            as: 'select',
-            selections: { '':'', static: 'Static', dynamic: 'Dynamic' },
-          } ),
-          ff.field( {
-            key: 'static',
-            label: false,
-            layout: 'vertical',
-            as: 'table',
-            item: 'selection',
-            form: (fff) => [
-              fff.field( { key: 'value' } ),
-              fff.field( { key: 'label' } ),
-            ],
-            dependent: {
-              key: 'type',
-              value: 'static',
-            }
-          } ),
-          ff.field( {
-            key: 'key',
-            // placeholder: 'Required',
-            dependent: {
-              key: 'type',
-              pattern: '^dynamic$',
-            }
-          } ),
-        ],
-        dependent: {
-          key: 'control',
-          pattern: '^(select|radios|checkboxes|multiselect|combobox)$',
-        }
-      } ),
-
-      f.fieldset( {
-        // key: 'nest',
-        // as: 'one',
-        // label: false,
-        layout: 'vertical',
-        body: [
-          f.field( {
-            key: 'item',
-          } ),
-          f.field( {
-            key: 'static',
-            as: 'checkbox',
-            // value: 'on',
-            label: false,
-            checkbox: { label: 'Addable' },
-          } ),
-        ],
-        dependent: {
-          key: 'control',
-          pattern: '^(many|table)$',
-        }
-      } ),
-
-      f.field( {
-        key: 'checkbox',
-        as: 'one',
-        form: (ff) => [
-          ff.row( { columns: [
             ff.field( {
               key: 'label',
-              layout: 'vertical',
+              as: 'one',
+              form: (fff) => [
+                fff.field( {
+                  key: 'type',
+                  vertical: true,
+                  label: false,
+                  as: 'select',
+                  placeholder: 'Default',
+                  selections: {
+                    custom: 'Custom',
+                    none: 'None',
+                  }
+                } ),
+                fff.field( {
+                  key: 'custom',
+                  vertical: true,
+                  label: false,
+                  dependent: {
+                    key: 'type',
+                    value: 'custom'
+                  }
+                } ),
+              ],
+            } ),
+
+            ff.field( {
+              key: 'layout',
+              as: 'checkbox',
+              checked: 'vertical',
+              checkbox: { label: 'Vertical' },
+            } ),
+
+            ff.field( {
+              key: 'help',
+              as: 'markdown',
+            } ),
+
+            ff.field( {
+              key: 'hint',
+            } ),
+
+          ],
+          dependent: {
+            key: 'control',
+            pattern: '^(?!hidden).+$',
+          },
+        } ),
+
+        ff.field( {
+          key: 'placeholder',
+          dependent: {
+            key: 'control',
+            pattern: '^(?!(hidden|checkbox|checkboxes|radios|one|many|table|json)$).+',
+          }
+        } ),
+
+        ff.field( {
+          key: 'dependent',
+          as: 'many',
+          singular: 'dependency',
+          form: (fff) => fff.row( { columns: [
+            fff.field( {
+              key: 'target',
+            } ),
+            fff.field( {
+              key: 'pattern',
+            } ),
+          ] } ),
+          dependent: {
+            key: 'control',
+            pattern: '^.+$',
+          }
+        } ),
+
+        ff.field( {
+          key: 'validation',
+          as: 'one',
+          form: (fff) => [
+            fff.field( {
+              key: 'required',
+              as: 'checkbox',
+            } ),
+            fff.fieldset( {
+              vertical: true,
+              label: false,
+              body: fff.row( { columns: [
+                fff.field( {
+                  key: 'min',
+                  as: 'input/number',
+                } ),
+                fff.field( {
+                  key: 'max',
+                  as: 'input/number',
+                } ),
+                fff.field( {
+                  key: 'step',
+                  as: 'input/number',
+                } ),
+              ] } ),
+              dependent: {
+                key: '[..]control',
+                pattern: '^number$',
+              },
+            } ),
+            fff.fieldset( {
+              vertical: true,
+              label: false,
+              body: fff.row( { columns: [
+                fff.field( {
+                  key: 'minlength',
+                  label: 'Min length',
+                  as: 'input/number',
+                } ),
+                fff.field( {
+                  key: 'maxlength',
+                  label: 'Max length',
+                  as: 'input/number',
+                } ),
+              ] } ),
+              dependent: {
+                key: '[..]control',
+                pattern: '^(string|password|combobox)$',
+              },
+            } ),
+            fff.field( {
+              key: 'pattern',
+              dependent: {
+                key: '[..]control',
+                pattern: '^(string|password|combobox)$',
+              },
+            } ),
+            fff.field( {
+              key: 'message',
+            } ),
+          ],
+          dependent: {
+            key: 'control',
+            pattern: '^(string|select|text|checkbox|checkboxes|radios|password|combobox|color|date|email|number|tel|time|url|code|markdown|country|language|timezone)$',
+          },
+
+        } ),
+
+        ff.field( {
+          key: 'value',
+          label: 'Default value',
+          dependent: {
+            key: 'control',
+            pattern: '^(?!(one|many|table)$).+$',
+          }
+        } ),
+
+        ff.field( {
+          key: 'selections',
+          as: 'one',
+          form: (fff) => [
+            fff.field( {
+              key: 'type',
+              vertical: true,
+              label: false,
+              as: 'select',
+              placeholder: 'None',
+              selections: { static: 'Static', dynamic: 'Dynamic' },
+            } ),
+            fff.field( {
+              key: 'static',
+              label: false,
+              vertical: true,
+              as: 'table',
+              singular: 'selection',
+              form: (ffff) => [
+                ffff.field( { key: 'value' } ),
+                ffff.field( { key: 'label' } ),
+              ],
+              dependent: {
+                key: 'type',
+                value: 'static',
+              }
+            } ),
+            fff.field( {
+              key: 'dig',
+              hint: `dot-separated keys, such as 'account.profiles'`,
+              dependent: {
+                key: 'type',
+                pattern: '^dynamic$',
+              }
+            } ),
+          ],
+          dependent: {
+            key: 'control',
+            pattern: '^(select|radios|checkboxes|multiselect|combobox)$',
+          }
+        } ),
+
+        ff.field( {
+          key: 'datalist',
+          as: 'one',
+          dependent: {
+            key: 'control',
+            pattern: '^(string|number|url|email|color|date|tel|time)$',
+          },
+          form: fff => [
+            fff.field( {
+              key: 'type',
+              vertical: true,
+              label: false,
+              as: 'select',
+              placeholder: 'None',
+              selections: { static: 'Static', dynamic: 'Dynamic' },
+            } ),
+            fff.field( {
+              key: 'static',
+              label: false,
+              vertical: true,
+              collection: true,
+              singular: 'selection',
+              dependent: {
+                key: 'type',
+                value: 'static',
+              }
+            } ),
+            fff.field( {
+              key: 'dig',
+              hint: `dot-separated keys, such as 'account.profiles'`,
+              dependent: {
+                key: 'type',
+                pattern: '^dynamic$',
+              }
+            } ),
+          ]
+        } ),
+
+        ff.field( {
+          key: 'collection',
+          as: 'checkbox',
+          checkbox: { label: 'Show multiple controls' },
+          dependent: {
+            key: 'control',
+            pattern: '^(?!(checkbox|checkboxes|radios|multiselect|one|many|table)$).+$',
+          }
+        } ),
+
+        ff.fieldset( {
+          label: 'Items',
+          body: [
+            ff.field( {
+              key: 'singular',
+              hint: "singular inflection for an item, such as 'pet' when key is 'pets'",
             } ),
             ff.field( {
-              key: 'checked',
-              layout: 'vertical',
+              key: 'confined',
+              as: 'checkbox',
+              label: false,
+              vertical: true,
+              checkbox: { label: 'Confined' },
+              hint: "items can't be added or removed",
             } ),
-            // ff.field( {
-            //   key: 'unchecked',
-            //   layout: 'vertical',
-            // } ),
-          ] } ),
-        ],
-        dependent: {
-          key: 'control',
-          value: 'checkbox',
-        },
-      } ),
-
-      f.fieldset( {
-        layout: 'vertical',
-        label: false,
-        body: [
-
-          f.field( {
-            key: 'confirm',
-            as: 'checkbox',
-            checkbox: {
-              label: 'Show confirmation',
+            ff.field( {
+              key: 'stationary',
+              as: 'checkbox',
+              label: false,
+              vertical: true,
+              checkbox: { label: 'Stationary' },
+              hint: "items can't be sorted",
+            } ),
+          ],
+          dependent: [
+            {
+              key: 'control',
+              pattern: '^(many|table)$',
             },
-          } ),
-
-          f.field( {
-            key: 'confirmation',
-            as: 'one',
-            label: false,
-            form: (ff) => [
-              ff.field( {
-                key: 'placeholder',
-              } ),
-            ],
-            dependent: {
-              key: 'confirm',
-              value: 'on',
+            {
+              key: 'collection',
             },
-          } ),
-
-        ],
-        dependent: {
-          key: 'control',
-          value: 'password',
-        },
-      } ),
-
-      f.field( {
-        key: 'code',
-        as: 'one',
-        form: (ff) => [
-          ff.field( {
-            key: 'mode',
-            as: 'select',
-            selections: {
-              '': '',
-              shell: 'Shell',
-              javascript: 'JavaScript',
-              ruby: 'Ruby',
-              python: 'Python',
-              xml: 'XML',
-              yaml: 'YAML',
-            },
-          } ),
-        ],
-        dependent: {
-          key: 'control',
-          value: 'code',
-        },
-      } ),
-
-    ]
-  } ),
-
-  f.fieldset( {
-    layout: 'vertical',
-    label: false,
-    body: cc.collapse( {
-      label: 'Nest',
-      body: [
-        f.field( {
-          key: 'components',
-          label: false,
-          layout: 'vertical',
-          as: 'many',
-          item: 'form component',
-          form: cc.dialogue.designer.form.component,
+          ],
         } ),
+
+        ff.field( {
+          key: 'checkbox',
+          as: 'one',
+          form: (fff) => [
+            fff.row( { columns: [
+              fff.field( {
+                key: 'label',
+                vertical: true,
+              } ),
+              fff.field( {
+                key: 'checked',
+                vertical: true,
+              } ),
+            ] } ),
+          ],
+          dependent: {
+            key: 'control',
+            value: 'checkbox',
+          },
+        } ),
+
+        ff.fieldset( {
+          vertical: true,
+          label: false,
+          body: [
+
+            ff.field( {
+              key: 'confirm',
+              as: 'checkbox',
+              checkbox: {
+                label: 'Show secondary input',
+              },
+            } ),
+
+            ff.field( {
+              key: 'confirmation',
+              as: 'one',
+              label: false,
+              form: (fff) => [
+                fff.field( {
+                  key: 'placeholder',
+                } ),
+              ],
+              dependent: {
+                key: 'confirm',
+                value: 'on',
+              },
+            } ),
+
+          ],
+          dependent: {
+            key: 'control',
+            value: 'password',
+          },
+        } ),
+
+        ff.field( {
+          key: 'code',
+          as: 'one',
+          form: (fff) => [
+            fff.field( {
+              key: 'mode',
+              as: 'select',
+              selections: {
+                '': '',
+                shell: 'Shell',
+                javascript: 'JavaScript',
+                ruby: 'Ruby',
+                python: 'Python',
+                xml: 'XML',
+                yaml: 'YAML',
+              },
+            } ),
+          ],
+          dependent: {
+            key: 'control',
+            value: 'code',
+          },
+        } ),
+
       ]
     } ),
-    dependent: {
-      key: 'control',
-      pattern: '^(one|many|table)$',
-    }
-  } ),
 
+    ff.fieldset( {
+      vertical: true,
+      label: false,
+      body: cc.collapse( {
+        label: 'Components',
+        body: [
+          ff.field( {
+            key: 'components',
+            label: false,
+            vertical: true,
+            as: 'many',
+            singular: 'form component',
+            form: cc.dialogue.designer.form.component,
+          } ),
+        ]
+      } ),
+      dependent: {
+        key: 'control',
+        pattern: '^(one|many|table)$',
+      }
+    } ),
 
-
-]
+  ]
+} )

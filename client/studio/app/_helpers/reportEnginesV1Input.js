@@ -1,7 +1,7 @@
 app.reportEnginesV1Input = r => (a,x) => r.field( {
   key: 'input',
   as: 'one',
-  layout: 'vertical',
+  vertical: true,
   report: (rr) => [
     rr.field( {
       key: 'type',
@@ -39,7 +39,7 @@ app.reportEnginesV1Input = r => (a,x) => r.field( {
       report: (rrr) => [
 
         a.div( Object.keys( rrr.object.items ).length ?
-          x.output( rrr.object.items ) :
+          x.out( rrr.object.items ) :
           a.i( 'None' ),
           {
             class: 'well d-block',
@@ -51,7 +51,7 @@ app.reportEnginesV1Input = r => (a,x) => r.field( {
         //   key: 'items',
         //   as: 'table',
         //   label: false,
-        //   layout: 'vertical',
+        //   vertical: true,
         //   report: (rrrr) => [
         //     rrrr.field( {
         //       key: 'value',

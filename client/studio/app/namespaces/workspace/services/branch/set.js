@@ -16,7 +16,7 @@ app.namespaces.workspace.services.branch.set = controller => (a,x) => [
             customValueLabel: '+ New branch',
             label: false,
             required: true,
-            layout: 'vertical',
+            vertical: true,
             selections: f.object.all,
             // placeholder: 'Select branch',
           } ),

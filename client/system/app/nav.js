@@ -61,9 +61,6 @@ app.nav = controller => (a,x) => a['app-nav']( [
   $open: function( path ) {
     controller.open( path )
   },
-  $reopen: function() {
-    controller.reopen()
-  },
   $load: function( path ) {
     controller.load( path )
   },

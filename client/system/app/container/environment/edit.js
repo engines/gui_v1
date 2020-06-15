@@ -19,7 +19,7 @@ app.container.environment.edit = type => controller => (a,x) => {
           readonly: environment_variable.immutable || undefined,
         } ) )
 
-        el.$nodes = app.form( {
+        el.$nodes = [app.form( {
           url: `${ path }/properties/runtime`,
           object: container,
           success: () => controller.open( '..' ),
@@ -29,7 +29,7 @@ app.container.environment.edit = type => controller => (a,x) => {
             fields.map( field => f.field( field ) ),
             f.buttons(),
           ]
-        } )
+        } )]
 
       },
       {

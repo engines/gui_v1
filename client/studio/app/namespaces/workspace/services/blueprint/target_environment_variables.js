@@ -11,7 +11,7 @@ app.namespaces.workspace.services.blueprint.target_environment_variables = bluep
       f.field( {
         key: 'target_environment_variables',
         as: 'table',
-        layout: 'vertical',
+        vertical: true,
         label: false,
         form: (ff) => [
           ff.field( {

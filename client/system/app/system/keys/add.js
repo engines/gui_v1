@@ -11,7 +11,7 @@ app.system.keys.add = controller => (a,x) => [
       f.field( {
         key: 'key_name',
         label: false,
-        layout: 'vertical',
+        vertical: true,
         required: 'required',
       } ),
 

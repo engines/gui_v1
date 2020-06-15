@@ -1,16 +1,17 @@
 cc.tree = data => (a,x) => a['div.tree'](
-  a.ul( cc.tree.branch( data ) )
+  cc.tree.branch( data )
 )
 
-cc.tree.branch = data => (a,x) => a.li( [
+cc.tree.branch = data => (a,x) => a['div.tree-branch']( [
 
   cc.button( {
     label: a['button-icon-toggler'](
-      ( el, state ) => app.icon(
-        `fa fa-caret-${ state ? 'down' : 'right' }`,
-        data.name
-      ),
+      null,
       {
+        $nodes: ( el, state ) => app.icon(
+          `fa fa-caret-${ state ? 'down' : 'right' }`,
+          data.name
+        ),
         $state: false,
         $toggle: function() {
           this.$state = !this.$state
@@ -23,9 +24,9 @@ cc.tree.branch = data => (a,x) => a.li( [
     }
   } ),
 
-  a.ul( [
-    a.li( x.output( data.content ) ),
-    data.children.map( child => a.li( cc.tree.branch( child ) ) ),
+  a['div.tree-data.pl-2']( [
+    a['div.tree-content']( x.out( data.content ) ),
+    a['div.tree-branches']( data.children.map( child => cc.tree.branch( child ))),
   ], {
     style: { display: 'none' },
   } ),

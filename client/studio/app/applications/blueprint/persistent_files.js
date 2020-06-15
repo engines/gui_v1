@@ -11,7 +11,7 @@ app.applications.blueprint.persistent_files = blueprint => controller => (a,x) =
       f.field( {
         key: 'persistent_files',
         as: 'table',
-        layout: 'vertical',
+        vertical: true,
         label: false,
         form: (ff) => [
           ff.field( {

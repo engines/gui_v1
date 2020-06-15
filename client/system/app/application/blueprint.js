@@ -8,7 +8,7 @@ app.application.blueprint = controller => (a,x) => {
     a['div.clearfix']( a['div.float-right']( app.close( controller, 'Close' ) ) ),
     app.http(
       `/~/~/containers/engine/${ name }/blueprint`,
-      ( blueprint, el ) => el.$nodes = x.output( blueprint ),
+      ( blueprint, el ) => el.$nodes = x.out( blueprint ),
       {
         placeholder: app.hourglass( 'Loading blueprint' )
       }

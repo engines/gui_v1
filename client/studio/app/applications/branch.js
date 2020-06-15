@@ -1,7 +1,7 @@
-app.applications.branch = controller => controller.routes( {
-  '/?': app.applications.branch.show,
-  '/set': app.applications.branch.set,
-  '/remove': app.applications.branch.remove,
-}, {
-  lazy: true,
-} )
+app.applications.branch = controller => controller.nest({
+  routes: {
+    '/?': app.applications.branch.show,
+    '/set': app.applications.branch.set,
+    '/remove': app.applications.branch.remove,
+  }
+})

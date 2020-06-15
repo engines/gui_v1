@@ -4,63 +4,19 @@ cc.dialogue.designer.form.component = f => [
     key: 'type',
     as: 'select',
     label: false,
-    layout: 'vertical',
+    vertical: true,
     selections: [
       { value: '', label: '' },
       { value: 'field', label: 'Field' },
-      { disabled: 'hr' },
       { value: 'fieldset', label: 'Fieldset' },
       { value: 'row', label: 'Row' },
-      { disabled: 'hr' },
       { value: 'template', label: 'Template' },
     ],
   } ),
 
-  f.field( {
-    key: 'field',
-    as: 'one',
-    label: false,
-    layout: 'vertical',
-    dependent: {
-      key: 'type',
-      pattern: '^field$',
-    },
-    form: cc.dialogue.designer.form.field
-  } ),
-
-  f.field( {
-    key: 'fieldset',
-    as: 'one',
-    label: false,
-    layout: 'vertical',
-    dependent: {
-      key: 'type',
-      pattern: '^fieldset$',
-    },
-    form: cc.dialogue.designer.form.fieldset
-  } ),
-
-  f.field( {
-    key: 'row',
-    as: 'one',
-    label: false,
-    layout: 'vertical',
-    dependent: {
-      key: 'type',
-      pattern: '^row$',
-    },
-    form: cc.dialogue.designer.form.row
-  } ),
-
-  f.field( {
-    key: 'template',
-    as: 'markdown',
-    label: false,
-    layout: 'vertical',
-    dependent: {
-      key: 'type',
-      pattern: '^template$',
-    },
-  } ),
+  cc.dialogue.designer.form.field(f),
+  cc.dialogue.designer.form.fieldset(f),
+  cc.dialogue.designer.form.row(f),
+  cc.dialogue.designer.report.template(f)
 
 ]

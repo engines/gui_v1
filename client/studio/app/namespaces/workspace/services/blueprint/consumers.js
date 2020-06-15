@@ -11,7 +11,7 @@ app.namespaces.workspace.services.blueprint.consumers = blueprint => controller 
       f.field( {
         key: 'accepts',
         as: 'table',
-        layout: 'vertical',
+        vertical: true,
         form: (ff) => [
           ff.field( {
             key: 'type',

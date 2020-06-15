@@ -26,7 +26,7 @@ app.applications.blueprint.service_configurations.show = blueprint => controller
           key: 'variables',
           as: 'one',
           label: false,
-          layout: 'vertical',
+          vertical: true,
           report: (rr) => Object.keys( r.object.variables ).
             map( key =>
               rr.field( {

@@ -6,12 +6,8 @@ gem 'sinatra-cross_origin'
 gem 'thin'
 gem 'rake'
 gem 'rest-client'
-gem 'byebug'
 
-gem 'uglifier'
-# gem "mustache"
-
-# gem 'selenium-webdriver'
-# gem 'geckodriver-helper'
-
-# gem 'elasticsearch'
+group :development do
+  gem 'byebug'
+  gem 'uglifier'
+end

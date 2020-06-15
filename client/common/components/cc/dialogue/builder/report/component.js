@@ -10,6 +10,8 @@ cc.dialogue.builder.report.component = ( r, componentSpec, params ) => {
     return cc.dialogue.builder.report.template( r, componentSpec.template, params )
   } else if ( componentSpec.type == 'form' ) {
     return cc.dialogue.builder.report.form( r, componentSpec.form, params )
+  } else if ( componentSpec.type == 'navigation' ) {
+    return cc.dialogue.builder.navigation( componentSpec.navigation, { ...params, ...r.object } )
   } else {
     return null
   }

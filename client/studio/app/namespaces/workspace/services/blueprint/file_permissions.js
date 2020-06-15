@@ -11,7 +11,7 @@ app.namespaces.workspace.services.blueprint.file_permissions = blueprint => cont
       f.field( {
         key: 'file_permissions',
         as: 'many',
-        layout: 'vertical',
+        vertical: true,
         label: false,
         form: (ff) => [
 

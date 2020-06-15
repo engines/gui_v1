@@ -11,7 +11,7 @@ app.applications.blueprint.system_packages = blueprint => controller => (a,x) =>
       f.field( {
         key: 'system_packages',
         as: 'table',
-        layout: 'vertical',
+        vertical: true,
         label: false,
         form: (ff) => [
           ff.field( {

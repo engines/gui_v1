@@ -51,7 +51,7 @@ app.namespaces.workspace.services.blueprint.configurators.show = blueprint => co
               key: 'content',
               as: 'code',
               label: false,
-              layout: 'vertical',
+              vertical: true,
               code: {
                 mode: rr.object.language,
               }
@@ -66,7 +66,7 @@ app.namespaces.workspace.services.blueprint.configurators.show = blueprint => co
               key: 'content',
               as: 'code',
               label: false,
-              layout: 'vertical',
+              vertical: true,
               code: {
                 mode: rr.object.language,
               }
@@ -81,7 +81,7 @@ app.namespaces.workspace.services.blueprint.configurators.show = blueprint => co
               key: 'content',
               as: 'code',
               label: false,
-              layout: 'vertical',
+              vertical: true,
               code: {
                 mode: rr.object.language,
               }
@@ -96,7 +96,7 @@ app.namespaces.workspace.services.blueprint.configurators.show = blueprint => co
               key: 'content',
               as: 'code',
               label: false,
-              layout: 'vertical',
+              vertical: true,
               code: {
                 mode: rr.object.language,
               }
@@ -111,7 +111,7 @@ app.namespaces.workspace.services.blueprint.configurators.show = blueprint => co
             controller.open( 'variables' )
           },
         } ),
-        x.output( configurator.variables.output() ),
+        x.out( configurator.variables.output() ),
 
       ]
     } ),

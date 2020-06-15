@@ -27,7 +27,7 @@ app.container.environment.show = type => controller => (a,x) => {
                 key: 'environments',
                 as: 'many',
                 label: false,
-                layout: 'vertical',
+                vertical: true,
                 report: (rr) => [
                   rr.field( {
                     key: 'value',

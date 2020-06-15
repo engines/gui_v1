@@ -24,14 +24,6 @@ app.system.show.menu = controller => (a,x) => {
     menuButton( 'Exceptions', 'exceptions', 'fas fa-bug' ),
     menuButton( 'Last install', 'last_install', 'fas fa-history' ),
     menuButton( 'Checkup', 'checkup', 'fas fa-stethoscope' ),
-    // app.collapse( {
-    //   label: app.icon( 'fas fa-stethoscope', 'Diagnostics' ),
-    //   button: {
-    //     class: 'btn app-btn d-block w-100 text-left'
-    //   },
-    //   body: [
-    //   ]
-    // } ),
 
   ]
 
