@@ -3,13 +3,12 @@ app.system.install.library = controller => (a,x) => [
   a['div.clearfix'](
     a['div.float-right']( [
       app.btn( app.icon( 'fas fa-save', 'Load' ), (e,el) => controller.open( 'url' ) ),
-      // app.btn( app.icon( 'fa fa-backward', 'Last' ), (e,el) => controller.open( 'last' ) ),
       app.close( controller, 'Close' ),
     ] )
   ),
 
   app.http(
-    'https://library.engines.org/api/v0/apps',
+    libraryURL,
     ( library, el ) => el.$nodes = [
       a['.app-library'](
         library.apps.map( application => app.button( {

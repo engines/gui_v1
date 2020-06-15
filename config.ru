@@ -18,22 +18,18 @@ map('/node_modules') { run Rack::Directory.new('node_modules') }
 if ( Sinatra::Base.development? )
   puts "Which app mode? 0 for System, 1 for Studio."
   answer = $stdin.gets.chomp
-  if answer == '0'
-    mode = 'system'
-  elsif answer == '1'
-    mode = 'studio'
+  if answer == '1'
+    ENV['MODE'] = 'studio'
   else
-    puts "Invalid selection."
-    exit false
+    ENV['MODE'] = 'system'
   end
-  ENV['MODE'] = mode
 else
-  mode = ENV['MODE'] || 'system'
+  ENV['MODE'] ||= 'system'
 end
 
 $SESSION_TIMEOUT_MINUTES = ENV['SESSION_TIMEOUT_MINUTES'] || 60
 
-require_relative "server/#{ mode }"
+require_relative "server/#{ ENV['MODE'] }"
 map('/~') { run Server::Api }
 map('/') { run Server::Client }
 

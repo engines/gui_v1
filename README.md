@@ -2,14 +2,16 @@ Engines GUI
 -----------
 
 Sinatra modular style, with `config.ru`.
-Static assets served from `/public`
-No services.
+
+Static assets served from `/public`.
+
+Needs persistent directory `/data/`
 
 Run app:
 ```console
 npm i
 thin start
-``
+```
 
 To allow sessions to persist after restart, set `ENV['SESSION_SECRET']`.
 

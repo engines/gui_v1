@@ -49,7 +49,7 @@
   <% if Sinatra::Base.development? %>
   <script type="application/javascript" src="http://localhost:8000/axf/axf.js" ></script>
   <% else %>
-  <script type="application/javascript" src="/node_modules/axf/dist/axf.js" ></script>
+  <script type="application/javascript" src="/node_modules/axf/axf.js" ></script>
   <% end %>
 
   <script type="application/javascript" src="/app.js" ></script>
@@ -92,6 +92,10 @@ File.read(
   'data/workspaces/b5b2df292e7b0a234b61abbd29545e7e/services/1b8aae0e24c06bec45776e4eca91ccac/uadmin/blueprint.json'
 ) : {}
 %>
+
+<% if ENV['MODE'] == 'system' %>
+let libraryURL = "<%= ENV['APPLICATION_LIBRARY_URL'] || 'https://library.engines.org/api/v0/apps' %>"
+<% end %>
 
 window.onload = () => {
   if( window.localStorage.cssTheme ) {
