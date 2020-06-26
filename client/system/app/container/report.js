@@ -8,8 +8,8 @@ app.container.report = type => controller => (a,x) => {
 
   return [
 
-    a.h5( `Container` ),
-    a['div.clearfix']( a['div.float-right']( app.close( controller, 'Close' ) ) ),
+    a.h3( `Container` ),
+    app.close( controller ),
     app.http(
       path,
       ( container, el ) => el.$nodes = x.out( container ),

@@ -25,7 +25,7 @@ app.system.admin = controller => (a,x) => [
         as: 'password',
         confirmation: true,
       } ),
-      f.buttons(),
+      f.buttons({cancel: {onclick: () => controller.open('..')}}),
     ]
   } )
 

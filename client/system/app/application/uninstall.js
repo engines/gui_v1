@@ -4,8 +4,8 @@ app.application.uninstall = controller => (a,x) => {
 
   return [
 
-    a.h3( `Uninstall ${ name }` ),
-    a['div.clearfix']( a['div.float-right']( app.close( controller, 'Close' ) ) ),
+    a.h3('Uninstall'),
+    app.close( controller ),
 
     a.p( app.btn(
       app.icon( 'fas fa-minus-circle', 'Uninstall' ),
@@ -14,7 +14,12 @@ app.application.uninstall = controller => (a,x) => {
       $uninstall: function() {
         this.$nodes = app.http(
           `/-/-/containers/engine/${ name }/delete/all`,
-          () => controller.open( '..' ),
+          (result, el) => {
+            x.lib.animate.fade.out(
+              document.querySelector(`app app-menu-application[name='${name}']`)
+            )
+            controller.open('/')
+          },
           { method: 'delete' }
         )
       },

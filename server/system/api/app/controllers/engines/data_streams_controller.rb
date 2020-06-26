@@ -3,10 +3,10 @@ module Server
     module App
       module Controllers
 
-        get '/download/service/*' do
+        get '/download/service/:service_name' do
 
-          filename = "Engines #{ params[:splat][0].gsub('/', ' ') } export #{ Time.now.strftime("%Y-%m-%d %H:%M:%S") }.gz"
-          route = "/containers/service/#{ params[:splat][0] }/export"
+          filename = "Engines #{ params[:service_name].gsub('/', ' ') } #{ Time.now.strftime("%Y-%m-%d-%H-%M-%S") }"
+          route = "/containers/service/#{ params[:service_name] }/export"
 
           content_type 'application/octet-stream'
           attachment filename
@@ -15,8 +15,6 @@ module Server
             logger.info "Service export stream started."
             begin
               @engines.stream_chunks( route ) do |chunk|
-                # raise Error::NotAuthenticated if line == 'Invalid Token'
-                # line = nil if line == '.'
                 out.write chunk
                 out.flush
               end
@@ -35,28 +33,14 @@ module Server
 
         post '/upload/service/:service_name' do
 
-          route = "/containers/service/#{ params[:splat][0] }/import"
-
-          stream do |out|
-            logger.info "Service import stream started."
-            begin
-              @engines.upstream_chunks( route ) do |chunk|
-                # raise Error::NotAuthenticated if line == 'Invalid Token'
-                # line = nil if line == '.'
-                out.write chunk
-                out.flush
-              end
-              logger.info "Service import stream complete."
-            rescue IOError => e
-              logger.info "Service import stream lost its connection with receiver."
-            rescue => e
-              error_message = "Service import stream error. #{ e }"
-              logger.error error_message
-            ensure
-              out.close unless out.closed?
-            end
-          end
-
+          route = "/containers/service/#{ params[:service_name] }/import"
+          payload = request.body
+          @engines.post(
+            route,
+            payload: request.body,
+            content_type: request.content_type,
+            content_length: request.content_length
+          )
         end
 
 

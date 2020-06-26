@@ -3,7 +3,8 @@ app.service.configurations = controller => (a,x) => [
   controller.nest({
     routes: {
       '/?': app.service.configurations.index,
-      '/perform': app.service.configurations.perform,
+      '/:configuration_name': app.service.configurations.show,
+      '/:configuration_name/edit': app.service.configurations.edit,
     }
   })
 

@@ -2,11 +2,7 @@ app.system.checkup = controller => (a,x) => [
 
   a.h3( 'System checkup' ),
 
-  a['div.clearfix'](
-    a['div.float-right']( [
-      app.close( controller, 'Close' ),
-    ] )
-  ),
+  app.close( controller ),
 
   app.http(
     '/-/-/containers/check_and_act',

@@ -4,15 +4,15 @@ app.service.export = controller => (a,x) => {
 
   return [
 
-    a.h5( `Export` ),
-    a['div.clearfix']( a['div.float-right']( app.close( controller, 'Close' ) ) ),
+    a.h3( `Export` ),
+    app.close( controller ),
     app.link( {
-      label: app.icon( 'fa fa-check', 'OK' ),
+      label: app.icon( 'fa fa-download', 'Download' ),
       href: `/-/download/service/${ name }`,
       target: '_blank',
-      class: 'btn btn-primary',
+      class: 'btn app-btn',
     } ),
-    app.link( { label: 'TEST DOWNLOAD', href: '/-/download/test', target: '_blank' } ),
+    // app.link( { label: 'TEST DOWNLOAD', href: '/-/download/test', target: '_blank' } ),
 
   ]
 

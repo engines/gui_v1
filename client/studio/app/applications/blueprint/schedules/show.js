@@ -15,7 +15,7 @@ app.applications.blueprint.schedules.show = blueprint => controller => (a,x) => 
           controller.open( 'edit' )
         },
       } ),
-      app.close( controller, 'Return to schedules' ),
+      app.close( controller, {title: 'Return to schedules'}),
     ] ) ),
 
     app.report( {

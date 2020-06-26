@@ -18,7 +18,7 @@ app.applications.reset = controller => (a,x) => [
       title: 'Reset branch',
       onclick: (e,el) => {
 
-        el.$('^').$nodes = app.http(
+        el.$('^').$nodes = [app.http(
           `/-/applications/${ controller.params.application_id }/reset`,
           ( result, el ) => el.$nodes = [
             a.pre( result.message ),
@@ -38,7 +38,7 @@ app.applications.reset = controller => (a,x) => [
               app.hourglass( 'Resetting branch' )
             )
           }
-        )
+        )]
 
       },
     } ),

@@ -26,7 +26,7 @@ app.blueprintForm = (
     entry.formSubmit( data )
     let path = isNew ? `../${ entry.id }` : '..'
 
-    output.$nodes = app.http(
+    output.$nodes = [app.http(
       blueprint.apiEndpoint,
       () => controller.open( path ),
       {
@@ -36,7 +36,7 @@ app.blueprintForm = (
         headers: { 'Content-type': 'application/json' },
         body:  JSON.stringify( blueprint.output, null, 2 )
       }
-    )
+    )]
 
 
   },

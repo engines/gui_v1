@@ -10,7 +10,7 @@ app.applications.index = controller => (a,x) => [
       },
       title: 'New application',
     } ),
-    app.close( controller, 'Return to home' ),
+    app.close( controller, {title: 'Return to home'}),
   ] ) ),
 
 

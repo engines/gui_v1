@@ -18,7 +18,7 @@ app.applications.pull = controller => (a,x) => [
     // confirm: 'Are you sure that you want to delete this service?',
     onclick: (e,el) => {
 
-      el.$('^').$nodes = app.http(
+      el.$('^').$nodes = [app.http(
         `/-/applications/${ controller.params.application_id }/pull`,
         ( pull, el ) => el.$nodes = [
           a.pre( pull.message ),
@@ -38,7 +38,7 @@ app.applications.pull = controller => (a,x) => [
             app.hourglass( 'Pulling application' )
           )
         }
-      )
+      )]
 
     },
   } ),

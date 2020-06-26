@@ -10,7 +10,7 @@ app.container.bindings.nonpersistent = type => controller => (a,x) => {
   //
   // return [
   //
-  //   a['div.clearfix']( a['div.float-right']( app.close( controller, 'Close' ) ) ),
+  //   app.close( controller ),
   //   a.br,
   //   app.http(
   //     [

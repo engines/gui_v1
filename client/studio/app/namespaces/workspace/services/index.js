@@ -10,7 +10,7 @@ app.namespaces.workspace.services.index = controller => (a,x) => [
       },
       title: 'New service',
     } ),
-    app.close( controller, 'Return to workspace' ),
+    app.close( controller, {title: 'Return to workspace'}),
   ] ) ),
 
   app.http(

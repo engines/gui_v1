@@ -15,7 +15,7 @@ app.namespaces.workspace.services.blueprint.configurators.show = blueprint => co
           controller.open( 'edit' )
         },
       } ),
-      app.close( controller, 'Return to configurators' ),
+      app.close( controller, {title: 'Return to configurators'}),
     ] ) ),
 
     app.report( {

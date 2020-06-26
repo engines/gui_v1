@@ -15,7 +15,7 @@ app.applications.blueprint.actionators.show = blueprint => controller => (a,x) =
           controller.open( 'edit' )
         },
       } ),
-      app.close( controller, 'Return to actionators' ),
+      app.close( controller, {title: 'Return to actionators'}),
     ] ) ),
 
     app.report( {

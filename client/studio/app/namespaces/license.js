@@ -6,7 +6,7 @@ app.namespaces.license = controller => (a,x) => [
 
       a['div.clearfix']( [
         a['div.btn-group.float-right']( [
-          app.close( controller, 'Return to namespaces' ),
+          app.close( controller, {title: 'Return to namespaces'}),
         ] ),
       ] ),
 

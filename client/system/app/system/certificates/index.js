@@ -1,10 +1,6 @@
 app.system.certificates.index = controller => (a,x) => [
 
-  a['div.clearfix'](
-    a['div.float-right']( [
-      app.close( controller, 'Close' ),
-    ] )
-  ),
+  app.close( controller ),
 
   app.http( '/-/-/system/certs/default' ),
 

@@ -5,12 +5,12 @@ app.system.show.heading = controller => (a,x) => a['div.clearfix']( [
       menu: [
         app.btn(
           'Restart',
-          () => controller.open( 'restart' ),
+          () => controller.open( '/restart' ),
           { class: 'btn app-btn d-block w-100 text-left' }
         ),
         app.btn(
           'Shutdown',
-          () => controller.open( 'shutdown' ),
+          () => controller.open( '/shutdown' ),
           { class: 'btn app-btn d-block w-100 text-left' }
         ),
       ]

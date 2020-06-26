@@ -1,4 +1,4 @@
-app.service.configurations.perform = controller => (a,x) => {
+app.service.configurations.edit = controller => (a,x) => {
 
   const containerName = controller.params.name
   const configurationName = controller.params.configuration_name
@@ -18,15 +18,16 @@ app.service.configurations.perform = controller => (a,x) => {
           definition, [ 'configurators' ], {}
         )[ configurationName ]
 
-        let values = configuration.variables
+        let values = configuration.variables || {}
 
         el.$nodes = [
-          a.h5( configurator.label || configurator.name ),
+          a.h3( configurator.label || configurator.name ),
           a.small( configurator.description ),
 
           app.form( {
             url: `${ containerPath }/configuration/${ configurationName }`,
             scope: 'api_vars[variables]',
+            success: () => controller.open( '..' ),
             form: f => [
               configurator.variables.map( variable => f.field( {
                 ...enginesFieldV1( variable ),
@@ -34,18 +35,6 @@ app.service.configurations.perform = controller => (a,x) => {
               } ) ),
               f.buttons(),
             ],
-            asyncformTag: {
-              $on: {
-                'ax.appkit.http.success': (e,el) => {
-                  el.$('|appkit-asyncform-body').$nodes = app.btn(
-                    app.icon( 'fa fa-check', 'OK' ),
-                    () => controller.open( '..' ),
-                    { class: 'btn btn-primary' },
-                  )
-                },
-              }
-            },
-
           } ),
         ]
 

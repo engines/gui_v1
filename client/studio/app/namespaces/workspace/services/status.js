@@ -6,7 +6,7 @@ app.namespaces.workspace.services.status = controller => (a,x) => [
 
       a['div.clearfix']( [
         a['div.btn-group.float-right']( [
-          app.close( controller, 'Return to services' ),
+          app.close( controller, {title: 'Return to services'}),
         ] ),
       ] ),
 

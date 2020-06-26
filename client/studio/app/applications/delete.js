@@ -19,7 +19,7 @@ app.applications.delete = controller => (a,x) => [
       // confirm: 'Are you sure that you want to delete this application?',
       onclick: (e,el) => {
 
-        el.$('^').$nodes = app.http(
+        el.$('^').$nodes = [app.http(
           `/-/applications/${ controller.params.application_id }`,
           ( result, el ) => el.$nodes = [
             a.p( 'Application has been deleted.' ),
@@ -39,7 +39,7 @@ app.applications.delete = controller => (a,x) => [
               app.hourglass( 'Deleting application' )
             )
           }
-        )
+        )]
 
       },
     } ),

@@ -3,7 +3,7 @@ app.system.install.library = controller => (a,x) => [
   a['div.clearfix'](
     a['div.float-right']( [
       app.btn( app.icon( 'fas fa-save', 'Load' ), (e,el) => controller.open( 'url' ) ),
-      app.close( controller, 'Close' ),
+      app.close( controller ),
     ] )
   ),
 

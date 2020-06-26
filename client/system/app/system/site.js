@@ -14,9 +14,12 @@ app.system.site = controller => (a,x) => [
           label: false,
           vertical: true
         } ),
-        f.buttons(),
+        f.buttons({cancel: {onclick: () => controller.open('..')}}),
       ]
-    } )]
+    } )],
+    {
+      placeholder: app.hourglass('Loading site'),
+    }
   ),
 
 ]

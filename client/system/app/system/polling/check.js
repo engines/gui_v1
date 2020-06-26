@@ -16,7 +16,8 @@ app.system.polling.check = ( route, success, options={} ) => (a,x) => a['app-pol
                 503: ( response, el ) => el.$('^app-polling').$wait(),
                 ...options.when
               },
-              catch: ( error, el ) => {
+              catch: ( e, el ) => {
+                console.log("Caught:", e)
                 el.$('^app-polling').$wait()
               },
             }

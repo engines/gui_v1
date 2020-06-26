@@ -8,8 +8,8 @@ app.container.processes = type => controller => (a,x) => {
 
   return [
 
-    a.h5( `Processes` ),
-    a['div.clearfix']( a['div.float-right']( app.close( controller, 'Close' ) ) ),
+    a.h3( `Processes` ),
+    app.close( controller ),
     a.br,
     app.http(
       path,
@@ -22,7 +22,7 @@ app.container.processes = type => controller => (a,x) => {
           process => a.tr( process.map( value => a.td( value ) ) )
         ) )
 
-        el.$nodes = a.table( [ headings, rows ], { class: 'table' } )
+        el.$nodes = a.table( [ headings, rows ], { class: 'table table-responsive text-nowrap' } )
 
       },
       {

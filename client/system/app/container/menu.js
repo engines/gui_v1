@@ -1,36 +1,37 @@
 app.container.menu = ( controller, type ) => (a,x) => {
 
   let menuButton = app.menuButton( controller )
+  let prefix = `/${type}s/${controller.params.name}/`
 
   return [
 
-    menuButton( 'Memory', 'memory', 'fas fa-memory' ),
-    menuButton( 'Actions', 'actions', 'fas fa-crosshairs' ),
+    menuButton( 'Memory', `${prefix}memory`, 'fas fa-memory' ),
+    menuButton( 'Actions', `${prefix}actions`, 'fas fa-crosshairs' ),
 
     type === 'service' ? [
-      menuButton( 'Configure', 'configure', 'fas fa-cogs' ),
-      menuButton( 'Export', 'export', 'fas fa-download' ),
-      menuButton( 'Import', 'import', 'fas fa-upload' ),
+      menuButton( 'Configuration', `${prefix}configurations`, 'fas fa-cogs' ),
+      menuButton( 'Export', `${prefix}export`, 'fas fa-download' ),
+      menuButton( 'Import', `${prefix}import`, 'fas fa-upload' ),
     ] : [
-      menuButton( 'Network', 'network', 'fas fa-sitemap' ),
-      menuButton( 'Icon', 'icon', 'fas fa-icons' ),
+      menuButton( 'Network', `${prefix}network`, 'fas fa-sitemap' ),
+      menuButton( 'Icon', `${prefix}icon`, 'fas fa-icons' ),
     ],
 
-    menuButton( 'About', 'about', 'fas fa-info' ),
+    menuButton( 'About', `${prefix}about`, 'fas fa-info' ),
 
     a.hr,
 
-    menuButton( 'Environment', 'environment', 'fas fa-question-circle' ),
-    menuButton( 'Bindings', 'bindings', 'fas fa-dice-d20' ),
-    menuButton( 'Logs', 'logs', 'fas fa-file-alt' ),
-    menuButton( 'Processes', 'processes', 'fas fa-list' ),
-    menuButton( 'Container', 'container', 'fas fa-cube' ),
+    menuButton( 'Environment', `${prefix}environment`, 'fas fa-question-circle' ),
+    menuButton( 'Bindings', `${prefix}bindings`, 'fas fa-dice-d20' ),
+    menuButton( 'Logs', `${prefix}logs`, 'fas fa-file-alt' ),
+    menuButton( 'Processes', `${prefix}processes`, 'fas fa-list' ),
+    menuButton( 'Container', `${prefix}container`, 'fas fa-cube' ),
 
     type === 'service' ? [
-      menuButton( 'Definition', 'definition', 'fas fa-map' ),
+      menuButton( 'Definition', `${prefix}definition`, 'fas fa-map' ),
     ] : [
-      menuButton( 'Installation', 'installation', 'fas fa-clipboard-check' ),
-      menuButton( 'Blueprint', 'blueprint', 'fas fa-map' ),
+      menuButton( 'Installation', `${prefix}installation`, 'fas fa-clipboard-check' ),
+      menuButton( 'Blueprint', `${prefix}blueprint`, 'fas fa-map' ),
     ],
 
   ]

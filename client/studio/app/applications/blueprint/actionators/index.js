@@ -11,7 +11,7 @@ app.applications.blueprint.actionators.index = blueprint => controller => (a,x) 
       },
       title: 'New actionator',
     } ),
-    app.close( controller, 'Return to blueprint' ),
+    app.close( controller, {title: $1}),
   ] ) ),
 
   blueprint.actionators.map(

@@ -86,7 +86,7 @@ app.namespaces.workspace.services.show = controller => (a,x) => [
               controller.open( 'push' )
             }
           } ),
-          app.close( controller, 'Return to namespace services' ),
+          app.close( controller, {title: 'Return to namespace services'}),
         ] ),
       ] ),
 

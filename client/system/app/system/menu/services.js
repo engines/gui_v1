@@ -4,13 +4,11 @@ services = controller => (a,x) => app.http(
   ( services, el ) => el.$nodes = [
     a['div.container']( [
       a.hr,
-      a['app-system-services']( [
-        a['app-system-containers'](
-          Object.keys( services ).sort().map(
-            name => app.system.menu.services.service( controller, name, services[name] )
-          )
-        ),
-      ] )
+      a['app-menu-buttons'](
+        Object.keys( services ).sort().map(
+          name => app.system.menu.services.service( controller, name, services[name] )
+        )
+      ),
     ] )
   ]
 )

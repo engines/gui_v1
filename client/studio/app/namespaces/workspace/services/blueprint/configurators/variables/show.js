@@ -16,7 +16,7 @@ app.namespaces.workspace.services.blueprint.configurators.variables.show = bluep
           controller.open( 'edit' )
         },
       } ),
-      app.close( controller, 'Return to variables' ),
+      app.close( controller, {title: 'Return to variables'}),
     ] ) ),
 
     app.report( {

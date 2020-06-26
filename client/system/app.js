@@ -43,7 +43,8 @@ let app = (a,x) => a['app']( [
       nav.$load( '/disconnected' )
     },
     'app.reconnected': (e,el) => {
-      location.assign( '/' )
+      console.log('RECONNECTED')
+      location.assign('/')
     },
     'app.connected': (e,el) => {
       el.$('app-system-eventsource').$run()
@@ -56,10 +57,13 @@ let app = (a,x) => a['app']( [
     },
     'app.container.status.update': (e,el) => {
       let update = e.detail
-      let selector = `app-container-state[name='${ update.name }']`
+      let selector = `app-container-state[name="${ update.name }"]`
       el.$$( selector ).forEach( el => {
         el.$state = { ...el.$state, status: update.status }
       } )
+      if (!el.$(`^app app-menu ${ selector }`)) {
+        el.$('^app app-menu').$render()
+      }
     },
 
   }

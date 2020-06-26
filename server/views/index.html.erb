@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Engines <%= ENV['MODE'] %></title>
+  <title>Engines <%= ENV['MODE'] == 'system' ? 'System' : 'Studio' %></title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="/favicon.png" type="image/png">
@@ -86,15 +86,15 @@
 
 <script>
 
-let inDevelopment = <%= Sinatra::Base.development? %>
+let inDevelopment = <%= Sinatra::Base.development? %>;
 let uadminBlueprint = <%= Sinatra::Base.development? ?
 File.read(
   'data/workspaces/b5b2df292e7b0a234b61abbd29545e7e/services/1b8aae0e24c06bec45776e4eca91ccac/uadmin/blueprint.json'
 ) : {}
-%>
+%>;
 
 <% if ENV['MODE'] == 'system' %>
-let libraryURL = "<%= ENV['APPLICATION_LIBRARY_URL'] || 'https://library.engines.org/api/v0/apps' %>"
+let libraryURL = "<%= ENV['APPLICATION_LIBRARY_URL'] || 'https://library.engines.org/api/v0/apps' %>";
 <% end %>
 
 window.onload = () => {
@@ -106,7 +106,7 @@ window.onload = () => {
   loadingSpinner.style.opacity = 0
   setTimeout( function() { loadingSpinner.remove() }, 1000 )
   ax( app )
-}
+};
 </script>
 
 </body>

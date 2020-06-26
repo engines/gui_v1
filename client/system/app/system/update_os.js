@@ -1,20 +1,19 @@
 app.system.update_os = controller => (a,x) => [
 
-  a.h3( "Update Operating system" ),
+  a.h3( "Update" ),
 
   a['div.clearfix'](
     a['div.float-right']( [
-      app.close( controller, 'Close' ),
+      app.close( controller ),
     ] )
   ),
 
   a['app-system-update-os-http'](
     [
-      a.p( 'Update Operating system?' ),
+      a.p( 'Update operating system?' ),
       app.btn(
         app.icon( "fa fa-check", "OK" ),
         (e,el) => el.$('^app-system-update-os-http').$start(),
-        { class: 'btn btn-primary' },
       ),
     ],
     {

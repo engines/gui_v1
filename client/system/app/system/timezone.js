@@ -3,7 +3,7 @@ app.system.timezone = controller => (a,x) => [
 
   app.http(
     '/-/-/system/control/base_os/timezone',
-    (  timezone, el ) => el.$nodes = [app.form( {
+    (  timezone, el ) => el.$nodes = [ app.form( {
       url: '/-/-/system/control/base_os/timezone',
       success: () => controller.open( '..' ),
       scope: 'api_vars',
@@ -15,9 +15,12 @@ app.system.timezone = controller => (a,x) => [
           as: 'timezone',
           vertical: true,
         } ),
-        f.buttons(),
+        f.buttons({cancel: {onclick: () => controller.open('..')}}),
       ]
-    } )]
+    } ) ],
+    {
+      placeholder: app.hourglass('Loading timezone'),
+    }
   ),
 
 ]

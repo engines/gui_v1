@@ -50,7 +50,7 @@ app.settings = controller => (a,x) => [
   //     a.h3( 'Settings' ),
   //
   //     a['div.clearfix']( a['div.btn-group.float-right']( [
-  //       app.close( controller, 'Return to home' ),
+  //       app.close( controller, {title: 'Return to home'}),
   //     ] ) ),
   //
   //     a['div.input-group']( [

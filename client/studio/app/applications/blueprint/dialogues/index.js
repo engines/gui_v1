@@ -10,7 +10,7 @@ app.applications.blueprint.dialogues.index = blueprint => controller => (a,x) =>
       },
       title: 'New dialogue',
     } ),
-    app.close( controller, 'Return to blueprint' ),
+    app.close( controller, {title: 'Return to blueprint'}),
   ] ) ),
 
   blueprint.dialogues.map(

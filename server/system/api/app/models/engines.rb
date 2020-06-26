@@ -16,17 +16,15 @@ module Server
             api_call route, options
           end
 
-          def post( route, payload, options={} )
+          def post( route, options={} )
             api_call route,
               method: :post,
-              payload: payload,
               **options
           end
 
-          def put( route, payload, options={} )
+          def put( route, options={} )
             api_call route,
               method: :put,
-              payload: payload,
               **options
           end
 
@@ -36,24 +34,23 @@ module Server
               **options
           end
 
-          def stream_chunks( route, &block )
-            block_response = asChunks &block
-            api_call( route, block_response: block_response )
+          def stream_chunks( route, options={}, &block )
+            block_response = responseChunks &block
+            api_call( route, block_response: block_response, **options )
           end
 
-          def stream_lines( route, &block )
-            block_response = asLines &block
-            api_call( route, block_response: block_response )
+          def stream_lines( route, options={}, &block )
+            block_response = responseLines &block
+            api_call( route, block_response: block_response, **options )
           end
 
-          def upstream_chunks( route, &block )
-            block_response = asChunks &block
-            api_call( route, block_response: block_response, method: :post )
-          end
+          # def upstream( route, options={} )
+          #   api_call(route, method: :post, **options)
+          # end
 
           private
 
-          def asChunks
+          def responseChunks
             Proc.new do |response|
               response.read_body do |chunk|
                 yield chunk
@@ -61,7 +58,7 @@ module Server
             end
           end
 
-          def asLines
+          def responseLines
             Proc.new do |response|
               response.read_body do |chunk|
                 chunk.split("\n").each do |line|
@@ -72,32 +69,23 @@ module Server
           end
 
           def api_call( route, options={} )
-            puts ({
-              method: options[:method] || :get,
+            request_options = {
+              method: :get,
               url: url_for( route ),
-              payload: options[:payload] || nil,
-              timeout: options[:timeout] || 120,
+              # payload: options[:payload] || nil,
+              timeout: 120,
               verify_ssl: false,
               headers: {
+                content_length: options[:content_length] || nil,
                 content_type: options[:content_type] || :json,
                 access_token: @token
               },
-              block_response: options[:block_response]
-            }.to_yaml)
-
+              # block_response: options[:block_response],
+              **options
+            }
+            puts(request_options.to_yaml)
             response_for do
-              RestClient::Request.execute(
-                method: options[:method] || :get,
-                url: url_for( route ),
-                payload: options[:payload] || nil,
-                timeout: options[:timeout] || 120,
-                verify_ssl: false,
-                headers: {
-                  content_type: options[:content_type] || :json,
-                  access_token: @token
-                },
-                block_response: options[:block_response]
-              )
+              RestClient::Request.execute(request_options)
             end
           end
 
@@ -107,17 +95,12 @@ module Server
 
           def response_for( &block )
             yield
-          # rescue => e
-          #   debugger
           rescue  RestClient::Forbidden
             raise Error::NotAuthenticated
           rescue  RestClient::NotFound => e
             raise Error::System404.new e
           rescue  RestClient::MethodNotAllowed => e
             raise Error::SystemApiWarning.new e
-          rescue  RestClient::NotAcceptable,
-                  RestClient::InternalServerError => e
-            raise Fatal::SystemError.new e
           rescue  Errno::EHOSTUNREACH,
                   Errno::ECONNREFUSED,
                   Errno::ECONNRESET,
@@ -126,6 +109,8 @@ module Server
                   RestClient::Exceptions::OpenTimeout,
                   RestClient::Exceptions::ReadTimeout
             raise Error::SystemUnavailable
+          rescue => e
+            raise Fatal::SystemError.new e
           end
 
         end

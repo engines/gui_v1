@@ -1,6 +1,6 @@
 app.system.certificates = controller => (a,x) => [
 
-  a.h3( 'System certificates' ),
+  a.h3( 'Certificates' ),
 
   controller.nest({
     routes: {

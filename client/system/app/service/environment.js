@@ -4,8 +4,8 @@
 //
 //   return [
 //
-//     a.h5( `Envrionment` ),
-//     a['div.clearfix']( a['div.float-right']( app.close( controller, 'Close' ) ) ),
+//     a.h3( `Envrionment` ),
+//     app.close( controller ),
 //     app.http(
 //       `/-/-/containers/service/${ name }`,
 //       ( container, el ) => el.$nodes = app.report( {

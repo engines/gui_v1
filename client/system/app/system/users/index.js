@@ -1,20 +1,22 @@
 app.system.users.index = controller => (a,x) => [
 
-  a['div.clearfix'](
-    a['div.float-right']( [
-      app.close( controller, 'Close' ),
-    ] )
-  ),
+  app.close( controller ),
+
+  app.float({
+    left: app.btn(
+      app.icon( 'fa fa-plus', 'New' ),
+      (e,el) => controller.open( 'new' )
+    ),
+    right: app.btn(
+      app.icon( 'fas fa-user-friends', 'Groups' ),
+      () => controller.open( 'groups', controller.query ),
+    ),
+  }),
 
   app.http(
     '/-/-/system/uadmin/users/accounts',
     ( accounts, el ) => {
       el.$nodes = [
-
-        app.btn(
-          app.icon( 'fa fa-plus', 'New' ),
-          (e,el) => controller.open( 'new' )
-        ),
 
         accounts.length ?
         accounts.map( account => a.div( app.btn (
@@ -25,7 +27,7 @@ app.system.users.index = controller => (a,x) => [
               a.small( account.uid ),
             ]
           ),
-          () => controller.open( 'query', { user_uid: account.uid } )
+          () => controller.open( 'user', { user_uid: account.uid } )
         ) ) ) :
         a.i( 'None' ),
 

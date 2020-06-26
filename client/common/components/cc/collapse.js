@@ -1,8 +1,9 @@
 cc.collapse = ( options={} ) => (a,x) => a['app-collapse']( [
   cc.button( {
-    label: a['app-collapse-indicator'](
-      ( el ) => cc.icon( el.$iconClass(), options.label ),
+    label: a(
       {
+        $tag: 'app-collapse-indicator',
+        $nodes: ( el ) => cc.icon( el.$iconClass(), options.label ),
         $state: options.display,
         $iconClass: function() {
           return this.$state ? 'fa fa-caret-down' : 'fa fa-caret-right'

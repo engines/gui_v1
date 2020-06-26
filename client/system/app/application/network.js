@@ -4,32 +4,18 @@ app.application.network = controller => (a,x) => {
 
   return [
 
-    a.h5( 'Network' ),
-    a['div.clearfix']( a['div.float-right']( app.close( controller, 'Close' ) ) ),
+    a.h3( 'Network' ),
     app.http(
-
-
-      // {
-      //   http_protocol: container[:protocol],
-      //   host_name: container[:hostname],
-      //   domain_name: container[:domain_name],
-      //   available_domain_names: @system.domains[:names].map{ |domain| domain[:domain_name] },
-      //   default_http_protocol: blueprint[:software][:base][:http_protocol],
-      //   reserved_fqdns: @system.reserved_fqdns
-      // }
-
       [
         `/-/-/containers/engine/${ name }`,
         `/-/-/containers/engine/${ name }/blueprint`,
         '/-/-/system/domains/',
-        // '/-/-/system/reserved/hostnames',
       ],
 
       ( [
         container,
         blueprint,
         domains,
-        // reserved_hostnames,
       ], el ) => {
 
         let protocols_allowed = ((blueprint.software || {}).base || {}).http_protocol || 'https_only'
@@ -52,7 +38,7 @@ app.application.network = controller => (a,x) => {
             object: {
               http_protocol: container.protocol,
               host_name: container.hostname,
-              domain_name: container.host_name,
+              domain_name: container.domain_name,
             },
             action: `/-/-/containers/engine/${name}/properties/network`,
             success: () => controller.open('..'),
@@ -85,6 +71,5 @@ app.application.network = controller => (a,x) => {
     ),
 
   ]
-
 
 }

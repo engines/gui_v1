@@ -112,7 +112,7 @@ app.namespaces.workspace.show = controller => (a,x) => [
                     }
                   } ),
 
-                  app.close( controller, 'Return to namespace' ),
+                  app.close( controller, {title: 'Return to namespace'}),
 
                 ] ),
               ] ),

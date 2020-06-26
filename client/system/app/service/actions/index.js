@@ -6,13 +6,13 @@ app.service.actions.index = controller => (a,x) => {
 
   return [
 
-    a.h5( `Actions` ),
-    a['div.clearfix']( a['div.float-right']( app.close( controller, 'Close' ) ) ),
+    a.h3( `Actions` ),
+    app.close( controller ),
     app.http(
       path,
       ( definition, el ) => {
         let actions = Object.values( x.lib.object.dig( definition, [ 'service_actionators' ], {} ) )
-        el.$nodes = [ app.container.actions.list( controller, actions ) ]
+        el.$nodes = [ app.container.actions.index( controller, actions ) ]
       },
       {
         placeholder: app.hourglass( 'Loading actions' )

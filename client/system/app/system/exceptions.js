@@ -3,7 +3,7 @@ app.system.exceptions = controller => (a,x) => [
 
   a['div.clearfix'](
     a['div.float-right']( [
-      app.close( controller, 'Close' ),
+      app.close( controller ),
     ] )
   ),
 
@@ -15,7 +15,7 @@ app.system.exceptions = controller => (a,x) => [
         logging ?
         app.float({
           left: 'Remote exception logging is enabled.',
-          right: app.btn(app.icon('fa fa-toggle-off', 'Disable'), () => {
+          right: app.btn(app.icon('fa fa-times-circle', 'Disable'), () => {
             el.$nodes = () => [
               app.http(
                 '/-/-/system/config/remote_exception_logging/disable',
@@ -30,7 +30,7 @@ app.system.exceptions = controller => (a,x) => [
         }) :
         app.float({
           left: 'Remote exception logging is disabled.',
-          right: app.btn(app.icon('fa fa-toggle-on', 'Enable'), () => {
+          right: app.btn(app.icon('fa fa-check-circle', 'Enable'), () => {
             el.$nodes = () => [
               app.http(
                 '/-/-/system/config/remote_exception_logging/enable',

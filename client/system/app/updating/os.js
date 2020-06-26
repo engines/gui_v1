@@ -1,5 +1,5 @@
 app.updating.os = controller => (a,x) => [
-  a.h3( "Updating Operating system" ),
+  a.h3( "Updating operating system" ),
   app.system.polling(
     '/-/-/system/status',
     ( status, el ) => {

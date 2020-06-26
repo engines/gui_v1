@@ -4,8 +4,8 @@ app.application.installation = controller =>  {
 
   return (a,x) => [
 
-    a.h5( 'Installation' ),
-    a['div.clearfix']( a['div.float-right']( app.close( controller, 'Close' ) ) ),
+    a.h3( 'Installation' ),
+    app.close( controller ),
 
     app.http(
       `/-/-/containers/engine/${ name }/build_report`,

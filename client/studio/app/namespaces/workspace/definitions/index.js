@@ -8,7 +8,7 @@ app.namespaces.workspace.definitions.index = controller => (a,x) => [
 
       a['div.clearfix']( [
         a['div.btn-group.float-right']( [
-          app.close( controller, 'Return to workspace' ),
+          app.close( controller, {title: 'Return to workspace'}),
         ] ),
       ] ),
 

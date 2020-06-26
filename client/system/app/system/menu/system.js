@@ -4,28 +4,30 @@ system = ( system, controller ) => (a,x) => a['div.container']( [
   app.btn(
     [
       system.hostname,
-      a['app-system-state']( (el,system) => [
-
-        (
-          system.needs_reboot ||
-          system.needs_engines_update ||
-          system.needs_base_update
-        ) ?
-          a['.text-warning']( app.icon( 'fa fa-bell', ' ' ) ) :
-          null,
-
-        system.did_build_fail ?
-          a['.error']( app.icon( 'fas fa-tools', ' ' ) ) :
-          null,
-
-        system.is_building ?
-          a['.text-info']( app.icon( 'fas fa-tools', ' ' ) ) :
-          null,
-
-      ], {
+      a({
         id: 'system',
         $state: system,
-      } ),
+        $tag: 'app-system-state',
+        $nodes: (el, state) => [
+
+          (
+            state.needs_reboot ||
+            state.needs_engines_update ||
+            state.needs_base_update
+          ) ?
+            a['.text-warning']( app.icon( 'fa fa-bell', ' ' ) ) :
+            null,
+
+          state.did_build_fail ?
+            a['.error']( app.icon( 'fas fa-tools', ' ' ) ) :
+            null,
+
+          state.is_building ?
+            a['.text-info']( app.icon( 'fas fa-tools', ' ' ) ) :
+            null,
+
+        ],
+      }),
     ],
     () => controller.open( '/' ),
     {

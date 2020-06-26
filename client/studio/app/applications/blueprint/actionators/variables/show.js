@@ -16,7 +16,7 @@ app.applications.blueprint.actionators.variables.show = blueprint => controller 
           controller.open( 'edit' )
         },
       } ),
-      app.close( controller, 'Return to variables' ),
+      app.close( controller, {title: 'Return to variables'}),
     ] ) ),
 
     app.report( {

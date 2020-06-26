@@ -3,6 +3,7 @@ app.system.users.new = controller => (a,x) => [
   app.form( {
     url: '/-/-/system/uadmin/users/accounts/',
     scope: 'api_vars[account]',
+    success: (user, el) => controller.open('../user', {user_uid: user.uid}),
     form: f => [
       f.row( {
         columns: [
@@ -18,7 +19,7 @@ app.system.users.new = controller => (a,x) => [
       } ),
       f.field( {
         key: 'uid',
-        label: 'UID username',
+        label: 'Username',
         vertical: true,
       } ),
       f.field( {

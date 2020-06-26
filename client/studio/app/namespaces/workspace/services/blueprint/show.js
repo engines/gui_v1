@@ -2,7 +2,7 @@ app.namespaces.workspace.services.blueprint.show = blueprint => controller => (a
 
   a['div.clearfix']( [
     a['div.btn-group.float-right']( [
-      app.close( controller, 'Return to service' ),
+      app.close( controller, {title: 'Return to service'}),
     ] ),
   ] ),
 

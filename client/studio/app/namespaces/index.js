@@ -10,7 +10,7 @@ app.namespaces.index = controller => (a,x) => [
       },
       title: 'New services provider',
     } ),
-    app.close( controller, 'Return to home' ),
+    app.close( controller, {title: 'Return to home'}),
 
     // app.button( {
     //   label: app.icon( 'far fa-list-alt', 'Namespaces' ),

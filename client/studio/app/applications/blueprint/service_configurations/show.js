@@ -16,7 +16,7 @@ app.applications.blueprint.service_configurations.show = blueprint => controller
           controller.open( 'edit' )
         },
       } ),
-      app.close( controller, 'Return to service configurations' ),
+      app.close( controller, {title: 'Return to service configurations'}),
     ] ) ),
 
     app.report( {

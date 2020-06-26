@@ -11,7 +11,7 @@ app.applications.blueprint.schedules.index = blueprint => controller => (a,x) =>
       },
       title: 'New schedule',
     } ),
-    app.close( controller, 'Return to blueprint' ),
+    app.close( controller, {title: 'Return to blueprint'}),
   ] ) ),
 
   blueprint.schedules.map(

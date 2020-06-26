@@ -4,8 +4,8 @@ app.application.blueprint = controller => (a,x) => {
 
   return [
 
-    a.h5( `Blueprint` ),
-    a['div.clearfix']( a['div.float-right']( app.close( controller, 'Close' ) ) ),
+    a.h3( `Blueprint` ),
+    app.close( controller ),
     app.http(
       `/-/-/containers/engine/${ name }/blueprint`,
       ( blueprint, el ) => el.$nodes = x.out( blueprint ),

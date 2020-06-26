@@ -15,7 +15,7 @@ app.namespaces.workspace.services.blueprint.consumer_params.show = blueprint => 
           controller.open( 'edit' )
         },
       } ),
-      app.close( controller, 'Return to consumer params' ),
+      app.close( controller, {title: 'Return to consumer params'}),
     ] ) ),
 
     app.report( {

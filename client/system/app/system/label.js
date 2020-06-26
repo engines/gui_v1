@@ -24,9 +24,12 @@ app.system.label = controller => (a,x) => [
           as: 'input/color',
           label: 'Background',
         } ),
-        f.buttons(),
+        f.buttons({cancel: {onclick: () => controller.open('..')}}),
       ]
-    } )]
+    } )],
+    {
+      placeholder: app.hourglass('Loading label'),
+    }
   ),
 
 ]

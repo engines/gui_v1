@@ -19,7 +19,7 @@ app.applications.push = controller => (a,x) => [
       // confirm: 'Are you sure that you want to delete this application?',
       onclick: (e,el) => {
 
-        el.$('^').$nodes = app.http(
+        el.$('^').$nodes = [app.http(
           `/-/applications/${ controller.params.application_id }/push`,
           ( result, el ) => el.$nodes = [
             a.pre( result.message ),
@@ -39,7 +39,7 @@ app.applications.push = controller => (a,x) => [
               app.hourglass( 'Pushing commits' )
             )
           }
-        )
+        )]
 
       },
     } ),

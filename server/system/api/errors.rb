@@ -50,6 +50,7 @@ module Server
       class SystemApiWarning < Error
 
         def initialize(e)
+          # debugger 
           @headers = e.http_headers
           @body = e.http_body
         end
@@ -60,8 +61,9 @@ module Server
 
         def parsed_message
           if @headers[:content_type] =~ /application\/json/
-            object = JSON.parse( @body, symbolize_names: true )[:error_object] || {}
-            message = object[:error_mesg]
+            object = JSON.parse( @body, symbolize_names: true )
+            error = object[:error_object] || object[:error] || {}
+            message = error[:error_mesg] || error[:message]
           end
           message || 'Not allowed. ( No message provided by System API. )'
         end

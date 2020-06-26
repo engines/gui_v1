@@ -19,9 +19,12 @@ app.system.locale = controller => (a,x) => [
           label: 'Country',
           as: 'country',
         } ),
-        f.buttons(),
+        f.buttons({cancel: {onclick: () => controller.open('..')}}),
       ]
-    } )]
+    } )],
+    {
+      placeholder: app.hourglass('Loading locale'),
+    }
   ),
 
 ]

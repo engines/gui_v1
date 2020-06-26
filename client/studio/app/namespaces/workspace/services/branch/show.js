@@ -22,7 +22,7 @@ app.namespaces.workspace.services.branch.show = controller => (a,x) => [
               controller.open( 'remove' )
             }
           } ),
-          app.close( controller, 'Return to service' ),
+          app.close( controller, {title: 'Return to service'}),
 
         ] ),
       ),

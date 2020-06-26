@@ -6,7 +6,7 @@ app.applications.blueprint.dialogues.show = blueprint => controller => (a,x) => 
 
     a.h5( `dialogue ${ dialogue.id + 1 }` ),
     a['div.clearfix']( a['div.float-right'](
-      app.close( controller, 'Return to dialogues' ),
+      app.close( controller, {title: 'Return to dialogues'}),
     ) ),
     a.hr,
     a['div.clearfix']( a['div.float-right'](

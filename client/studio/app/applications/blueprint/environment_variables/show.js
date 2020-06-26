@@ -15,7 +15,7 @@ app.applications.blueprint.environment_variables.show = blueprint => controller 
           controller.open( 'edit' )
         },
       } ),
-      app.close( controller, 'Return to environment variables' ),
+      app.close( controller, {title: 'Return to environment variables'}),
     ] ) ),
 
     app.report( {

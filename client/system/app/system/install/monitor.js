@@ -2,7 +2,7 @@ app.system.install.monitor = controller => (a,x) => [
 
   a['div.clearfix'](
     a['div.float-right']( [
-      app.close( controller, 'Close' ),
+      app.close( controller, {path: '/'}),
     ] )
   ),
 
@@ -58,7 +58,7 @@ app.system.install.monitor = controller => (a,x) => [
           app.btn(
             app.icon( "fa fa-check", "OK" ),
             () => controller.open( '..' ),
-            { class: 'btn btn-primary' },
+            { class: 'btn app-btn' },
           )
         ]
       }

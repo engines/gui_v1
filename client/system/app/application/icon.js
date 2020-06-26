@@ -6,7 +6,7 @@ app.application.icon = controller => (a,x) => {
 
   return [
 
-    a.h5( 'Icon' ),
+    a.h3( 'Icon' ),
     app.http(
       path,
       ( icon_url, el ) => {

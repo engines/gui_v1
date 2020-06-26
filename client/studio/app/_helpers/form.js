@@ -4,7 +4,6 @@ app.form = ( options={} ) => cc.form( {
   when: {
     401: ( response, el ) => el.$send( 'app.server.not.authenticated' ),
     418: ( response, el ) => el.$send( 'app.server.session.timeout' ),
-    // 503: ( response, el ) => alert( 'Server not responding.' ),
     'text/terminal': ( response, el ) => response.text().then( result => {
       el.$nodes = [cc.xterm( { text: result } )]
     } ),

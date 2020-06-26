@@ -8,7 +8,7 @@ app.namespaces.definitions.index = controller => (a,x) => [
 
       a['div.clearfix']( [
         a['div.btn-group.float-right']( [
-          app.close( controller, 'Return to namespace' ),
+          app.close( controller, {title: 'Return to namespace'}),
         ] ),
       ] ),
 

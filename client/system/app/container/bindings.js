@@ -1,6 +1,6 @@
 app.container.bindings = type => controller => (a,x) => [
 
-  a.h5( 'Bindings' ),
+  a.h3( 'Bindings' ),
 
   controller.nest({
     routes: {

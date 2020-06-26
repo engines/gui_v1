@@ -14,7 +14,7 @@
   "homepage": "https://github.com/engines/gui_v1#readme",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.13.0",
-    "axf": "^0.0.17",
+    "axf": "^0.0.18",
     "bootstrap": "^4.5.0",
     "chart.js": "^2.9.3",
     "codemirror": "^5.54.0",

@@ -10,11 +10,11 @@ module Server
         post '/session' do
           token = @engines.post(
             '/system/login',
-            { api_vars: {
+            payload: { api_vars: {
               user_name: "admin",
               password: params[:password]
             } }.to_json,
-            { timeout: 5 }
+            timeout: 5
           ).body
           @current_user.login( token )
           'Logged in.'

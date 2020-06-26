@@ -15,8 +15,8 @@
 //
 //   return [
 //
-//     a.h5( 'Bindings' ),
-//     a['div.clearfix']( a['div.float-right']( app.close( controller, 'Close' ) ) ),
+//     a.h3( 'Bindings' ),
+//     app.close( controller ),
 //     a.br,
 //     app.http(
 //       [

@@ -34,7 +34,7 @@ app.namespaces.show = controller => (a,x) => [
               controller.open( 'pull' )
             }
           } ),
-          app.close( controller, 'Return to providers' ),
+          app.close( controller, {title: 'Return to providers'}),
 
         ] ),
       ] ),

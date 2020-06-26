@@ -6,8 +6,8 @@ app.service.configurations.index = controller => (a,x) => {
 
   return [
 
-    a.h5( `Configure` ),
-    a['div.clearfix']( a['div.float-right']( app.close( controller, 'Close' ) ) ),
+    a.h3( `Configure` ),
+    app.close( controller ),
     app.http(
       path,
       ( definition, el ) => {
@@ -17,7 +17,7 @@ app.service.configurations.index = controller => (a,x) => {
           configurations.map( configuration => a.div( [
             app.btn(
               app.icon( 'fa fa-caret-right', ( configuration.label || configuration.name ) ),
-              () => controller.open( 'perform', { configuration_name: configuration.name } ),
+              () => controller.open( configuration.name ),
             ),
           ] ) ) :
           a.i( 'None' )

@@ -8,7 +8,7 @@ app.container.memory = type => controller => (a,x) => {
 
   return [
 
-    a.h5( 'Memory' ),
+    a.h3( 'Memory' ),
     app.http(
       `${ path }/metrics/memory`,
       ( memory, el ) => {
@@ -26,7 +26,7 @@ app.container.memory = type => controller => (a,x) => {
                 label: false,
                 vertical: true,
               } ),
-              f.buttons(),
+              f.buttons({cancel: {onclick: () => controller.open('..')}}),
             ]
           } )
         ]

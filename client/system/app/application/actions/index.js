@@ -6,13 +6,13 @@ app.application.actions.index = controller => (a,x) => {
 
   return [
 
-    a.h5( `Actions` ),
-    a['div.clearfix']( a['div.float-right']( app.close( controller, 'Close' ) ) ),
+    a.h3( `Actions` ),
+    app.close( controller ),
     app.http(
       path,
       ( blueprint, el ) => {
         let actions = x.lib.object.dig( blueprint, [ 'software', 'actionators' ], [] )
-        el.$nodes = [ app.container.actions.list( controller, actions ) ]
+        el.$nodes = [ app.container.actions.index( controller, actions ) ]
       },
       {
         placeholder: app.hourglass( 'Loading actions' )

@@ -3,7 +3,7 @@ app.system.registry = controller => (a,x) => [
 
   a['div.clearfix'](
     a['div.float-right']( [
-      app.close( controller, 'Close' ),
+      app.close( controller ),
     ] )
   ),
 

@@ -14,7 +14,7 @@ app.system.hostname = controller => (a,x) => [
           label: false,
           vertical: true
         } ),
-        f.buttons(),
+        f.buttons({cancel: {onclick: () => controller.open('..')}}),
       ]
     } )],
     {

@@ -1,19 +1,19 @@
-app.service.actions.perform = type => controller => (a,x) => {
+app.application.actions.show = controller => (a,x) => {
 
   const containerName = controller.params.name
   const actionName = controller.params.action_name
 
-  let containerPath = `/-/-/containers/service/${ containerName }`
+  let containerPath = `/-/-/containers/engine/${ containerName }`
 
   return [
 
     app.http(
-      `${ containerPath }/service_definition`,
-      ( definition, el ) => {
+      `${ containerPath }/blueprint`,
+      ( blueprint, el ) => {
 
         let action = x.lib.object.dig(
-          definition, [ 'service_actionators' ], {}
-        )[ actionName ]
+          blueprint, [ 'software', 'actionators' ], []
+        ).find( action => action.name === actionName )
 
         el.$nodes = [app.container.actions.perform( controller, containerPath, action )]
 

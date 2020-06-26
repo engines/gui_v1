@@ -86,7 +86,7 @@ app.applications.show = controller => (a,x) => [
               controller.open( 'pull' )
             }
           } ),
-          app.close( controller, 'Return to applications' ),
+          app.close( controller, {title: 'Return to applications'}),
 
         ] ),
       ] ),
