@@ -3,23 +3,6 @@ module Server
     module App
       module Controllers
 
-        # def json_payload(request)
-        #   debugger
-        #   request.body.read
-        # end
-
-        post '/dev' do
-          content_type 'text/terminal'
-          params.to_yaml
-        end
-
-        get '/reconnected' do
-          @engines.get('/undefined_endpoint', timeout: 5)
-        rescue Error::System404
-          # System has responded with a 404, so it must be back up!
-          return 'System connected.'
-        end
-
         get '/-/*' do
           path = request.fullpath.sub '/-/-', ''
           result = @engines.get(path)
@@ -30,7 +13,6 @@ module Server
 
         delete '/-/*' do
           path = request.fullpath.sub '/-/-', ''
-          # debugger
           result = @engines.delete(
             path,
             payload: {api_vars: params[:api_vars] || {}}.to_json,
@@ -42,7 +24,6 @@ module Server
         end
 
         post '/-/*' do
-          # debugger
           path = request.fullpath.sub '/-/-', ''
           result = @engines.post(
             path,
@@ -55,7 +36,6 @@ module Server
         end
 
         put '/-/*' do
-          # debugger
           path = request.fullpath.sub '/-/-', ''
           result = @engines.put(
             path,

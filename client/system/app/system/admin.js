@@ -1,8 +1,7 @@
 app.system.admin = controller => (a,x) => [
   a.h3( "Admin" ),
 
-  app.http( '/-/-/system/user/admin' ),
-  app.http( '/-/-/system/user/engines' ),
+  app.http( '/-/-/system/system_user/settings' ),
 
   app.form( {
     url: '/-/-/unauthenticated/user/set_password',

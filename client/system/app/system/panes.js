@@ -20,7 +20,7 @@ app.system.panes = ( system, controller ) => (a,x) => {
             } }
           ) : null,
 
-          a['div.container.position-relative'](
+          a['div.container-fluid.position-relative'](
             app.system.routes( system, controller )
           )
         ],

@@ -11,8 +11,13 @@ app.system.users.user = controller => (a,x) => [
       '/domain': app.system.users.user.mailbox.edit,
       '/disable': app.system.users.user.mailbox.disable,
       '/mailbox': app.system.users.user.mailbox,
-      '/aliases*': app.system.users.user.aliases,
-      '/distributions*': app.system.users.user.distributions,
+      '/add_group': app.system.users.user.groups.add,
+      '/remove_group': app.system.users.user.groups.remove,
+      '/add_alias': app.system.users.user.aliases.add,
+      '/remove_alias': app.system.users.user.aliases.remove,
+      '/add_distribution': app.system.users.user.distributions.add,
+      '/remove_distribution': app.system.users.user.distributions.remove,
+      '/delete': app.system.users.user.delete,
     }
   }),
 

@@ -25,6 +25,13 @@ module Server
           'Logged out.'
         end
 
+        get '/reconnected' do
+          @engines.get('/system/status', timeout: 5)
+          return 'System connected.'
+        rescue RestClient::Forbidden
+          return 'System connected.'
+        end
+
       end
     end
   end

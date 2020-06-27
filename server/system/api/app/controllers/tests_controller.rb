@@ -14,6 +14,10 @@ module Server
           'Bad error'
         end
 
+        post '/dev' do
+          content_type 'text/terminal'
+          params.to_yaml
+        end
 
       end
     end

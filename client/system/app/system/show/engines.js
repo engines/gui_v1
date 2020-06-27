@@ -2,7 +2,7 @@ app.system.show.engines = controller => (a,x) => [
   a['div.clearfix']( [
     a['div.float-right'](
       app.btn(
-        app.icon( 'fas fa-redo', 'Update' ),
+        app.icon( 'fas fa-redo' ),
         () => controller.open( 'update' )
       ),
     ),
@@ -13,7 +13,6 @@ app.system.show.engines = controller => (a,x) => [
       ),
     ),
   ] ),
-  a.hr,
 ]
 
 

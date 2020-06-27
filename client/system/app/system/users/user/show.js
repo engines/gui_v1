@@ -10,20 +10,33 @@ app.system.users.user.show = controller => (a,x) => [
     '/-/-/system/uadmin/users/accounts/',
     ( account, el ) => el.$nodes = [
 
-      a['div.float-right'](
-        app.btn(
+      app.float({
+        left: a.div(a.strong(account.name), {class: 'pt-2'}),
+        right: app.btn(
           app.icon( 'fas fa-address-card', 'Name' ),
           () => controller.open( 'edit', controller.query ),
         ),
-      ),
-      a.div(a.strong(account.name), {class: 'pt-2'}),
-      a.hr,
+      }),
 
-      a.div(
-        account.groups.length ?
-        a.ul(account.groups.map(group => a.li(group.name))) :
-        a.div(a.i('No groups'))
-      ),
+      app.float({
+        left: a.div(
+          'Groups',
+          { class: 'pt-2' }
+        ),
+        right: [
+          app.btn(
+            app.icon( 'fa fa-plus' ),
+            (e,el) => controller.open( 'add_group', controller.query )
+          ),
+          app.btn(
+            app.icon( 'fa fa-minus' ),
+            (e,el) => controller.open( 'remove_group', controller.query )
+          ),
+        ],
+      }),
+      account.groups.length ?
+      a.ul(account.groups.map(group => a.li(group.name))) :
+      a.div(a.i('No groups')),
       a.hr,
 
       account.email.mailbox ? [
@@ -41,32 +54,46 @@ app.system.users.user.show = controller => (a,x) => [
         a.div( a.strong( account.email.mailbox ), { class: 'pt-2' } ),
         a.br,
 
-        a['div.float-right'](
-          app.btn(
-            app.icon( 'fas fa-share-square', 'Aliases' ),
-            () => controller.open( 'aliases', controller.query )
-          )
-        ),
-        a.div(
-          account.email.aliases.length ?
-          a.ul(account.email.aliases.map(alias => a.li(alias))) :
-          a.div(a.i('No aliases')),
-          { class: 'pt-2' }
-        ),
+        app.float({
+          left: a.div(
+            'Aliases',
+            { class: 'pt-2' }
+          ),
+          right: [
+            app.btn(
+              app.icon( 'fa fa-plus' ),
+              (e,el) => controller.open( 'add_alias', controller.query )
+            ),
+            app.btn(
+              app.icon( 'fa fa-minus' ),
+              (e,el) => controller.open( 'remove_alias', controller.query )
+            ),
+          ],
+        }),
+        account.email.aliases.length ?
+        a.ul(account.email.aliases.map(alias => a.li(alias))) :
+        a.div(a.i('None')),
         a.br,
+        app.float({
+          left: a.div(
+            'Distributions',
+            { class: 'pt-2' }
+          ),
+          right: [
+            app.btn(
+              app.icon( 'fa fa-plus' ),
+              (e,el) => controller.open( 'add_distribution', controller.query )
+            ),
+            app.btn(
+              app.icon( 'fa fa-minus' ),
+              (e,el) => controller.open( 'remove_distribution', controller.query )
+            ),
+          ],
+        }),
+        account.email.distribution_groups.length ?
+        a.ul(account.email.distribution_groups.map(distribution => a.li(distribution.name))) :
+        a.div(a.i('None')),
 
-        a['div.float-right'](
-          app.btn(
-            app.icon( 'fas fa-mail-bulk', 'Distributions' ),
-            () => controller.open( 'distributions', controller.query )
-          )
-        ),
-        a.div(
-          account.email.distribution_groups.length ?
-          a.ul(account.email.distribution_groups.map(distribution_group => a.li(distribution_group.name))) :
-          a.div(a.i('No distributions')),
-          { class: 'pt-2' }
-        ),
       ] : [
         app.float({
           left: a.div(a.i('Email not enabled'), { class: 'pt-2' }),
@@ -81,7 +108,7 @@ app.system.users.user.show = controller => (a,x) => [
         left: app.btn(
           app.icon('fas fa-user-secret', 'Password'),
           () => controller.open(
-            'edit',
+            'password',
             controller.query
           )
         ),

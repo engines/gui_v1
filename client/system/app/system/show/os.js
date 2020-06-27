@@ -2,7 +2,7 @@ app.system.show.os = controller => (a,x) => [
   a['div.clearfix']( [
     a['div.float-right'](
       app.btn(
-        app.icon( 'fas fa-redo', 'Update' ),
+        app.icon( 'fas fa-redo' ),
         () => controller.open( 'update_os' )
       ),
     ),
@@ -13,5 +13,4 @@ app.system.show.os = controller => (a,x) => [
       ),
     ),
   ] ),
-  a.hr,
 ]

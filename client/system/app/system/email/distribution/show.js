@@ -1,6 +1,6 @@
 app.system.email.distribution.show = controller => (a,x) => [
 
-  a.h5(controller.params.distribution_name),
+  a.h5('Distribution'),
 
   app.close( controller ),
 
@@ -10,10 +10,13 @@ app.system.email.distribution.show = controller => (a,x) => [
       el.$nodes = [
 
         app.float({
-          left: a.p(distribution.description ?
-            distribution.description :
-            a.i('No description')
-          ),
+          left: [
+            a.strong(controller.params.distribution_name),
+            a.p(distribution.description ?
+              distribution.description :
+              a.i('No description')
+            )
+          ],
           right: app.btn(
             app.icon('fas fa-edit', 'Edit'),
             () => controller.open('edit', controller.query)

@@ -6,12 +6,14 @@ app.restarting = controller => (a,x) => [
       if ( result.is_rebooting ) {
         el.$('^app-polling').$wait()
       } else {
+        alert('Not rebooting Reconnected')
         el.$send( 'app.reconnected' )
       }
     },
     {
       when: {
         503: ( result, el ) => {
+          alert('503 Reconnected')
           el.$send( 'app.reconnected' )
         }
       }

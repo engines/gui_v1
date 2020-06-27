@@ -28,6 +28,7 @@ app.system.users.user.mailbox.edit = controller => (a,x) => [
               key: 'domain_name',
               as: 'select',
               selections: mailbox.email_domains,
+              label: 'Mailbox domain',
             }),
           ]
         }),

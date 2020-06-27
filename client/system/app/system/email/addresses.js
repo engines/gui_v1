@@ -21,7 +21,6 @@ app.system.email.addresses = controller => (a,x) => [
           a['div.input-group-append'](a['.input-group-text'](app.icon('fa fa-search'))),
         ]),
         addresses.map((address) => a['email-address']([
-          address,
           app.btn([ app.icon('fa fa-caret-right', address.email_address)], () => {
             address.source_type == 'distribution_group' ?
             controller.open('../distribution', {distribution_name: address.distribution_group_name}) :

@@ -43,7 +43,6 @@ let app = (a,x) => a['app']( [
       nav.$load( '/disconnected' )
     },
     'app.reconnected': (e,el) => {
-      console.log('RECONNECTED')
       location.assign('/')
     },
     'app.connected': (e,el) => {

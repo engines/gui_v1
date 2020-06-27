@@ -1,11 +1,3 @@
-// def create_users_email_alias( user_uid, email_alias )
-//   @system_api.post 'system/uadmin/users/accounts/email/aliases/', user_uid: user_uid, alias: email_alias
-// end
-//
-// def delete_users_email_alias( user_uid, address )
-//   @system_api.delete 'system/uadmin/users/accounts/email/aliases/', user_uid: user_uid, address: address
-// end
-
 app.system.users.user.aliases.add = controller => (a,x) => [
 
   a.h5( 'Add alias' ),
@@ -14,19 +6,13 @@ app.system.users.user.aliases.add = controller => (a,x) => [
     '/-/-/system/uadmin/users/accounts/email/edit',
     ( mailbox, el ) => el.$nodes = [app.form( {
       url: '/-/-/system/uadmin/users/accounts/email/aliases/',
-      // method: 'PUT',
       scope: 'api_vars',
       success: () => controller.open( '..', controller.query ),
-      object: {
-        user_uid: controller.params.user_uid,
-        email: {
-          domain_name: mailbox.domain_name,
-        },
-      },
       form: f => [
         f.field({
           key: 'user_uid',
           as: 'hidden',
+          value: controller.params.user_uid,
         }),
         f.field({
           key: 'alias',
