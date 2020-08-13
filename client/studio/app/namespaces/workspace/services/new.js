@@ -8,7 +8,8 @@ app.namespaces.workspace.services.new = controller => (a,x) => [
     form: (f) => [
       f.field( {
         key: 'url',
-        as: 'input/url',
+        as: 'input',
+        type: 'url',
         label: false,
         required: true,
         placeholder: 'Repo URL',

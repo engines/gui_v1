@@ -5,14 +5,14 @@ let app = (a,x) => a['app'](
   ] ),
   {
     $on: {
-      'app.server.not.authenticated': (e,el) => {
+      'app.authenticated': (e, el) => {
         nav.$load( '/login' )
       },
-      'app.server.session.timeout': (e,el) => {
+      'app.timeout': (e, el) => {
         nav.$load( '/timeout' )
       },
-      'appkit.router.load': (e,el) => {
-        nav.$update()
+      'ax.appkit.router.load': (e, el) => {
+        nav.$render()
         let noCheck = [ '/timeout', '/login', '/logout' ]
         if ( !noCheck.includes( e.detail.path ) ) nav.$timeoutCheck()
       },

@@ -4,7 +4,7 @@
 //
 //   app.http(
 //     '/-/-/system/certificates/',
-//     ( response, el ) => response.json().then(
+//     ( result, el, response ) => response.json().then(
 //       certificates => el.$nodes = [
 //
 //         app.form( {
@@ -41,7 +41,7 @@
 //                   () => controller.open( '..' ),
 //                   {
 //                     method: 'DELETE',
-//                     placeholder: app.hourglass( `Removing certificate...` )
+//                     placeholder: app.hourglass('Removing certificate')
 //                   }
 //                 )
 //

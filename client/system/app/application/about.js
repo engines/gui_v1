@@ -29,7 +29,7 @@ app.application.about = controller => (a,x) => {
           ] : null,
           a.hr,
           [
-            a.i( 'License' ), '',
+            a.i( 'License' ), ' ',
             ( licenseUrl && licenseLabel ) ?
             a.a( licenseLabel, { href: licenseUrl, target: licenseUrl } ) :
             ( licenseUrl && !licenseLabel ) ?

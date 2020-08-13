@@ -21,7 +21,7 @@ app.namespaces.workspace.services.blueprint.consumer_scripts = blueprint => cont
       form: (ff) => [
         ff.field( {
           key: 'content',
-          as: 'code',
+          as: 'codemirror',
           vertical: true,
           label: false,
           code: {

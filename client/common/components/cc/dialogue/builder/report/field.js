@@ -44,37 +44,38 @@ cc.dialogue.builder.report.field = ( r, fieldSpec, params ) => {
   }
 
   let controlTypes = {
-    string: { control: 'string' },
-    text: { control: 'textarea' },
-    preformatted: { control: 'preformatted' },
-    select: { control: 'select' },
-    boolean: { control: 'boolean' },
-    checkbox: { control: 'checkbox' },
-    checkboxes: { control: 'checkboxes' },
-    radios: { control: 'radios' },
-    password: { control: 'password' },
-    color: { control: 'color' },
-    datetime: { control: 'datetime' },
-    email: { control: 'email' },
-    number: { control: 'number' },
-    tel: { control: 'tel' },
-    url: { control: 'url' },
-    json: { control: 'json' },
-    output: { control: 'output' },
-    country: { control: 'country' },
-    language: { control: 'language' },
-    timezone: { control: 'timezone' },
-    markdown: { control: 'markdown' },
-    code: { control: 'code' },
-    one: { control: 'one' },
-    many: { control: 'many' },
-    table: { control: 'table' },
+    string: { as: 'string' },
+    text: { as: 'textarea' },
+    preformatted: { as: 'preformatted' },
+    select: { as: 'select' },
+    boolean: { as: 'boolean' },
+    checkbox: { as: 'checkbox' },
+    checkboxes: { as: 'checkboxes' },
+    radios: { as: 'radios' },
+    password: { as: 'password' },
+    color: { as: 'color' },
+    datetime: { as: 'datetime' },
+    email: { as: 'email' },
+    number: { as: 'number' },
+    tel: { as: 'tel' },
+    url: { as: 'url' },
+    json: { as: 'json' },
+    output: { as: 'output' },
+    country: { as: 'country' },
+    language: { as: 'language' },
+    timezone: { as: 'timezone' },
+    markdown: { as: 'markdown' },
+    code: { as: 'codemirror' },
+    terminal: { as: 'xtermjs' },
+    one: { as: 'one' },
+    many: { as: 'many' },
+    table: { as: 'table' },
   }
 
-  let control = fieldSpec.control || 'string'
-  let controlType = controlTypes[control]
-  field.control = controlType.control
-  field[field.control] = fieldSpec[field.control]
+  let as = fieldSpec.as || 'string'
+  let controlType = controlTypes[as]
+  field.as = controlType.as
+  field.control = fieldSpec.control
 
   return r.field( field )
 

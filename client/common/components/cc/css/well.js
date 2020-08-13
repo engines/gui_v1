@@ -1,4 +1,4 @@
-ax.css( {
+ax.style( {
   '.well': {
     padding: '.5rem',
     // borderColor: 'lightgray',

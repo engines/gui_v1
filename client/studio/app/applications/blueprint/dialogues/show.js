@@ -23,12 +23,12 @@ app.applications.blueprint.dialogues.show = blueprint => controller => (a,x) => 
       a['div.btn-group.float-left']( [
 
         app.form( {
-          action: submition => {
+          action: (submission) => {
             app.applications.blueprint.dialogues.tests.
               perform( {
                 blueprint: blueprint,
                 controller: controller,
-                submition: submition,
+                submission: submission,
               } )
           },
           form: (f) => [

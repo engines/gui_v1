@@ -27,8 +27,7 @@ app.system.panes = ( system, controller ) => (a,x) => {
         percent: window.localStorage.systemHorizontalPanesPercent || '33',
         panesTag: {
           $on: {
-            'ax.panes.resize': (e,el) => {
-              el.$('^app').$$('|ax-xtermjs').$fit()
+            'ax.appkit.panes.resize': (e, el) => {
               const panesPercent = e.detail.percent
               window.localStorage.systemHorizontalPanesPercent = panesPercent
             }

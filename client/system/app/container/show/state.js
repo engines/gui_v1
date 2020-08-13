@@ -8,12 +8,12 @@ app.container.show.state = container => (a,x) => {
 
   return a.h5( [
     app.container.icons.state( status ),
-    status.state,
+    ` ${status.state} `,
     status.state === 'running' ? app.container.show.uptime( path ) : null,
     app.container.icons.error( status ),
     a['#instructor']( null, {
-      $instruct: function( instruction ) {
-        this.$nodes = app.http(
+      $instruct: (el) => ( instruction ) => {
+        el.$nodes = app.http(
           `${ path }/${ instruction }`,
           ( result, el ) => el.$nodes = a['.pl-2.pr-2']( app.hourglass() ),
           {

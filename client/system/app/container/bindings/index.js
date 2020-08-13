@@ -9,7 +9,9 @@ app.container.bindings.index = type => controller => (a,x) => {
   return [
 
     app.close( controller ),
-    a.br,
+
+    a.h3( 'Bindings' ),
+
     app.http(
       [
         `${ path }/persistent/`,
@@ -17,48 +19,58 @@ app.container.bindings.index = type => controller => (a,x) => {
       ],
       ( [ persistent, nonpersistent ], el ) => {
 
-        let bindings = [
-          ...persistent,
-          ...nonpersistent
-        ].sort( ( a, b ) => {
-          if ( a.service_handle < b.service_handle ){
-            return -1
-          }
-          if ( a.service_handle > b.service_handle ){
-            return 1
-          }
-          return 0
-        } ).sort( ( a, b ) => {
-          if ( a.service_container_name < b.service_container_name ){
-            return -1
-          }
-          if ( a.service_container_name > b.service_container_name ){
-            return 1
-          }
-          return 0
-        } )
-
         el.$nodes = [
-
-          bindings.map( binding => a.div( app.btn (
+          app.btn(
+            app.icon('fa fa-plus', 'New'),
+            () => controller.open('new', controller.query),
+          ),
+          a.hr,
+          a.small('Persistent'),
+          persistent.length ?
+          persistent.map( binding => a.div( app.btn (
             app.icon(
               'fa fa-caret-right',
-              [
-                binding.service_container_name,
-                a.small( binding.service_handle ),
-              ]
+              `${
+                binding.service_container_name
+              }:${
+                binding.service_handle
+              }`
             ),
             () => controller.open(
-              binding.persistent ?
-              'persistent' :
-              'nonpersistent',
+              'persistent',
               {
+                service: binding.service_container_name,
                 type: binding.type_path,
                 publisher: binding.publisher_namespace,
                 handle: binding.service_handle,
               }
             )
-          ) ) ),
+          ) ) ) :
+          a.p(a['i.placeholder']('None')),
+
+          a.hr,
+          a.small('Nonpersistent'),
+          nonpersistent ?
+          nonpersistent.map( binding => a.div( app.btn (
+            app.icon(
+              'fa fa-caret-right',
+              `${
+                binding.service_container_name
+              }:${
+                binding.service_handle
+              }`
+            ),
+            () => controller.open(
+              'nonpersistent',
+              {
+                service: binding.service_container_name,
+                type: binding.type_path,
+                publisher: binding.publisher_namespace,
+                handle: binding.service_handle,
+              }
+            )
+          ) ) ) :
+          a.p(a['i.placeholder']('None')),
 
         ]
 
@@ -73,17 +85,47 @@ app.container.bindings.index = type => controller => (a,x) => {
 
       a.hr,
 
-      a.p( 'Consumers' ),
       app.http(
         `/-/-/containers/service/${ name }/consumers/`,
-        ( consumers, el ) => el.$nodes = x.out( consumers )
-      ),
+        ( consumers, el ) => {
 
+          el.$nodes = [
+            a.small( 'Consumers' ),
+            consumers.length ?
+            consumers.map((consumer) => a.div(app.btn(
+              app.icon(
+                'fa fa-caret-right',
+                `${
+                  consumer.parent_engine
+                } ${
+                  consumer.service_container_name
+                }:${
+                  consumer.service_handle
+                }`
+              ),
+              () => {
+                let path = `/applications/${
+                  consumer.parent_engine
+                }/bindings/${
+                  consumer.persistent ? 'persistent' : 'nonpersistent'
+                }/`;
+                let query = {
+                  service: consumer.service_container_name,
+                  type: consumer.type_path,
+                  publisher: consumer.publisher_namespace,
+                  handle: consumer.service_handle,
+                };
+                controller.open(path, query);
+              }
+            ))) :
+            a.p(a['i.placeholder']('None')),
+            // x.out( consumers ),
+          ];
 
-      a.p( 'Subservices' ),
-      app.http(
-        `/-/-/containers/service/${ name }/sub_services`,
-        ( subservices, el ) => el.$nodes = x.out( subservices )
+        },
+        {
+          placeholder: app.hourglass('Loading consumer bindings')
+        }
       ),
 
     ] : null,

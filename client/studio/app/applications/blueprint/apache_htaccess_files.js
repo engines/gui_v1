@@ -19,7 +19,7 @@ app.applications.blueprint.apache_htaccess_files = blueprint => controller => (a
           } ),
           ff.field( {
             key: 'content',
-            as: 'code',
+            as: 'codemirror',
             vertical: true,
             label: false,
           } ),

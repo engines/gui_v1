@@ -15,12 +15,12 @@ app.blueprintForm = (
       },
     } ),
   ],
-  action: ( submition ) => {
+  action: (submission) => {
 
-    let data = manipulator ? manipulator( submition.data ) : submition.data,
-        form = submition.form,
-        output = submition.output,
-        complete = submition.complete
+    let data = manipulator ? manipulator( submission.data ) : submission.data,
+        form = submission.form,
+        output = submission.output,
+        complete = submission.complete
 
     let isNew = entry.isNew
     entry.formSubmit( data )
@@ -32,7 +32,7 @@ app.blueprintForm = (
       {
         complete: complete,
         method: 'POST',
-        // placeholder: app.hourglass( `Saving blueprint...` ),
+        // placeholder: app.hourglass('Saving blueprint'),
         headers: { 'Content-type': 'application/json' },
         body:  JSON.stringify( blueprint.output, null, 2 )
       }

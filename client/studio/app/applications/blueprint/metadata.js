@@ -23,7 +23,8 @@ app.applications.blueprint.metadata = blueprint => controller => (a,x) => [
           } ),
           ff.field( {
             key: 'url',
-            as: 'input/url',
+            as: 'input',
+            type: 'url',
             label: 'Website URL',
           } ),
         ]
@@ -40,7 +41,8 @@ app.applications.blueprint.metadata = blueprint => controller => (a,x) => [
           } ),
           ff.field( {
             key: 'url',
-            as: 'input/url',
+            as: 'input',
+            type: 'url',
             label: 'URL',
           } ),
         ]

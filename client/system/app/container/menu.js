@@ -10,8 +10,8 @@ app.container.menu = ( controller, type ) => (a,x) => {
 
     type === 'service' ? [
       menuButton( 'Configuration', `${prefix}configurations`, 'fas fa-cogs' ),
-      menuButton( 'Export', `${prefix}export`, 'fas fa-download' ),
-      menuButton( 'Import', `${prefix}import`, 'fas fa-upload' ),
+      menuButton( 'Export', `${prefix}export`, 'fas fa-archive' ),
+      menuButton( 'Import', `${prefix}import`, 'fas fa-database' ),
     ] : [
       menuButton( 'Network', `${prefix}network`, 'fas fa-sitemap' ),
       menuButton( 'Icon', `${prefix}icon`, 'fas fa-icons' ),

@@ -9,7 +9,7 @@ app.system.show.errors = ( controller, system ) => (a,x) => a.p( [
   ) : null,
   system.needs_base_update ? app.btn(
     a['.text-warning']( app.icon( 'fa fa-bell', 'Needs OS update' ) ),
-    () => controller.open( '/update_os' ),
+    () => controller.open( '/update/os' ),
   ) : null,
   system.did_build_fail ? app.btn(
     a['.error']( app.icon( 'fas fa-tools', 'Install failed' ) ),

@@ -64,7 +64,7 @@ app.applications.blueprint.actionators.show = blueprint => controller => (a,x) =
           report: (rr) => [
             rr.field( {
               key: 'content',
-              as: 'code',
+              as: 'codemirror',
               label: false,
               vertical: true,
               code: {

@@ -27,7 +27,8 @@ app.applications.blueprint.components = blueprint => controller => (a,x) => [
           } ),
           ff.field( {
             key: 'url',
-            as: 'input/url',
+            as: 'input',
+            type: 'url',
             label: 'URL',
           } ),
           ff.field( {
@@ -36,7 +37,7 @@ app.applications.blueprint.components = blueprint => controller => (a,x) => [
             form: (fff) => [
               fff.field( {
                 key: 'content',
-                as: 'code',
+                as: 'codemirror',
                 vertical: true,
                 label: false,
                 code: {

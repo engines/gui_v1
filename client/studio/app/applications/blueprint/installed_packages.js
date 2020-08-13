@@ -28,7 +28,8 @@ app.applications.blueprint.installed_packages = blueprint => controller => (a,x)
           } ),
           ff.field( {
             key: 'source_url',
-            as: 'input/url',
+            as: 'input',
+            type: 'url',
             label: 'Source URL',
           } ),
           ff.field( {

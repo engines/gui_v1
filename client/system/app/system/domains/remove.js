@@ -24,15 +24,15 @@ app.system.domains.remove = controller => (a,x) => [
 
         ],
 
-        action: ( submition ) => {
+        action: (submission) => {
 
-          let domain = submition.data.domain
+          let domain = submission.data.domain
 
-          submition.output.$nodes = app.http(
+          submission.output.$nodes = app.http(
             `/-/-/system/domains/${ domain }`,
             () => controller.open( '..' ),
             {
-              complete: submition.complete,
+              complete: submission.complete,
               method: 'DELETE'
             }
           )

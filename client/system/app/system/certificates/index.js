@@ -6,8 +6,8 @@ app.system.certificates.index = controller => (a,x) => [
 
   app.http(
     '/-/-/system/certs/',
-    ( certificates, el ) => el.$nodes = [
-      certificates,
+    // ( certificates, el ) => el.$nodes = [
+    //   certificates,
       // app.btn(
       //   app.icon( 'fa fa-plus' ),
       //   (e,el) => controller.open( 'add' )
@@ -16,7 +16,7 @@ app.system.certificates.index = controller => (a,x) => [
       //   app.icon( 'fa fa-minus' ),
       //   (e,el) => controller.open( 'remove' )
       // ),
-    ]
+    // ]
   ),
 
   app.http( '/-/-/system/certs/service_certs' )

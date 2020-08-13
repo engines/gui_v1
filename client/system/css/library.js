@@ -1,17 +1,13 @@
-ax.css( {
+ax.style( {
 
-  '.app-library': {
+  'library-applications': {
     display: 'block',
 
-    '> button': {
+    'button.btn': {
       textAlign: 'left',
       display: 'block',
       width: '100%',
       padding: '0px',
-      // '&:hover': {
-      //   backgroundColor: '#007bff',
-      //   color: 'white',
-      // }
     },
 
   },

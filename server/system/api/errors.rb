@@ -37,8 +37,12 @@ module Server
 
       class SystemUnavailable < Error
 
+        def initialize(e)
+          @message = e.message
+        end
+
         def message
-          "System unavailable."
+          "System unavailable. #{@message}"
         end
 
         def status
@@ -50,7 +54,6 @@ module Server
       class SystemApiWarning < Error
 
         def initialize(e)
-          # debugger 
           @headers = e.http_headers
           @body = e.http_body
         end
@@ -98,11 +101,47 @@ module Server
 
       end
 
+      # class Upload < Error
+      #
+      #   def initialize(e)
+      #     @message = e.message
+      #   end
+      #
+      #   def message
+      #     @message ||= parsed_message
+      #   end
+      #
+      #   def parsed_message
+      #     "Engines System API route not found: #{
+      #       @request.method.upcase
+      #     } '#{
+      #       URI.parse( @request.url ).path
+      #     }'."
+      #   end
+      #
+      #   def status
+      #     500
+      #   end
+      #
+      # end
+
     end
 
     class Fatal < StandardError
 
-      class SystemError < Fatal
+      # class Error < Fatal
+      #
+      #   # def initialize(e)
+      #   #   @message = e.message
+      #   # end
+      #   #
+      #   # def status
+      #   #   500
+      #   # end
+      #
+      # end
+
+      class SystemApiError < Fatal
 
         def initialize(e)
           @body = e.http_body
@@ -123,6 +162,29 @@ module Server
         end
 
       end
+
+      class SystemJsonError < Fatal
+
+        # def initialize(e)
+        #   @body = e.http_body
+        # end
+        #
+        # def message
+        #   @message ||= "Engines System API server JSON error:\n'#{
+        #     JSON.parse( @body ).to_yaml
+        #   }'."
+        # end
+        #
+        # def parsed_message
+        #
+        # end
+
+        def status
+          500
+        end
+
+      end
+
 
     end
 

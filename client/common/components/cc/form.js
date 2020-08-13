@@ -5,9 +5,11 @@ cc.form = ( options={} ) => (a,x) => x.form( {
     x.form.field.dependent.shim,
     x.form.field.nest.shim,
     x.form.field.nest.prefab.shim,
+    x.codemirror.form.shim,
     x.bootstrap.form.shim,
     x.form.async.shim,
-    cc.form.shim
+    cc.form.shim,
   ],
+  horizontal: true,
   ...options,
 } )

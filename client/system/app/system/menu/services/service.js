@@ -7,16 +7,16 @@ a['app-menu-service'](
         id: `service_${ name }`,
         name: `${ name }`,
         $state: { status: status },
-        $nodes: ( el, container ) => [
-          app.container.icons.state( container.status ),
-          name,
-          app.container.icons.error( container.status ),
+        $nodes: ( el ) => [
+          app.container.icons.state( el.$state.status ),
+          ` ${name} `,
+          app.container.icons.error( el.$state.status ),
         ],
       }
     ),
     () => controller.open( `/services/${ name }` ),
     {
-      class: 'btn app-btn d-block w-100 text-left',
+      class: 'btn app-btn d-block w-100 text-left overflow-hidden',
     }
   ),
   {

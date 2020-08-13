@@ -3,7 +3,7 @@ app.system.show.os = controller => (a,x) => [
     a['div.float-right'](
       app.btn(
         app.icon( 'fas fa-redo' ),
-        () => controller.open( 'update_os' )
+        () => controller.open( 'update/os' )
       ),
     ),
     a['div.float-left'](

@@ -1,11 +1,6 @@
 app.system.registry = controller => (a,x) => [
-  a.h3( 'System registry' ),
-
-  a['div.clearfix'](
-    a['div.float-right']( [
-      app.close( controller ),
-    ] )
-  ),
+  app.close( controller ),
+  a.h3( 'Registry' ),
 
   app.http(
     [
@@ -30,7 +25,10 @@ app.system.registry = controller => (a,x) => [
       app.tree( sub_services ),
       app.tree( orphans ),
       app.tree( shares ),
-    ]
+    ],
+    {
+      placeholder: app.hourglass('Loading registry'),
+    }
   ),
 
   // app.http(

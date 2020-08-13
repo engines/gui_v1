@@ -22,14 +22,12 @@ app.service.show = controller => (a,x) => {
           {
             name: name,
             $state: container,
-            $update: function( el, container ) {
-              this.$('|appkit-transition').$to( app.container.show( 'service', controller, container ) )
+            $update: (el) => {
+              el.$('ax-appkit-transition').$to( app.container.show( 'service', controller, el.$state ) )
             }
           }
         ),
-
       ]
-
     },
     {
       placeholder: app.hourglass( 'Loading container' )

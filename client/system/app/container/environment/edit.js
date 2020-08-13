@@ -16,7 +16,7 @@ app.container.environment.edit = type => controller => (a,x) => {
           key: environment_variable.name,
           label: environment_variable.name,
           value: environment_variable.value || '',
-          readonly: environment_variable.immutable || undefined,
+          disabled: environment_variable.immutable || false,
         } ) )
 
         el.$nodes = [app.form( {

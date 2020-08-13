@@ -38,7 +38,7 @@ app.system.email.domains.add = controller => (a,x) => [
       } )]
     },
     {
-      placeholer: app.hourglass('Loading email')
+      placeholder: app.hourglass('Loading new domain')
     }
   ),
 

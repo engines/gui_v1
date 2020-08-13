@@ -37,7 +37,8 @@ form = ( controller, blueprint, actionator ) => (a,x) => {
         } ),
         f.field( {
           key: 'timeout',
-          as: 'input/number',
+          as: 'input',
+          type: 'number',
         } ),
         f.field( {
           key: 'enable_logging',
@@ -55,7 +56,7 @@ form = ( controller, blueprint, actionator ) => (a,x) => {
               key: 'content',
               label: false,
               vertical: true,
-              as: 'code',
+              as: 'codemirror',
               code: {
                 mode: {
                   value: ff.object.content_mode,

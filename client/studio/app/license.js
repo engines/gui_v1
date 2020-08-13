@@ -12,7 +12,7 @@ app.license = ( parent, path ) => controller => (a,x) => [
         scope: 'license',
         form: (f) => [
           f.field( {
-            as: 'code',
+            as: 'codemirror',
             key: 'content',
             vertical: true,
             label: false,
@@ -23,7 +23,7 @@ app.license = ( parent, path ) => controller => (a,x) => [
             }
           } ),
         ],
-        success: ( response, el ) => {
+        success: () => {
           controller.open( '..' )
         }
       } )

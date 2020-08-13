@@ -31,7 +31,7 @@ app.applications.blueprint.actionators.variables.delete = blueprint => controlle
             () => controller.open( '../..' ),
             {
               method: 'POST',
-              placeholder: app.hourglass( `Saving blueprint...` ),
+              placeholder: app.hourglass('Saving blueprint'),
               headers: { 'Content-type': 'application/json' },
               body:  JSON.stringify( blueprint.output, null, 2 )
             }

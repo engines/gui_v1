@@ -1,13 +1,13 @@
 app.login = controller => (a,x) => app.form( {
   url: '/-/session',
-  success: ( response, el ) => {
+  success: ( result, el, response ) => {
     nav.$setUser( true )
     el.$send( 'app.server.authenticated' )
     controller.open()
   },
-  when: {
-    401: null, // Perform default error behaviour on 401, i.e. Show error message.
-  },
+  // when: {
+  //   401: null, // Perform default error behaviour on 401, i.e. Show error message.
+  // },
   form: (f) => [
     f.input( { name: 'name', value: 'Engines Studio', inputTag: { class: 'd-none' } } ),
     f.input( { name: 'password', type: 'password', placeholder: 'Password', required: 'required' } ),

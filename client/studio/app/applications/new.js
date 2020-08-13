@@ -8,7 +8,8 @@ app.applications.new = controller => (a,x) => [
     form: (f) => [
       f.field( {
         key: 'url',
-        as: 'input/url',
+        as: 'input',
+        type: 'url',
         label: false,
         vertical: true,
         placeholder: 'Repo URL',

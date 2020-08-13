@@ -46,7 +46,7 @@ app.system.certificates.add = controller => (a,x) => [
     //         () => controller.open( '..' ),
     //         {
     //           method: 'DELETE',
-    //           placeholder: app.hourglass( `Removing domain...` )
+    //           placeholder: app.hourglass('Removing domain')
     //         }
     //       )
     //

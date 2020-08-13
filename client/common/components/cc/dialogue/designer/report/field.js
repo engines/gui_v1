@@ -94,7 +94,7 @@ f.field( {
               key: 'layout',
               as: 'checkbox',
               checked: 'vertical',
-              checkbox: { label: 'Vertical' },
+              control: { label: 'Vertical' },
             } ),
 
             ff.field( {

@@ -1,8 +1,8 @@
-ax.css( {
+ax.style( {
 
   'app-system': {
 
-    '|ax-panes': {
+    'ax-appkit-panes': {
 
       top: 'calc( 1.5rem + 14px )',
 

@@ -8,7 +8,8 @@ app.service.import = controller => (a,x) => {
     app.close( controller ),
     a.br,
 
-    x.filepond( {
+    x.filepond({filepond: {
+      // onerror: (e) => alert(`aaa ${JSON.stringify(e)}`),
       server: {
         url: `/-/upload/service/${ name }`,
         process: {
@@ -17,7 +18,7 @@ app.service.import = controller => (a,x) => {
           }
         }
       }
-    } ),
+    }}),
 
   ]
 

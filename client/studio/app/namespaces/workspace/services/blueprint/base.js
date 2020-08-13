@@ -11,7 +11,8 @@ app.namespaces.workspace.services.blueprint.base = blueprint => controller => (a
 
       f.field( {
         key: 'inherit',
-        as: 'input/url',
+        as: 'input',
+        type: 'url',
       } ),
       f.field( {
         key: 'name',
@@ -111,19 +112,22 @@ app.namespaces.workspace.services.blueprint.base = blueprint => controller => (a
         form: (ff) => [
           ff.field( {
             key: 'required',
-            as: 'input/number',
+            as: 'input',
+            type: 'number',
             required: true,
           } ),
           ff.field( {
             key: 'recommended',
-            as: 'input/number',
+            as: 'input',
+            type: 'number',
           } ),
         ]
       } ),
 
       f.field( {
         key: 'source_files',
-        as: 'input/url',
+        as: 'input',
+        type: 'url',
       } ),
 
     ]

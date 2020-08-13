@@ -1,30 +1,30 @@
-ax.css( {
+ax.style( {
 
-  '|appkit-report-control': {
+  'ax-appkit-report-control': {
 
-    display: 'block',
-    '&:focus, &:focus-within': {
-      boxShadow: '0 0 0 .2rem #FFD70077',
-    },
+    // display: 'block',
+    // '&:focus, &:focus-within': {
+    //   boxShadow: '0 0 0 .2rem #FFD70077',
+    // },
+    //
+    //
+    // '.form-control': {
+    //   minHeight: 'calc(1.5em + .75rem + 2px)',
+    //   maxHeight: '300px',
+    //   overflowY: 'auto',
+    //   borderColor: 'transparent',
+    // },
+    //
+    // '.form-control:focus, .form-control:focus-within': {
+    //   borderColor: '#CED4DA',
+    //   boxShadow: 'unset',
+    // },
 
-
-    '.form-control': {
-      minHeight: 'calc(1.5em + .75rem + 2px)',
-      maxHeight: '300px',
-      overflowY: 'auto',
-      borderColor: 'transparent',
-    },
-
-    '.form-control:focus, .form-control:focus-within': {
-      borderColor: '#CED4DA',
-      boxShadow: 'unset',
-    },
-
-    // 'input:focus, |appkit-report-control textarea:focus': {
+    // 'input:focus, ax-appkit-report-control textarea:focus': {
     //   boxShadow: 'none',
     // },
-    
-    '|appkit-report-checkbox-wrapper, |appkit-report-checkboxs, |appkit-report-radios': {
+
+    'ax-appkit-report-checkbox-wrapper, ax-appkit-report-checkboxes, ax-appkit-report-radios': {
       pointerEvents: 'none',
     },
 
@@ -33,13 +33,13 @@ ax.css( {
       marginBottom: '0.25rem',
     },
 
-    '|appkit-report-password': {
+    'ax-appkit-report-password': {
       paddingRight: '1px',
     },
 
-    '|appkit-report-string': { minHeight: '40px' },
+    'ax-appkit-report-string': { minHeight: '40px' },
 
-    '|appkit-report-nest': {
+    'ax-appkit-report-nest': {
       '.table-sm': {
         td: { padding: '0.125rem', },
         th: { padding: '0.125rem', fontWeight: 'normal' },

@@ -13,10 +13,6 @@ app.nav = controller => (a,x) => a['app-nav']( [
   a['.nav-host']( a.small( location.hostname ) ),
 
   a['app-nav-buttons.float-right']( [
-    // app.button( {
-    //   label: app.icon( 'fa fa-cog' ),
-    //   onclick: () => controller.open( '/settings' ),
-    // } ),
     app.btn(
       app.icon( 'fas fa-cog' ),
       () => controller.open( '/settings' ),
@@ -36,33 +32,34 @@ app.nav = controller => (a,x) => a['app-nav']( [
     style: { display: 'none' },
   } ),
 
-  app.http( '/-/session', ( response, el ) => {
-    el.$('^app-nav').$setUser( true )
-  } ),
+  app.http(
+    '/-/session',
+    (result, el) => el.$('^app-nav').$setUser( true ),
+  ),
 
 ], {
-
   id: 'nav',
-
-  $init: function() {
-    this.$update()
+  $init: (el) => {
+    el.$render()
   },
-  $setUser: function( user ) {
-    let buttons = this.$('app-nav-buttons')
-    user ? x.lib.animate.fade.in( buttons ) : x.lib.animate.fade.out( buttons )
+  $setUser: (el) => ( user ) => {
+    let buttons = el.$('app-nav-buttons')
+    user ?
+      x.lib.animate.fade.in( buttons ) :
+      x.lib.animate.fade.out( buttons )
   },
-  $path: () => window.location.pathname,
-  $update: function() {
-    let path = this.$path()
+  $path: (el) => () => window.location.pathname,
+  $update: (el) => {
+    // debugger
+    let path = el.$path()
     let active = ( path.match( /\w+/ ) || [''] )[0]
-    this.$$( `.app-nav-btn` ).classList.remove('active')
-    this.$$( `.app-nav-btn-${ active }` ).classList.add('active')
+    el.$$( `.app-nav-btn` ).classList.remove('active')
+    el.$$( `.app-nav-btn-${ active }` ).classList.add('active')
   },
-  $open: function( path ) {
+  $open: (el) => ( path ) => {
     controller.open( path )
   },
-  $load: function( path ) {
+  $load: (el) => ( path ) => {
     controller.load( path )
   },
-
 } )

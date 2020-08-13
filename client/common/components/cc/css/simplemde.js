@@ -1,5 +1,5 @@
-ax.css( {
-  '|appkit-form-simplemde': {
+ax.style( {
+  'ax-appkit-form-easymde': {
     '.CodeMirror': {
       borderColor: '#ced4da',
       borderTop: '1px solid #ced4da',

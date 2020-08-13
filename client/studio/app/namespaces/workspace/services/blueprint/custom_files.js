@@ -37,7 +37,7 @@ app.namespaces.workspace.services.blueprint.custom_files = blueprint => controll
 
           ff.field( {
             key: 'content',
-            as: 'code',
+            as: 'codemirror',
             vertical: true,
             code: {
               mode: {

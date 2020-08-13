@@ -5,8 +5,8 @@ app.charts.ram = ram => (a,x) => {
   let used = total - free
 
   return [
-    x.chart( {
-      wrapperTag: {
+    x.chartjs( {
+      divTag: {
         class: 'system-show-chart',
         style: {
           height: '66px',

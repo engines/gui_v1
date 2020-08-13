@@ -19,6 +19,11 @@ module Server
           params.to_yaml
         end
 
+        get '/slow' do
+          sleep 30
+          params.to_yaml
+        end
+
       end
     end
   end

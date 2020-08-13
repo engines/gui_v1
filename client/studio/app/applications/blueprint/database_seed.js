@@ -11,7 +11,7 @@ app.applications.blueprint.database_seed = blueprint => controller => (a,x) => [
 
       f.field( {
         key: 'content',
-        as: 'code',
+        as: 'codemirror',
         vertical: true,
         label: false,
         code: {

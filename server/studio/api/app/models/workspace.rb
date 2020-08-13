@@ -20,7 +20,6 @@ module Server
               exists: true,
               branch: repo.branch.current,
               remote: repo.remote,
-              # services: namespace.services.to_h
             } :
             { exists: false }
           end
@@ -83,8 +82,6 @@ module Server
           end
 
         end
-
-
 
       end
     end

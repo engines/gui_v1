@@ -1,12 +1,7 @@
 app.system.reserved = controller => (a,x) => [
+  app.close( controller ),
 
   a.h3( 'Reserved' ),
-
-  a['div.clearfix'](
-    a['div.float-right']( [
-      app.close( controller ),
-    ] )
-  ),
 
   a.div( app.collapse( {
     label: 'Container names',

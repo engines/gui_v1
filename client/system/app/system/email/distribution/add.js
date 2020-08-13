@@ -40,7 +40,7 @@ app.system.email.distribution.add = controller => (a,x) => [
     },
     {
       query: {distribution_group_name: controller.params.distribution_name},
-      placeholer: app.hourglass('Loading email')
+      placeholder: app.hourglass('Loading distribution')
     }
   ),
 

@@ -16,7 +16,7 @@ app.applications.blueprint.custom_php_inis = blueprint => controller => (a,x) =>
         form: (ff) => [
           ff.field( {
             key: 'content',
-            as: 'code',
+            as: 'codemirror',
             vertical: true,
             label: false,
             code: { mode: 'php' },

@@ -29,7 +29,7 @@ app.namespaces.workspace.services.blueprint.scripts = blueprint => controller =>
       form: (ff) => [
         ff.field( {
           key: 'content',
-          as: 'code',
+          as: 'codemirror',
           vertical: true,
           label: false,
           code: {

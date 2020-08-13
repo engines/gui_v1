@@ -45,7 +45,7 @@
 #         end
 #
 #         def auth_filepath
-#           "sessions/#{ session[:session_id] }"
+#           "sessions/#{ session['session_id'] }"
 #         end
 #
 #       end

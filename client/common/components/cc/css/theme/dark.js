@@ -1,4 +1,4 @@
-ax.css( {
+ax.style( {
 
   'body.app-theme-dark': {
 
@@ -23,7 +23,7 @@ ax.css( {
       borderTop: '1px solid rgba(255, 255, 255, 0.1)'
     },
 
-    '|appkit-menu menu': {
+    'ax-appkit-menu menu': {
       backgroundColor: 'black',
     },
 
@@ -49,9 +49,9 @@ ax.css( {
       borderColor: '#333',
     },
 
-    '|ax-panes': {
+    'ax-appkit-panes': {
 
-      '|ax-panes-drag': {
+      'ax-appkit-panes-drag': {
         background: '#FFF1',
         '&:hover': {
           background: '#333',
@@ -59,7 +59,7 @@ ax.css( {
       },
 
       '&.dragable': {
-        '|ax-panes-drag': {
+        'ax-appkit-panes-drag': {
           background: '#666',
         },
       },

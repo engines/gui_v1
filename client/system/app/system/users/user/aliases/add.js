@@ -25,7 +25,7 @@ app.system.users.user.aliases.add = controller => (a,x) => [
               as: 'hidden',
             }),
             a({
-              $on: { 'input: update address field': (e,el) => {
+              $on: { 'input: update address field': (e, el) => {
                 let local = el.$('^form [name="api_vars[alias][local_part]"]').value
                 let domain_name = el.$('^form [name="api_vars[alias][domain_name]"]').value
                 el.$('^form [name="api_vars[alias][address]"]').value = `${local}@${domain_name}`

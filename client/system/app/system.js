@@ -1,5 +1,5 @@
 app.system = controller => (a,x) => a( {
-  $init: function(el) {
+  $init: (el) => {
     el.$nodes = [app.http( [
       '/-/-/system/status',
       '/-/-/engine_builder/status',
@@ -24,6 +24,8 @@ app.system = controller => (a,x) => a( {
         el.$send( 'app.restarting' )
       } else if ( system.is_base_system_updating ) {
         el.$send( 'app.os.updating' )
+      } else if ( system.is_halting ) {
+        el.$send( 'app.shutdown' )
       } else if ( system.is_engines_system_updating ) {
         el.$send( 'app.updating' )
       }

@@ -21,7 +21,7 @@ app.readme = ( parent, path ) => controller => (a,x) => [
             }
           } ),
         ],
-        success: ( response, el ) => {
+        success: ( result, el, response ) => {
           controller.open( '..' )
         }
       } )

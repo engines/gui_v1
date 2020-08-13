@@ -6,12 +6,11 @@ module Server
         logging: Sinatra::Base.development? ? Logger::DEBUG : Logger::INFO,
         dump_errors: Sinatra::Base.development?,
         show_exceptions: false,
-        session_timeout_seconds: $SESSION_TIMEOUT_MINUTES.to_f * 60,
+        session_timeout_seconds: ENV['SESSION_TIMEOUT_MINUTES'].to_f * 60,
         ssh_private_key_filename: "identity",
         ssh_public_key_filename: "identity.pub",
         enable_services_designer: !!ENV['ENABLE_SERVICES_DESIGNER'] || Sinatra::Base.development?,
-        # git_username: ENV['GIT_USERNAME'] || 'Engines Studio',
         user_password: ( Sinatra::Base.development? ? 'password' : ENV['USER_PASSWORD'] ) || 'password'
-
   end
+
 end

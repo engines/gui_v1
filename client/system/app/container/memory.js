@@ -21,12 +21,13 @@ app.container.memory = type => controller => (a,x) => {
             form: (f) =>  [
               f.field( {
                 key: 'memory',
-                as: 'input/number',
+                as: 'input',
+                type: 'number',
                 hint: 'Megabytes',
                 label: false,
                 vertical: true,
               } ),
-              f.buttons({cancel: {onclick: () => controller.open('..')}}),
+              f.buttons(),
             ]
           } )
         ]

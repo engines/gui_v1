@@ -42,7 +42,7 @@ form = ( controller, blueprint, configurator ) => (a,x) => {
               key: 'content',
               label: false,
               vertical: true,
-              as: 'code',
+              as: 'codemirror',
               code: {
                 mode: {
                   value: ff.object.content_mode,
@@ -60,7 +60,7 @@ form = ( controller, blueprint, configurator ) => (a,x) => {
               key: 'content',
               label: false,
               vertical: true,
-              as: 'code',
+              as: 'codemirror',
               code: {
                 mode: {
                   value: ff.object.content_mode,
@@ -78,7 +78,7 @@ form = ( controller, blueprint, configurator ) => (a,x) => {
               key: 'content',
               label: false,
               vertical: true,
-              as: 'code',
+              as: 'codemirror',
               code: {
                 mode: {
                   value: ff.object.content_mode,
@@ -96,7 +96,7 @@ form = ( controller, blueprint, configurator ) => (a,x) => {
               key: 'content',
               label: false,
               vertical: true,
-              as: 'code',
+              as: 'codemirror',
               code: {
                 mode: {
                   value: ff.object.content_mode,

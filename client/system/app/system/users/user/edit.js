@@ -14,7 +14,8 @@ app.system.users.user.edit = controller => (a,x) => [
       form: f => [
         f.field( {
           key: 'uid',
-          as: 'input/hidden',
+          as: 'input',
+          type: 'hidden',
         } ),
         f.field( {
           key: 'account',

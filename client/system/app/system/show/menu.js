@@ -8,6 +8,7 @@ app.system.show.menu = controller => (a,x) => {
 
     a.hr,
 
+    menuButton( 'Admin', '/admin', 'fas fa-user-shield' ),
     menuButton( 'Users', '/users', 'fas fa-users' ),
     menuButton( 'Email', '/email', 'fas fa-envelope' ),
     menuButton( 'Locale', '/locale', 'fas fa-globe-americas' ),
@@ -17,8 +18,7 @@ app.system.show.menu = controller => (a,x) => {
     menuButton( 'Domains', '/domains', 'fas fa-globe' ),
     menuButton( 'Certificates', '/certificates', 'fas fa-certificate' ),
     menuButton( 'Site', '/site', 'fas fa-home' ),
-    menuButton( 'Keys', '/keys', 'fas fa-key' ),
-    menuButton( 'Admin', '/admin', 'fas fa-user-shield' ),
+    menuButton( 'SSH', '/ssh', 'fas fa-key' ),
 
     a.hr,
 

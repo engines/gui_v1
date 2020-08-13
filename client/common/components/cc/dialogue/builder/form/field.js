@@ -54,39 +54,39 @@ cc.dialogue.builder.form.field = ( f, fieldSpec, params ) => {
   }
 
   let controlTypes = {
-    string: { control: 'input', type: 'text' },
-    select: { control: 'select' },
-    text: { control: 'textarea' },
-    checkbox: { control: 'checkbox' },
-    checkboxes: { control: 'checkboxes' },
-    radios: { control: 'radios' },
-    hidden: { control: 'input', type: 'hidden' },
-    password: { control: 'password' },
-    combobox: { control: 'combobox' },
-    multiselect: { control: 'multiselect' },
-    color: { control: 'input', type: 'color' },
-    date: { control: 'input', type: 'date' },
-    email: { control: 'input', type: 'email' },
-    number: { control: 'input', type: 'number' },
-    tel: { control: 'input', type: 'tel' },
-    time: { control: 'input', type: 'time' },
-    url: { control: 'input', type: 'url' },
-    code: { control: 'code' },
-    markdown: { control: 'markdown' },
-    country: { control: 'country' },
-    language: { control: 'language' },
-    timezone: { control: 'timezone' },
-    json: { control: 'json' },
-    one: { control: 'one' },
-    many: { control: 'many' },
-    table: { control: 'table' },
+    string: { as: 'input', type: 'text' },
+    select: { as: 'select' },
+    text: { as: 'textarea' },
+    checkbox: { as: 'checkbox' },
+    checkboxes: { as: 'checkboxes' },
+    radios: { as: 'radios' },
+    hidden: { as: 'input', type: 'hidden' },
+    password: { as: 'password' },
+    combobox: { as: 'combobox' },
+    multiselect: { as: 'multiselect' },
+    color: { as: 'input', type: 'color' },
+    date: { as: 'input', type: 'date' },
+    email: { as: 'input', type: 'email' },
+    number: { as: 'input', type: 'number' },
+    tel: { as: 'input', type: 'tel' },
+    time: { as: 'input', type: 'time' },
+    url: { as: 'input', type: 'url' },
+    code: { as: 'codemirror' },
+    markdown: { as: 'easymde' },
+    country: { as: 'country' },
+    language: { as: 'language' },
+    timezone: { as: 'timezone' },
+    json: { as: 'json' },
+    one: { as: 'one' },
+    many: { as: 'many' },
+    table: { as: 'table' },
   }
 
-  let control = fieldSpec.control || 'string'
-  let controlType = controlTypes[control]
-  field.control = controlType.control
+  let as = fieldSpec.as || 'string'
+  let controlType = controlTypes[as]
+  field.as = controlType.as
   field.type = controlType.type
-  field[field.control] = fieldSpec[field.control]
+  field.control = fieldSpec.control
 
   let validation = fieldSpec.validation || {}
   field.required = validation.required || undefined

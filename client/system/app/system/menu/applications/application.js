@@ -6,16 +6,16 @@ a['app-menu-application'](
         // id: `application_${ name }`,
         name: `${ name }`,
         $state: { status: status },
-        $nodes: ( el, container ) => [
-          app.container.icons.state( container.status ),
-          name,
-          app.container.icons.error( container.status ),
+        $nodes: ( el ) => [
+          app.container.icons.state( el.$state.status ),
+          ` ${name} `,
+          app.container.icons.error( el.$state.status ),
         ],
       }
     ),
     () => controller.open( `/applications/${ name }` ),
     {
-      class: 'btn app-btn d-block w-100 text-left',
+      class: 'btn app-btn d-block w-100 text-left overflow-hidden',
     }
   ),
   {

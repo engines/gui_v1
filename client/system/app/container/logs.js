@@ -15,10 +15,19 @@ app.container.logs = type => controller => (a,x) => {
       path,
       ( logs, el ) => {
         el.$nodes = [
-          app.xterm( { text: logs.stdout, label: a['.success']( 'Output' ) } ),
-          a.br,
-          app.xterm( { text: logs.stderr, label: a['.error']( 'Error' ) } ),
+          app.report({
+            object: logs,
+            report: (r) => [
+              r.field({key: 'stdout', as: 'xtermjs', label: false, control: {label: 'stdout'}}),
+              r.field({key: 'stderr', as: 'xtermjs', label: false, control: {label: 'stderr'}}),
+            ]
+          })
         ]
+        // el.$nodes = [
+        //   app.xterm( { text: logs.stdout, label: a['.success']( 'Output' ) } ),
+        //   a.br,
+        //   app.xterm( { text: logs.stderr, label: a['.error']( 'Error' ) } ),
+        // ]
       },
       {
         placeholder: app.hourglass( 'Loading logs' )

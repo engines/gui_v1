@@ -20,7 +20,7 @@ app.container.show.dialogues = ( type, controller, container ) => (a,x) => {
             a.hr,
             a.div( app.dialogue.builder( main.components ), {
               $on: {
-                'app-container-dialogue-navigation': (e,el) => {
+                'app-container-dialogue-navigation': (e, el) => {
                   let dialogueName = e.detail.dialogue
                   let params = e.detail.params || {}
                   let dialogue = dialogues.find( dialogue => dialogue.name === dialogueName )

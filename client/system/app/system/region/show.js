@@ -2,7 +2,7 @@
 //
 //   app.http(
 //     '/-/-/system/control/base_os/locale',
-//     ( response, el ) => response.json().then( locale =>
+//     ( result, el, response ) => response.json().then( locale =>
 //
 //       el.$nodes = app.report( {
 //         object: {
@@ -23,7 +23,7 @@
 //   a.hr,
 //   app.http(
 //     '/-/-/system/control/base_os/timezone',
-//     ( response, el ) => response.text().then( timezone =>
+//     ( result, el, response ) => response.text().then( timezone =>
 //
 //       el.$nodes = app.report( {
 //         report: (r) => [

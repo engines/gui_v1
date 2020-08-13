@@ -1,7 +1,8 @@
-ax.css( {
+ax.style( {
 
   '.app-btn': {
     color: '#333',
+    whiteSpace: 'nowrap',
   },
 
   '.app-btn:hover': {

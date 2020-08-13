@@ -1,4 +1,4 @@
-ax.css( {
+ax.style( {
 
   '.error': { color: 'red' },
   '.success': { color: 'blue' },

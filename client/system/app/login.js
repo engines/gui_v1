@@ -1,6 +1,9 @@
 app.login = controller => (a,x) => app.form( {
   url: '/-/session',
-  success: ( response, el ) => el.$send( 'app.authenticated' ),
+  success: ( result, el ) => el.$send( 'app.authenticated' ),
+  when: {
+    401: null,
+  },
   form: (f) => [
     f.input( { name: 'password', type: 'password', placeholder: 'Password' } ),
     f.submit( {

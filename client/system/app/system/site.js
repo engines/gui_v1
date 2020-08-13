@@ -10,7 +10,7 @@ app.system.site = controller => (a,x) => [
       form: (f) => [
         f.field( {
           key: 'default_site',
-          value: site,
+          value: site || '',
           label: false,
           vertical: true
         } ),

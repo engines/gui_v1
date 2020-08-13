@@ -24,7 +24,7 @@ app.applications.blueprint.template_files = blueprint => controller => (a,x) => 
 
           ff.field( {
             key: 'content',
-            as: 'code',
+            as: 'codemirror',
             vertical: true,
             code: {
               mode: {

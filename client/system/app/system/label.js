@@ -16,12 +16,14 @@ app.system.label = controller => (a,x) => [
         } ),
         f.field( {
           key: 'color',
-          as: 'input/color',
+          as: 'input',
+          type: 'color',
           label: 'Text',
         } ),
         f.field( {
           key: 'background_color',
-          as: 'input/color',
+          as: 'input',
+          type: 'color',
           label: 'Background',
         } ),
         f.buttons({cancel: {onclick: () => controller.open('..')}}),

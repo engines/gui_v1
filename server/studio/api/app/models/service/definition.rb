@@ -71,9 +71,9 @@ module Server
                 constants: ( blueprint( :software, :constants ) || [] ).map do |c|
                   { c[:name].to_sym => c }
                 end.inject( :merge ),
-                configurators: ( blueprint( :software, :configurators ) || [] ).map do |c|
-                  { c[:name] => c }
-                end.inject( :merge ),
+                # configurators: ( blueprint( :software, :configurators ) || [] ).map do |c|
+                #   { c[:name] => c }
+                # end.inject( :merge ),
                 service_dependencies: ( blueprint( :software, :service_dependencies ) || [] ),
                 build_dependencies: ( blueprint( :software, :build_dependencies ) || [] ),
                 guises: ( blueprint( :software, :guises ) || [] ),

@@ -19,8 +19,8 @@ app.charts.containers = containers => (a,x) => {
   } ).sort( (a,b) => b.size - a.size )
 
   return [
-    x.chart( {
-      wrapperTag: {
+    x.chartjs( {
+      divTag: {
         class: 'system-show-chart',
         style: {
           height: `${ containers.length * 14 + 52 }px`,

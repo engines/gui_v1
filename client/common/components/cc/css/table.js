@@ -1,4 +1,4 @@
-ax.css( {
+ax.style( {
 
   '.table-sm': {
     td: { padding: '0.125rem', },

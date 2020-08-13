@@ -4,7 +4,7 @@ module Server
       module Models
         class Engines
 
-          def initialize( ip_address, token, logger )
+          def initialize(ip_address, token, logger)
             @ip_address = ip_address
             @token = token
             @logger = logger
@@ -12,39 +12,39 @@ module Server
 
           attr_reader :logger, :token
 
-          def get( route, options={} )
+          def get(route, options={})
             api_call route, options
           end
 
-          def post( route, options={} )
+          def post(route, options={})
             api_call route,
               method: :post,
               **options
           end
 
-          def put( route, options={} )
+          def put(route, options={})
             api_call route,
               method: :put,
               **options
           end
 
-          def delete( route, options={} )
+          def delete(route, options={})
             api_call route,
               method: :delete,
               **options
           end
 
-          def stream_chunks( route, options={}, &block )
+          def stream_chunks(route, options={}, &block)
             block_response = responseChunks &block
-            api_call( route, block_response: block_response, **options )
+            api_call(route, block_response: block_response, **options)
           end
 
-          def stream_lines( route, options={}, &block )
+          def stream_lines(route, options={}, &block)
             block_response = responseLines &block
-            api_call( route, block_response: block_response, **options )
+            api_call(route, block_response: block_response, **options)
           end
 
-          # def upstream( route, options={} )
+          # def upstream(route, options={})
           #   api_call(route, method: :post, **options)
           # end
 
@@ -68,49 +68,55 @@ module Server
             end
           end
 
-          def api_call( route, options={} )
+          def api_call(route, options={})
             request_options = {
               method: :get,
-              url: url_for( route ),
-              # payload: options[:payload] || nil,
+              url: url_for(route),
               timeout: 120,
               verify_ssl: false,
               headers: {
-                content_length: options[:content_length] || nil,
                 content_type: options[:content_type] || :json,
                 access_token: @token
               },
-              # block_response: options[:block_response],
               **options
             }
+            if options[:content_length]
+              request_options[:headers][:content_length]
+            end
             puts(request_options.to_yaml)
             response_for do
               RestClient::Request.execute(request_options)
             end
           end
 
-          def url_for( route )
+          def url_for(route)
             "https://#{@ip_address}:2380/v0#{route}"
           end
 
-          def response_for( &block )
+          def response_for(&block)
             yield
           rescue  RestClient::Forbidden
             raise Error::NotAuthenticated
           rescue  RestClient::NotFound => e
             raise Error::System404.new e
-          rescue  RestClient::MethodNotAllowed => e
+          rescue  RestClient::NotAcceptable,
+                  RestClient::MethodNotAllowed => e
             raise Error::SystemApiWarning.new e
           rescue  Errno::EHOSTUNREACH,
                   Errno::ECONNREFUSED,
                   Errno::ECONNRESET,
+                  Errno::ENETUNREACH,
                   OpenSSL::SSL::SSLError,
                   RestClient::ServerBrokeConnection,
                   RestClient::Exceptions::OpenTimeout,
-                  RestClient::Exceptions::ReadTimeout
-            raise Error::SystemUnavailable
+                  RestClient::Exceptions::ReadTimeout => e
+            raise Error::SystemUnavailable.new e
+          rescue JSON::ParserError => e
+            raise Fatal::SystemJsonError.new e
+          rescue RestClient => e
+            raise Fatal::SystemApiError.new e
           rescue => e
-            raise Fatal::SystemError.new e
+            raise Fatal.new e
           end
 
         end

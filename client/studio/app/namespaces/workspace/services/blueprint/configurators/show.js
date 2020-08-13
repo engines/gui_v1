@@ -49,7 +49,7 @@ app.namespaces.workspace.services.blueprint.configurators.show = blueprint => co
           report: (rr) => [
             rr.field( {
               key: 'content',
-              as: 'code',
+              as: 'codemirror',
               label: false,
               vertical: true,
               code: {
@@ -64,7 +64,7 @@ app.namespaces.workspace.services.blueprint.configurators.show = blueprint => co
           report: (rr) => [
             rr.field( {
               key: 'content',
-              as: 'code',
+              as: 'codemirror',
               label: false,
               vertical: true,
               code: {
@@ -79,7 +79,7 @@ app.namespaces.workspace.services.blueprint.configurators.show = blueprint => co
           report: (rr) => [
             rr.field( {
               key: 'content',
-              as: 'code',
+              as: 'codemirror',
               label: false,
               vertical: true,
               code: {
@@ -94,7 +94,7 @@ app.namespaces.workspace.services.blueprint.configurators.show = blueprint => co
           report: (rr) => [
             rr.field( {
               key: 'content',
-              as: 'code',
+              as: 'codemirror',
               label: false,
               vertical: true,
               code: {

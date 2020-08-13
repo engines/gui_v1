@@ -20,7 +20,7 @@ app.namespaces.workspace.commit = controller => (a,x) => [
         }
       } ),
     ],
-    success: ( result, el ) => el.$('^|appkit-asyncform').$nodes = [
+    success: ( result, el ) => el.$('^ax-appkit-asyncform').$nodes = [
       a.pre( result.message ),
       a['div.clearfix']( [
         app.button( {

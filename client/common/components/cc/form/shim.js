@@ -6,7 +6,7 @@ cc.form.shim = {
       asyncformTag: {
         ...options.asyncformTag,
         $on: {
-          'ax.appkit.form.async.complete': (e,el) => {
+          'ax.appkit.form.async.complete': (e, el) => {
             el.$$('button[type="submit"]').$$.forEach( button => {
               button.$revert && button.$revert()
             } )
@@ -17,15 +17,6 @@ cc.form.shim = {
     } )
 
   },
-  // field: ( f, target ) => ( options={} ) => {
-  //   // debugger
-  //   let help = options.help ? (a,x) => cc.md( options.help ) : null
-  //   // debugger
-  //   return target( {
-  //     ...options,
-  //     help: help,
-  //   } )
-  // },
 
   help: ( f, target ) => ( options={} ) => {
     let help = options.help ? (a,x) => cc.md( options.help ) : null
@@ -43,15 +34,15 @@ cc.form.shim = {
     buttonTag: {
       ...options.buttonTag,
       $on: {
-        'click: change button label': (e,el) => {
+        'click: change button label': (e, el) => {
           let to = options.to
           el.$from = el.innerHTML
           if ( to ) el.$nodes = [ to ]
         },
         ...( options.buttonTag || {} ).$on
       },
-      $revert: function() {
-        if (this.$from ) this.$html = this.$from
+      $revert: (el) => () => {
+        if (el.$from ) el.$html = el.$from
       },
     }
   } ),
@@ -65,10 +56,10 @@ cc.form.shim = {
     buttonTag: {
       ...options.buttonTag,
       $on: {
-        'click: turn off all sorting': (e,el) => {
-          el.$('^form').$$('|appkit-form-nest-sort-off button').click()
+        'click: turn off all sorting': (e, el) => {
+          el.$('^form').$$('ax-appkit-form-nest-sort-off button').click()
         },
-        'click: revert label when invalid': (e,el) => {
+        'click: revert label when invalid': (e, el) => {
           let valid = el.$('^form').checkValidity()
           if ( !valid ) el.$revert()
         },
@@ -77,8 +68,38 @@ cc.form.shim = {
     }
   } ),
 
-  control: ( f, target ) => ( options={} ) => {
+  field: ( f, target ) => ( options={} ) => {
 
+    if(
+      ax.is.undefined(options.vertical) &&
+      ax.is.undefined(options.horizontal)
+    ) {
+      console.warn('No orientation!', options)
+    // } else if (options.hasOwnProperty('vertical')) {
+    //   console.warn('Vertical key deprecated!', options)
+    }
+
+    options.horizontal = options.vertical ? false : true
+    return target(options)
+  },
+  fieldset: ( f, target ) => ( options={} ) => {
+
+    if(
+      ax.is.undefined(options.vertical) &&
+      ax.is.undefined(options.horizontal)
+    ) {
+      console.warn('No orientation!', options)
+    // } else if (options.hasOwnProperty('vertical')) {
+    //   console.warn('Vertical key deprecated!', options)
+    }
+
+    options.horizontal = options.vertical ? false : true
+    return target(options)
+  },
+
+
+
+  control: ( f, target ) => ( options={} ) => {
     if ( options.collection ) {
       return target( {
         ...options,
@@ -126,24 +147,21 @@ cc.form.shim = {
 
   controls: {
 
-    combobox: ( f, target ) => ( options={} ) => (a,x) => f.controls.selectinput( options ),
+    combobox: ( f, target ) => ( options={} ) => f.controls.selectinput( options ),
     json: ( f, target ) => ( options={} ) => (a,x) => x.jsoneditor.form.control( f, { theme: 'bootstrap3', ...options } ),
-    code: ( f, target ) => ( options={} ) => (a,x) => {
-
-        if ( ax.is.object( options.mode) ) {
+    codemirror: ( f, target ) => ( options={} ) => (a,x) => {
+        if ( ax.is.string(options.mode) ) {
           options.mode = {
             value: options.mode.value || localStorage.editorDefaultMode,
             selections: options.mode.selections,
           }
         }
-
-        return x.codemirror.form.control( f, {
+        return target( f, {
           keymap: window.localStorage.editorKeymap,
           ...options,
-        } )
-
+        } );
     },
-    markdown: ( f, target ) => ( options={} ) => (a,x) => x.simplemde.form.control( f, options ),
+    markdown: ( f, target ) => ( options={} ) => (a,x) => x.easymde.form.control( f, options ),
 
     table: ( f, target ) => ( options={} ) => target( {
       addable: true,
@@ -188,58 +206,63 @@ cc.form.shim = {
 
     } ),
 
-    many: ( f, target ) => ( options={} ) => target( {
-      addable: true,
-      removeable: true,
-      moveable: true,
-      ...options,
-      sortOnButton: {
-        ...options.sortOnButton,
-        buttonTag: {
-          class: 'btn app-btn',
-          ...( options.sortOnButton || {} ).buttonTag,
-        },
-      },
-      addButton: {
-        ...options.addButton,
-        buttonTag: {
-          class: 'btn app-btn',
-          ...( options.addButton || {} ).buttonTag,
-        },
-      },
-      upButton: {
-        ...options.upButton,
-        buttonTag: {
-          class: 'btn app-btn',
-          ...( options.upButton || {} ).buttonTag,
-        },
-      },
-      downButton: {
-        ...options.downButton,
-        buttonTag: {
-          class: 'btn app-btn',
-          ...( options.downButton || {} ).buttonTag,
-        },
-      },
-      removeButton: {
-        ...options.removeButton,
-        buttonTag: {
-          class: 'btn app-btn',
-          ...( options.removeButton || {} ).buttonTag,
-        },
-      },
+    many: ( f, target ) => ( options={} ) => {
 
-    } ),
+      if(
+        ax.is.undefined(options.vertical) &&
+        ax.is.undefined(options.horizontal)
+      ) {
+        console.warn('No orientation!', options)
+      // } else if (options.hasOwnProperty('vertical')) {
+      //   console.warn('Vertical key deprecated!', options)
+      }
+
+      return target( {
+        horizontal: options.vertical ? false : true,
+        addable: true,
+        removeable: true,
+        moveable: true,
+        ...options,
+        sortOnButton: {
+          ...options.sortOnButton,
+          buttonTag: {
+            class: 'btn app-btn',
+            ...( options.sortOnButton || {} ).buttonTag,
+          },
+        },
+        addButton: {
+          ...options.addButton,
+          buttonTag: {
+            class: 'btn app-btn',
+            ...( options.addButton || {} ).buttonTag,
+          },
+        },
+        upButton: {
+          ...options.upButton,
+          buttonTag: {
+            class: 'btn app-btn',
+            ...( options.upButton || {} ).buttonTag,
+          },
+        },
+        downButton: {
+          ...options.downButton,
+          buttonTag: {
+            class: 'btn app-btn',
+            ...( options.downButton || {} ).buttonTag,
+          },
+        },
+        removeButton: {
+          ...options.removeButton,
+          buttonTag: {
+            class: 'btn app-btn',
+            ...( options.removeButton || {} ).buttonTag,
+          },
+        },
+
+      } )
+    },
 
   },
-
-  // btns: (f) => ( controller, options={} ) => f.buttons( {
-  //   cancel: {
-  //     onclick: () => history.back(), // controller.open( '..', controller.query, controller.anchor ),
-  //     ...options.cancel
-  //   },
-  //   ...options
-  // } ),
 
   buttons: (f) => ( options={} ) => (a,x) => a['app-form-buttons']( [
     ( options.cancel == false ) ? null:  f.button( {

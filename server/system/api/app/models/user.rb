@@ -54,7 +54,7 @@ module Server
           private
 
           def filepath
-            "sessions/#{ @session[:session_id] }"
+            "sessions/#{ @session['session_id'] }"
           end
 
           def timestamp

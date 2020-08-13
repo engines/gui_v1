@@ -23,7 +23,7 @@ app.system.users.index = controller => (a,x) => [
           app.icon(
             'fa fa-caret-right',
             [
-              account.name,
+              `${account.name} `,
               a.small( account.uid ),
             ]
           ),

@@ -16,7 +16,7 @@ app.applications.blueprint.apache_httpd_configurations = blueprint => controller
         form: (ff) => [
           ff.field( {
             key: 'content',
-            as: 'code',
+            as: 'codemirror',
             vertical: true,
             label: false,
           } ),

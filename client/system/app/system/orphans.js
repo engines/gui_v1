@@ -1,13 +1,12 @@
 app.system.orphans = controller => (a,x) => [
 
-  a.h3( 'System orphans' ),
+  a.h3( 'Orphans' ),
 
   controller.nest({
     routes: {
-      '/?': app.system.orphans.show,
-      // '/default': app.system.orphans.default,
-      // '/add': app.system.orphans.add,
-      // '/remove': app.system.orphans.remove,
+      '/?': app.system.orphans.index,
+      '/orphan/?': app.system.orphans.show,
+      '/orphan/delete/?': app.system.orphans.delete,
     }
   })
 

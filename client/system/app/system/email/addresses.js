@@ -9,10 +9,11 @@ app.system.email.addresses = controller => (a,x) => [
         a['p.form-inline']([
           a['input.form-control'](null, {
             $on: {
-              'input: filter email addresses': (e,el) => {
+              'input: filter email addresses': (e, el) => {
                 let value = el.value
                 el.$('^email-addresses').$$('button').forEach((button) => {
-                  button.$('^email-address').style.display = button.innerText.includes(value) ?
+                  button.$('^email-address').style.display =
+                  button.innerText.toLowerCase().includes(value.toLowerCase()) ?
                   'unset' : 'none'
                 })
               }

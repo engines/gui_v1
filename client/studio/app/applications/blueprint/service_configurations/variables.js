@@ -20,7 +20,8 @@ app.applications.blueprint.service_configurations.variables = blueprint => contr
           form: (ff) => [
             ff.field( {
               key: 'name',
-              as: 'input/hidden',
+              as: 'input',
+              type: 'hidden',
             } ),
             ff.field( {
               key: 'value',

@@ -2,7 +2,7 @@ module Server
   class Api
 
     if Sinatra::Base.development?
-      ENV['ENGINES_SYSTEM_IP'] = '172.16.162.129'
+      ENV['ENGINES_SYSTEM_IP'] = '172.16.162.130'
     end
 
     set sessions: true,
@@ -12,7 +12,6 @@ module Server
         show_exceptions: false,
         engines_system_ip: ENV['ENGINES_SYSTEM_IP'],
         session_timeout_seconds: ( ENV['SESSION_TIMEOUT_MINUTES'] || 15 ).to_f * 60,
-        enable_side_load: !!ENV['ENABLE_SIDE_LOAD'] || Sinatra::Base.development?,
         library_url: !!ENV['APPLICATION_LIBRARY_URL'] # || Sinatra::Base.development? ? 'https://library.engines.org/api/v0/apps' : nil,
 
   end

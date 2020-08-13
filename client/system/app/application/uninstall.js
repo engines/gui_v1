@@ -1,30 +1,27 @@
-app.application.uninstall = controller => (a,x) => {
+app.application.uninstall = controller => (a,x) => [
+  app.close( controller ),
 
-  const name = controller.params.name
+  a.h3('Uninstall'),
 
-  return [
+  a.p( app.btn(
+    app.icon( 'fas fa-minus-circle', 'Uninstall' ),
+    (e,el) => el.$('^').$uninstall()
+  ), {
+    $uninstall: (el) => () => {
+      el.$nodes = app.http(
+        `/-/-/containers/engine/${controller.params.name}/delete/all`,
+        (result, el) => {
+          x.lib.animate.fade.out(
+            document.querySelector(`app app-menu-application[name='${controller.params.name}']`)
+          )
+          controller.open('/')
+        },
+        {
+          placeholder: app.hourglass('Uninstalling'),
+          method: 'delete'
+        }
+      )
+    },
+  } ),
 
-    a.h3('Uninstall'),
-    app.close( controller ),
-
-    a.p( app.btn(
-      app.icon( 'fas fa-minus-circle', 'Uninstall' ),
-      (e,el) => el.$('^').$uninstall()
-    ), {
-      $uninstall: function() {
-        this.$nodes = app.http(
-          `/-/-/containers/engine/${ name }/delete/all`,
-          (result, el) => {
-            x.lib.animate.fade.out(
-              document.querySelector(`app app-menu-application[name='${name}']`)
-            )
-            controller.open('/')
-          },
-          { method: 'delete' }
-        )
-      },
-    } ),
-
-  ]
-
-}
+]

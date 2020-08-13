@@ -1,5 +1,5 @@
-app.charts.cpu = cpu => (a,x) => x.chart( {
-  wrapperTag: {
+app.charts.cpu = cpu => (a,x) => x.chartjs( {
+  divTag: {
     class: 'system-show-chart',
     style: {
       height: '94px',

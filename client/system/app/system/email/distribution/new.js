@@ -35,7 +35,6 @@ app.system.email.distribution.new = controller => (a,x) => [
                 as: 'textarea',
                 label: false,
                 vertical: true,
-                required: true,
                 placeholder: 'Description',
               }),
             ]
@@ -45,7 +44,7 @@ app.system.email.distribution.new = controller => (a,x) => [
       } )]
     },
     {
-      placeholer: app.hourglass('Loading email')
+      placeholder: app.hourglass('Loading new distribution')
     }
   ),
 

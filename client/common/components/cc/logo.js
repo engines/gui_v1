@@ -2,7 +2,7 @@ cc.logo = function( size=100 ) {
 
   let scale = size / 100 / 3
 
- return (a,x) => a(
+ return (a,x) => a['!'](
 `<svg width='${ size }' height='${ size }' style='vertical-align: middle;'>
   <g transform='scale(${ scale })'>
     <path d='

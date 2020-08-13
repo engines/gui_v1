@@ -10,7 +10,8 @@ app.applications.blueprint.base = blueprint => controller => (a,x) => [
     (f) => [
       f.field( {
         key: 'inherit',
-        as: 'input/url',
+        as: 'input',
+        type: 'url',
       } ),
       f.field( {
         key: 'name',
@@ -49,7 +50,8 @@ app.applications.blueprint.base = blueprint => controller => (a,x) => [
       } ),
       f.field( {
         key: 'framework_port_override',
-        as: 'input/number',
+        as: 'input',
+        type: 'number',
         dependent: {
           key: 'deployment_type',
           value: 'web',
@@ -70,7 +72,7 @@ app.applications.blueprint.base = blueprint => controller => (a,x) => [
       } ),
       f.field( {
         key: 'sudo_list',
-        as: 'code',
+        as: 'codemirror',
       } ),
       f.field( {
         key: 'continuous_deployment',
@@ -82,18 +84,21 @@ app.applications.blueprint.base = blueprint => controller => (a,x) => [
         form: (ff) => [
           ff.field( {
             key: 'required',
-            as: 'input/number',
+            as: 'input',
+            type: 'number',
             required: true,
           } ),
           ff.field( {
             key: 'recommended',
-            as: 'input/number',
+            as: 'input',
+            type: 'number',
           } ),
         ]
       } ),
       f.field( {
         key: 'first_run_url',
-        as: 'input/url',
+        as: 'input',
+        type: 'url',
         label: 'First run URL'
       } ),
       f.field( {

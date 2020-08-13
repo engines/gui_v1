@@ -28,7 +28,7 @@
 //
 //   app.http(
 //     '/-/-/system/metrics/memory/statistics',
-//     ( response, el ) => {
+//     ( result, el, response ) => {
 //       response.json().then( memory => {
 //
 //         let chartDataFor = ( containers ) => Object.keys( containers ).map( name => {
@@ -54,7 +54,7 @@
 //           containers = chartDataFor( containers )
 //
 //           return [
-//             x.chart( {
+//             x.chartjs( {
 //               wrapperTag: {
 //                 style: {
 //                   height: `${ containers.length * 30 + 100 }px`,

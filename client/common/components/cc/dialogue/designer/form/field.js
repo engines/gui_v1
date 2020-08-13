@@ -96,7 +96,7 @@ cc.dialogue.designer.form.field = f => f.field( {
               key: 'layout',
               as: 'checkbox',
               checked: 'vertical',
-              checkbox: { label: 'Vertical' },
+              control: { label: 'Vertical' },
             } ),
 
             ff.field( {
@@ -155,15 +155,18 @@ cc.dialogue.designer.form.field = f => f.field( {
               body: fff.row( { columns: [
                 fff.field( {
                   key: 'min',
-                  as: 'input/number',
+                  as: 'input',
+                  type: 'number',
                 } ),
                 fff.field( {
                   key: 'max',
-                  as: 'input/number',
+                  as: 'input',
+                  type: 'number',
                 } ),
                 fff.field( {
                   key: 'step',
-                  as: 'input/number',
+                  as: 'input',
+                  type: 'number',
                 } ),
               ] } ),
               dependent: {
@@ -178,12 +181,14 @@ cc.dialogue.designer.form.field = f => f.field( {
                 fff.field( {
                   key: 'minlength',
                   label: 'Min length',
-                  as: 'input/number',
+                  as: 'input',
+                  type: 'number',
                 } ),
                 fff.field( {
                   key: 'maxlength',
                   label: 'Max length',
-                  as: 'input/number',
+                  as: 'input',
+                  type: 'number',
                 } ),
               ] } ),
               dependent: {
@@ -301,7 +306,7 @@ cc.dialogue.designer.form.field = f => f.field( {
         ff.field( {
           key: 'collection',
           as: 'checkbox',
-          checkbox: { label: 'Show multiple controls' },
+          control: { label: 'Show multiple controls' },
           dependent: {
             key: 'control',
             pattern: '^(?!(checkbox|checkboxes|radios|multiselect|one|many|table)$).+$',
@@ -320,7 +325,7 @@ cc.dialogue.designer.form.field = f => f.field( {
               as: 'checkbox',
               label: false,
               vertical: true,
-              checkbox: { label: 'Confined' },
+              control: { label: 'Confined' },
               hint: "items can't be added or removed",
             } ),
             ff.field( {
@@ -328,7 +333,7 @@ cc.dialogue.designer.form.field = f => f.field( {
               as: 'checkbox',
               label: false,
               vertical: true,
-              checkbox: { label: 'Stationary' },
+              control: { label: 'Stationary' },
               hint: "items can't be sorted",
             } ),
           ],
@@ -372,7 +377,7 @@ cc.dialogue.designer.form.field = f => f.field( {
             ff.field( {
               key: 'confirm',
               as: 'checkbox',
-              checkbox: {
+              control: {
                 label: 'Show secondary input',
               },
             } ),

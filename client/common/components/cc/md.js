@@ -1,1 +1,1 @@
-cc.md = ( markdown ) => ax.x.markedjs.markdown( { markdown: markdown, sanitize: DOMPurify.sanitize } )
+cc.md = ( markdown ) => ax.x.markedjs( { markdown: markdown, sanitize: DOMPurify.sanitize } )

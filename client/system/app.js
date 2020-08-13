@@ -5,56 +5,61 @@ let app = (a,x) => a['app']( [
     ),
   ], {
   $on: {
-    'appkit.router.load': (e,el) => {
-      nav.$update()
+    'ax.appkit.router.load': (e, el) => {
+      nav.$render()
     },
-    'app.authenticated': (e,el) => {
+    'app.authenticated': (e, el) => {
       el.$('^app app-nav').$setUser( true )
       nav.$open()
     },
-    'app.unauthenticated': (e,el) => {
+    'app.unauthenticated': (e, el) => {
       el.$('^app app-nav').$setUser( false )
       el.$('app-system-eventsource').$close()
       nav.$load( '/login' )
     },
-    'app.timeout': (e,el) => {
+    'app.timeout': (e, el) => {
       el.$('^app app-nav').$setUser( false )
       el.$('app-system-eventsource').$close()
       nav.$load( '/timeout' )
     },
-    'app.restarting': (e,el) => {
+    'app.restarting': (e, el) => {
       el.$('^app app-nav').$setUser( false )
       el.$('app-system-eventsource').$close()
-      nav.$open( '/restarting' )
+      nav.$open( '/restart/progress' )
     },
-    'app.os.updating': (e,el) => {
+    'app.shutdown': (e, el) => {
       el.$('^app app-nav').$setUser( false )
       el.$('app-system-eventsource').$close()
-      nav.$open( '/updating/os' )
+      nav.$open( '/shutdown/progress' )
     },
-    'app.updating': (e,el) => {
+    'app.os.updating': (e, el) => {
       el.$('^app app-nav').$setUser( false )
       el.$('app-system-eventsource').$close()
-      nav.$open( '/updating' )
+      nav.$open( '/update/os/progress' )
     },
-    'app.disconnected': (e,el) => {
+    'app.updating': (e, el) => {
+      el.$('^app app-nav').$setUser( false )
+      el.$('app-system-eventsource').$close()
+      nav.$open( '/update/progress' )
+    },
+    'app.disconnected': (e, el) => {
       el.$('^app app-nav').$setUser( false )
       el.$('app-system-eventsource').$close()
       nav.$load( '/disconnected' )
     },
-    'app.reconnected': (e,el) => {
+    'app.reconnected': (e, el) => {
       location.assign('/')
     },
-    'app.connected': (e,el) => {
+    'app.connected': (e, el) => {
       el.$('app-system-eventsource').$run()
     },
-    'app.system.status.update': (e,el) => {
+    'app.system.status.update': (e, el) => {
       let update = e.detail
       el.$$( 'app-system-state' ).forEach( el => {
         el.$state = { ...el.$state, ...update.status }
       } )
     },
-    'app.container.status.update': (e,el) => {
+    'app.container.status.update': (e, el) => {
       let update = e.detail
       let selector = `app-container-state[name="${ update.name }"]`
       el.$$( selector ).forEach( el => {

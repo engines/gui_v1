@@ -30,7 +30,7 @@ app.namespaces.workspace.services.blueprint.consumer_params.delete = blueprint =
             () => controller.open( '../..' ),
             {
               method: 'POST',
-              placeholder: app.hourglass( `Saving blueprint...` ),
+              placeholder: app.hourglass('Saving blueprint'),
               headers: { 'Content-type': 'application/json' },
               body:  JSON.stringify( blueprint.output, null, 2 )
             }

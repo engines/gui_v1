@@ -19,7 +19,8 @@ app.application.icon = controller => (a,x) => {
             form: (f) =>  [
               f.field( {
                 key: 'icon_url',
-                as: 'input/url',
+                as: 'input',
+                type: 'url',
                 label: false,
                 vertical: true,
               } ),

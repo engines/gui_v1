@@ -10,11 +10,11 @@
 //
 //   app.http(
 //     '/-/-/system/metrics/disks',
-//     ( response, el ) => {
+//     ( result, el, response ) => {
 //       response.json().then( disks => {
 //
 //         el.$nodes = [
-//           x.chart( {
+//           x.chartjs( {
 //             wrapperTag: {
 //               style: {
 //                 height: `${ Object.keys( disks ).length * 70 + 30 }px`,

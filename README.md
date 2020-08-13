@@ -10,12 +10,17 @@ Needs persistent directory `/data/`
 Run app:
 ```console
 npm i
-thin start
+bundle
+rainbows
 ```
+
+Run app in development with `./dev`.
 
 To allow sessions to persist after restart, set `ENV['SESSION_SECRET']`.
 
-Default user timeout is 15 mins. If you want different, set `ENV['SESSION_TIMEOUT_MINUTES']`.
+Default user timeout is 15 mins. Otherwise set `ENV['SESSION_TIMEOUT_MINUTES']`.
+
+Default log dir is './log'. Otherwise set ENV['LOG_DIRECTORY']
 
 System
 ------
@@ -23,9 +28,6 @@ System
 Set `ENV['ENGINES_SYSTEM_IP']`
 
 To enable install from library, set `ENV['APPLICATION_LIBRARY_URL']`
-
-To enable side loading of blueprints, set `ENV['ENABLE_SIDE_LOAD']`.
-
 
 Studio
 ------

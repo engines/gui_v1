@@ -5,10 +5,14 @@ app.routes = controller => controller.nest({
     '/timeout': app.timeout,
     '/disconnected': app.disconnected,
     '/reconnect': app.reconnect,
-    '/restarting': app.restarting,
-    '/updating/os': app.updating.os,
-    '/updating': app.updating,
     '/settings': app.settings,
-    '/?*': app.system,
+    '/update/os*': app.update_os,
+    '/update*': app.update,
+    '/restart*': app.restart,
+    '/shutdown': app.shutdown,
+    '/shutdown/start': app.shutdown.start,
+    '/shutdown/progress': app.shutdown.progress,
+    '/shutdown/exit': app.shutdown.exit,
+    '*': app.system,
   }
 })

@@ -1,4 +1,4 @@
-ax.css( {
+ax.style( {
 
   '.app-view-login': {
     marginTop: '20vh',

@@ -1,5 +1,5 @@
-ax.css( {
-  '|appkit-out': {
+ax.style( {
+  'ax-appkit-out': {
 
     label: {
       color: '#666',
@@ -7,28 +7,28 @@ ax.css( {
       marginBottom: '0rem',
     },
 
-    '|appkit-output-null': {
+    'ax-appkit-output-null': {
       color: 'red',
       fontFamily: 'monospace',
     },
 
-    '|appkit-output-function': {
+    'ax-appkit-output-function': {
       color: 'orange',
       fontFamily: 'monospace',
     },
 
-    '|appkit-output-number': {
+    'ax-appkit-output-number': {
       color: 'blue',
       fontFamily: 'monospace',
     },
 
-    '|appkit-output-boolean': {
+    'ax-appkit-output-boolean': {
       color: 'blue',
       fontFamily: 'monospace',
       fontStyle: 'italic',
     },
 
-    '|appkit-output-text': {
+    'ax-appkit-output-text': {
       // color: '#333'
     },
 

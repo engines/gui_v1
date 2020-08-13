@@ -42,7 +42,7 @@ cc.report.shim = {
   },
 
   fieldset: ( r, target ) => ( options={} ) => (a,x) => f.dependent( {
-    body: a['fieldset|appkit-form-control']( [
+    body: a['fieldsetax-appkit-form-control']( [
       options.legend ? a.legend( options.legend, options.legendTag ) : null,
       options.body || null,
     ], options.fieldsetTag ),

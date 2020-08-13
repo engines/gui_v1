@@ -53,7 +53,7 @@ app.applications.blueprint.dialogues.parameters = blueprint => controller =>
                 } ),
                 fff.field( {
                   key: 'value',
-                  as: 'code',
+                  as: 'codemirror',
                   placeholder: 'Template string',
                 } ),
               ],

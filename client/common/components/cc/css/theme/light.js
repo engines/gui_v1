@@ -1,4 +1,4 @@
-// ax.css( {
+// ax.style( {
 //
 //   'body.app-theme-light': {
 //

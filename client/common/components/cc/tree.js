@@ -8,13 +8,13 @@ cc.tree.branch = data => (a,x) => a['div.tree-branch']( [
     label: a['button-icon-toggler'](
       null,
       {
-        $nodes: ( el, state ) => app.icon(
-          `fa fa-caret-${ state ? 'down' : 'right' }`,
+        $nodes: (el) => app.icon(
+          `fa fa-caret-${ el.$state ? 'down' : 'right' }`,
           data.name
         ),
         $state: false,
-        $toggle: function() {
-          this.$state = !this.$state
+        $toggle: (el) => () => {
+          el.$state = !el.$state
         },
       }
     ),

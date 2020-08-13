@@ -1,4 +1,4 @@
-ax.css( {
+ax.style( {
   '.tree': {
     // ul: {
     //   paddingInlineStart: '20px',
@@ -38,7 +38,7 @@ ax.css( {
   }
 } )
 
-// ax.css( `
+// ax.style( `
 //
 // .tree {
 //   min-height:20px;

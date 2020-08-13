@@ -15,7 +15,7 @@ app.system.users.user.distributions.remove = controller => (a,x) => [
           as: 'hidden',
         }),
         a({
-          $on: { 'input: update distribution_group_name field': (e,el) => {
+          $on: { 'input: update distribution_group_name field': (e, el) => {
             let name = e.target.options[e.target.selectedIndex].innerHTML;
             el.$('^form [name="api_vars[distribution_group_name]"]').value = name
           }},

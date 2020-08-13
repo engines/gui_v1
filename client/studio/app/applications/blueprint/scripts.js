@@ -22,7 +22,7 @@ app.applications.blueprint.scripts = blueprint => controller => (a,x) => [
       form: (ff) => [
         ff.field( {
           key: 'content',
-          as: 'code',
+          as: 'codemirror',
           vertical: true,
           label: false,
           code: {

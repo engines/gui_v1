@@ -30,7 +30,7 @@ app.system.email.distribution.remove = controller => (a,x) => [
     },
     {
       query: {name: controller.params.distribution_name},
-      placeholer: app.hourglass('Loading email')
+      placeholder: app.hourglass('Loading distributions')
     }
   ),
 

@@ -1,4 +1,4 @@
-ax.css( `
+ax.style( `
 
   div.jsoneditor,
   div.jsoneditor-menu {

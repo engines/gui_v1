@@ -42,7 +42,6 @@ app.system.email.distribution.edit = controller => (a,x) => [
                 as: 'textarea',
                 label: false,
                 vertical: true,
-                required: true,
                 placeholder: 'Description',
               }),
             ]
@@ -53,7 +52,7 @@ app.system.email.distribution.edit = controller => (a,x) => [
     },
     {
       query: {name: controller.params.distribution_name},
-      placeholer: app.hourglass('Loading email')
+      placeholder: app.hourglass('Loading distribution')
     }
   ),
 

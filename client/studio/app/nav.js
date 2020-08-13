@@ -25,8 +25,8 @@ app.nav = controller => (a,x) => a['app-nav']( [
     } ),
 
     a['app-nav-timeout-check']( null, {
-      $check: function() {
-        this.$nodes = app.http( '/-/session', () => nav.$setUser( true ) )
+      $check: (el) => () => {
+        el.$nodes = app.http( '/-/session', () => nav.$setUser( true ) )
       }
     } ),
 
@@ -52,24 +52,24 @@ app.nav = controller => (a,x) => a['app-nav']( [
   // $init: function() {
   //   this.$update()
   // },
-  $setUser: function( user ) {
-    let buttons = this.$('app-nav-buttons')
+  $setUser: (el) => ( user ) => {
+    let buttons = el.$('app-nav-buttons')
     user ? x.lib.animate.fade.in( buttons, { display: 'unset' } ) : x.lib.animate.fade.out( buttons )
   },
-  $path: () => window.location.pathname,
-  $update: function() {
-    let path = this.$path()
+  $path: (el) => () => window.location.pathname,
+  $update: (el) => {
+    let path = el.$path()
     let active = ( path.match( /\w+/ ) || [''] )[0]
     nav.$$( `.app-nav-btn` ).classList.remove('active')
     nav.$$( `.app-nav-btn-${ active }` ).classList.add('active')
   },
-  $timeoutCheck: function() {
-    this.$('app-nav-timeout-check').$check()
+  $timeoutCheck: (el) => () => {
+    el.$('app-nav-timeout-check').$check()
   },
-  $open: function( path ) {
+  $open: (el) => ( path ) => {
     controller.open( path )
   },
-  $load: function( path ) {
+  $load: (el) => ( path ) => {
     controller.load( path )
   },
 

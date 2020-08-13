@@ -1,8 +1,6 @@
 app.system.admin = controller => (a,x) => [
   a.h3( "Admin" ),
 
-  app.http( '/-/-/system/system_user/settings' ),
-
   app.form( {
     url: '/-/-/unauthenticated/user/set_password',
     success: () => location.assign( '/' ),
@@ -10,7 +8,8 @@ app.system.admin = controller => (a,x) => [
     form: (f) => [
       f.field( {
         key: 'user_name',
-        as: 'input/hidden',
+        as: 'input',
+        type: 'hidden',
         value: 'engines',
       } ),
       f.field( {

@@ -5,8 +5,8 @@ cc.collapse = ( options={} ) => (a,x) => a['app-collapse']( [
         $tag: 'app-collapse-indicator',
         $nodes: ( el ) => cc.icon( el.$iconClass(), options.label ),
         $state: options.display,
-        $iconClass: function() {
-          return this.$state ? 'fa fa-caret-down' : 'fa fa-caret-right'
+        $iconClass: (el) => () => {
+          return el.$state ? 'fa fa-caret-down' : 'fa fa-caret-right'
         },
       }
     ),
@@ -27,18 +27,18 @@ cc.collapse = ( options={} ) => (a,x) => a['app-collapse']( [
 
 ], {
   $state: options.display,
-  $toggle: function() { this.$state = !this.$state },
-  $update: (el, display) => {
-    el.$('app-collapse-indicator').$state = display
+  $toggle: (el) => () => { el.$state = !el.$state },
+  $update: (el) => {
+    el.$('app-collapse-indicator').$state = el.$state
     let body = el.$('app-collapse-body')
-    if ( display ) {
+    if ( el.$state ) {
       x.lib.animate.fade.in( body )
-      let firstControl = el.$$('|appkit-form-control').$$[0]
+      let firstControl = el.$$('ax-appkit-form-control').$$[0]
       if ( firstControl ) {
         firstControl.$focus()
       }
       // SimpleMDE needs to be refreshed when it appears.
-      el.$$('|appkit-form-simplemde').$refresh()
+      // el.$$('ax-appkit-form-simplemde').$refresh()
     } else {
       x.lib.animate.fade.out( body )
     }

@@ -20,13 +20,14 @@ app.system.install.new = controller => (a,x) => [
 
   app.http(
     `/-/-/engine_builder/resolve_blueprint?${
-      x.lib.query.from.object( { blueprint_url: controller.params.blueprint_url } )
+      x.lib.query.stringify( { blueprint_url: controller.params.blueprint_url } )
     }`,
     ( blueprint, el ) => el.$nodes = [
 
       a.p( app.hourglass( 'Loading installation'), { $init: el => {
 
         let services = blueprint.software.service_configurations || []
+        let variables = blueprint.software.environment_variables || []
 
         Promise.all( [
 

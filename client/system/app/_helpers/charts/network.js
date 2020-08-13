@@ -17,8 +17,8 @@ app.charts.network = network => (a,x) => {
   } ).sort( (a,b) => b.total - a.total )
 
   return [
-    x.chart( {
-      wrapperTag: {
+    x.chartjs( {
+      divTag: {
         class: 'system-show-chart',
         style: {
           height: `${ network.length * 14 + 52 }px`,

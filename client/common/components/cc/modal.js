@@ -8,20 +8,20 @@ cc.modal = ( options={} ) => (a,x) => a['app-modal'](
   ),
   {
     id: options.id || 'modal',
-    $open: function( options={} ) {
+    $open: (el) => ( options={} ) => {
 
-      this.$('.modal-dialog').className = `modal-dialog modal-${ options.size || 'md' }`
+      el.$('.modal-dialog').className = `modal-dialog modal-${ options.size || 'md' }`
 
-      this.$('.modal-content').$nodes = [
+      el.$('.modal-content').$nodes = [
         a['div.modal-header']( [
           a['.modal-title']( options.title ),
-          a['button.close']( a( '&times;' ), { data: { dismiss: 'modal' } } )
+          a['button.close']( a['!']( '&times;' ), { data: { dismiss: 'modal' } } )
         ] ),
         a['div.modal-body']( options.body ),
         options.footer ? a['div.modal-footer']( options.footer ) : null,
      ]
 
-      $( this.$('.modal') ).modal( { backdrop: 'static' } )
+      $( el.$('.modal') ).modal( { backdrop: 'static' } )
 
     },
   }

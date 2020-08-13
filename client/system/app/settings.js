@@ -34,10 +34,10 @@ app.settings = controller => (a,x) => [
       } ),
       f.buttons(),
     ],
-    action: submition => {
-      window.localStorage.cssTheme = submition.data.theme
-      window.localStorage.editorKeymap = submition.data.editor_keymap
-      window.localStorage.editorDefaultMode = submition.data.editor_default_mode
+    action: (submission) => {
+      window.localStorage.cssTheme = submission.data.theme
+      window.localStorage.editorKeymap = submission.data.editor_keymap
+      window.localStorage.editorDefaultMode = submission.data.editor_default_mode
       location.assign( '/' )
     }
   } ),

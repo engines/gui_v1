@@ -28,7 +28,7 @@ app.namespaces.workspace.services.branch.set = controller => (a,x) => [
         ],
         success: ( result, el ) => {
           serviceBranch.$text = result.current
-          el.$('^|appkit-asyncform').$nodes = [
+          el.$('^ax-appkit-asyncform').$nodes = [
             a.pre( result.message ),
             a['div.clearfix']( [
               app.button( {
