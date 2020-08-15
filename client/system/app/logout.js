@@ -1,4 +1,4 @@
-app.logout = controller => (a,x) => [
+app.logout = controller => (a,x) => a['div.mt-2']([
   app.http(
     '/-/session',
     ( result, el  ) => el.$send( 'app.unauthenticated' ),
@@ -7,4 +7,4 @@ app.logout = controller => (a,x) => [
       placeholder: app.hourglass('Logging out'),
     }
   )
-]
+])

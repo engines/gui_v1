@@ -14,13 +14,19 @@ app.system.users.user.delete = controller => (a,x) => [
           )
         ] :
         [
+
           app.http(
             '/-/-/system/uadmin/users/accounts/',
             () => controller.open('../..'),
             {
               method: 'DELETE',
-              query: { uid: controller.params.user_uid },
-              placeholder: app.hourglass('Deleteing user'),
+              body: x.lib.query.stringify(
+                { api_vars: {uid: controller.params.user_uid} },
+              ),
+              headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+              },
+              placeholder: app.hourglass('Deleting user'),
             }
           )
         ]

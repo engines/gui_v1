@@ -33,7 +33,7 @@ app.system = controller => (a,x) => a( {
       el.$nodes = [ app.system.panes( system, controller ) ]
 
     }, {
-      placeholder: a['div.text-center.mt-4']( app.hourglass( 'Loading system' ) )
+      placeholder: a['div.mt-2']( app.hourglass( 'Loading system' ) )
     } )]
   },
 } ),

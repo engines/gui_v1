@@ -1,10 +1,6 @@
 module Server
   class Api
 
-    if Sinatra::Base.development?
-      ENV['ENGINES_SYSTEM_IP'] = '172.16.162.130'
-    end
-
     set sessions: true,
         session_secret: ENV.fetch('SESSION_SECRET') { Sinatra::Base.development? ? '0' : SecureRandom.hex(64) },
         logging: Sinatra::Base.development? ? Logger::DEBUG : Logger::INFO,
