@@ -1,6 +1,6 @@
 app.applications.blueprint.schedules = blueprint => controller => (a,x) => [
 
-  controller.nest({
+  controller.mount({
     routes: {
       '/?': app.applications.blueprint.schedules.index( blueprint ),
       '/new': app.applications.blueprint.schedules.new( blueprint ),

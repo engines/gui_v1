@@ -3,7 +3,7 @@ app.restart.progress = controller => (a,x) => [
   app.polling(
     '/-/-/system/status',
     ( result, el ) =>  {
-      if ( result.is_rebooting ) {
+      if ( result.is_restarting ) {
         el.$('^app-polling').$wait()
       } else {
         el.$send( 'app.reconnected' )

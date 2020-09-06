@@ -12,9 +12,6 @@ app.system.show.metrics = controller => (a,x) => app.http(
     app.system.show.metrics.network( network ),
     app.system.show.metrics.storage( storage ),
     app.system.show.metrics.cpu( cpu ),
-  ], {
-    // $init: el => x.lib.animate.fade.in( el ),
-    // style: { display: 'none' },
-  } )
+  ] )
 
 )

@@ -2,7 +2,7 @@ app.system.email = controller => (a,x) => [
 
   a.h3('Email'),
 
-  controller.nest({
+  controller.mount({
     routes: {
       '/?': app.system.email.show,
       '/setup': app.system.email.setup,

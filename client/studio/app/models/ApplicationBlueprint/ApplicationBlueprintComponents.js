@@ -43,7 +43,7 @@ class ApplicationBlueprintComponents {
           label: item.label,
           url: item.url,
           install_script: {
-            content_mode: app.codemirrorMode( installScript.language ),
+            content_mode: installScript.language,
             content: installScript.content,
           }
         }
@@ -64,7 +64,7 @@ class ApplicationBlueprintComponents {
         label: item.label,
         url: item.url,
         install_script: {
-          language: app.codemirrorLanguage( item.install_script.content_mode ),
+          language: item.install_script.content_mode,
           content: item.install_script.content,
         }
       } ) ),

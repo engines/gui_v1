@@ -10,8 +10,6 @@ cc.dialogue.builder.report.field = ( r, fieldSpec, params ) => {
     help: fieldSpec.help,
     hint: fieldSpec.hint,
     layout: fieldSpec.layout,
-    // item: fieldSpec.item,
-    // confirmation: fieldSpec.confirmation,
     dependent: fieldSpec.dependent,
     placeholder: fieldSpec.placeholder,
   }

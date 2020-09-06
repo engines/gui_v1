@@ -16,6 +16,7 @@ app.namespaces.workspace.services.blueprint.service_dependencies = blueprint => 
           ff.field( {
             key: 'type',
             required: true,
+            help: "Do it",
           } ),
         ]
       } ),

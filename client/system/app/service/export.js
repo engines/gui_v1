@@ -12,7 +12,6 @@ app.service.export = controller => (a,x) => {
       target: '_blank',
       class: 'btn app-btn',
     } ),
-    // app.link( { label: 'TEST DOWNLOAD', href: '/-/download/test', target: '_blank' } ),
 
   ]
 

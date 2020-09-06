@@ -32,17 +32,20 @@ cc.dialogue.builder.form.form = ( options={} ) => (a,x) => {
     let labelSpec = cancelSpec.label || {}
 
     if( labelSpec.display === 'none' ) {
-      cancel.label = false
+      cancel.label = ''
     } else if ( labelSpec.display === 'custom' ) {
       cancel.label = Mustache.render( labelSpec.custom, options.params )
     } else {
-      cancel.label = ''
+      cancel.label = 'Cancel'
     }
 
-    cancel.onclick = (e,el) => el.$send(
-      'app-container-dialogue-navigation',
-      { detail: { dialogue: cancelSpec.dialogue || 'main', params: options.params } }
-    )
+    cancel.onclick = (e,el) => {
+      el.$('^app-modal').$close();
+      // el.$send(
+      //   'app-container-dialogue-navigation',
+      //   { detail: { dialogue: cancelSpec.dialogue || 'main', params: options.params } }
+      // )
+    }
 
   }
 
@@ -71,14 +74,14 @@ cc.dialogue.builder.form.form = ( options={} ) => (a,x) => {
   } else if ( labelSpec.display === 'custom' ) {
     submit.label = Mustache.render( labelSpec.custom, options.params )
   } else {
-    submit.label = ''
+    submit.label = 'Submit'
   }
 
   submit.onclick = (e,el) => {
-    el.$send(
-      'app-container-dialogue-navigation',
-      { detail: { dialogue: submitSpec.dialogue || 'main', params: el.$('^form').$data() } }
-    )
+    // el.$send(
+    //   'app-container-dialogue-navigation',
+    //   { detail: { dialogue: submitSpec.dialogue || 'main', params: el.$('^form').$data() } }
+    // )
   }
 
   let formFn = (f) => [
@@ -92,6 +95,7 @@ cc.dialogue.builder.form.form = ( options={} ) => (a,x) => {
   ]
 
   return app.form( {
+    action: '/-/test',
     form: formFn,
     params: options.params,
     object: options.object,

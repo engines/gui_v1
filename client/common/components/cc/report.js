@@ -6,6 +6,7 @@ cc.report = ( options={} ) => (a,x) => x.report( {
     x.report.field.nest.shim,
     x.report.field.nest.prefab.shim,
     x.xtermjs.report.shim,
+    x.codemirror.report.shim,
     x.bootstrap.report.shim,
     cc.report.shim
   ],

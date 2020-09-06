@@ -9,20 +9,48 @@ ax.style( {
     color: 'red',
     marginTop: '0.5rem',
   },
-  'ax-appkit-form-nest-item': {
-    padding: '0.5rem',
+
+  'ul|ax-appkit-form-nest-items': {
+      'padding': '0px',
+      'list-style-type': 'none',
   },
-  'ax-appkit-form-nest': {
+  'ul|ax-appkit-form-nest-items li|ax-appkit-form-nest-item': {
+      'border-left': '1px dotted black',
+      'position': 'relative',
+      'padding-bottom': '0.25rem',
+  },
+  'ul|ax-appkit-form-nest-items li|ax-appkit-form-nest-item:before': {
+      'content': '""',
+      'width': '4px',
+      'position': 'absolute',
+      'border-bottom': '1px dotted black',
+      'top': '0.5rem',
+  },
+  'ul|ax-appkit-form-nest-items li|ax-appkit-form-nest-item:last-child:after': {
+      'content': '""',
+      'width': '4px',
+      'position': 'absolute',
+      'border-bottom': '1px dotted black',
+      'margin-top': '0.2rem',
+  },
+  'ax-appkit-form-nest-many-footer': {
+     'border-left': 'none',
+  },
+  'ax-appkit-form-nest-many-footer:before': {
+     'border-left': '1px dotted black',
+     'height': '0.5rem',
+     'margin-top': 'calc(-0.5rem + 1px)',
+  },
+  'li|ax-appkit-form-nest-item > *': {
+    'display': 'block',
+    'margin': '0 5px',
   },
 
-  'ax-appkit-form-nest-item:hover': {
-    boxShadow: 'inset 0px 0px 2px #007bff',
-  },
-  'ax-appkit-form-nest-item[draggable]': {
-    boxShadow: 'inset 0px 0px 2px #ffc107',
+  '|ax-appkit-form-nest-item[draggable]': {
+    boxShadow: '0px 0px 2px #ffc107',
     cursor: 'grab',
   },
-  'ax-appkit-form-nest-item[draggable]:active': {
+  '|ax-appkit-form-nest-item[draggable]:active': {
     cursor: 'grabbing',
   },
 

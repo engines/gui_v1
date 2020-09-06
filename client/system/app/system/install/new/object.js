@@ -31,8 +31,8 @@ app.system.install.new.object = ( install ) => {
           { adopt_orphan: 'Adopt orphan' } : {}
         ),
       },
-      shareable: service.shareable.map( service => `${ service.parent_engine }/${ service.service_handle }` ),
-      adoptable: service.adoptable.map( service => `${ service.parent_engine }/${ service.service_handle }` ),
+      shareable: service.shareable.map( service => `${ service.parent_engine }:${ service.service_handle }` ),
+      adoptable: service.adoptable.map( service => `${ service.parent_engine }:${ service.service_handle }` ),
     } ) ),
 
     variables:  variables.map( variable => enginesFieldV1( variable ) ),

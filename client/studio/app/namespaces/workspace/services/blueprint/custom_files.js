@@ -1,12 +1,12 @@
 app.namespaces.workspace.services.blueprint.custom_files = blueprint => controller => (a,x) => [
 
-  a.h5( 'Template files' ),
+  a.h5( 'Custom files' ),
   a.hr,
 
   app.blueprintForm(
     controller,
     blueprint,
-    blueprint.templateFiles,
+    blueprint.customFiles,
     (f) => [
       f.field( {
         key: 'custom_files',
@@ -39,9 +39,9 @@ app.namespaces.workspace.services.blueprint.custom_files = blueprint => controll
             key: 'content',
             as: 'codemirror',
             vertical: true,
-            code: {
+            control: {
               mode: {
-                value: app.codemirrorMode( ff.object.content_mode ),
+                value: ff.object.content_mode,
                 selections: app.selections.script_modes,
               },
             },

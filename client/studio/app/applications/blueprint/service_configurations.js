@@ -1,6 +1,6 @@
 app.applications.blueprint.service_configurations = blueprint => controller => (a,x) => [
 
-  controller.nest({
+  controller.mount({
     routes: {
       '/?': app.applications.blueprint.service_configurations.index( blueprint ),
       '/new_namespace': app.applications.blueprint.service_configurations.new_namespace( blueprint ),

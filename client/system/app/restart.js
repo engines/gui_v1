@@ -1,9 +1,8 @@
 app.restart = controller => (a,x) => [
   a.h3( "Restart" ),
-  controller.nest({
+  controller.mount({
     routes: {
-      '/?': app.restart.show,
-      '/start': app.restart.start,
+      '/?': app.restart.start,
       '/progress': app.restart.progress,
     }
   })

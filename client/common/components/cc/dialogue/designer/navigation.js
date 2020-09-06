@@ -11,42 +11,7 @@ cc.dialogue.designer.navigation = blueprint => f => f.fieldset( {
 
         cc.collapse( {
           label: 'Components',
-          body: [
-            ff.field( {
-              key: 'components',
-              singular: 'navigation component',
-              label: false,
-              vertical: true,
-              as: 'many',
-              form: fff => [
-                fff.field( {
-                  key: 'type',
-                  as: 'select',
-                  vertical: true,
-                  label: false,
-                  selections: {
-                    button: 'Button',
-                    menu: 'Menu',
-                  },
-                } ),
-                fff.field( {
-                  key: 'button',
-                  as: 'one',
-                  vertical: true,
-                  label: false,
-                  form: ffff => [
-                    cc.dialogue.designer.navigation.button( blueprint )( ffff ),
-                    ffff.field( {
-                      key: 'parameters',
-                      singular: 'parameter',
-                      collection: true,
-                      
-                    } )
-                  ]
-                } ),
-              ],
-            } ),
-          ],
+          body: cc.dialogue.designer.navigation.components(blueprint)(ff),
         } ),
 
       ],

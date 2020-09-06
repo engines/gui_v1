@@ -19,8 +19,7 @@ app.container.bindings.new.nonpersistent = type => controller => (a,x) => {
   let form = (variables) => app.form({
     action: submissionPath,
     success: (result) => {
-
-      // controller.open('../../nonpersistent', {})
+      
       alert(`Result should be binding object. Currently getting: ${JSON.stringify(result)}. Can't redirect to binding, so redirecting to binding index instead.`)
       controller.open('../..');
 

@@ -91,10 +91,8 @@ f.field( {
             } ),
 
             ff.field( {
-              key: 'layout',
+              key: 'horizontal',
               as: 'checkbox',
-              checked: 'vertical',
-              control: { label: 'Vertical' },
             } ),
 
             ff.field( {
@@ -107,6 +105,10 @@ f.field( {
             } ),
 
           ],
+          dependent: {
+            key: 'control',
+            pattern: '^(?!hidden).+$',
+          },
         } ),
 
         ff.field( {
@@ -142,7 +144,7 @@ f.field( {
           key: 'placeholder',
           dependent: {
             key: 'control',
-            pattern: '^(?!boolean|checkbox|checkboxes|radios|one|many|table)$',
+            pattern: '^(?!boolean|checkbox|checkboxes|radios|one|many|table).+$',
           }
         } ),
 
@@ -160,13 +162,16 @@ f.field( {
         } ),
 
         ff.field( {
-          key: 'select',
+          key: 'selections',
           as: 'one',
           form: (fff) => [
             fff.field( {
               key: 'type',
+              vertical: true,
+              label: false,
               as: 'select',
-              selections: { '':'', static: 'Static', dynamic: 'Dynamic' },
+              placeholder: 'None',
+              selections: { static: 'Static', dynamic: 'Dynamic' },
             } ),
             fff.field( {
               key: 'static',
@@ -184,7 +189,8 @@ f.field( {
               }
             } ),
             fff.field( {
-              key: 'key',
+              key: 'dig',
+              hint: `dot-separated keys, such as 'account.profiles'`,
               dependent: {
                 key: 'type',
                 pattern: '^dynamic$',
@@ -193,7 +199,7 @@ f.field( {
           ],
           dependent: {
             key: 'control',
-            pattern: '^select$',
+            pattern: '^(select|radios|checkboxes|multiselect|combobox)$',
           }
         } ),
 
@@ -250,16 +256,7 @@ f.field( {
       label: false,
       body: cc.collapse( {
         label: 'Components',
-        body: [
-          ff.field( {
-            key: 'components',
-            label: false,
-            vertical: true,
-            as: 'many',
-            singular: 'report component',
-            form: cc.dialogue.designer.report.component( blueprint ),
-          } ),
-        ]
+        body: cc.dialogue.designer.report.components( blueprint )(ff),
       } ),
       dependent: {
         key: 'control',

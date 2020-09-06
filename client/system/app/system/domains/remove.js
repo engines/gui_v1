@@ -7,7 +7,6 @@ app.system.domains.remove = controller => (a,x) => [
     ( domains, el ) => el.$nodes = [
 
       app.form( {
-        // scope: 'api_vars',
         form: (f) => [
 
           f.field( {

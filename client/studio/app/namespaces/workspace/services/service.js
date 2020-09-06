@@ -12,7 +12,7 @@ app.namespaces.workspace.services.service = namespace => controller => (a,x) => 
         id: 'serviceBranch',
       } ),
 
-      controller.nest({
+      controller.mount({
         routes: {
           '/?': app.namespaces.workspace.services.show,
           '/delete': app.namespaces.workspace.services.delete,

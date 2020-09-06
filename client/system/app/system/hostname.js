@@ -23,5 +23,3 @@ app.system.hostname = controller => (a,x) => [
   ),
 
 ]
-
-// f\.buttons\([\n\r\s]+\{[\n\r\s]+cancel:[\n\r\s]+\{[\n\r\s]+onclick:.+[\n\r\s]+\}[\n\r\s]+\}[\n\r\s]+\)

@@ -13,9 +13,6 @@ app.applications.blueprint.file_write_permissions = blueprint => controller => (
         as: 'table',
         vertical: true,
         label: false,
-        // thTag: {
-        //   width: '120px',
-        // },
         form: (ff) => [
           ff.field( {
             key: 'path',
@@ -27,7 +24,6 @@ app.applications.blueprint.file_write_permissions = blueprint => controller => (
           ff.field( {
             key: 'recursive',
             as: 'checkbox',
-            // checked: true,
             thTag: {
               width: '75px',
             },

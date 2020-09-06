@@ -48,16 +48,6 @@ app.applications.blueprint.schedules.show = blueprint => controller => (a,x) => 
         } ),
         r.field( {
           key: 'instruction',
-          // as: 'select',
-          // placeholder: ' ',
-          // selections: {
-          //   start: 'Start',
-          //   stop: 'Stop',
-          //   pause: 'Pause',
-          //   unpause: 'Unpause',
-          //   restart: 'Restart',
-          //   action: 'Action',
-          // }
         } ),
         r.field( {
           key: 'actionator',
@@ -65,11 +55,8 @@ app.applications.blueprint.schedules.show = blueprint => controller => (a,x) => 
           report: (rr) => [
             rr.field( {
               key: 'name',
-              // as: 'select',
               vertical: true,
               label: false,
-              // placeholder: 'Select actionator',
-              // selections: blueprint.schedules.actionators,
             } ),
           ],
           dependent: {

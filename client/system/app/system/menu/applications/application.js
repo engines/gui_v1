@@ -3,7 +3,6 @@ a['app-menu-application'](
   app.btn(
     a['app-container-state']( null,
       {
-        // id: `application_${ name }`,
         name: `${ name }`,
         $state: { status: status },
         $nodes: ( el ) => [

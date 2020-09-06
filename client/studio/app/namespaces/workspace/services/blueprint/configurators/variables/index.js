@@ -18,27 +18,10 @@ app.namespaces.workspace.services.blueprint.configurators.variables.index = blue
       app.close( controller, {title: 'Return to configurator'}),
     ] ) ),
 
-
     configurator.variables.map( item => [ app.button( {
       label: `${ item.id + 1 }. ${ item.object.name }`,
       onclick: () => controller.open( `${ item.id }` ),
     } ) ] )
-
-    // app.report( {
-    //   object: configurator.object,
-    //   report: (r) => [
-    //     r.field( {
-    //       key: 'variables',
-    //       as: 'many',
-    //       vertical: true,
-    //
-    //       report: (rr) => app.button( {
-    //         label: `${ rr.index + 1 }. ${ rr.object.name }`,
-    //         onclick: () => controller.open( `${ rr.index }` ),
-    //       } ),
-    //     } ),
-    //   ]
-    // } ),
 
   ]
 

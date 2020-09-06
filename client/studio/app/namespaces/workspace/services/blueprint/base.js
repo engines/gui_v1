@@ -29,7 +29,6 @@ app.namespaces.workspace.services.blueprint.base = blueprint => controller => (a
       } ),
       f.field( {
         key: 'type_path',
-        // label: 'Type',
         required: true,
       } ),
       f.field( {

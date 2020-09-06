@@ -172,7 +172,6 @@ cc.selections = {
     password: "password",
     password_with_confirmation: "password_with_confirmation",
     radio_buttons: "radio_buttons (Uses collection for radio button values and labels.)",
-    // range: "range",
     select: "select (Uses collection for list values and labels.)",
     select_multiple: "select_multiple (Return an array of selected values. Value can be a comma-separated list. Uses collection for list values and labels.)",
     select_with_input: "select_with_input (Select with user input. Uses collection for list values and labels.)",

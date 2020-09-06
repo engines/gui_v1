@@ -1,6 +1,6 @@
 app.applications.blueprint.actionators = blueprint => controller => (a,x) => [
 
-  controller.nest({
+  controller.mount({
     routes: {
       '/?': app.applications.blueprint.actionators.index( blueprint ),
       '/new': app.applications.blueprint.actionators.new( blueprint ),

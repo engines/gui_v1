@@ -45,19 +45,8 @@ cc.dialogue.designer.report.fieldset = blueprint => f => f.field( {
     } ),
 
     cc.collapse( {
-      label: 'Body',
-      body: [
-
-        ff.field( {
-          key: 'body',
-          as: 'many',
-          label: false,
-          singular: 'fieldset component',
-          form: cc.dialogue.designer.report.component( blueprint ),
-          vertical: true,
-        } ),
-
-      ],
+      label: 'Components',
+      body: cc.dialogue.designer.report.components( blueprint )(ff),
     } ),
 
   ]

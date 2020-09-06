@@ -28,7 +28,11 @@ app.system.users.user.groups.add = controller => (a,x) => [
       } ) :
       [
         a.p(a.i('No more to add')),
-        app.btn(app.icon('fa fa-check', 'OK'), () => controller.open('..', controller.query))
+        app.btn(
+          app.icon('fa fa-check', 'OK'),
+          () => controller.open('..', controller.query),
+          { class: 'btn btn-primary' }
+        )
       ]
     ],
     {

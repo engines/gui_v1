@@ -4,11 +4,32 @@ app.system.install.new.form = ( controller, install ) => (a,x) => {
     url: '/-/-/containers/engines/build',
     success: () => controller.open( '../monitor' ),
     object: install,
-    scope: 'api_vars',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    encode: (formData) => {
+      let object = x.lib.form.data.objectify(formData)
+      let bindings = Object.values(object.attached_services || {})
+      object.attached_services = []
+      for (let binding of bindings) {
+        let parent, handle
+        if (binding.share || binding.adopt) {
+          [parent, handle] = binding.share.split(':')
+        }
+        object.attached_services.push({
+          publisher_namespace: binding.publisher_namespace,
+          type_path: binding.type_path,
+          create_type: binding.create_type,
+          parent_engine: parent,
+          service_handle: handle,
+        })
+      }
+      return JSON.stringify({api_vars: object})
+    },
     form: (f) => [
 
-      f.field( { key: 'repository_url', as: 'input', type: 'hidden' } ),
-      f.field( { key: 'icon_url', as: 'input', type: 'hidden' } ),
+      f.field( { key: 'repository_url', as: 'hidden' } ),
+      f.field( { key: 'icon_url', as: 'hidden' } ),
 
       f.field( { key: 'engine_name', label: 'Name', required: 'required' } ),
       f.field( { key: 'memory', label: 'Memory (MB)', as: 'input', type: 'number', min: f.object.minimum_memory, required: 'required' } ),
@@ -33,8 +54,7 @@ app.system.install.new.form = ( controller, install ) => (a,x) => {
 
         a['div.col-sm-4']( 'Bind' ),
         a['div.col-sm-8'](
-          f.object.attached_services.map( service => [
-            // service,
+          f.object.attached_services.map( (service,i) => [
             a['.app-install-form-service']( [
               `${
                 service.publisher_namespace
@@ -42,26 +62,24 @@ app.system.install.new.form = ( controller, install ) => (a,x) => {
                 service.type_path
               }`,
               f.field( {
-                name: 'api_vars[attached_services][][publisher_namespace]',
+                name: `attached_services[${i}][publisher_namespace]`,
                 value: service.publisher_namespace,
-                as: 'input',
-                type: 'hidden'
+                as: 'hidden'
               } ),
               f.field( {
-                name: 'api_vars[attached_services][][type_path]',
+                name: `attached_services[${i}][type_path]`,
                 value: service.type_path,
-                as: 'input',
-                type: 'hidden'
+                as: 'hidden'
               } ),
               f.field( {
-                name: 'api_vars[attached_services][][create_type]',
+                name: `attached_services[${i}][create_type]`,
                 label: false,
                 vertical: true,
                 as: 'select',
                 selections: service.create_types,
               } ),
               f.field( {
-                name: 'api_vars[attached_services][][share]',
+                name: `attached_services[${i}][share]`,
                 label: false,
                 vertical: true,
                 as: 'select',
@@ -70,12 +88,12 @@ app.system.install.new.form = ( controller, install ) => (a,x) => {
                 selections: service.shareable,
                 dependent: {
                   search: '^.app-install-form-service',
-                  selector: '[name="api_vars[attached_services][][create_type]"]',
+                  selector: `[name="attached_services[${i}][create_type]"]`,
                   value: 'share_existing'
                 },
               } ),
               f.field( {
-                name: 'api_vars[attached_services][][adopt]',
+                name: `attached_services[${i}][adopt]`,
                 label: false,
                 vertical: true,
                 as: 'select',
@@ -84,7 +102,7 @@ app.system.install.new.form = ( controller, install ) => (a,x) => {
                 selections: service.adoptable,
                 dependent: {
                   search: '^.app-install-form-service',
-                  selector: '[name="api_vars[attached_services][][create_type]"]',
+                  selector: `[name="attached_services[${i}][create_type]"]`,
                   value: 'adopt_orphan'
                 },
               } ),
@@ -120,7 +138,7 @@ app.system.install.new.form = ( controller, install ) => (a,x) => {
       f.object.variables.length > 0 ?
         a.p( a.small( 'Environment' ), { class: 'border-bottom' } ) :
         null,
-        
+
       f.field( {
         key: 'variables',
         as: 'one',
@@ -133,7 +151,7 @@ app.system.install.new.form = ( controller, install ) => (a,x) => {
 
       f.buttons(),
 
-    ]
+    ],
   } )
 
 }

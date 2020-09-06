@@ -50,7 +50,6 @@ app.nav = controller => (a,x) => a['app-nav']( [
   },
   $path: (el) => () => window.location.pathname,
   $update: (el) => {
-    // debugger
     let path = el.$path()
     let active = ( path.match( /\w+/ ) || [''] )[0]
     el.$$( `.app-nav-btn` ).classList.remove('active')

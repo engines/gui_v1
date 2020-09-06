@@ -1,10 +1,5 @@
 app.container.dialogues.params = ( type, controller, container, blueprint, params, dialogue, index=0 ) => {
 
-  // let dialogues = container.dialogues ||
-  //                 app.container.dialogues.uadmin.dialogues || {}
-  //
-  // let dialogue = dialogues[name]
-
   let path = `/-/-/containers/${
     container.type === 'service' ? 'service' : 'engine'
   }/${ container.name }`
@@ -60,42 +55,3 @@ app.container.dialogues.params = ( type, controller, container, blueprint, param
   }
 
 }
-
-// let invokeAction = ( type, controller, actionName, params ) => {
-//
-//   const containerName = controller.params.name
-//
-//   let path = `/-/-/containers/${
-//     type === 'service' ? 'service' : 'engine'
-//   }/${ containerName }`
-//
-// }
-
-
-
-
-//
-// let newParams = dialogue.params
-//
-// let index = newParams.length
-// let depth = 0
-//
-//
-//
-// .filter( param => param.action ).map( param => params.action )
-//
-// let component
-// if ( dialogue ) {
-// component = app.http(
-//   ,
-//   ( results, el ) => {
-//
-//
-//
-//
-//   }
-// ),
-//
-//
-//
-// app.dialogue.builder( dialogue.components, params )

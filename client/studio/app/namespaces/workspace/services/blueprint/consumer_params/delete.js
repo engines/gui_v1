@@ -20,7 +20,6 @@ app.namespaces.workspace.services.blueprint.consumer_params.delete = blueprint =
         label: app.icon( 'fa fa-trash', 'Delete' ),
         class: 'btn btn-danger',
         title: 'Delete consumer param',
-        // confirm: 'Are you sure that you want to delete this application?',
         onclick: (e,el) => {
 
           consumerParam.delete()

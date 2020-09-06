@@ -1,7 +1,7 @@
 app.system.install = controller => (a,x) => [
   a.h3( 'Install' ),
 
-  controller.nest({
+  controller.mount({
     routes: {
       '/?': app.system.install.library,
       '/url': app.system.install.url,

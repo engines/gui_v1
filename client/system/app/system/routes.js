@@ -1,5 +1,5 @@
 app.system.routes = ( system, controller ) => (a,x) => [
-  controller.nest({
+  controller.mount({
     routes: {
       '/applications/:name*': app.application,
       '/services/:name*': app.service,

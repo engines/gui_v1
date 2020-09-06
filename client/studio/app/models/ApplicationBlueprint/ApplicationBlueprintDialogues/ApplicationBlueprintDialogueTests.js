@@ -8,12 +8,15 @@ class ApplicationBlueprintDialogueTests {
   assign( collection ) {
     this.collection = collection.map( ( item, i ) => ( {
       label: item.label,
-      parameters: item.parameters,
+      parameters: item.parameters || {},
     } ) )
   }
 
   get formObject() {
-    return { tests: this.collection }
+    return { tests: this.collection.map( ( item, i ) => ( {
+      label: item.label,
+      parameters: JSON.stringify(item.parameters, null, 2),
+    } ) ) }
   }
 
   formSubmit( formObject ) {

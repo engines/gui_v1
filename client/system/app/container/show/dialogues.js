@@ -26,36 +26,28 @@ app.container.show.dialogues = ( type, controller, container ) => (a,x) => {
                   let dialogue = dialogues.find( dialogue => dialogue.name === dialogueName )
                   if( dialogue ) {
                     el.$nodes = [
-                      // app.collapse( {
-                        //   label: app.icon( 'fas fa-info' ),
-                        //   body: [
-                          //     'params', params,
-                          //     'dialogue', dialogue,
-                          //   ]
-                          // } ),
-                          // a.hr,
-                          app.container.dialogues.params( type, controller, container, blueprint, params, dialogue )
-                        ]
-                      } else {
-                        el.$nodes = [
-                          a['.error']( app.icon(
-                            'fas fa-exclamation-triangle',
-                            dialogueName ?
-                            `Dialogue '${ dialogueName }' is not defined.`:
-                            `Dialogue is not defined.`
-                          ) ),
-                          a.p(
-                            app.button( {
-                              label: app.icon( 'fa fa-check', 'OK' ),
-                              onclick: () => el.$nodes = [app.dialogue.builder( main.components )],
-                            } ),
-                          ),
-                        ]
-                      }
-                    },
-                  },
-                } )
-              ]
+                      app.container.dialogues.params( type, controller, container, blueprint, params, dialogue )
+                    ]
+                  } else {
+                    el.$nodes = [
+                      a['.error']( app.icon(
+                        'fas fa-exclamation-triangle',
+                        dialogueName ?
+                        `Dialogue '${ dialogueName }' is not defined.`:
+                        `Dialogue is not defined.`
+                      ) ),
+                      a.p(
+                        app.button( {
+                          label: app.icon( 'fa fa-check', 'OK' ),
+                          onclick: () => el.$nodes = [app.dialogue.builder( main.components )],
+                        } ),
+                      ),
+                    ]
+                  }
+                },
+              },
+            } )
+          ]
         }
 
 

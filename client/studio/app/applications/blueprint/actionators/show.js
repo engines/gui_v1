@@ -35,9 +35,7 @@ app.applications.blueprint.actionators.show = blueprint => controller => (a,x) =
         } ),
         r.field( {
           key: 'return_type',
-          // as: 'select',
           placeholder: ' ',
-          selections: app.selections.actionator_return_types,
           compact: true,
         } ),
         r.field( {
@@ -67,7 +65,7 @@ app.applications.blueprint.actionators.show = blueprint => controller => (a,x) =
               as: 'codemirror',
               label: false,
               vertical: true,
-              code: {
+              control: {
                 mode: rr.object.language,
               }
             } )
@@ -81,7 +79,7 @@ app.applications.blueprint.actionators.show = blueprint => controller => (a,x) =
             controller.open( 'variables' )
           },
         } ),
-        x.out( actionator.variables.output() ),
+        x.out( x.lib.compact(actionator.variables.output()) ),
 
       ]
     } ),

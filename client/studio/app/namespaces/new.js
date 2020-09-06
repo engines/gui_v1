@@ -4,7 +4,6 @@ app.namespaces.new = controller => (a,x) => [
 
   app.form( {
     url: '/-/namespaces/new',
-    // object: branch,
     scope: 'namespace',
     form: (f) => [
       f.field( {

@@ -11,17 +11,13 @@ cc.dialogue.designer.report.row = blueprint => f => f.field( {
 
     cc.collapse( {
       label: 'Columns',
-      body: [
-
-        ff.field( {
-          key: 'columns',
-          as: 'many',
-          singular: 'column',
-          form: cc.dialogue.designer.report.component( blueprint ),
-          label: false,
-          vertical: true,
-        } ),
-      ],
+      body: ff.field({
+        key: 'columns',
+        as: 'many',
+        singular: 'column',
+        vertical: true,
+        form: cc.dialogue.designer.report.components( blueprint )
+      }),
     } ),
 
   ]

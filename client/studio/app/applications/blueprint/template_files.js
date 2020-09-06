@@ -26,9 +26,9 @@ app.applications.blueprint.template_files = blueprint => controller => (a,x) => 
             key: 'content',
             as: 'codemirror',
             vertical: true,
-            code: {
+            control: {
               mode: {
-                value: app.codemirrorMode( ff.object.content_mode ),
+                value: ff.object.content_mode,
                 selections: app.selections.template_file_modes,
               },
             },

@@ -1,7 +1,7 @@
 app.router = (a,x) => x.router( {
   routes: controller => [
     app.nav( controller ),
-    controller.nest({
+    controller.mount({
       routes: {
         '/?': app.home,
         '/login': app.login,

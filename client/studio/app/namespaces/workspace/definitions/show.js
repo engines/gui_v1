@@ -20,7 +20,6 @@ app.namespaces.workspace.definitions.show = controller => (a,x) => [
         app.button( {
           label: app.icon( 'fa fa-trash', 'Delete' ),
           class: 'btn app-btn-danger',
-          // confirm: 'Are you sure that you want to delete this namespace?',
           onclick: (e,el) => {
             controller.open( 'delete', controller.query )
           },

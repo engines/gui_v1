@@ -19,7 +19,6 @@ app.container.bindings.persistent.import = type => controller => (a,x) => {
     x.filepond({filepond: {
       server: {
         url: `/-/upload/service/${ name }/${ bindingIdentifier }`,
-        // onload: () => controller.open('..', {query: controller.query}),
         process: {
           headers: {
             'Content-Type': 'application/octet-stream'

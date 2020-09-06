@@ -1,6 +1,6 @@
 app.namespaces.workspace.services.blueprint.consumer_params.index = blueprint => controller => (a,x) => [
 
-  a.h5( 'Environment variables' ),
+  a.h5( 'Consumer params' ),
   a.hr,
 
   a['div.clearfix']( a['div.btn-group.float-right']( [

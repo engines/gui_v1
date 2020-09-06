@@ -25,7 +25,6 @@ app.applications.blueprint.dialogues.parameters = blueprint => controller =>
               selections: {
                 action: 'Action',
                 assign: 'Assign',
-                // parse: 'Parse',
               }
             } ),
             ff.field( {

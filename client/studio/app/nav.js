@@ -26,11 +26,51 @@ app.nav = controller => (a,x) => a['app-nav']( [
 
     a['app-nav-timeout-check']( null, {
       $check: (el) => () => {
-        el.$nodes = app.http( '/-/session', () => nav.$setUser( true ) )
+        el.$nodes = app.http(
+          '/-/session',
+          () => nav.$setUser( true ),
+        )
       }
     } ),
 
     a['div.float-right']( [
+
+      a.span(
+        [
+          a.button(
+            app.icon('fa fa-copy'),
+            {
+              class: "btn app-btn app-nav-btn dropdown-toggle",
+              type: "button",
+              id: "dropdownMenuButton",
+              data: {toggle: "dropdown"},
+            }
+          ),
+          a.div(
+            app.selections.resolve_strings.map(
+              (string) => app.button({
+                label: [
+                  string,
+                  a.textarea(
+                    string,
+                    {style: {height: '0px', width: '0px', border: 'none'}}
+                  ),
+                ],
+                onclick: (e, el) => {
+                  el.$('^ textarea').select();
+                  document.execCommand("copy");
+                },
+                class: "dropdown-item",
+              })
+            ),
+            {class: "dropdown-menu dropdown-menu-right"}
+          ),
+        ],
+        {class: "dropdown"}
+      ),
+
+
+
       app.button( {
         label: app.icon( 'fa fa-cog' ),
         title: 'Settings',
@@ -49,9 +89,6 @@ app.nav = controller => (a,x) => a['app-nav']( [
   } ),
 ], {
   id: 'nav',
-  // $init: function() {
-  //   this.$update()
-  // },
   $setUser: (el) => ( user ) => {
     let buttons = el.$('app-nav-buttons')
     user ? x.lib.animate.fade.in( buttons, { display: 'unset' } ) : x.lib.animate.fade.out( buttons )

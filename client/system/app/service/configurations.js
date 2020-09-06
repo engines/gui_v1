@@ -1,6 +1,6 @@
 app.service.configurations = controller => (a,x) => [
 
-  controller.nest({
+  controller.mount({
     routes: {
       '/?': app.service.configurations.index,
       '/:configuration_name/?': app.service.configurations.show,

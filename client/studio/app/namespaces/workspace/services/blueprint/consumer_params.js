@@ -1,6 +1,6 @@
 app.namespaces.workspace.services.blueprint.consumer_params = blueprint => controller => (a,x) => [
 
-  controller.nest({
+  controller.mount({
     routes: {
       '/?': app.namespaces.workspace.services.blueprint.consumer_params.index( blueprint ),
       '/new': app.namespaces.workspace.services.blueprint.consumer_params.new( blueprint ),

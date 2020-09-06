@@ -23,11 +23,6 @@ app.container.logs = type => controller => (a,x) => {
             ]
           })
         ]
-        // el.$nodes = [
-        //   app.xterm( { text: logs.stdout, label: a['.success']( 'Output' ) } ),
-        //   a.br,
-        //   app.xterm( { text: logs.stderr, label: a['.error']( 'Error' ) } ),
-        // ]
       },
       {
         placeholder: app.hourglass( 'Loading logs' )

@@ -18,7 +18,6 @@ app.applications.branch.set = controller => (a,x) => [
             required: true,
             vertical: true,
             selections: f.object.all,
-            // placeholder: 'Select branch',
           } ),
           f.buttons( {
             cancel: {

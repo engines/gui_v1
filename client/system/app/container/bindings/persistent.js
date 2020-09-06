@@ -8,7 +8,7 @@ app.container.bindings.persistent = type => controller => (a,x) => [
     controller.query.handle
   }`),
 
-  controller.nest({
+  controller.mount({
     routes: {
       '/?': app.container.bindings.persistent.show( type ),
       '/export/?': app.container.bindings.persistent.export( type ),

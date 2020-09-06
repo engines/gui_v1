@@ -15,7 +15,6 @@ app.applications.pull = controller => (a,x) => [
     label: app.icon( 'fas fa-file-download', 'Pull' ),
     class: 'btn btn-primary',
     title: 'Pull application',
-    // confirm: 'Are you sure that you want to delete this service?',
     onclick: (e,el) => {
 
       el.$('^').$nodes = [app.http(
@@ -33,7 +32,6 @@ app.applications.pull = controller => (a,x) => [
           ] ),
         ],
         {
-          // method: 'DELETE',
           placeholder: a.p(
             app.hourglass( 'Pulling application' )
           )

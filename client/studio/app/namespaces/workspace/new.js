@@ -32,9 +32,4 @@ app.namespaces.workspace.new = controller => (a,x) => [
     }
   } ),
 
-// ] ),
-//
-//   a['app-namespace-workspace-create']( [
-//
-
 ]

@@ -10,7 +10,7 @@ app.applications.blueprint.components = blueprint => controller => (a,x) => [
     (f) => [
       f.field( {
         key: 'path',
-        // required: true,
+        required: true,
       } ),
       f.field( {
         key: 'extract',
@@ -40,7 +40,7 @@ app.applications.blueprint.components = blueprint => controller => (a,x) => [
                 as: 'codemirror',
                 vertical: true,
                 label: false,
-                code: {
+                control: {
                   mode: {
                     value: fff.object.content_mode,
                     selections: app.selections.script_modes,

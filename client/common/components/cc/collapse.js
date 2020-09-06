@@ -32,13 +32,16 @@ cc.collapse = ( options={} ) => (a,x) => a['app-collapse']( [
     el.$('app-collapse-indicator').$state = el.$state
     let body = el.$('app-collapse-body')
     if ( el.$state ) {
-      x.lib.animate.fade.in( body )
-      let firstControl = el.$$('ax-appkit-form-control').$$[0]
-      if ( firstControl ) {
-        firstControl.$focus()
-      }
-      // SimpleMDE needs to be refreshed when it appears.
-      // el.$$('ax-appkit-form-simplemde').$refresh()
+      x.lib.animate.fade.in( body, {
+        complete: () => {
+          let firstControl = el.$$('ax-appkit-form-control').$$[0]
+          if ( firstControl ) {
+            firstControl.$focus()
+          }
+          // EasyMDE needs to be refreshed when it appears.
+          el.$$('ax-appkit-easymde').$refresh()
+        }
+      } )
     } else {
       x.lib.animate.fade.out( body )
     }

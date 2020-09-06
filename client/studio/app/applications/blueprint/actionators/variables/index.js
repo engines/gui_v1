@@ -24,22 +24,6 @@ app.applications.blueprint.actionators.variables.index = blueprint => controller
       onclick: () => controller.open( `${ item.id }` ),
     } ) ] )
 
-    // app.report( {
-    //   object: actionator.object,
-    //   report: (r) => [
-    //     r.field( {
-    //       key: 'variables',
-    //       as: 'many',
-    //       vertical: true,
-    //
-    //       report: (rr) => app.button( {
-    //         label: `${ rr.index + 1 }. ${ rr.object.name }`,
-    //         onclick: () => controller.open( `${ rr.index }` ),
-    //       } ),
-    //     } ),
-    //   ]
-    // } ),
-
   ]
 
 }

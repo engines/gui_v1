@@ -8,7 +8,7 @@ app.namespaces.workspace.services.blueprint = namespace => controller => (a,x) =
 
       el.$nodes = [
 
-        controller.nest({
+        controller.mount({
           routes: {
             '/?': app.namespaces.workspace.services.blueprint.show( blueprintObject ),
             '/metadata': app.applications.blueprint.metadata( blueprintObject ),
@@ -21,7 +21,7 @@ app.namespaces.workspace.services.blueprint = namespace => controller => (a,x) =
             '/installed_packages': app.applications.blueprint.installed_packages( blueprintObject ),
             '/required_modules': app.applications.blueprint.required_modules( blueprintObject ),
             '/included_files': app.namespaces.workspace.services.blueprint.included_files( blueprintObject ),
-            '/service_configurations': app.applications.blueprint.service_configurations( blueprintObject ),
+            '/service_configurations*': app.applications.blueprint.service_configurations( blueprintObject ),
             '/environment_variables*': app.applications.blueprint.environment_variables( blueprintObject ),
             '/target_environment_variables': app.namespaces.workspace.services.blueprint.target_environment_variables( blueprintObject ),
             '/constants': app.namespaces.workspace.services.blueprint.constants( blueprintObject ),

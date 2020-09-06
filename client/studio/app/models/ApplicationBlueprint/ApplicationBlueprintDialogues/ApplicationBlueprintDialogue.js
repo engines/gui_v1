@@ -3,18 +3,16 @@ class ApplicationBlueprintDialogue {
   constructor( dialogues, object, id ) {
     this.dialogues = dialogues
     this.id = id
-    this.assign( object )
+    this.assign(object)
     this.parameters = new ApplicationBlueprintDialogueParameters( this, object.parameters || [] )
     this.components = new ApplicationBlueprintDialogueComponents( this, object.components || [] )
     this.tests = new ApplicationBlueprintDialogueTests( this, object.tests || [] )
   }
 
   assign( object ) {
-
     this.object = {
       name: object.name,
     }
-
   }
 
   delete() {
@@ -23,7 +21,7 @@ class ApplicationBlueprintDialogue {
 
   get formObject() {
     return {
-      ...this.object,
+      name: this.object.name,
     }
   }
 

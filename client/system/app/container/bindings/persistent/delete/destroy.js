@@ -23,7 +23,7 @@ app.container.bindings.persistent.delete.destroy = type => controller => (a,x) =
     app.form( {
       url: path,
       method: 'DELETE',
-      success: () => controller.open( '../..' ),
+      success: () => controller.open( '../../..' ),
       form: f => [
         f.buttons({
           submit: {

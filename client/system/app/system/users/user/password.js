@@ -10,8 +10,7 @@ app.system.users.user.password = controller => (a,x) => [
       form: f => [
         f.field( {
           key: 'user_uid',
-          as: 'input',
-          type: 'hidden',
+          as: 'hidden',
           value: account.uid,
         } ),
         f.field( {

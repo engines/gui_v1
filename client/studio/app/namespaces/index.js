@@ -11,11 +11,6 @@ app.namespaces.index = controller => (a,x) => [
       title: 'New services provider',
     } ),
     app.close( controller, {title: 'Return to home'}),
-
-    // app.button( {
-    //   label: app.icon( 'far fa-list-alt', 'Namespaces' ),
-    //   onclick: (e,el) => controller.open( '/namespaces' )
-    // } ),
   ] ) ),
 
   app.http(

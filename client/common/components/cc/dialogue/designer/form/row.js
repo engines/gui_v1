@@ -17,12 +17,12 @@ cc.dialogue.designer.form.row = (f) => f.field( {
           key: 'columns',
           as: 'many',
           singular: 'column',
-          form: cc.dialogue.designer.form.component,
+          form: cc.dialogue.designer.form.components,
           label: false,
           vertical: true,
         } ),
       ],
     } ),
-    
+
   ]
 } )

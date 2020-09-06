@@ -148,18 +148,11 @@ cc.form.shim = {
   controls: {
 
     combobox: ( f, target ) => ( options={} ) => f.controls.selectinput( options ),
-    json: ( f, target ) => ( options={} ) => (a,x) => x.jsoneditor.form.control( f, { theme: 'bootstrap3', ...options } ),
     codemirror: ( f, target ) => ( options={} ) => (a,x) => {
-        if ( ax.is.string(options.mode) ) {
-          options.mode = {
-            value: options.mode.value || localStorage.editorDefaultMode,
-            selections: options.mode.selections,
-          }
-        }
-        return target( f, {
-          keymap: window.localStorage.editorKeymap,
-          ...options,
-        } );
+      options.keymap = {
+        value: window.localStorage.editorKeymap
+      }
+      return target(options);
     },
     markdown: ( f, target ) => ( options={} ) => (a,x) => x.easymde.form.control( f, options ),
 

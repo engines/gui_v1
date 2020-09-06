@@ -8,7 +8,7 @@ app.applications.blueprint = controller => (a,x) => [
 
       el.$nodes = [
 
-        controller.nest({
+        controller.mount({
           routes: {
             '/?': app.applications.blueprint.show( blueprintObject ),
             '/metadata': app.applications.blueprint.metadata( blueprintObject ),

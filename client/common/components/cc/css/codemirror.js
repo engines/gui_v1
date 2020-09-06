@@ -1,9 +1,5 @@
 ax.style( {
 
-  // 'ax-appkit-form-codemirror-mode': {
-  //   select: {
-  //   }
-  // },
   'ax-appkit-form-codemirror-toolbar': {
     '.custom-select': {
       width: '30%',

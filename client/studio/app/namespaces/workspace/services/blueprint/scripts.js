@@ -32,7 +32,7 @@ app.namespaces.workspace.services.blueprint.scripts = blueprint => controller =>
           as: 'codemirror',
           vertical: true,
           label: false,
-          code: {
+          control: {
             mode: {
               value: ff.object.content_mode,
               selections: app.selections.script_modes,

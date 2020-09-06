@@ -87,59 +87,59 @@ class ServiceBlueprintScripts {
 
     return {
       start: {
-        content_mode: app.codemirrorMode( this.object.start.language ),
+        content_mode: this.object.start.language,
         content: this.object.start.content
       },
       start_sudo: {
-        content_mode: app.codemirrorMode( this.object.start_sudo.language ),
+        content_mode: this.object.start_sudo.language,
         content: this.object.start_sudo.content
       },
       install: {
-        content_mode: app.codemirrorMode( this.object.install.language ),
+        content_mode: this.object.install.language,
         content: this.object.install.content
       },
       install_sudo: {
-        content_mode: app.codemirrorMode( this.object.install_sudo.language ),
+        content_mode: this.object.install_sudo.language,
         content: this.object.install_sudo.content
       },
       post_install: {
-        content_mode: app.codemirrorMode( this.object.post_install.language ),
+        content_mode: this.object.post_install.language,
         content: this.object.post_install.content
       },
       post_install_sudo: {
-        content_mode: app.codemirrorMode( this.object.post_install_sudo.language ),
+        content_mode: this.object.post_install_sudo.language,
         content: this.object.post_install_sudo.content
       },
       first_run: {
-        content_mode: app.codemirrorMode( this.object.first_run.language ),
+        content_mode: this.object.first_run.language,
         content: this.object.first_run.content
       },
       first_run_sudo: {
-        content_mode: app.codemirrorMode( this.object.first_run_sudo.language ),
+        content_mode: this.object.first_run_sudo.language,
         content: this.object.first_run_sudo.content
       },
       backup: {
-        content_mode: app.codemirrorMode( this.object.backup.language ),
+        content_mode: this.object.backup.language,
         content: this.object.backup.content
       },
       backup_sudo: {
-        content_mode: app.codemirrorMode( this.object.backup_sudo.language ),
+        content_mode: this.object.backup_sudo.language,
         content: this.object.backup_sudo.content
       },
       restore: {
-        content_mode: app.codemirrorMode( this.object.restore.language ),
+        content_mode: this.object.restore.language,
         content: this.object.restore.content
       },
       restore_sudo: {
-        content_mode: app.codemirrorMode( this.object.restore_sudo.language ),
+        content_mode: this.object.restore_sudo.language,
         content: this.object.restore_sudo.content
       },
       shutdown: {
-        content_mode: app.codemirrorMode( this.object.shutdown.language ),
+        content_mode: this.object.shutdown.language,
         content: this.object.shutdown.content
       },
       shutdown_sudo: {
-        content_mode: app.codemirrorMode( this.object.shutdown_sudo.language ),
+        content_mode: this.object.shutdown_sudo.language,
         content: this.object.shutdown_sudo.content
       },
     }
@@ -165,10 +165,9 @@ class ServiceBlueprintScripts {
       'shutdown_sudo',
     ] ) {
       if ( formObject[key].content ) {
-        formObject[key].language = app.codemirrorLanguage( formObject[key].content_mode )
+        formObject[key].language = formObject[key].content_mode
       }
     }
-
     this.assign( formObject )
 
   }

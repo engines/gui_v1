@@ -1,22 +1,23 @@
-cc.dialogue.builder.form.row = ( f, componentSpec, params ) => {
+cc.dialogue.builder.form.row = ( rowSpec, params ) => {
 
   let a = ax.a
   let x = ax.x
 
-  let columns = []
+  let columns
 
-  if ( componentSpec.columns ) {
-    let columnsSpec = componentSpec.columns || []
-    let result = []
-    for ( let i in columnsSpec ) {
-      result.push( cc.dialogue.builder.form.component( f, columnsSpec[i] ) )
-    }
-    columns = result
+  if ( rowSpec.columns ) {
+    let columnsSpec = rowSpec.columns || []
+    columns = columnsSpec.map(
+    (columnSpec) =>
+      a['div.col-sm'](
+        columnSpec.components.map(
+          (componentSpec) =>
+            cc.dialogue.builder.form.component( componentSpec, params )
+        )
+      )
+    )
   }
 
-  return f.row( {
-    ...componentSpec,
-    columns: columns,
-  } )
+  return a['div.row'](columns || [])
 
 }

@@ -7,6 +7,7 @@ cc.dialogue.designer = blueprint => f => (a,x) => [
     singular: 'dialogue component',
     form: cc.dialogue.designer.component( blueprint ),
     vertical: true,
+    removeable: true,
   } ),
 
 ]

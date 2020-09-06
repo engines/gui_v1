@@ -18,7 +18,7 @@ app.namespaces.workspace.services.blueprint.target_environment_variables = bluep
             key: 'variable_name',
             required: true,
             as: 'select',
-            selections: consumer_params,
+            selections: blueprint.consumerParams.collection.map(cp => cp.object.name),
           } ),
           ff.field( {
             key: 'environment_variable_name',

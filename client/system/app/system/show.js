@@ -3,7 +3,7 @@ app.system.show = controller => (a,x) => [
   a['div.row']([
     a['div.col-3.pt-1.overflow-auto'](app.system.show.menu( controller )),
     a['div.col-9'](
-      controller.nest({
+      controller.mount({
         routes: {
           '/?': [
             app.system.show.engines( controller ),

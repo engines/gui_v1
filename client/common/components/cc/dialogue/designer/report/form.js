@@ -16,23 +16,14 @@ cc.dialogue.designer.report.form = blueprint => f => f.field( {
           key: 'submit',
           label: 'Submit',
           as: 'one',
-          form: cc.dialogue.designer.navigation.button( blueprint ),
+          form: cc.dialogue.designer.button( blueprint ),
         } ),
       ],
     } ),
 
     cc.collapse( {
       label: 'Form',
-      body: [
-        ff.field( {
-          key: 'components',
-          label: false,
-          as: 'many',
-          singular: 'form component',
-          form: cc.dialogue.designer.form.component,
-          vertical: true,
-        } ),
-      ],
+      body: cc.dialogue.designer.form.components(ff),
     } ),
 
   ]

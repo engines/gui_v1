@@ -57,7 +57,7 @@ form = ( controller, blueprint, actionator ) => (a,x) => {
               label: false,
               vertical: true,
               as: 'codemirror',
-              code: {
+              control: {
                 mode: {
                   value: ff.object.content_mode,
                   selections: app.selections.script_modes,

@@ -3,7 +3,7 @@ app.system.ssh = controller => (a,x) => [
 
   a.h3( 'SSH key' ),
 
-  controller.nest({
+  controller.mount({
     routes: {
       '/?': app.system.ssh.show,
       '/generate': app.system.ssh.generate,

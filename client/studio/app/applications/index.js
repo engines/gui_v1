@@ -2,6 +2,31 @@ app.applications.index = controller => (a,x) => [
 
   a.h5( 'Applications' ),
 
+  x.form({
+    shims: [
+      x.form.field.shim,
+      x.form.field.extras.shim,
+      x.form.field.dependent.shim,
+      x.form.field.nest.shim,
+      x.form.field.nest.prefab.shim,
+      x.codemirror.form.shim,
+      x.bootstrap.form.shim,
+      x.form.async.shim,
+    ],
+    form: (f) => [
+      f.field({key: 'cats'}),
+      f.field({
+        key: 'code',
+        as: 'codemirror',
+        mode: 'javascript',
+        codemirror: {lineNumbers: false},
+        hint: 'This is a hint',
+      }),
+    ]
+  }),
+
+
+
   a['div.clearfix']( a['div.btn-group.float-right']( [
     app.button( {
       label: app.icon( 'fa fa-plus', 'New application' ),

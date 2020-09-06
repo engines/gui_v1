@@ -1,6 +1,6 @@
 app.applications.blueprint.environment_variables = blueprint => controller => (a,x) => [
 
-  controller.nest({
+  controller.mount({
     routes: {
       '/?': app.applications.blueprint.environment_variables.index( blueprint ),
       '/new': app.applications.blueprint.environment_variables.new( blueprint ),

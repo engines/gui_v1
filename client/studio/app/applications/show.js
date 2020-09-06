@@ -58,13 +58,6 @@ app.applications.show = controller => (a,x) => [
               controller.open( 'branch' )
             }
           } ),
-          // app.button( {
-          //   label: app.icon( 'fas fa-clipboard-list', 'Status' ),
-          //   title: 'Status',
-          //   onclick: (e,el) => {
-          //     controller.open( 'status' )
-          //   }
-          // } ),
           app.button( {
             label: app.icon( 'fas fa-bookmark', 'Commit' ),
             title: 'Commit',

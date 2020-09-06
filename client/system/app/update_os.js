@@ -1,6 +1,6 @@
 app.update_os = controller => (a,x) => [
   a.h3( "Update OS" ),
-  controller.nest({
+  controller.mount({
     routes: {
       '/?': app.update_os.show,
       '/start': app.update_os.start,

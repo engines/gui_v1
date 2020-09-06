@@ -22,10 +22,8 @@ cc.dialogue.designer.form.fieldset = (f) => f.field( {
         } ),
 
         ff.field( {
-          key: 'layout',
+          key: 'horizontal',
           as: 'checkbox',
-          checked: 'vertical',
-          control: { label: 'Vertical' },
         } ),
 
         ff.field( {
@@ -45,19 +43,8 @@ cc.dialogue.designer.form.fieldset = (f) => f.field( {
     } ),
 
     cc.collapse( {
-      label: 'Body',
-      body: [
-
-        ff.field( {
-          key: 'body',
-          as: 'many',
-          label: false,
-          singular: 'fieldset component',
-          form: cc.dialogue.designer.form.component,
-          vertical: true,
-        } ),
-
-      ],
+      label: 'Components',
+      body: cc.dialogue.designer.form.components(ff),
     } ),
 
   ]

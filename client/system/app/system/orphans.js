@@ -2,7 +2,7 @@ app.system.orphans = controller => (a,x) => [
 
   a.h3( 'Orphans' ),
 
-  controller.nest({
+  controller.mount({
     routes: {
       '/?': app.system.orphans.index,
       '/orphan/?': app.system.orphans.show,

@@ -14,21 +14,6 @@ module Server
 
           attr_reader :owner
 
-          # def to_json
-          #   to_h.to_json
-          # end
-          #
-          # def to_h
-          #   debugger
-          #   {
-          #     status: status,
-          #     branch: branch.current,
-          #     remote: remote,
-          #     diff: diff,
-          #     # empty: empty?,
-          #   }
-          # end
-
           def remote
             @remote ||= git( 'remote get-url origin' ).strip
           end

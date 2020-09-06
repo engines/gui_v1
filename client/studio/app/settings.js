@@ -27,57 +27,13 @@ app.settings = controller => (a,x) => [
           sublime: 'Sublime',
         },
       } ),
-      f.field( {
-        key: 'editor_default_mode',
-        as: 'select',
-        placeholder: 'None',
-        selections: app.selections.script_modes,
-      } ),
       f.buttons(),
     ],
     action: (submission) => {
       window.localStorage.cssTheme = submission.data.theme
       window.localStorage.editorKeymap = submission.data.editor_keymap
-      window.localStorage.editorDefaultMode = submission.data.editor_default_mode
       location.assign( '/' )
     }
   } ),
 
-
-  // app.http(
-  //   '/-/settings',
-  //   ( settings, el ) => el.$nodes = [
-  //
-  //     a.h3( 'Settings' ),
-  //
-  //     a['div.clearfix']( a['div.btn-group.float-right']( [
-  //       app.close( controller, {title: 'Return to home'}),
-  //     ] ) ),
-  //
-  //     a['div.input-group']( [
-  //       a['div.input-group-prepend'](
-  //         a['div.input-group-text']( 'SSH public key' )
-  //       ),
-  //       a.input( null, {
-  //         name: 'public_key',
-  //         value: settings.public_key,
-  //         class: 'form-control',
-  //       } ),
-  //       a['div.input-group-append'](
-  //         app.button( {
-  //           label: app.icon( 'fa fa-copy' ),
-  //           class: 'btn btn-primary',
-  //           title: 'Copy to clipboard',
-  //           onclick: (e,el) => {
-  //             let keyText = el.$('^.input-group [name="public_key"]')
-  //             keyText.focus(),
-  //             keyText.select(),
-  //             document.execCommand('copy')
-  //           },
-  //         } )
-  //       ),
-  //     ] ),
-  //
-  //   ]
-  // )
 ]

@@ -20,7 +20,6 @@ let enginesFieldV1 = ( variable ) => {
     datetime: {as: 'input', type: 'datetime'},
     decimal: {as: 'input', type: 'decimal'},
     email: {as: 'input', type: 'email'},
-    // file: {as: 'input', type: 'file'},
     float: {as: 'input', type: 'number'},
     hidden: {as: 'input', type: 'hidden'},
     integer: {as: 'input', type: 'number'},
@@ -37,15 +36,13 @@ let enginesFieldV1 = ( variable ) => {
     tel: {as: 'input', type: 'tel'},
     text: {as: 'textarea'},
     url: {as: 'input', type: 'url'},
-    // uuid: {as: 'input', type: 'url'},
-  }[ input.type ] // || `${ input.type || '' }`
+  }[ input.type ]
 
   return {
    key: `${ variable.name || '' }`,
    value: `${ variable.value || '' }`,
    as: fieldV2.as,
    type: fieldV2.type,
-   // unchecked: input.type === 'checkbox_boolean' ? false : '',
    checked: fieldV2.as === 'checkbox' ? 'true' : undefined,
    confirmation: input.type === 'password_with_confirmation',
    label: `${ input.label || '' }`,

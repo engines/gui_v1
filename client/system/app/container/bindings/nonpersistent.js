@@ -8,7 +8,7 @@ app.container.bindings.nonpersistent = type => controller => (a,x) => [
     controller.query.handle
   }`),
 
-  controller.nest({
+  controller.mount({
     routes: {
       '/?': app.container.bindings.nonpersistent.show( type ),
       '/registration*': app.container.bindings.nonpersistent.registration( type ),

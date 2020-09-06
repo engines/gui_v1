@@ -5,7 +5,7 @@ app.service = controller => (a,x) => [
   a['div.row']( [
     a['div.col-3.pt-1.overflow-auto']( app.container.menu( controller, 'service' ) ),
     a['div.col-9'](
-      controller.nest({
+      controller.mount({
         routes: {
           '/?': app.service.show,
           '/memory': app.container.memory( 'service' ),

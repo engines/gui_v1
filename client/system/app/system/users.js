@@ -2,7 +2,7 @@ app.system.users = controller => (a,x) => [
 
   a.h3( 'Users' ),
 
-  controller.nest({
+  controller.mount({
     routes: {
       '/?': app.system.users.index,
       '/new': app.system.users.new,

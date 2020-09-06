@@ -21,11 +21,41 @@ app.applications.blueprint.dialogues.tests = blueprint => controller =>
             key: 'label',
             required: true,
           } ),
-          f.field( {
-            key: 'parameters',
-            as: 'json',
-            value: {},
-          } ),
+          a.div([
+            f.field( {
+              key: 'parameters',
+              as: 'codemirror',
+              mode: 'javascript',
+              value: '{}',
+            } ),
+            a['json-error'](a.input(null, {
+              style: {
+                border: 'none',
+                margin: '0px',
+                padding: '0px',
+                height: '0px',
+                width: '100%',
+              },
+              tabindex: 0,
+            }), {
+              style: {
+                display: 'flex',
+                marginTop: '-10px',
+              }
+            }),
+          ], {
+            $on: {
+              'ax.appkit.form.control.change: check json object': (e, el) => {
+                try {
+                  el.$('json-error input').setCustomValidity('');
+                  let value = JSON.parse(el.$('ax-appkit-form-control').$value())
+                  if (ax.is.not.object(value)) ax.throw('Must be an object literal.')
+                } catch (error) {
+                  el.$('json-error input').setCustomValidity(error.message)
+                }
+              }
+            }
+          }),
         ],
       } ),
       data => {

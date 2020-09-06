@@ -1,4 +1,4 @@
-app.namespaces.workspace.definitions = controller => controller.nest({
+app.namespaces.workspace.definitions = controller => controller.mount({
   routes: {
     '/?': app.namespaces.workspace.definitions.index,
     '/query': app.namespaces.workspace.definitions.show,

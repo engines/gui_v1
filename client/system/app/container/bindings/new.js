@@ -2,7 +2,7 @@ app.container.bindings.new = type => controller => (a,x) => [
 
   a.h3('New binding'),
 
-  controller.nest({
+  controller.mount({
     routes: {
       '/?': app.container.bindings.new.show( type ),
       '/strategy': app.container.bindings.new.strategy( type ),

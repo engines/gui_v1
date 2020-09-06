@@ -5,7 +5,7 @@ let app = (a,x) => a['app'](
   ] ),
   {
     $on: {
-      'app.authenticated': (e, el) => {
+      'app.unauthenticated': (e, el) => {
         nav.$load( '/login' )
       },
       'app.timeout': (e, el) => {

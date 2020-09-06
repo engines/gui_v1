@@ -6,7 +6,6 @@ ax.style( {
   },
 
   '.app-btn:hover': {
-    // color: '#fff',
     backgroundColor: 'lightgray',
   },
 

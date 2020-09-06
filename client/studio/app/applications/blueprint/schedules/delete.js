@@ -20,7 +20,6 @@ app.applications.blueprint.schedules.delete = blueprint => controller => (a,x) =
         label: app.icon( 'fa fa-trash', 'Delete' ),
         class: 'btn btn-danger',
         title: 'Delete schedule',
-        // confirm: 'Are you sure that you want to delete this application?',
         onclick: (e,el) => {
 
           schedule.delete()

@@ -1,4 +1,4 @@
-app.applications.branch = controller => controller.nest({
+app.applications.branch = controller => controller.mount({
   routes: {
     '/?': app.applications.branch.show,
     '/set': app.applications.branch.set,

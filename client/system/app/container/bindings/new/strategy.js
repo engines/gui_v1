@@ -1,12 +1,7 @@
 app.container.bindings.new.strategy = type => controller => (a,x) => {
 
-  // const name = controller.params.name
-
   return [
-    // app.close( controller ),
-
     a.h5(controller.params.service),
-// controller,
     app.http(
       [
         `/-/-/service_manager/persistent_services/${controller.params.publisher}/${controller.params.type}`,
@@ -40,7 +35,7 @@ app.container.bindings.new.strategy = type => controller => (a,x) => {
               key: 'share',
               as: 'select',
               horizontal: true,
-              selections: shareables.map((shareable) => shareable.service_handle),
+              selections: shareables.map((shareable) => `${shareable.parent_engine}:${shareable.service_handle}`),
               dependent: {
                 key: 'strategy',
                 value: 'share'
@@ -50,7 +45,7 @@ app.container.bindings.new.strategy = type => controller => (a,x) => {
               key: 'adopt',
               as: 'select',
               horizontal: true,
-              selections: adoptables.map((adoptable) => adoptable.service_handle),
+              selections: adoptables.map((adoptable) => `${adoptable.parent_engine}:${adoptable.service_handle}`),
               dependent: {
                 key: 'strategy',
                 value: 'adopt'

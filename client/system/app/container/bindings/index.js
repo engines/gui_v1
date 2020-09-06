@@ -119,7 +119,6 @@ app.container.bindings.index = type => controller => (a,x) => {
               }
             ))) :
             a.p(a['i.placeholder']('None')),
-            // x.out( consumers ),
           ];
 
         },

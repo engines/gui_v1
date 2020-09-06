@@ -1,6 +1,6 @@
 app.shutdown = controller => (a,x) => [
   a.h3( "Shutdown" ),
-  controller.nest({
+  controller.mount({
     routes: {
       '/?': app.shutdown.show,
       '/progress': app.shutdown.progress,

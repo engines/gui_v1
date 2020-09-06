@@ -50,7 +50,6 @@ cc.dialogue.designer.form.field = f => f.field( {
             { value: 'country', label: 'Country' },
             { value: 'language', label: 'Language' },
             { value: 'timezone', label: 'Timezone' },
-            // { value: 'uri', label: 'URI' },
             { disabled: 'hr' },
             { value: 'json', label: 'JSON' },
             { disabled: 'hr' },
@@ -93,10 +92,8 @@ cc.dialogue.designer.form.field = f => f.field( {
             } ),
 
             ff.field( {
-              key: 'layout',
+              key: 'horizontal',
               as: 'checkbox',
-              checked: 'vertical',
-              control: { label: 'Vertical' },
             } ),
 
             ff.field( {
@@ -286,10 +283,13 @@ cc.dialogue.designer.form.field = f => f.field( {
               label: false,
               vertical: true,
               collection: true,
+              addable: true,
+              removeable: true,
+              moveable: true,
               singular: 'selection',
               dependent: {
                 key: 'type',
-                value: 'static',
+                pattern: '^static$',
               }
             } ),
             fff.field( {
@@ -436,16 +436,7 @@ cc.dialogue.designer.form.field = f => f.field( {
       label: false,
       body: cc.collapse( {
         label: 'Components',
-        body: [
-          ff.field( {
-            key: 'components',
-            label: false,
-            vertical: true,
-            as: 'many',
-            singular: 'form component',
-            form: cc.dialogue.designer.form.component,
-          } ),
-        ]
+        body: cc.dialogue.designer.form.components(ff),
       } ),
       dependent: {
         key: 'control',

@@ -47,27 +47,27 @@ class ServiceBlueprintConsumerScripts {
 
     return {
       add: {
-        content_mode: app.codemirrorMode( this.object.add.language ),
+        content_mode: this.object.add.language,
         content: this.object.add.content
       },
       add_sudo: {
-        content_mode: app.codemirrorMode( this.object.add_sudo.language ),
+        content_mode: this.object.add_sudo.language,
         content: this.object.add_sudo.content
       },
       update: {
-        content_mode: app.codemirrorMode( this.object.update.language ),
+        content_mode: this.object.update.language,
         content: this.object.update.content
       },
       update_sudo: {
-        content_mode: app.codemirrorMode( this.object.update_sudo.language ),
+        content_mode: this.object.update_sudo.language,
         content: this.object.update_sudo.content
       },
       remove: {
-        content_mode: app.codemirrorMode( this.object.remove.language ),
+        content_mode: this.object.remove.language,
         content: this.object.remove.content
       },
       remove_sudo: {
-        content_mode: app.codemirrorMode( this.object.remove_sudo.language ),
+        content_mode: this.object.remove_sudo.language,
         content: this.object.remove_sudo.content
       },
     }
@@ -85,7 +85,7 @@ class ServiceBlueprintConsumerScripts {
       'remove_sudo',
     ] ) {
       if ( formObject[key].content ) {
-        formObject[key].language = app.codemirrorLanguage( formObject[key].content_mode )
+        formObject[key].language = formObject[key].content_mode
       }
     }
 

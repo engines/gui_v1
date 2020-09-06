@@ -1,4 +1,4 @@
-app.views = ( parent, path ) => controller => controller.nest({
+app.views = ( parent, path ) => controller => controller.mount({
   routes: {
     '/?': app.views.index( parent, path ),
     '/new': app.views.new( parent, path ),

@@ -20,7 +20,6 @@ app.applications.blueprint.service_configurations.delete = blueprint => controll
         label: app.icon( 'fa fa-trash', 'Delete' ),
         class: 'btn btn-danger',
         title: 'Delete service configuration',
-        // confirm: 'Are you sure that you want to delete this application?',
         onclick: (e,el) => {
 
           serviceConfiguration.delete()

@@ -23,9 +23,9 @@ cc.dialogue.builder.navigation.button = ( buttonSpec, params ) => {
   if( labelSpec.display === 'none' ) {
     button.label = ''
   } else if ( labelSpec.display === 'custom' ) {
-    button.label = Mustache.render( labelSpec.custom, params )
+    button.label = Mustache.render( labelSpec.custom || '', params )
   } else {
-    button.label = ax.x.lib.text.labelize( buttonSpec.dialogue || 'main' )
+    button.label = ax.x.lib.text.labelize( buttonSpec.dialogue || '' )
   }
 
   button.onclick = (e,el) => {
@@ -41,7 +41,7 @@ cc.dialogue.builder.navigation.button = ( buttonSpec, params ) => {
 
     el.$send(
       'app-container-dialogue-navigation',
-      { detail: { dialogue: buttonSpec.dialogue || 'main', params: sendParams } }
+      { detail: { dialogue: buttonSpec.dialogue, params: sendParams } }
     )
 
   }

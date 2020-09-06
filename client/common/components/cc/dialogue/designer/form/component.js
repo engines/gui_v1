@@ -6,7 +6,6 @@ cc.dialogue.designer.form.component = f => [
     label: false,
     vertical: true,
     selections: [
-      { value: '', label: '' },
       { value: 'field', label: 'Field' },
       { value: 'fieldset', label: 'Fieldset' },
       { value: 'row', label: 'Row' },

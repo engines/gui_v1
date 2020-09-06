@@ -29,6 +29,7 @@ class ServiceBlueprint {
     this.consumers = new ServiceBlueprintConsumers( this, software.consumers || {} )
     this.consumerScripts = new ServiceBlueprintConsumerScripts( this, software.consumer_scripts || [] )
     this.consumerParams = new ApplicationBlueprintEnvironmentVariables( this, software.consumer_params || [] )
+    // this.consumerParams = new ServiceBlueprintConsumerParams( this, software.consumer_params || [] )
     this.customFiles = new ServiceBlueprintCustomFiles( this, software.custom_files || [] )
     this.actionators = new ApplicationBlueprintActionators( this, software.actionators || [] )
     this.configurators = new ServiceBlueprintConfigurators( this, software.configurators || [] )
@@ -46,26 +47,6 @@ class ServiceBlueprint {
   get apiEndpoint() {
     return `/-/namespaces/${ this.namespace.id }/workspace/services/${ this.id }/blueprint`
   }
-
-  // get framework() {
-  //   return this.base.object.framework
-  // }
-  //
-  // get hasRakeTasks() {
-  //   return [ 'rails4', 'rails5', 'sinatra' ].includes( this.framework )
-  // }
-  //
-  // get hasCustomPhpInis() {
-  //   return [ 'apache_php', 'apache_php56' ].includes( this.framework )
-  // }
-  //
-  // get hasApacheHtaccessFiles() {
-  //   return [ 'apache_php', 'apache_php56' ].includes( this.framework )
-  // }
-  //
-  // get hasApacheHttpdConfigurations() {
-  //   return [ 'apache_php', 'apache_php56' ].includes( this.framework )
-  // }
 
   get output() {
 

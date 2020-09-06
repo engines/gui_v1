@@ -39,7 +39,7 @@ class ApplicationBlueprintActionator {
       enable_logging: this.object.enable_logging ? 'on' : null,
       background: this.object.background ? 'on' : null,
       script: {
-        content_mode: app.codemirrorMode( this.object.script.language ),
+        content_mode: this.object.script.language,
         content: this.object.script.content,
       }
     }
@@ -50,7 +50,7 @@ class ApplicationBlueprintActionator {
 
     formObject.script = formObject.script || {}
     if ( formObject.script.content ) {
-      formObject.script.language = app.codemirrorLanguage( formObject.script.content_mode )
+      formObject.script.language = formObject.script.content_mode
     }
 
     this.assign( formObject )

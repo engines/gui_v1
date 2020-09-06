@@ -2,7 +2,7 @@ app.system.domains = controller => (a,x) => [
 
   a.h3( 'Domains' ),
 
-  controller.nest({
+  controller.mount({
     routes: {
       '/?': app.system.domains.index,
       '/default': app.system.domains.default,

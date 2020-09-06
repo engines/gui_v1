@@ -46,21 +46,6 @@ app.reportEnginesV1Input = r => (a,x) => r.field( {
           }
         ),
 
-
-        // rrr.field( {
-        //   key: 'items',
-        //   as: 'table',
-        //   label: false,
-        //   vertical: true,
-        //   report: (rrrr) => [
-        //     rrrr.field( {
-        //       key: 'value',
-        //     } ),
-        //     rrrr.field( {
-        //       key: 'label',
-        //     } ),
-        //   ]
-        // } ),
         rrr.field( {
           key: 'include_blank',
           as: 'boolean',

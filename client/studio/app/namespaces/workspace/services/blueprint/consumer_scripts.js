@@ -6,7 +6,7 @@ app.namespaces.workspace.services.blueprint.consumer_scripts = blueprint => cont
   app.blueprintForm(
     controller,
     blueprint,
-    blueprint.consumer_scripts,
+    blueprint.consumerScripts,
     (f) => [
       'add',
       'add_sudo',
@@ -24,7 +24,7 @@ app.namespaces.workspace.services.blueprint.consumer_scripts = blueprint => cont
           as: 'codemirror',
           vertical: true,
           label: false,
-          code: {
+          control: {
             mode: {
               value: ff.object.content_mode,
               selections: app.selections.script_modes,

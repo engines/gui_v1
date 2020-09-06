@@ -28,10 +28,6 @@ ax.style( {
       fontStyle: 'italic',
     },
 
-    'ax-appkit-output-text': {
-      // color: '#333'
-    },
-
   }
 
 } )

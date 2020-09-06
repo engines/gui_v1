@@ -20,7 +20,6 @@ app.applications.blueprint.actionators.delete = blueprint => controller => (a,x)
         label: app.icon( 'fa fa-trash', 'Delete' ),
         class: 'btn btn-danger',
         title: 'Delete actionator',
-        // confirm: 'Are you sure that you want to delete this application?',
         onclick: (e,el) => {
 
           actionator.delete()

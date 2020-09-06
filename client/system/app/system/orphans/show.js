@@ -14,8 +14,6 @@ app.system.orphans.show = controller => (a,x) => {
 
     app.close( controller ),
 
-    // controller.params,
-
     a.h3(parent),
     a.h5(`${controller.params.service}:${controller.params.handle}`),
 

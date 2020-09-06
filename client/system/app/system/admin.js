@@ -8,8 +8,7 @@ app.system.admin = controller => (a,x) => [
     form: (f) => [
       f.field( {
         key: 'user_name',
-        as: 'input',
-        type: 'hidden',
+        as: 'hidden',
         value: 'engines',
       } ),
       f.field( {

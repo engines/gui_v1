@@ -25,7 +25,7 @@ class ServiceBlueprintCustomFiles {
         type: item.type,
         path: item.path,
         content: item.content,
-        content_mode: app.codemirrorMode( item.language ),
+        content_mode: item.language,
         execute: item.execute ? true : false,
         sudo: item.sudo ? true : false,
       } )
@@ -39,7 +39,7 @@ class ServiceBlueprintCustomFiles {
     this.assign( Object.values( formObject.custom_files || {} ).map( item => ( {
       path: item.path,
       content: item.content,
-      language: app.codemirrorLanguage( item.content_mode ),
+      language: item.content_mode,
     } ) ) )
   }
 

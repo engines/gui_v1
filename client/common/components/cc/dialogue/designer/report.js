@@ -11,16 +11,7 @@ cc.dialogue.designer.report = blueprint => f => f.field( {
 
       cc.collapse( {
         label: 'Components',
-        body: [
-          ff.field( {
-            key: 'components',
-            label: false,
-            as: 'many',
-            singular: 'report component',
-            form: cc.dialogue.designer.report.component( blueprint ),
-            vertical: true,
-          } ),
-        ],
+        body: cc.dialogue.designer.report.components( blueprint )(ff),
       } ),
 
     ]

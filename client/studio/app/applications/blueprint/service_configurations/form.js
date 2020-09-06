@@ -22,12 +22,12 @@ form = ( controller, blueprint, serviceConfiguration ) => (a,x) => {
 
             f.field( {
               key: 'publisher_namespace',
-              type: 'hidden',
+              as: 'hidden',
             } ),
 
             f.field( {
               key: 'type_path',
-              type: 'hidden',
+              as: 'hidden',
             } ),
 
             f.field( {

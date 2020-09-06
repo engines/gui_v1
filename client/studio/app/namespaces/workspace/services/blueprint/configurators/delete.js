@@ -20,7 +20,6 @@ app.namespaces.workspace.services.blueprint.configurators.delete = blueprint => 
         label: app.icon( 'fa fa-trash', 'Delete' ),
         class: 'btn btn-danger',
         title: 'Delete configurator',
-        // confirm: 'Are you sure that you want to delete this application?',
         onclick: (e,el) => {
 
           configurator.delete()

@@ -16,7 +16,6 @@ app.namespaces.workspace.pull = controller => (a,x) => [
       label: app.icon( 'fas fa-file-upload', 'Pull' ),
       class: 'btn btn-primary',
       title: 'Pull branch',
-      // confirm: 'Are you sure that you want to delete this service?',
       onclick: (e,el) => {
 
         el.$('^').$nodes = app.http(

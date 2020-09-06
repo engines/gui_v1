@@ -6,13 +6,6 @@ applications = controller => (a,x) => a({
     ( applications, el ) => el.$nodes = [
       a['div.container']( [
         a.hr,
-        // app.btn(
-        //   app.icon( 'fa fa-plus', 'Install' ),
-        //   (e,el) => controller.open( '/install' ),
-        //   {
-        //     class: 'btn app-btn d-block w-100 text-left overflow-hidden',
-        //   }
-        // ),
         Object.keys( applications ).length ?
         a['app-menu-buttons']( Object.keys( applications ).sort().map(
           name => app.system.menu.applications.application( controller, name, applications[name] )

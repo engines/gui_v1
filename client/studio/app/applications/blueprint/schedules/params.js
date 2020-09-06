@@ -20,8 +20,7 @@ app.applications.blueprint.schedules.params = blueprint => controller => (a,x) =
           form: (ff) => [
             ff.field( {
               key: 'name',
-              as: 'input',
-              type: 'hidden',
+              as: 'hidden',
             } ),
             ff.field( {
               key: 'value',

@@ -1,6 +1,6 @@
 app.system.email.domains = controller => (a,x) => [
 
-  controller.nest({
+  controller.mount({
     routes: {
       '/?': app.system.email.domains.index,
       '/default': app.system.email.domains.default,

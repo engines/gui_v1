@@ -5,30 +5,33 @@ app.system.users.user.delete = controller => (a,x) => [
     (account, el) => {
       el.$nodes = [
 
-        account.email.mailbox ?
+        (account.email.mailbox || account.groups.length) ?
         [
-          a.p('User cannot be deleted while email is enabled.'),
+          a.p('User cannot be deleted when a member of groups or email is enabled.'),
           app.btn(
             app.icon('fa fa-check', 'OK'),
-            () => controller.open('..', controller.query)
+            () => controller.open('..', controller.query),
+            { class: 'btn btn-primary' }
           )
         ] :
         [
+          a.p('Are you sure that you want to delete this user?'),
 
-          app.http(
-            '/-/-/system/uadmin/users/accounts/',
-            () => controller.open('../..'),
-            {
-              method: 'DELETE',
-              body: x.lib.query.stringify(
-                { api_vars: {uid: controller.params.user_uid} },
-              ),
-              headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-              },
-              placeholder: app.hourglass('Deleting user'),
-            }
-          )
+          app.form( {
+            url: '/-/-/system/uadmin/users/accounts/',
+            method: 'DELETE',
+            scope: 'api_vars',
+            success: () => controller.open('../..'),
+            form: f => [
+              f.field({
+                key: 'uid',
+                as: 'hidden',
+                value: controller.params.user_uid,
+              }),
+              f.buttons(),
+            ]
+          } ),
+
         ]
       ]
     },

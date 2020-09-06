@@ -11,7 +11,8 @@ app.system.users.user.mailbox.disable = controller => (a,x) => [
         a.p('Mailbox cannot be disabled while it is associated with aliases or distributions.'),
         app.btn(
           app.icon('fa fa-check', 'OK'),
-          () => controller.open('..', controller.query)
+          () => controller.open('..', controller.query),
+          { class: 'btn btn-primary' }
         )
       ] :
       app.http(

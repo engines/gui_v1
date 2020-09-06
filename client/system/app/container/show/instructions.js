@@ -18,7 +18,6 @@ app.container.show.instructions = ( controller, container ) => (a,x) => {
       name === 'control' ? null : [
         instructionButton( 'Stop', 'stop', 'fas fa-stop-circle' ),
         instructionButton( 'Pause', 'pause', 'fas fa-pause-circle' ),
-        // instructionButton( 'Halt', 'halt', 'far fa-stop-circle' ),
       ],
     ]
     case 'paused':

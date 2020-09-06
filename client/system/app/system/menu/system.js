@@ -9,7 +9,6 @@ system = ( system, controller ) => (a,x) => a['div.container']( [
         $state: system,
         $tag: 'app-system-state',
         $nodes: (el) => [
-          // el.$state,
           (
             el.$state.needs_reboot ||
             el.$state.needs_engines_update ||

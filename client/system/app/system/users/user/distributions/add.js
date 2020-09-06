@@ -35,7 +35,11 @@ app.system.users.user.distributions.add = controller => (a,x) => [
       }) : [
         a['i.placeholder']('No distributions available.'),
         a.br,
-        app.btn(app.icon('fa fa-check', 'OK'), () => controller.open('..', controller.query)),
+        app.btn(
+          app.icon('fa fa-check', 'OK'),
+          () => controller.open('..', controller.query),
+          { class: 'btn btn-primary' }
+        ),
       ],
     ],
     {

@@ -2,7 +2,7 @@ app.system.users.user = controller => (a,x) => [
 
   a.h5( controller.params.user_uid ),
 
-  controller.nest({
+  controller.mount({
     routes: {
       '/?': app.system.users.user.show,
       '/edit': app.system.users.user.edit,

@@ -16,8 +16,6 @@ app.system.install.monitor = controller => (a,x) => [
             installing.domain_name
           }` ),
 
-
-
           app.xterm( { label: 'Builder log' } ),
           a['appkit-event-source']( null, {
             $init: (el) => {
@@ -48,7 +46,8 @@ app.system.install.monitor = controller => (a,x) => [
                         a.p( a['.error']('Installation failed.') ),
                         app.btn(
                           app.icon( 'fa fa-check', 'OK' ),
-                          (e,el) => controller.open( '/' )
+                          (e,el) => controller.open( '/' ),
+                          { class: 'btn btn-primary' }
                         ),
                       ] : [
                         a.p( 'Installation complete.' ),
@@ -68,11 +67,6 @@ app.system.install.monitor = controller => (a,x) => [
       } else {
         el.$nodes = [
           a.p( a['.error']( 'Not installing.' ) ),
-          app.btn(
-            app.icon( "fa fa-check", "OK" ),
-            () => controller.open( '/' ),
-            { class: 'btn app-btn' },
-          )
         ]
       }
 

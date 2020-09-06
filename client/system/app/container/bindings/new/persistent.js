@@ -1,6 +1,7 @@
 app.container.bindings.new.persistent = type => controller => (a,x) => {
 
   const name = controller.params.name
+  const [handle, parent] = controller.params.share.split(':')
 
   let definitionPath = `/-/-/service_manager/service_definitions/${
     controller.params.publisher
@@ -10,29 +11,39 @@ app.container.bindings.new.persistent = type => controller => (a,x) => {
 
   let submissionPath = `/-/-/containers/engine/${
     name
-  }/services/persistent/${
+  }/services/persistent${
     ({
-      create: '.',
-      share: 'share',
-      adopt: 'orphan',
+      create: '',
+      share: '/share',
+      adopt: '/orphan',
     })[controller.params.strategy]
+  }/${
+    parent
   }/${
     controller.params.publisher
   }/${
     controller.params.type
+  }${
+    ({
+      create: '',
+      share: `/${handle}`,
+      adopt: `/${controller.params.adopt}`,
+    })[controller.params.strategy]
   }`;
 
   let form = (variables) => app.form({
     action: submissionPath,
     success: (result) => {
 
-      // controller.open('../../persistent', {})
       alert(`Result should be binding object. Currently getting: ${JSON.stringify(result)}. Can't redirect to binding, so redirecting to binding index instead.`)
       controller.open('../..');
 
     },
     scope: 'api_vars',
     form: (f) => [
+      `@system_api.post "containers/engine/#{@name}/services/persistent/share/#{args[:parent]}/#{args[:publisher_namespace]}/#{args[:type_path]}/#{args[:service_handle]}", { variables: args[:variables] }`,
+      submissionPath,
+      controller.params,
       f.field({
         key: 'variables',
         as: 'one',
@@ -65,7 +76,7 @@ app.container.bindings.new.persistent = type => controller => (a,x) => {
             app.http(
               `/-/-/service_manager/persistent_services/${controller.params.publisher}/${controller.params.type}`,
               (shareables, el) => {
-                let shareable = shareables.find((shareable) => shareable.service_handle == controller.params.share)
+                let shareable = shareables.find((shareable) => shareable.service_handle == handle)
                 let variables = Object.values(definition.consumer_params).filter(
                   (variable) => !variable.immutable
                 ).map(
@@ -75,7 +86,7 @@ app.container.bindings.new.persistent = type => controller => (a,x) => {
                   })
                 );
                 el.$nodes = [
-                  a.h5(`Share ${controller.params.service}:${controller.params.share}`),
+                  a.h5(`Share ${controller.params.service}:${parent}:${handle}`),
                   form(variables),
                 ]
               }
@@ -96,7 +107,7 @@ app.container.bindings.new.persistent = type => controller => (a,x) => {
                   })
                 );
                 el.$nodes = [
-                  a.h5(`Adopt ${controller.params.service}:${controller.params.adopt}`),
+                  a.h5(`Adopt ${controller.params.service}:${parent}:${controller.params.adopt}`),
                   form(variables),
                 ]
               }

@@ -7,7 +7,6 @@ app.blueprintForm = (
 ) => app.form( {
   object: entry.formObject,
   form: (f) => [
-    // f.object,
     fields(f),
     f.buttons( {
       cancel: {
@@ -32,7 +31,6 @@ app.blueprintForm = (
       {
         complete: complete,
         method: 'POST',
-        // placeholder: app.hourglass('Saving blueprint'),
         headers: { 'Content-type': 'application/json' },
         body:  JSON.stringify( blueprint.output, null, 2 )
       }

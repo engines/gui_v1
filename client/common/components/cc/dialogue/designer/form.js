@@ -10,33 +10,24 @@ cc.dialogue.designer.form = blueprint => f => f.field( {
   form: (ff) => [
 
     cc.collapse( {
-      label: 'Options',
+      label: 'Components',
+      body: cc.dialogue.designer.form.components(ff),
+    } ),
+
+    cc.collapse( {
+      label: 'Buttons',
       body: [
         ff.field( {
           key: 'cancel',
           label: 'Cancel',
           as: 'one',
-          form: cc.dialogue.designer.navigation.button( blueprint ),
+          form: cc.dialogue.designer.button( blueprint ),
         } ),
         ff.field( {
           key: 'submit',
           label: 'Submit',
           as: 'one',
-          form: cc.dialogue.designer.navigation.button( blueprint ),
-        } ),
-      ],
-    } ),
-
-    cc.collapse( {
-      label: 'Components',
-      body: [
-        ff.field( {
-          key: 'components',
-          label: false,
-          as: 'many',
-          singular: 'form component',
-          form: cc.dialogue.designer.form.component,
-          vertical: true,
+          form: cc.dialogue.designer.button( blueprint ),
         } ),
       ],
     } ),

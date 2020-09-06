@@ -1,4 +1,4 @@
-app.applications = controller => controller.nest( {
+app.applications = controller => controller.mount( {
   routes: {
     '/?': app.applications.index,
     '/new': app.applications.new,

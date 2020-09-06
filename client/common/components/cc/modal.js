@@ -24,5 +24,8 @@ cc.modal = ( options={} ) => (a,x) => a['app-modal'](
       $( el.$('.modal') ).modal( { backdrop: 'static' } )
 
     },
+    $close: (el) => () => {
+      el.$('button.close').click();
+    }
   }
 )

@@ -21,7 +21,7 @@ class ApplicationBlueprintTemplateFiles {
       collection.push( {
         path: item.path,
         content: item.content,
-        content_mode: app.codemirrorMode( item.language ),
+        content_mode: item.language,
       } )
     }
 
@@ -33,7 +33,7 @@ class ApplicationBlueprintTemplateFiles {
     this.assign( Object.values( formObject.template_files || {} ).map( item => ( {
       path: item.path,
       content: item.content,
-      language: app.codemirrorLanguage( item.content_mode ),
+      language: item.content_mode,
     } ) ) )
   }
 

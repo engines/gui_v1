@@ -40,7 +40,7 @@ app.system.users.user.emailable = controller => (a,x) => [
           ]
         }) :
         [
-          a.p('Setup email default domain first!'),
+          a.p('Setup email first.'),
           app.close( controller, { query: controller.query } ),
         ]
       ]

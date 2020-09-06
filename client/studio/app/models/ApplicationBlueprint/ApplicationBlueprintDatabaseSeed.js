@@ -19,7 +19,7 @@ class ApplicationBlueprintDatabaseSeed {
 
     return {
       content: this.object.content,
-      content_mode: app.codemirrorMode( this.object.language ),
+      content_mode: this.object.language,
       script: this.object.script ? 'on' : null,
     }
 
@@ -28,9 +28,9 @@ class ApplicationBlueprintDatabaseSeed {
   formSubmit( formObject ) {
 
     this.assign( {
-      language: app.codemirrorLanguage( formObject.content_mode ),
+      language: formObject.content_mode,
       content: formObject.content,
-      script: formObject.script, // === 'on' ? true : null,
+      script: formObject.script,
     } )
 
   }

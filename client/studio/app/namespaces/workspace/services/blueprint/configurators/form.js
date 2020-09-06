@@ -43,7 +43,7 @@ form = ( controller, blueprint, configurator ) => (a,x) => {
               label: false,
               vertical: true,
               as: 'codemirror',
-              code: {
+              control: {
                 mode: {
                   value: ff.object.content_mode,
                   selections: app.selections.script_modes,
@@ -61,7 +61,7 @@ form = ( controller, blueprint, configurator ) => (a,x) => {
               label: false,
               vertical: true,
               as: 'codemirror',
-              code: {
+              control: {
                 mode: {
                   value: ff.object.content_mode,
                   selections: app.selections.script_modes,
@@ -79,7 +79,7 @@ form = ( controller, blueprint, configurator ) => (a,x) => {
               label: false,
               vertical: true,
               as: 'codemirror',
-              code: {
+              control: {
                 mode: {
                   value: ff.object.content_mode,
                   selections: app.selections.script_modes,
@@ -97,7 +97,7 @@ form = ( controller, blueprint, configurator ) => (a,x) => {
               label: false,
               vertical: true,
               as: 'codemirror',
-              code: {
+              control: {
                 mode: {
                   value: ff.object.content_mode,
                   selections: app.selections.script_modes,

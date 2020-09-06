@@ -13,7 +13,7 @@ app.applications.blueprint.dialogues.tests.perform = options => {
   let component = (a,x) => a['app-dialogue-test']( [
     a['app-dialogue-test-output'],
     ...cc.dialogue.builder(
-      dialogue.components.collection,
+      dialogue.output().components,
       test.parameters || {},
     ),
   ] )

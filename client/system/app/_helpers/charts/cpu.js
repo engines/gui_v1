@@ -34,9 +34,6 @@ app.charts.cpu = cpu => (a,x) => x.chartjs( {
         xAxes: [ {
           stacked: true,
           display: false,
-          // ticks: {
-          //   callback: value => `${ Math.round( value * 100 ) }%`
-          // },
         } ],
         yAxes: [ {
           stacked: true,

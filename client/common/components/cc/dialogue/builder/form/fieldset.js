@@ -1,7 +1,7 @@
 cc.dialogue.builder.form.fieldset = ( f, fieldsetSpec, params ) => {
 
-  if ( fieldsetSpec.body ) {
-    let componentsSpec = fieldsetSpec.body || []
+  if ( fieldsetSpec.components ) {
+    let componentsSpec = fieldsetSpec.components || []
     let result = []
     for ( let i in componentsSpec ) {
       result.push( cc.dialogue.builder.form.component( f, componentsSpec[i] ) )

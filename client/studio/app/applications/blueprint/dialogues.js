@@ -1,6 +1,6 @@
 app.applications.blueprint.dialogues = blueprint => controller => (a,x) => [
 
-  controller.nest({
+  controller.mount({
     routes: {
       '/?': app.applications.blueprint.dialogues.index( blueprint ),
       '/new': app.applications.blueprint.dialogues.new( blueprint ),

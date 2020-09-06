@@ -20,7 +20,6 @@ app.applications.blueprint.environment_variables.delete = blueprint => controlle
         label: app.icon( 'fa fa-trash', 'Delete' ),
         class: 'btn btn-danger',
         title: 'Delete environment variable',
-        // confirm: 'Are you sure that you want to delete this application?',
         onclick: (e,el) => {
 
           environmentVariable.delete()

@@ -21,7 +21,7 @@ app.system = controller => (a,x) => a( {
       }
 
       if ( system.is_rebooting ) {
-        el.$send( 'app.restarting' )
+        el.$send( 'app.rebooting' )
       } else if ( system.is_base_system_updating ) {
         el.$send( 'app.os.updating' )
       } else if ( system.is_halting ) {

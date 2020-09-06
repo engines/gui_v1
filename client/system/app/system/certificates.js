@@ -2,7 +2,7 @@ app.system.certificates = controller => (a,x) => [
 
   a.h3( 'Certificates' ),
 
-  controller.nest({
+  controller.mount({
     routes: {
       '/?': app.system.certificates.index,
       '/default': app.system.certificates.default,

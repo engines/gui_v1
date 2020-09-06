@@ -6,7 +6,7 @@ app.namespaces.namespace = controller => (a,x) => [
       a.h3( namespace.name ),
       a.small( namespace.remote ),
 
-      controller.nest({
+      controller.mount({
         routes: {
           '/?': app.namespaces.show,
           '/workspace*': app.namespaces.workspace( namespace ),

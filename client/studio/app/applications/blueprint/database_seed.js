@@ -14,9 +14,9 @@ app.applications.blueprint.database_seed = blueprint => controller => (a,x) => [
         as: 'codemirror',
         vertical: true,
         label: false,
-        code: {
+        control: {
           mode: {
-            value: app.codemirrorMode( f.object.content_mode ),
+            value: f.object.content_mode,
             selections: app.selections.database_seed_modes,
           },
         },

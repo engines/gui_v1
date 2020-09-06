@@ -20,7 +20,6 @@ app.applications.blueprint.dialogues.delete = blueprint => controller => (a,x) =
         label: app.icon( 'fa fa-trash', 'Delete' ),
         class: 'btn btn-danger',
         title: 'Delete dialogue',
-        // confirm: 'Are you sure that you want to delete this application?',
         onclick: (e,el) => {
 
           dialogue.delete()

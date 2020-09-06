@@ -27,6 +27,11 @@ let app = (a,x) => a['app']( [
       el.$('app-system-eventsource').$close()
       nav.$open( '/restart/progress' )
     },
+    'app.rebooting': (e, el) => {
+      el.$('^app app-nav').$setUser( false )
+      el.$('app-system-eventsource').$close()
+      nav.$open( '/reboot/progress' )
+    },
     'app.shutdown': (e, el) => {
       el.$('^app app-nav').$setUser( false )
       el.$('app-system-eventsource').$close()

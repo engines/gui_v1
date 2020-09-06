@@ -12,6 +12,7 @@ app.system.eventsource = (a,x) => a['app-system-eventsource'](
         } else if ( data.type == 'error' ) {
           el.$close()
           console.warn( `Event error.\n\n${ data.error }` )
+          alert( `Event error: ${ data.error }` )
           el.$send( 'app.disconnected' )
         } else if ( data.type == 'container_status_update' ) {
           let container_status_update = data.container_status_update

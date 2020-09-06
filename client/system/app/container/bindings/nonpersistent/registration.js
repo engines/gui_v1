@@ -4,7 +4,7 @@ app.container.bindings.nonpersistent.registration = type => controller => (a,x) 
 
   app.close(controller),
 
-  controller.nest({
+  controller.mount({
     routes: {
       '/?': app.container.bindings.nonpersistent.registration.show( type ),
       '/register/?': app.container.bindings.nonpersistent.registration.register( type ),

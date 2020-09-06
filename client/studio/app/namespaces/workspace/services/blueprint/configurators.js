@@ -1,6 +1,6 @@
 app.namespaces.workspace.services.blueprint.configurators = blueprint => controller => (a,x) => [
 
-  controller.nest({
+  controller.mount({
     routes: {
       '/?': app.namespaces.workspace.services.blueprint.configurators.index( blueprint ),
       '/new': app.namespaces.workspace.services.blueprint.configurators.new( blueprint ),

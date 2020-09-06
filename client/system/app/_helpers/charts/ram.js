@@ -37,9 +37,6 @@ app.charts.ram = ram => (a,x) => {
             xAxes: [ {
               stacked: true,
               display: false,
-              // ticks: {
-              //   callback: value => `${ Math.round( value * 100 ) }%`
-              // },
             } ],
             yAxes: [ {
               stacked: true,

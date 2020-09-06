@@ -9,6 +9,11 @@ app.system.show.heading = controller => (a,x) => a['div.clearfix']( [
           { class: 'btn app-btn d-block w-100 text-left overflow-hidden' }
         ),
         app.btn(
+          'Reboot',
+          () => controller.open( '/reboot' ),
+          { class: 'btn app-btn d-block w-100 text-left overflow-hidden' }
+        ),
+        app.btn(
           'Shutdown',
           () => controller.open( '/shutdown' ),
           { class: 'btn app-btn d-block w-100 text-left overflow-hidden' }

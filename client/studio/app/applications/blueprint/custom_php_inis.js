@@ -19,7 +19,7 @@ app.applications.blueprint.custom_php_inis = blueprint => controller => (a,x) =>
             as: 'codemirror',
             vertical: true,
             label: false,
-            code: { mode: 'php' },
+            control: { mode: 'php' },
           } ),
         ]
       } ),

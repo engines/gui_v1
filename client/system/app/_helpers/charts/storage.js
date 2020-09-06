@@ -31,7 +31,6 @@ app.charts.storage = storage => (a,x) => {
           labels: storage.map ( disk => disk.label ),
           used: storage.map ( disk => disk.used ),
           free: storage.map ( disk => disk.free ),
-          // size: storage.map ( disk => disk.size ),
           datasets: [
             {
               label: 'Used',
@@ -53,9 +52,6 @@ app.charts.storage = storage => (a,x) => {
             xAxes: [ {
               stacked: true,
               display: false,
-              // ticks: {
-              //   callback: value => `${ Math.round( value * 100 ) }%`
-              // },
             } ],
             yAxes: [ {
               stacked: true,

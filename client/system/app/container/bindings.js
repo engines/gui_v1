@@ -1,6 +1,6 @@
 app.container.bindings = type => controller => (a,x) => [
 
-  controller.nest({
+  controller.mount({
     routes: {
       '/?': app.container.bindings.index( type ),
       '/new*': app.container.bindings.new( type ),

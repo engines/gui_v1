@@ -52,31 +52,31 @@ class ApplicationBlueprintScripts {
 
     return {
       start: {
-        content_mode: app.codemirrorMode( this.object.start.language ),
+        content_mode: this.object.start.language,
         content: this.object.start.content
       },
       install: {
-        content_mode: app.codemirrorMode( this.object.install.language ),
+        content_mode: this.object.install.language,
         content: this.object.install.content
       },
       first_run: {
-        content_mode: app.codemirrorMode( this.object.first_run.language ),
+        content_mode: this.object.first_run.language,
         content: this.object.first_run.content
       },
       post_install: {
-        content_mode: app.codemirrorMode( this.object.post_install.language ),
+        content_mode: this.object.post_install.language,
         content: this.object.post_install.content
       },
       backup: {
-        content_mode: app.codemirrorMode( this.object.backup.language ),
+        content_mode: this.object.backup.language,
         content: this.object.backup.content
       },
       restore: {
-        content_mode: app.codemirrorMode( this.object.restore.language ),
+        content_mode: this.object.restore.language,
         content: this.object.restore.content
       },
       shutdown: {
-        content_mode: app.codemirrorMode( this.object.shutdown.language ),
+        content_mode: this.object.shutdown.language,
         content: this.object.shutdown.content
       }
     }
@@ -87,9 +87,8 @@ class ApplicationBlueprintScripts {
 
     for ( let key of [ 'start',  'install', 'first_run', 'post_install', 'backup', 'restore', 'shutdown' ] ) {
       if ( formObject[key].content ) {
-        formObject[key].language = app.codemirrorLanguage( formObject[key].content_mode )
+        formObject[key].language = formObject[key].content_mode
       }
-      // delete formObject[key].content_mode
     }
 
     this.assign( formObject )

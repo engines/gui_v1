@@ -6,7 +6,6 @@ cc.dialogue.designer.report.component = blueprint => f => [
     label: false,
     vertical: true,
     selections: [
-      { value: '', label: '' },
       { value: 'field', label: 'Field' },
       { value: 'fieldset', label: 'Fieldset' },
       { value: 'row', label: 'Row' },

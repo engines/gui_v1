@@ -52,7 +52,7 @@ app.namespaces.workspace.services.blueprint.configurators.show = blueprint => co
               as: 'codemirror',
               label: false,
               vertical: true,
-              code: {
+              control: {
                 mode: rr.object.language,
               }
             } )
@@ -67,7 +67,7 @@ app.namespaces.workspace.services.blueprint.configurators.show = blueprint => co
               as: 'codemirror',
               label: false,
               vertical: true,
-              code: {
+              control: {
                 mode: rr.object.language,
               }
             } )
@@ -82,7 +82,7 @@ app.namespaces.workspace.services.blueprint.configurators.show = blueprint => co
               as: 'codemirror',
               label: false,
               vertical: true,
-              code: {
+              control: {
                 mode: rr.object.language,
               }
             } )
@@ -97,7 +97,7 @@ app.namespaces.workspace.services.blueprint.configurators.show = blueprint => co
               as: 'codemirror',
               label: false,
               vertical: true,
-              code: {
+              control: {
                 mode: rr.object.language,
               }
             } )
@@ -111,7 +111,7 @@ app.namespaces.workspace.services.blueprint.configurators.show = blueprint => co
             controller.open( 'variables' )
           },
         } ),
-        x.out( configurator.variables.output() ),
+        x.out( x.lib.compact(configurator.variables.output()) ),
 
       ]
     } ),
