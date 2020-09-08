@@ -8,13 +8,11 @@ module Server
           stream( :keep_open ) do |out|
             started = Time.now.strftime("%H:%M:%S")
             logger.info "STREAM:#{ started }: Container events stream open."
-            begin
-              @engines.stream_lines( '/containers/events/stream' ) do |serializedEvent|
-                logger.info "STREAM:#{ started }:Event!"
+            parser = Yajl::Parser.new({:symbolize_keys => true}).tap do |p|
+              p.on_parse_complete = Proc.new do |event|
                 begin
                   raise Error::Timeout unless @current_user.within_timeout
-                  logger.info "STREAM:#{ started }:Raw event: #{serializedEvent}"
-                  event = JSON.parse( serializedEvent, symbolize_names: true )
+                  logger.info "STREAM:#{ started }:Event: #{event.to_json}"
                   if event[:no_op]
                     data = {}
                   else
@@ -57,6 +55,14 @@ module Server
                   out.puts "data: #{ { type: :timeout }.to_json }\n\n"
                   break
                 end
+
+              end
+            end
+
+            begin
+              @engines.stream_chunks( '/containers/events/stream' ) do |chunk|
+                logger.info "STREAM:#{ started }:Event!"
+                parser << chunk
               end
               raise "The container events stream not connected to the Engines system."
             rescue => e

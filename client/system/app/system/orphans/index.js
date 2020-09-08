@@ -40,6 +40,7 @@ app.system.orphans.index = controller => (a,x) => [
 
      el.$nodes = parents.length ?
      parents.map((parent) => a.div([
+       a.hr,
        a.h5(parent),
        orphanGroups[parent].map((orphan) => orphanItem(orphan))
      ])) :

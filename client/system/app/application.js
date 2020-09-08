@@ -20,7 +20,7 @@ app.application = controller => (a,x) => [
           '/processes': app.container.processes( 'application' ),
           '/container': app.container.report( 'application' ),
           '/blueprint': app.application.blueprint,
-          '/uninstall': app.application.uninstall,
+          '/uninstall*': app.application.uninstall,
         }
       })
     )

@@ -1,3 +1,5 @@
+require 'yajl'
+
 module Server
   class Api < Sinatra::Base
 

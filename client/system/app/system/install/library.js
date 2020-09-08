@@ -2,30 +2,31 @@ app.system.install.library = controller => (a,x) => [
 
   app.close( controller ),
 
+  app.float({
+    right: app.btn( app.icon( 'fas fa-save', 'Load' ), (e,el) => controller.open( 'url' ) ),
+  }),
+
   app.http(
     libraryURL,
     ( library, el ) => el.$nodes = a['app-library']([
-      app.float({
-        left: a['p.form-inline']([
-          a['input.form-control'](null, {
-            $init: (el) => {
-              el.focus()
-            },
-            $on: {
-              'input: filter applications': (e, el) => {
-                let value = el.value
-                el.$('^app-library library-applications').$$('button').forEach((button) => {
-                  button.$('^library-application').style.display =
-                  button.innerText.toLowerCase().includes(value.toLowerCase()) ?
-                  'unset' : 'none'
-                })
-              }
+      a['p.form-inline']([
+        a['input.form-control'](null, {
+          $init: (el) => {
+            el.focus()
+          },
+          $on: {
+            'input: filter applications': (e, el) => {
+              let value = el.value
+              el.$('^app-library library-applications').$$('button').forEach((button) => {
+                button.$('^library-application').style.display =
+                button.innerText.toLowerCase().includes(value.toLowerCase()) ?
+                'unset' : 'none'
+              })
             }
-          }),
-          a['div.input-group-append'](a['.input-group-text'](app.icon('fa fa-search'))),
-        ]),
-        right: app.btn( app.icon( 'fas fa-save', 'Load' ), (e,el) => controller.open( 'url' ) ),
-      }),
+          }
+        }),
+        a['div.input-group-append'](a['.input-group-text'](app.icon('fa fa-search'))),
+      ]),
       a['library-applications'](
         library.apps.map((application) => a['library-application']([
         app.btn(

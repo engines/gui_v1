@@ -21,7 +21,7 @@ app.application.about = controller => (a,x) => {
           a.p( description ),
           websiteUrl ? [
             a.hr,
-            a.i( 'Website' ), '',
+            a.i( 'Website' ), ' ',
             a.a(
               websiteUrl,
               { href: websiteUrl, target: websiteUrl }

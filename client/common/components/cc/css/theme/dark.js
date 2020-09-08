@@ -3,7 +3,7 @@ ax.style( {
   'body.app-theme-dark': {
 
     color: 'lightgray',
-    backgroundColor: 'black',
+    backgroundColor: '#111',
 
     '.app-btn': {
       color: 'lightgray',
@@ -31,11 +31,23 @@ ax.style( {
       color: 'lightgray',
     },
 
+    '.form-control': {
+      backgroundColor: '#aaa',
+      color: 'black',
+    },
     '.form-control:focus, .custom-select:focus': {
       boxShadow: '0 0 0 .2rem #90F9',
     },
     '.custom-control-input:focus ~ .custom-control-label::before': {
       boxShadow: '0 0 0 .2rem #90F9',
+    },
+    '.custom-select': {
+      backgroundColor: '#aaa',
+      color: 'black',
+    },
+
+    'ssh-key textarea.form-control[readonly]': {
+      backgroundColor: '#aaa'
     },
 
     '.table': {
@@ -69,6 +81,18 @@ ax.style( {
       },
 
     },
+
+    'ax-appkit-xtermjs-toolbar': {
+      backgroundColor: '#333',
+      button:{
+        color: '#ccc'
+      },
+    },
+
+    // '.terminal.xterm': {
+    //   border: '1px solid #ccc',
+    //   padding: '1px',
+    // },
 
 
 

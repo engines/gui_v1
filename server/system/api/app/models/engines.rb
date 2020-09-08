@@ -35,14 +35,15 @@ module Server
           end
 
           def stream_chunks(route, options={}, &block)
-            block_response = responseChunks &block
+            block_response = response_chunks &block
             api_call(route, block_response: block_response, **options)
           end
 
           def stream_lines(route, options={}, &block)
-            block_response = responseLines &block
+            block_response = response_lines &block
             api_call(route, block_response: block_response, **options)
           end
+
 
           # def upstream(route, options={})
           #   api_call(route, method: :post, **options)
@@ -50,7 +51,7 @@ module Server
 
           private
 
-          def responseChunks
+          def response_chunks
             Proc.new do |response|
               response.read_body do |chunk|
                 yield chunk
@@ -58,7 +59,7 @@ module Server
             end
           end
 
-          def responseLines
+          def response_lines
             Proc.new do |response|
               response.read_body do |chunk|
                 chunk.split("\n").each do |line|

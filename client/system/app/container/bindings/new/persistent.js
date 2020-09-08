@@ -1,7 +1,13 @@
 app.container.bindings.new.persistent = type => controller => (a,x) => {
 
   const name = controller.params.name
-  const [handle, parent] = controller.params.share.split(':')
+  let handle, parent
+
+  if (controller.params.strategy == 'share') {
+    [handle, parent] = controller.params.share.split(':')
+  } else if (controller.params.strategy == 'adopt') {
+    [handle, parent] = controller.params.adopt.split(':')
+  }
 
   let definitionPath = `/-/-/service_manager/service_definitions/${
     controller.params.publisher
@@ -41,9 +47,6 @@ app.container.bindings.new.persistent = type => controller => (a,x) => {
     },
     scope: 'api_vars',
     form: (f) => [
-      `@system_api.post "containers/engine/#{@name}/services/persistent/share/#{args[:parent]}/#{args[:publisher_namespace]}/#{args[:type_path]}/#{args[:service_handle]}", { variables: args[:variables] }`,
-      submissionPath,
-      controller.params,
       f.field({
         key: 'variables',
         as: 'one',
@@ -76,7 +79,13 @@ app.container.bindings.new.persistent = type => controller => (a,x) => {
             app.http(
               `/-/-/service_manager/persistent_services/${controller.params.publisher}/${controller.params.type}`,
               (shareables, el) => {
-                let shareable = shareables.find((shareable) => shareable.service_handle == handle)
+                let shareable = shareables.find((shareable) =>
+                  shareable.parent_engine == parent &&
+                  shareable.service_handle == handle
+                )
+
+                // if (!shareable) debugger
+
                 let variables = Object.values(definition.consumer_params).filter(
                   (variable) => !variable.immutable
                 ).map(
@@ -97,7 +106,11 @@ app.container.bindings.new.persistent = type => controller => (a,x) => {
             app.http(
               `/-/-/service_manager/orphan_services/${controller.params.publisher}/${controller.params.type}`,
               (adoptables, el) => {
-                let adoptable = adoptables.find((adoptable) => adoptable.service_handle == controller.params.adopt)
+                let adoptable = adoptables.find((adoptable) =>
+                  adoptable.parent_engine == parent &&
+                  adoptable.service_handle == handle
+                )
+                // if (!adoptable) debugger
                 let variables = Object.values(definition.consumer_params).filter(
                   (variable) => !variable.immutable
                 ).map(

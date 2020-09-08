@@ -53,7 +53,7 @@ app.system.install.monitor = controller => (a,x) => [
                         a.p( 'Installation complete.' ),
                         a.p( 'Please read the installation report.' ),
                         app.btn(
-                          app.icon( 'fa fa-arrow-right', 'Installation report' ),
+                          app.icon( 'fas fa-clipboard-check', 'Installation report' ),
                           (e,el) => controller.open( `/applications/${ installing.engine_name }/installation` )
                         ),
                       ]

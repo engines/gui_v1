@@ -7,7 +7,7 @@ app.system.install.url = controller => (a,x) => [
     },
     form: (f) => [
       f.field( {
-        name: 'install[url]',
+        name: 'url',
         placeholder: 'URL',
         type: 'url',
         required: true,

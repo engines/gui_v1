@@ -7,7 +7,7 @@ app.system.ssh.show = controller => (a,x) => [
       a.textarea(key, {
         style: {fontFamily: 'monospace'},
         readonly: true,
-        class: 'form-control bg-white',
+        class: 'form-control',
       }),
       app.float({
         left: a.a(app.icon('fa fa-download', 'Download'), {

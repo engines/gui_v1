@@ -1,7 +1,7 @@
 app.system.show.heading = controller => (a,x) => a['div.clearfix']( [
 
   a['div.float-right'](
-    x.popup( app.btn( app.icon( 'fas fa-power-off' ) ), {
+    x.popup( app.btn( app.icon( 'fas fa-power-off' ), null, {title: 'Power'} ), {
       menu: [
         app.btn(
           'Restart',

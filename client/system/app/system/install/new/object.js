@@ -7,16 +7,31 @@ app.system.install.new.object = ( install ) => {
     environment_variable => environment_variable.ask_at_build_time
   )
 
+  let taken = function(name) {
+    if (install.reserved_engine_names.includes(name)) return true
+    if (install.reserved_hostnames.includes(`${name}.${install.default_domain}`)) return true
+  }
+
+  let name = dig ( 'software', 'base', 'name' )
+  let i = 0
+
+  if (taken(name)) {
+    do {
+      i++
+      name = `${name}${i}`
+    } while (taken(name))
+  }
+
   return {
     repository_url: install.blueprint_url,
     icon_url: install.icon_url,
-    engine_name: dig ( 'software', 'base', 'name' ),
+    engine_name: name,
     memory: dig( 'software', 'base', 'memory', 'recommended' ),
     minimum_memory: dig( 'software', 'base', 'memory', 'required' ),
     country_code: install.locale.country_code,
     lang_code: install.locale.lang_code,
     http_protocol: dig ( 'software', 'base', 'http_protocol' ),
-    host_name: dig ( 'software', 'base', 'name' ),
+    host_name: name,
     domain_name: install.default_domain,
 
     attached_services: install.services.map( service => ( {

@@ -3,7 +3,10 @@ app.system.show.engines = controller => (a,x) => [
     a['div.float-right'](
       app.btn(
         app.icon( 'fas fa-redo' ),
-        () => controller.open( 'update' )
+        () => controller.open( 'update' ),
+        {
+          title: 'Update Engines System',
+        }
       ),
     ),
     a['div.float-left'](
