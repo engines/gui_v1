@@ -1,7 +1,7 @@
 app.system.show.errors = ( controller, system ) => (a,x) => a.p( [
   system.needs_reboot ? app.btn(
-    a['.text-warning']( app.icon( 'fa fa-bell', 'Needs restart' ) ),
-    () => controller.open( '/restart' ),
+    a['.text-warning']( app.icon( 'fa fa-bell', 'Needs reboot' ) ),
+    () => controller.open( '/reboot' ),
   ) : null,
   system.needs_engines_update ? app.btn(
     a['.text-warning']( app.icon( 'fa fa-bell', 'Needs Engines update' ) ),

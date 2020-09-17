@@ -2,10 +2,14 @@ app.system.show.os = controller => (a,x) => [
   a['div.clearfix']( [
     a['div.float-right'](
       app.btn(
-        app.icon( 'fas fa-redo' ),
+        [
+          app.icon( 'fas fa-redo' ),
+          a({$text: ' Update', class: 'button-hover-text'}),
+        ],
         () => controller.open( 'update/os' ),
         {
-          title: 'Update Operating System',
+          title: 'Update Engines System',
+          class: 'btn app-btn button-with-hover-text',
         }
       ),
     ),

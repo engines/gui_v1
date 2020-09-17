@@ -6,6 +6,7 @@ gem 'sinatra-cross_origin'
 gem 'rainbows'
 gem 'rake'
 gem 'rest-client'
+gem 'yajl-ruby'
 
 group :development do
   gem 'byebug'

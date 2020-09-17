@@ -7,9 +7,7 @@ module Server
         dump_errors: Sinatra::Base.development?,
         show_exceptions: false,
         session_timeout_seconds: ENV['SESSION_TIMEOUT_MINUTES'].to_f * 60,
-        ssh_private_key_filename: "identity",
-        ssh_public_key_filename: "identity.pub",
-        enable_services_designer: !!ENV['ENABLE_SERVICES_DESIGNER'] || Sinatra::Base.development?,
+        public_key_filepath: ENV['PUBLIC_KEY_FILEPATH'] || Sinatra::Base.development? ? "#{ Dir.home }/.ssh/identity.pub" : nil,
         user_password: ( Sinatra::Base.development? ? 'password' : ENV['USER_PASSWORD'] ) || 'password'
   end
 

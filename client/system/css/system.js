@@ -23,7 +23,18 @@ ax.style( {
       '&:hover canvas': {
         zIndex: 1,
       },
-    }
+    },
+
+    '.button-with-hover-text': {
+      '.button-hover-text': {
+        display: 'none',
+      }
+    },
+    '.button-with-hover-text:hover': {
+      '.button-hover-text': {
+        display: 'unset',
+      }
+    },
 
   }
 

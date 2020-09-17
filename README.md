@@ -35,3 +35,5 @@ Studio
 To run in 'Studio' mode, set `ENV['MODE']` to `studio`.
 
 Set a password with `ENV['USER_PASSWORD']`.
+
+Specifiy location of ssh public key file with `ENV['PUBLIC_KEY_FILEPATH']`.

@@ -72,6 +72,12 @@ app.nav = controller => (a,x) => a['app-nav']( [
 
 
       app.button( {
+        label: app.icon( 'fa fa-key' ),
+        title: 'Public key',
+        onclick: () => controller.open( '/key' ),
+        class: 'btn app-btn app-nav-btn app-nav-btn-key',
+      } ),
+      app.button( {
         label: app.icon( 'fa fa-cog' ),
         title: 'Settings',
         onclick: () => controller.open( '/settings' ),

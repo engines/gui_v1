@@ -10,6 +10,7 @@ app.router = (a,x) => x.router( {
         '/applications*': app.applications,
         '/namespaces*': app.namespaces,
         '/settings': app.settings,
+        '/key': app.key,
       },
     }),
   ],

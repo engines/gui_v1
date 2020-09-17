@@ -32,15 +32,7 @@ module Server
           end
 
           def public_key
-            File.read public_key_filepath
-          end
-
-          def private_key_filepath
-            "#{ Dir.home }/.ssh/#{ @settings.ssh_private_key_filename }"
-          end
-
-          def public_key_filepath
-            "#{ Dir.home }/.ssh/#{ @settings.ssh_public_key_filename }"
+            File.read @settings.public_key_filepath
           end
 
           def session_timeout_seconds

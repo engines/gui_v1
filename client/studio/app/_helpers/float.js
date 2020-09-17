@@ -1,0 +1,1 @@
+app.float = cc.float

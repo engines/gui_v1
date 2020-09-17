@@ -9,7 +9,7 @@ app.container.menu = ( controller, type ) => (a,x) => {
     menuButton( 'Actions', `${prefix}actions`, 'fas fa-crosshairs' ),
 
     type === 'service' ? [
-      menuButton( 'Configuration', `${prefix}configurations`, 'fas fa-cogs' ),
+      menuButton( 'Configure', `${prefix}configurations`, 'fas fa-cogs' ),
       menuButton( 'Export', `${prefix}export`, 'fas fa-archive' ),
       menuButton( 'Import', `${prefix}import`, 'fas fa-database' ),
     ] : [
