@@ -18,7 +18,6 @@ app.namespaces.workspace.new = controller => (a,x) => [
         app.http(
           `/-/namespaces/${ controller.params.namespace_id }/workspace`,
           ( result, el ) => {
-            workspaceBranch.$text = result.branch
             controller.open( '..' )
           },
           {
