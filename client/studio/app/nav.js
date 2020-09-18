@@ -29,6 +29,9 @@ app.nav = controller => (a,x) => a['app-nav']( [
         el.$nodes = app.http(
           '/-/session',
           () => nav.$setUser( true ),
+          {
+            catch: ( error, el ) => alert( 'Server not responding.' ),
+          }
         )
       }
     } ),
