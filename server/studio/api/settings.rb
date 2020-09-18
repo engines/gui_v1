@@ -10,8 +10,6 @@ module Server
         public_key_filepath: ENV['PUBLIC_KEY_FILEPATH'],
         user_password: ENV['USER_PASSWORD']
 
-    ENV['GIT_SSH_COMMAND'] = "ssh -i #{settings.public_key_filepath}"
-
   end
 
 end

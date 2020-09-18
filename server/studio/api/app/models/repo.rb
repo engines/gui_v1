@@ -71,13 +71,7 @@ module Server
           end
 
           def git( command )
-            stdout, stderr, status = Open3.
-              capture3( "git -C '#{ path }' #{ command }" )
-              result = stdout === '' ?
-                stderr :
-                stderr === '' ? stdout : "#{ stdout }\n#{ stderr }"
-            raise Error::GitError.new result unless status.exitstatus === 0
-            result
+            Git.exec path, command
           end
 
           def dirty?

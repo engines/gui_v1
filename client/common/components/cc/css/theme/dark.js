@@ -113,15 +113,6 @@ ax.style( {
       }
     },
 
-
-    // '.terminal.xterm': {
-    //   border: '1px solid #ccc',
-    //   padding: '1px',
-    // },
-
-
-
-
   },
 
 } )

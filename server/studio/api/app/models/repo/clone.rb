@@ -23,8 +23,9 @@ module Server
             end
 
             def clone
-              stdout, stderr, status = Open3.capture3( "git -C '#{ tmp }' clone '#{ @url }'" )
-              raise Error::RepoCloneFailed.new stderr if status.exitstatus != 0
+              Git.exec tmp, "clone '#{ @url }'"
+            rescue Error::GitError => e
+              raise Error::RepoCloneFailed.new e.message
             end
 
             def name
@@ -69,7 +70,7 @@ module Server
             end
 
             def branch
-              `git -C '#{ tmp_repo_path }' branch`
+              Git.exec tmp_repo_path, 'branch'
             end
 
             def tmp_repo_path
