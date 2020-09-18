@@ -83,11 +83,36 @@ ax.style( {
     },
 
     'ax-appkit-xtermjs-toolbar': {
-      backgroundColor: '#333',
+      backgroundColor: '#aaa',
       button:{
-        color: '#ccc'
+        color: '#ddd'
       },
     },
+
+    'ax-appkit-control-easymde': {
+      '.editor-toolbar': {
+        backgroundColor: '#aaa',
+        button:{
+          color: '#ddd'
+        },
+      },
+      '.CodeMirror': {
+        backgroundColor: '#aaa',
+      }
+    },
+
+    'ax-appkit-codemirror': {
+      'ax-appkit-codemirror-toolbar': {
+        backgroundColor: '#aaa',
+        button: {
+          color: '#ddd'
+        },
+      },
+      '.CodeMirror': {
+        backgroundColor: '#aaa',
+      }
+    },
+
 
     // '.terminal.xterm': {
     //   border: '1px solid #ccc',

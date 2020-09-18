@@ -4,6 +4,7 @@ require 'sinatra/json'
 require 'sinatra/cookies'
 require 'sinatra/streaming'
 require 'logger'
+require 'yaml'
 require 'byebug' if Sinatra::Base.development?
 require './server'
 

@@ -97,7 +97,7 @@ app.applications.show = controller => (a,x) => [
           onclick: (e,el) => {
             controller.open( 'reset' )
           },
-          title: 'Reset application',
+          title: 'Reset branch',
         } ),
         app.button( {
           label: app.icon( 'fa fa-trash', 'Delete' ),

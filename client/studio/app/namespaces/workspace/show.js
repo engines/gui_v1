@@ -104,13 +104,9 @@ app.namespaces.workspace.show = controller => (a,x) => [
                       controller.open( 'pull' )
                     }
                   } ),
-
                   app.close( controller, {title: 'Return to namespace'}),
-
                 ] ),
               ] ),
-
-
 
               a.p( readme.content ?
                 app.md( readme.content ) :
@@ -125,7 +121,7 @@ app.namespaces.workspace.show = controller => (a,x) => [
                   onclick: (e,el) => {
                     controller.open( 'reset' )
                   },
-                  title: 'Reset application',
+                  title: 'Reset branch',
                 } ),
                 app.button( {
                   label: app.icon( 'fa fa-trash', 'Delete' ),

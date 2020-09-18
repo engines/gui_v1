@@ -1,5 +1,3 @@
-require 'yaml'
-
 module Server
 
   # require_relative 'server/assets'
