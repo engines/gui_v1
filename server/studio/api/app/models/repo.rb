@@ -62,7 +62,7 @@ module Server
           def commit( commit )
             return { message: 'Nothing to commit.' } if uncommitted.empty?
             git 'add -A'
-            { message: git( "commit -m '#{ commit[:message] }'" ) }
+            { message: git( "commit -m \"#{ commit[:message] }\"" ) }
           end
 
           def push
