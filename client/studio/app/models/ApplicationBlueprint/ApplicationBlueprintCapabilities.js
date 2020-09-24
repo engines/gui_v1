@@ -38,7 +38,18 @@ class ApplicationBlueprintCapabilities {
   }
 
   output() {
-    return this.object
+    if (this.object.allow == 'default') {
+      return {}
+    } else if (this.object.allow == 'selected') {
+      return {
+        allow: 'selected',
+        selected: this.object.selected,
+      }
+    } else {
+      return {
+        allow: this.object.allow,
+      }
+    }
   }
 
 }
