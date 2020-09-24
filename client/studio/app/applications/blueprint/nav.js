@@ -220,6 +220,17 @@ app.applications.blueprint.nav = ( blueprint, controller ) => (a,x) => a['ul.nav
       },
     } )
   ),
+  a['li.nav-item'](
+    app.button( {
+      buttonTag: {
+        class: 'btn btn-sm app-btn',
+      },
+      label: app.icon( 'fa fa-caret-right', 'Capabilities' ),
+      onclick: (e,el) => {
+        controller.open('capabilities')
+      },
+    } )
+  ),
   blueprint.hasRakeTasks ? a['li.nav-item'](
     app.button( {
       buttonTag: {

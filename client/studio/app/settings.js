@@ -6,7 +6,6 @@ app.settings = controller => (a,x) => [
     object: {
       theme: window.localStorage.cssTheme,
       editor_keymap: window.localStorage.editorKeymap,
-      editor_default_mode: window.localStorage.editorDefaultMode
     },
     form: f => [
       f.field( {

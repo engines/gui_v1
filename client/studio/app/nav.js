@@ -71,9 +71,6 @@ app.nav = controller => (a,x) => a['app-nav']( [
         ],
         {class: "dropdown"}
       ),
-
-
-
       app.button( {
         label: app.icon( 'fa fa-key' ),
         title: 'Public key',
@@ -100,7 +97,13 @@ app.nav = controller => (a,x) => a['app-nav']( [
   id: 'nav',
   $setUser: (el) => ( user ) => {
     let buttons = el.$('app-nav-buttons')
-    user ? x.lib.animate.fade.in( buttons, { display: 'unset' } ) : x.lib.animate.fade.out( buttons )
+    if (user) {
+      if (buttons.style.display == 'none') {
+        x.lib.animate.fade.in( buttons, { display: 'unset' } )
+      }
+    } else {
+      x.lib.animate.fade.out( buttons )
+    }
   },
   $path: (el) => () => window.location.pathname,
   $update: (el) => {

@@ -5,6 +5,21 @@ ax.style( {
     color: 'lightgray',
     backgroundColor: '#111',
 
+    hr: {
+      borderTop: '1px solid rgba(255, 255, 255, 0.1)'
+    },
+    pre: {
+      color: 'lightgray',
+    },
+
+    '.bg-white': {
+      backgroundColor: '#333 !important',
+    },
+    '.text-dark': {
+      color: 'lightgray !important',
+    },
+
+
     '.app-btn': {
       color: 'lightgray',
     },
@@ -13,27 +28,27 @@ ax.style( {
       color: 'black',
     },
 
+    '.app-btn-danger:hover': {
+      backgroundColor: 'lightgray',
+    },
+
     'app-nav': {
       '.app-nav-btn.active': {
         color: 'black',
       },
     },
 
-    hr: {
-      borderTop: '1px solid rgba(255, 255, 255, 0.1)'
-    },
-
     'ax-appkit-menu menu': {
       backgroundColor: 'black',
-    },
-
-    pre: {
-      color: 'lightgray',
     },
 
     '.form-control': {
       backgroundColor: '#aaa',
       color: 'black',
+    },
+    '.form-control:disabled': {
+      backgroundColor: '#333',
+      color: 'lightgray',
     },
     '.form-control:focus, .custom-select:focus': {
       boxShadow: '0 0 0 .2rem #90F9',
@@ -44,6 +59,10 @@ ax.style( {
     '.custom-select': {
       backgroundColor: '#aaa',
       color: 'black',
+    },
+    '.custom-select:disabled': {
+      backgroundColor: '#333',
+      color: 'lightgray',
     },
 
     'ssh-key textarea.form-control[readonly]': {

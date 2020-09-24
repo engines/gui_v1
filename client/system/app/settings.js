@@ -26,18 +26,11 @@ app.settings = controller => (a,x) => [
           sublime: 'Sublime',
         },
       } ),
-      f.field( {
-        key: 'editor_default_mode',
-        as: 'select',
-        placeholder: 'None',
-        selections: app.selections.script_modes,
-      } ),
       f.buttons(),
     ],
     action: (submission) => {
       window.localStorage.cssTheme = submission.data.theme
       window.localStorage.editorKeymap = submission.data.editor_keymap
-      window.localStorage.editorDefaultMode = submission.data.editor_default_mode
       location.assign( '/' )
     }
   } ),

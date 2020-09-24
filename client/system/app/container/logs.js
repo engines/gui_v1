@@ -18,8 +18,8 @@ app.container.logs = type => controller => (a,x) => {
           app.report({
             object: logs,
             report: (r) => [
-              r.field({key: 'stdout', as: 'xtermjs', label: false, control: {label: 'stdout'}}),
-              r.field({key: 'stderr', as: 'xtermjs', label: false, control: {label: 'stderr'}}),
+              r.field({key: 'stdout', as: 'xtermjs', label: false, control: {label: 'stdout', convertEol: true}}),
+              r.field({key: 'stderr', as: 'xtermjs', label: false, control: {label: 'stderr', convertEol: true}}),
             ]
           })
         ]

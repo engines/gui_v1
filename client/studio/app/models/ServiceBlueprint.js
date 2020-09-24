@@ -36,7 +36,7 @@ class ServiceBlueprint {
     this.schedules = new ApplicationBlueprintSchedules( this, software.schedules || [] )
     this.serviceDependencies = new ServiceBlueprintServiceDependencies( this, software.service_dependencies || [] )
     this.guises = new ServiceBlueprintGuises( this, software.guises || [] )
-    this.capabilities = new ServiceBlueprintServiceCapabilities( this, software.capabilities || [] )
+    this.capabilities = new ApplicationBlueprintCapabilities( this, software.capabilities || [] )
     this.logDirectories = new ServiceBlueprintLogDirectories( this, software.log_directories || [] )
     this.buildDependencies = new ServiceBlueprintBuildDependencies( this, software.build_dependencies || [] )
     this.filePermissions = new ServiceBlueprintFilePermissions( this, software.file_permissions || [] )

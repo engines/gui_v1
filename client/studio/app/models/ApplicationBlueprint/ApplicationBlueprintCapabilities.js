@@ -1,4 +1,4 @@
-class ServiceBlueprintServiceCapabilities {
+class ApplicationBlueprintCapabilities {
 
   constructor( blueprint, object ) {
     this.blueprint = blueprint

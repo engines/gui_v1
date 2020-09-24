@@ -1,4 +1,4 @@
-app.namespaces.workspace.services.blueprint.capabilities = blueprint => controller => (a,x) => [
+app.applications.blueprint.capabilities = blueprint => controller => (a,x) => [
 
   a.h5( 'Capabilities' ),
   a.hr,
@@ -21,7 +21,7 @@ app.namespaces.workspace.services.blueprint.capabilities = blueprint => controll
 
       f.field( {
         key: 'selected',
-        as: 'checks',
+        as: 'checkboxes',
         dependent: {
           key: 'allow',
           value: 'selected',

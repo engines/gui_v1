@@ -28,6 +28,7 @@ class ApplicationBlueprint {
     this.workers = new ApplicationBlueprintWorkers( this, software.workers || {} )
     this.actionators = new ApplicationBlueprintActionators( this, software.actionators || [] )
     this.schedules = new ApplicationBlueprintSchedules( this, software.schedules || [] )
+    this.capabilities = new ApplicationBlueprintCapabilities( this, software.capabilities || [] )
     this.rakeTasks = new ApplicationBlueprintRakeTasks( this, framworkSpecific.rake_tasks || [] )
     this.customPhpInis = new ApplicationBlueprintCustomPhpInis( this, framworkSpecific.custom_php_inis || [] )
     this.apacheHtaccessFiles = new ApplicationBlueprintApacheHtaccessFiles( this, framworkSpecific.apache_htaccess_files || [] )
@@ -84,6 +85,7 @@ class ApplicationBlueprint {
         workers: this.workers.output(),
         actionators: this.actionators.output(),
         schedules: this.schedules.output(),
+        capabilities: this.capabilities.output(),
         dialogues: this.dialogues.output(),
         framework_specific: {
          rake_tasks: this.rakeTasks.output(),

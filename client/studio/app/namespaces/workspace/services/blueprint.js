@@ -37,7 +37,7 @@ app.namespaces.workspace.services.blueprint = namespace => controller => (a,x) =
             '/schedules*': app.applications.blueprint.schedules( blueprintObject ),
             '/service_dependencies': app.namespaces.workspace.services.blueprint.service_dependencies( blueprintObject ),
             '/guises': app.namespaces.workspace.services.blueprint.guises( blueprintObject ),
-            '/capabilities': app.namespaces.workspace.services.blueprint.capabilities( blueprintObject ),
+            '/capabilities': app.applications.blueprint.capabilities( blueprintObject ),
             '/log_directories': app.namespaces.workspace.services.blueprint.log_directories( blueprintObject ),
             '/build_dependencies': app.namespaces.workspace.services.blueprint.build_dependencies( blueprintObject ),
             '/file_permissions': app.namespaces.workspace.services.blueprint.file_permissions( blueprintObject ),
