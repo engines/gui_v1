@@ -33,7 +33,7 @@
     "@fortawesome/fontawesome-free": "^5.14.0",
     "bootstrap": "^4.5.2",
     "chart.js": "^2.9.3",
-    "codemirror": "^5.58.1",
+    "codemirror": "^5.58.2",
     "dompurify": "^2.1.0",
     "easymde": "^2.11.0",
     "filepond": "^4.20.1",
